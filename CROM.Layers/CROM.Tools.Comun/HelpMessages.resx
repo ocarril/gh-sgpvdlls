@@ -1,0 +1,675 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="17" xml:space="preserve">
+    <value>¡ El servidor  no existe, por favor verifique el nombre !</value>
+  </data>
+  <data name="18452" xml:space="preserve">
+    <value>Especifique un usuario y password</value>
+  </data>
+  <data name="18456" xml:space="preserve">
+    <value>El usuario o password es incorrecto</value>
+  </data>
+  <data name="208" xml:space="preserve">
+    <value>El nombre del objeto (tabla, procedimiento almacenado,etc.)es incorrecto.</value>
+  </data>
+  <data name="229" xml:space="preserve">
+    <value>¡ Error con el acceso a la base de datos. - Consultar con el DBA !</value>
+  </data>
+  <data name="2627" xml:space="preserve">
+    <value>¡ No se puede duplicar registro por, llaves primarias ya existen !</value>
+  </data>
+  <data name="4060" xml:space="preserve">
+    <value>¡ El usuario no tiene permisos para acceder a la base de datos !</value>
+  </data>
+  <data name="4121" xml:space="preserve">
+    <value>¡ Verificar función que genera código del sistema en la BD. !</value>
+  </data>
+  <data name="547" xml:space="preserve">
+    <value>¡ No se puede eliminar el registro...! Puede que este relacionado.</value>
+  </data>
+  <data name="6263" xml:space="preserve">
+    <value>¡ No esta habilitado el servidor SQL para uso de CLR-ASSEMBLY !</value>
+  </data>
+  <data name="gc_DOCUM_NO_ANULADO" xml:space="preserve">
+    <value>¡ No se puede anular documento esta siendo referenciado a otro {0}!</value>
+  </data>
+  <data name="gc_DOCUM_SE_ANULARA" xml:space="preserve">
+    <value>¿ Confirma anular este documento..[ SI ]-[ NO ] ?</value>
+  </data>
+  <data name="gc_DOCUM_SE_ELIMINARA" xml:space="preserve">
+    <value>¿ Confirma eliminar este documento..[ SI ]-[ NO ] ?</value>
+  </data>
+  <data name="gc_DOCUM_YA_ANULADO" xml:space="preserve">
+    <value>¡ Documento o Item ya se ha anulado satisfactoriamente. !</value>
+  </data>
+  <data name="gc_PEDD_CANTIDAD_ITEM" xml:space="preserve">
+    <value>¡ Cantidad de ítem tiene que ser mayor que cero. !</value>
+  </data>
+  <data name="gc_PEDD_CODIGO_ITEM" xml:space="preserve">
+    <value>¡ Seleccionar código de producto para este ítem. !</value>
+  </data>
+  <data name="gc_PEDD_DELETE_ITEM" xml:space="preserve">
+    <value>¿ Confirma eliminar el ítem seleccionado ?</value>
+  </data>
+  <data name="gc_PEDD_EXISTE_DOCUM" xml:space="preserve">
+    <value>¡ Número de documento ya existe, ingresar otro número. !</value>
+  </data>
+  <data name="gc_PEDD_MAXIMO_ITEMS" xml:space="preserve">
+    <value>¡ La cantidad límite de ítems a registrar son : [ {0} ] ítems. !</value>
+  </data>
+  <data name="gc_PEDD_NO_HAY_ITEMS" xml:space="preserve">
+    <value>¡ No existen ítem's para  hacer  edición en el documento. !</value>
+  </data>
+  <data name="gc_PEDD_PRECIO_ITEM" xml:space="preserve">
+    <value>¡ Precio de ítem de documento tiene que ser mayor que cero. !</value>
+  </data>
+  <data name="gc_PEDD_SELECT_ENTIDAD" xml:space="preserve">
+    <value>¡ Seleccionar entidad para seguir con el proceso. !</value>
+  </data>
+  <data name="gc_PRODUConsultas" xml:space="preserve">
+    <value>¡ Aún no se ha definido el código del producto. !</value>
+  </data>
+  <data name="gc_PRODUGRUPOCodigoRef" xml:space="preserve">
+    <value>¡ Ingresar código de referencia para el grupo. !</value>
+  </data>
+  <data name="gc_PRODUGRUPODescrip" xml:space="preserve">
+    <value>¡ Ingresar descripción o nombre para el grupo. !</value>
+  </data>
+  <data name="gc_PRODUGRUPOLinea" xml:space="preserve">
+    <value>¡ Seleccionar línea para el grupo. !</value>
+  </data>
+  <data name="gc_PRODUGRUPOMaterial" xml:space="preserve">
+    <value>¡ Seleccionar material para el grupo. !</value>
+  </data>
+  <data name="gc_PRODUGRUPOUnidad" xml:space="preserve">
+    <value>¡ Seleccionar unidad de medida para el grupo. !</value>
+  </data>
+  <data name="gc_PRODUValidaCodigo" xml:space="preserve">
+    <value>¡ Ingresar el código para el nuevo registro del producto. !</value>
+  </data>
+  <data name="gc_PRODUValidaCodigoREF" xml:space="preserve">
+    <value>¡ Ingresar el código para el registro del producto. !</value>
+  </data>
+  <data name="gc_PRODUValidaDescrip" xml:space="preserve">
+    <value>¡ Ingresar la descripción para el registro. !</value>
+  </data>
+  <data name="gc_PRODUValidaDescripAbr" xml:space="preserve">
+    <value>¡ Ingresar la descripción abreviada para el registro del producto. !</value>
+  </data>
+  <data name="gc_PRODUValidaDescripCom" xml:space="preserve">
+    <value>¡ Ingresar la descripción comercial para el registro del producto. !</value>
+  </data>
+  <data name="gc_PRODUValidaMoneda" xml:space="preserve">
+    <value>¡ Seleccionar el tipo de moneda para el producto. !</value>
+  </data>
+  <data name="gc_PRODUValidaTipoProduc" xml:space="preserve">
+    <value>¡ Seleccionar el tipo de producto. !</value>
+  </data>
+  <data name="gc_PRODUValidaUnidad" xml:space="preserve">
+    <value>¡ Seleccionar unidad de medida para el producto. !</value>
+  </data>
+  <data name="PERS_TARJETA_DUPLICADA" xml:space="preserve">
+    <value>¡ Tarjeta de Marcación de Empleado ya existe !</value>
+  </data>
+  <data name="TEDetalleActualizado" xml:space="preserve">
+    <value>Tabla Detalle Actualizada satisfactoriamente.</value>
+  </data>
+  <data name="TEDetalleCodiArgumento" xml:space="preserve">
+    <value>Ingrese el Código de Argumento del Registro.</value>
+  </data>
+  <data name="TEDetalleCodigoDetalleYaExiste" xml:space="preserve">
+    <value>¡ El código de la tabla detalle ya se encuentra Registrado. !</value>
+  </data>
+  <data name="TEDetalleCodigoTabla" xml:space="preserve">
+    <value>¡ Ingrese el código de la tabla. !</value>
+  </data>
+  <data name="TEDetalleCodigoTablaMaestra" xml:space="preserve">
+    <value>¡ Ingrese el código de la tabla maestra. !</value>
+  </data>
+  <data name="TEDetalleDescripcionCorta" xml:space="preserve">
+    <value>¡ Ingrese la descripción corta.! </value>
+  </data>
+  <data name="TEDetalleDescripcionDetalleYaExiste" xml:space="preserve">
+    <value>¡ El Nombre de la tabla ya se encuentra Registrado. !</value>
+  </data>
+  <data name="TEDetalleDescripcionLarga" xml:space="preserve">
+    <value>¡ Ingresar la descripcion larga del registro. !</value>
+  </data>
+  <data name="TEDetalleExisteDependenciaDetalle" xml:space="preserve">
+    <value>¡ Existe dependencia de registros de la tabla detalle. !</value>
+  </data>
+  <data name="TEDetalleIngreseCodigoArgumento" xml:space="preserve">
+    <value>¡ Ingresar el código de argumento. !</value>
+  </data>
+  <data name="TEDetalleNivelDetalle" xml:space="preserve">
+    <value>¡ Ingresar el número de nivel del código de argumento. En caso que no tenga niveles !</value>
+  </data>
+  <data name="TEDetalleNoLocalizaTablaPadre" xml:space="preserve">
+    <value>¡ No se localizó el código de la tabla padre. !</value>
+  </data>
+  <data name="TEDetallePreguntaElimina" xml:space="preserve">
+    <value>¿ Confirma eliminar el registro de la tabla maestra ?</value>
+  </data>
+  <data name="TEDetalleRegistrado" xml:space="preserve">
+    <value>¡ Tabla detalle grabada satisfactoriamente. !</value>
+  </data>
+  <data name="VALIDACIONGeneral" xml:space="preserve">
+    <value>¡ Completar los datos principales requeridos para el registro. !</value>
+  </data>
+  <data name="Evento_DELETE" xml:space="preserve">
+    <value>¡ Registro eliminado satisfactoriamente !</value>
+  </data>
+  <data name="Evento_DEPEND" xml:space="preserve">
+    <value>¡ Registro tiene dependencia con otro nivel en la tabla !</value>
+  </data>
+  <data name="Evento_EDIT" xml:space="preserve">
+    <value>¡ Registro actualizado satisfactoriamente !</value>
+  </data>
+  <data name="Evento_NEW" xml:space="preserve">
+    <value>¡ Registro insertado satisfactoriamente !</value>
+  </data>
+  <data name="Evento_DELETE_Confirma" xml:space="preserve">
+    <value>¿ Confirma eliminar el registro seleccionado ?</value>
+  </data>
+  <data name="gc_DOCUMENTOS_Series" xml:space="preserve">
+    <value>¡ No se ha definido rango o números de serie para documento [ {0} ] !</value>
+  </data>
+  <data name="Evento_EDIT_Confirma" xml:space="preserve">
+    <value>¿ Confirma la actualización del registro ...[ SI ]-[ NO ] ?</value>
+  </data>
+  <data name="Evento_NEW_Confirma" xml:space="preserve">
+    <value>¿ Confirma el ingreso del nuevo registro [ SI ]-[ NO ] ?</value>
+  </data>
+  <data name="gc_PRODUValidaMinAtrPart" xml:space="preserve">
+    <value>¡ Seleccionar como mínimo un atributo como parte de un producto. !</value>
+  </data>
+  <data name="gc_TIPO_CAMBIO_Existe" xml:space="preserve">
+    <value>¡ Registro de tipo de cambio para hoy ya existe !</value>
+  </data>
+  <data name="gc_DOCUM_SE_CANCELARA" xml:space="preserve">
+    <value>¿ Confirma cancelar este documento..[ SI ]-[ NO ] ?</value>
+  </data>
+  <data name="gc_DOCUM_YA_CANCELADO" xml:space="preserve">
+    <value>¡ Pago de documento  se ha cancelado/pagado satisfactoriamente. !</value>
+  </data>
+  <data name="VALIDACIONProceso" xml:space="preserve">
+    <value>¡ Proceso seleccionado aun no esta implementado. !</value>
+  </data>
+  <data name="VALIDACIONUsuario" xml:space="preserve">
+    <value>¡ Contraseña de usuario es incorrecta !</value>
+  </data>
+  <data name="SALIDA_GestionComercial" xml:space="preserve">
+    <value>¿ Confirma salir del sistema de Gestión Comercial ?</value>
+  </data>
+  <data name="TMTipoDeAtributo" xml:space="preserve">
+    <value>¡ No se ha seleccionado el tipo de atributo para la persona !</value>
+  </data>
+  <data name="TMTipoDeAtributoDescripcion" xml:space="preserve">
+    <value>¡ Ingrsar descripción del atributo seleccionado !</value>
+  </data>
+  <data name="TMValidarUbigeo" xml:space="preserve">
+    <value>¡ Seleccionar el ubigeo para el domicilio de la persona !</value>
+  </data>
+  <data name="VALIDACIONEmpresaClienteCROM" xml:space="preserve">
+    <value>¡ Empresa no esta asignada como usuario del sistema !</value>
+  </data>
+  <data name="MAESTROSApellidos" xml:space="preserve">
+    <value>¡ Ingresar apellidos para la persona natural !</value>
+  </data>
+  <data name="MAESTROSCodigoPersona" xml:space="preserve">
+    <value>¡ Ingesar código para la persona !</value>
+  </data>
+  <data name="MAESTROSNombres" xml:space="preserve">
+    <value>¡ Ingresar nombres para la persona natural !</value>
+  </data>
+  <data name="MAESTROSRazonSocial" xml:space="preserve">
+    <value>¡ Ingresar nombre de razón social para pesona jurídica !</value>
+  </data>
+  <data name="MAESTROSTipoEntidad" xml:space="preserve">
+    <value>¡ Seleccionar el tipo de entidad para la persona !</value>
+  </data>
+  <data name="MAESTROSBackup" xml:space="preserve">
+    <value>¡ No se puede iniciar copia de seguridad de la base de datos !</value>
+  </data>
+  <data name="MAESTROSAtributoValida" xml:space="preserve">
+    <value>¡ El atributo de la persona : [ {0} ] ya se encuentra registrado. !</value>
+  </data>
+  <data name="MAESTROSAtributoValidaDocumFiscal" xml:space="preserve">
+    <value>¡ Persona no tiene registrado el número de documento fiscal R.U.C. !</value>
+  </data>
+  <data name="MAESTROSAtributoValidaDocumNatural" xml:space="preserve">
+    <value>¡ Persona no tiene registrado el número de documento de D.N.I. !</value>
+  </data>
+  <data name="MAESTROSAtributoValidaDomicFiscal" xml:space="preserve">
+    <value>¡ Persona no tiene registrado el atributo de domicilio fiscal !</value>
+  </data>
+  <data name="MAESTROSRazonSocialValida" xml:space="preserve">
+    <value>¡ La razón social o nombre de persona ya está registrado en el sistema !</value>
+  </data>
+  <data name="Evento_VIEW" xml:space="preserve">
+    <value>¡ Solo tiene permiso para visualizar datos del registro !</value>
+  </data>
+  <data name="CROM_Existe" xml:space="preserve">
+    <value>OMCRGCPN</value>
+  </data>
+  <data name="MensajeInicio" xml:space="preserve">
+    <value>¡ Se está iniciando el acceso al sistema</value>
+  </data>
+  <data name="MensajeInicioError" xml:space="preserve">
+    <value>¡ No se puede inicializar el sistema !</value>
+  </data>
+  <data name="MensajeInicioErrorBD" xml:space="preserve">
+    <value>¡ No existe la base de datos  para el sistema en :</value>
+  </data>
+  <data name="MensajeInicioLic" xml:space="preserve">
+    <value>¡ Se hizo la apertura de la licencia del sistema ! \r ¡ Por favor volver a iniciar el sistema !</value>
+  </data>
+  <data name="MensajeInicioLic1" xml:space="preserve">
+    <value>¡ Mensaje de licencia para esta PC !</value>
+  </data>
+  <data name="MensajeInicioLicError" xml:space="preserve">
+    <value>¡ Licencia del sistema para esta PC. es INVÁLIDA! \r ¡ Contactarse con Orlando Carril al Cel:01-997405565 !</value>
+  </data>
+  <data name="gc_PEDD_UNIDAD_MEDIDA" xml:space="preserve">
+    <value>¡ Seleccionar unidad de medida para el ítem del documento. !</value>
+  </data>
+  <data name="VALIDACIONDuplicadoID" xml:space="preserve">
+    <value>¡ Código de registro primario ya existe. !</value>
+  </data>
+  <data name="gc_DOCUM_NO_EXISTE_DOCUM" xml:space="preserve">
+    <value>¡ Número de documento no existe, o fué eliminado. !</value>
+  </data>
+  <data name="gc_DOCUM_YA_CONTABILIZADO" xml:space="preserve">
+    <value>¡ Documento ya ha sido declarado o contabilizado. !</value>
+  </data>
+  <data name="2601" xml:space="preserve">
+    <value>¡ El dato del campo único de la tabla esta duplicado. !</value>
+  </data>
+  <data name="gc_DOCUMENTOS_SeriesUltimo" xml:space="preserve">
+    <value>¡ Aumentar el número correlativo de la serie del documento seleccionado. !</value>
+  </data>
+  <data name="INVENTARIO_CIERRE_Confirmar" xml:space="preserve">
+    <value>¿ Confirma realizar el cierre del Inventario del presente periodo ?</value>
+  </data>
+  <data name="INVENTARIO_CIERRE_Deshacer" xml:space="preserve">
+    <value>¿ Confirma deshacer el cierre del Inventario del presente periodo ?</value>
+  </data>
+  <data name="gc_LETRASCreadas" xml:space="preserve">
+    <value>¡ Las letras de cambio se han generado satisfactoriamente.!</value>
+  </data>
+  <data name="gc_LETRASEditadas" xml:space="preserve">
+    <value>¡ Las letras de cambio han  sido editadas satisfactoriamente.!</value>
+  </data>
+  <data name="gc_DOCUMENTOS_Empleado" xml:space="preserve">
+    <value>¡ Seleccionar empleado que esta emitiendo el documento.!</value>
+  </data>
+  <data name="gc_PRODUValidaEditNroSerie" xml:space="preserve">
+    <value>Registro de número de serie ya tiene operaciones.</value>
+  </data>
+  <data name="gc_DOCUM_Abandonar" xml:space="preserve">
+    <value>¡ El documento actual aun no lo ha guardado.! ¿ Abandona el documento actual ?</value>
+  </data>
+  <data name="gc_DOCUM_Selecciona" xml:space="preserve">
+    <value>¡ Aún no se ha seleccionado documento para emitir. !</value>
+  </data>
+  <data name="gc_DOCUM_AlmacenDestino" xml:space="preserve">
+    <value>¡ Seleccionar Almacen/Depósito de destino para los productos. !</value>
+  </data>
+  <data name="gc_DOCUM_AlmacenOrigen" xml:space="preserve">
+    <value>¡ Seleccionar Almacen/Depósito de origen para los productos. !</value>
+  </data>
+  <data name="gc_DOCUM_DefinirDatos" xml:space="preserve">
+    <value>¡ Definir datos del documento para poder guardar.!</value>
+  </data>
+  <data name="gc_DOCUM_FormaDePago" xml:space="preserve">
+    <value>¡ Documento no realiza, no esta asigando para formas de pagos/cobranza.!</value>
+  </data>
+  <data name="gc_DOCUM_NoEditable" xml:space="preserve">
+    <value>¡ Documento se encuentra en estado no editable, Por favor volver a seleccionar el tipo de documento. !</value>
+  </data>
+  <data name="gc_DOCUM_NoEsFiscal" xml:space="preserve">
+    <value>¡ Documento no es para realizar este tipo de operaciones. !</value>
+  </data>
+  <data name="gc_DOCUM_NoGuardado" xml:space="preserve">
+    <value>¡ Aún no ha guardado el documento, Por favor guardar el documento. !</value>
+  </data>
+  <data name="gc_DOCUM_NoImprime" xml:space="preserve">
+    <value>¡ Documento no esta habilitado para impresión de formato. !</value>
+  </data>
+  <data name="gc_DOCUM_NotaCreditoMayor" xml:space="preserve">
+    <value>¡ El monto total de la nota de crédito no puede ser mayor a su documento de referencia. !</value>
+  </data>
+  <data name="gc_DOCUM_SeleccionaMoneda" xml:space="preserve">
+    <value>¡ Seleccionar el tipo de moneda para el documento. !</value>
+  </data>
+  <data name="VALIDACIONEmpleado" xml:space="preserve">
+    <value>¡ Empleado asignado no existe.  Usuario [ {0} ] no pertenece a la empresa!</value>
+  </data>
+  <data name="gc_DOCUM_YA_REVERTIDO" xml:space="preserve">
+    <value>¡ Documento ya se ha revertido satisfactoriamente. !</value>
+  </data>
+  <data name="gc_DOCUM_SE_REVERTIRA" xml:space="preserve">
+    <value>¿ Confirma revertir el estado del documento..[ SI ]-[ NO ] ?</value>
+  </data>
+  <data name="Evento_REVERTIR_Confirma" xml:space="preserve">
+    <value>¿ Confirma la cambiar de estado el documento ...[ SI ]-[ NO ] ?</value>
+  </data>
+  <data name="gc_DOCUM_TotalIgualCero" xml:space="preserve">
+    <value>¡ El importe total del documento a emitir debe ser mayor que cero (0)!</value>
+  </data>
+  <data name="gc_DOCUM_Estado" xml:space="preserve">
+    <value>¡ Documento se encuentra en estado: [ {0} ] !</value>
+  </data>
+  <data name="gc_DOCUM_NoDefinido" xml:space="preserve">
+    <value>¡ No se han definido documentos de emisión para el sistema. !</value>
+  </data>
+  <data name="gc_DOCUM_NoEntidad" xml:space="preserve">
+    <value>¡ No existe la entidad a bucar....!</value>
+  </data>
+  <data name="gc_DOCUM_NoPagos" xml:space="preserve">
+    <value>¡ Documento [ {0} ] no es para cobranza o se realiza pagos. !</value>
+  </data>
+  <data name="gc_DOCUM_NoPagosEstado" xml:space="preserve">
+    <value>¡ Documento [ {0} ] no realiza, no esta asigando para formas de pagos/cobranza.!</value>
+  </data>
+  <data name="gc_DOCUM_NoRegistrado" xml:space="preserve">
+    <value>¡ Documento [ {0} ] no se encuentra registrado !</value>
+  </data>
+  <data name="SALIDA_ImpresionPhoto" xml:space="preserve">
+    <value>¿ Confirma salir del sistema de Impresión de Fotografías?</value>
+  </data>
+  <data name="gc_DOCUM_TipoDeCambio" xml:space="preserve">
+    <value>¡ Documento a emitir no tiene valor el tipo de cambio, ubicarse en la fecha de emisión.!</value>
+  </data>
+  <data name="gc_DOCUMAlertaPorArchivo" xml:space="preserve">
+    <value>¡Solo se debe de archivar Cotizaciones y Guias de Remisión!</value>
+  </data>
+  <data name="gc_DOCUMConfirmaArchivo" xml:space="preserve">
+    <value>¿Confirma ARCHIVAR documento {0} con número {1} ?</value>
+  </data>
+  <data name="gc_DOCUM_YA_ARCHIVADO" xml:space="preserve">
+    <value>¡ Documento ARCHIVADO satisfactoriamente. !</value>
+  </data>
+  <data name="INVENTARIO_ProcesoValidaAlmacen" xml:space="preserve">
+    <value>¡ Seleccionar depósito/almacén para procesar stocks de productos. !</value>
+  </data>
+  <data name="INVENTARIO_ProcesoValidaProducto" xml:space="preserve">
+    <value>¡ No existen productos para inventarios en la lista.!</value>
+  </data>
+  <data name="gc_DOCUM_LetraCambioDeDocum" xml:space="preserve">
+    <value>¡ Documento se encuentra en estado: [ {0} ] !</value>
+  </data>
+  <data name="gc_DOCUM_LetraCambioEliminar" xml:space="preserve">
+    <value>¿Confirma eliminar la letra de cambio?</value>
+  </data>
+  <data name="gc_DOCUM_LetraCambioEstado" xml:space="preserve">
+    <value>¡ Seleccionar estado para la letra de cambio.!</value>
+  </data>
+  <data name="gc_DOCUM_LetraCambioFechaRecep" xml:space="preserve">
+    <value>¡Fecha de recepción para la letra de cambio es incorrecta.!</value>
+  </data>
+  <data name="gc_DOCUM_LetraCambioGuardaFechaRecep" xml:space="preserve">
+    <value>¿Confirma guardar la fecha de recepción de la letra de cambio?</value>
+  </data>
+  <data name="gc_DOCUM_LetraCambioGuardar" xml:space="preserve">
+    <value>¿Confirma guardar el estado seleccionado de la letra de cambio?</value>
+  </data>
+  <data name="gc_PRODU_SERIADO_Consigna" xml:space="preserve">
+    <value>¡Este estado solo es actualizado por emisión de GUIAS DE REMISIONES por motivo de Consignación!</value>
+  </data>
+  <data name="gc_PRODU_SERIADO_Devolucion" xml:space="preserve">
+    <value>¿ Confirma la devolución de los productos prestados por Consignación?</value>
+  </data>
+  <data name="gc_PRODU_SERIADO_Importa" xml:space="preserve">
+    <value>¡Se necesita un nombre de rango definido en la hoja de excel para buscar!</value>
+  </data>
+  <data name="gc_PRODU_SERIADO_Selecciona" xml:space="preserve">
+    <value>¡ Solo debe de seleccionar [ {0} ] numeros de series. !</value>
+  </data>
+  <data name="gc_PRODU_SERIADO_Update" xml:space="preserve">
+    <value>¿ Confirma actualizar registro de N° de serie de producto ?</value>
+  </data>
+  <data name="gc_PRODUNoRegistrado" xml:space="preserve">
+    <value>¡ Producto no se ha registrado. completar mas datos!</value>
+  </data>
+  <data name="gc_DOCUM_Devolucion_Producto" xml:space="preserve">
+    <value>¡ La devolución de la mercaderia se ha realizado satisfactoriamente.!</value>
+  </data>
+  <data name="CROM_Cadena" xml:space="preserve">
+    <value>030177191250270155141175020786080481</value>
+  </data>
+  <data name="CROM_LicMensaje01" xml:space="preserve">
+    <value>¡Archivo de Licencia no es válido para esta PC!, solicitar una licencia nueva para esta PC.</value>
+  </data>
+  <data name="CROM_LicMensaje02" xml:space="preserve">
+    <value>¡Solicitar confirmación de licencia, enviar archivo Licencia.xml al correo: [omcr1905@gmail.com];  de la carpeta de trabajo del sistema.</value>
+  </data>
+  <data name="CROM_LicMensaje03" xml:space="preserve">
+    <value>¡Archivo Licencia.xml es Incorrecto, solicitar un nuevo archivo de licencia para esta PC.! </value>
+  </data>
+  <data name="VALIDACIONPuntoDeVenta" xml:space="preserve">
+    <value>¡ Seleccionar punto de venta para continuar!</value>
+  </data>
+  <data name="InventarioVALIDACIONNENS" xml:space="preserve">
+    <value>¡No existe números de series disponibles. Validar proceso!</value>
+  </data>
+  <data name="InventarioVALIDACIONNSGFT" xml:space="preserve">
+    <value>¡Números de series guardados de forma temporal.!</value>
+  </data>
+  <data name="InventarioVALIDACIONNSNS" xml:space="preserve">
+    <value>¡Aún no ha seleccionado los Números de SERIES. Validar proceso!</value>
+  </data>
+  <data name="INVENTARIOValidacionCIERREPrecios" xml:space="preserve">
+    <value>¡Se recomienda completar el Valor de Venta y Costo de los productos; para obtener un mejor resultado.!</value>
+  </data>
+  <data name="InventarioValidaDocum" xml:space="preserve">
+    <value>¡ No se ha registrado documento para registro de cierres de inventarios... !</value>
+  </data>
+  <data name="InventarioValidaPeriodo" xml:space="preserve">
+    <value>¡ Seleccionar periodo de Inventario. Vuelva a seleccionar Almacén !</value>
+  </data>
+  <data name="gc_DOCUM_YA_CANCELADOExiste" xml:space="preserve">
+    <value>¡ Documento ya se encuentra como cancelado en el historial del Pago!. </value>
+  </data>
+  <data name="ValidacionDUAkO" xml:space="preserve">
+    <value>¡La validación de la DUA NO es CORRECTA, existen Números de Series sin asignar para la DUA!.</value>
+  </data>
+  <data name="ValidacionDUAok" xml:space="preserve">
+    <value>¡La validación de la DUA es CORRECTA!.</value>
+  </data>
+  <data name="InventarioCerradoOK" xml:space="preserve">
+    <value>¡ Proceso de inventario se ha cerrado con Éxito....!</value>
+  </data>
+  <data name="InventarioDocumentoNI_NS_OK" xml:space="preserve">
+    <value>¡ Proceso de generar documentos por mermas o sobras terminado....!</value>
+  </data>
+  <data name="InventarioValidaDocumentoNI_NS" xml:space="preserve">
+    <value>¡ No se ha registrado (NOTA DE INGRESO/NOTA DE SALIDA) o numero de series para registro de reguralización de inventarios... !</value>
+  </data>
+  <data name="gc_DOCUM_NroDefinido" xml:space="preserve">
+    <value>¡ No se ha definido número de documento a emitir !</value>
+  </data>
+  <data name="GeneralAPP_MensajeErrorUser" xml:space="preserve">
+    <value>Estimado usuario a ocurrido un error. Por favor contactese con el admnistrador del sistema para que verifique el LOG del sistema.</value>
+  </data>
+  <data name="GeneralWSERVICE_NoComunicacion" xml:space="preserve">
+    <value>No se encuentra habilitado el servicio. Error interno!</value>
+  </data>
+  <data name="VALIDACIONUsuarioEmpleado" xml:space="preserve">
+    <value>¡ Empleado no existe en el sistema de seguridad.!</value>
+  </data>
+  <data name="InventarioCerradoNOOK" xml:space="preserve">
+    <value>¡ Proceso de inventario NO se ha cerrado con Éxito....!</value>
+  </data>
+  <data name="gc_IMPUESTO_NoDefinido" xml:space="preserve">
+    <value>¡ No se encuentra definido el impuesto para la emisión de documento!</value>
+  </data>
+  <data name="INVENTARIO_CIERRE_DeshacerOK" xml:space="preserve">
+    <value>Se ha deshecho el cierre del Inventario del presente periodo.</value>
+  </data>
+  <data name="CTA_CORRIENTE_NoRegistrada" xml:space="preserve">
+    <value>!Cuenta corriente no ha sido registrada!</value>
+  </data>
+  <data name="gc_DOCUM_DetalleNoRegis" xml:space="preserve">
+    <value>Detalle de documento no ha siso registrado!</value>
+  </data>
+  <data name="KARDEX_NoRegistrado" xml:space="preserve">
+    <value>Registro de KARDEX no ha sido registrado!.</value>
+  </data>
+  <data name="CTA_CORRIENTE_NoEliminada" xml:space="preserve">
+    <value>!Cuenta corriente no ha sido eliminada!</value>
+  </data>
+  <data name="gc_DOCUM_NoDesAsigRefer" xml:space="preserve">
+    <value>¡Documento no se ha desasignado su referencia.!</value>
+  </data>
+  <data name="CAJA_NoEliminada" xml:space="preserve">
+    <value>!Registro de la caja no ha sido eliminada!</value>
+  </data>
+  <data name="LETRACAMBIO_NoEliminada" xml:space="preserve">
+    <value>!Registro de la letra de cambio no ha sido eliminada!</value>
+  </data>
+  <data name="gc_DOCUM_DetalleNoElimnado" xml:space="preserve">
+    <value>Detalle de documento no ha siso eliminado</value>
+  </data>
+  <data name="gc_DOCUM_NoAnulado" xml:space="preserve">
+    <value>¡ Documento no ha sido anulado. !</value>
+  </data>
+  <data name="VALIDACIONNoExiste" xml:space="preserve">
+    <value>¡ Registro seleccionado no existe.!</value>
+  </data>
+  <data name="VALIDACIONTipoDeCambio" xml:space="preserve">
+    <value>¡ Tipo de cambio no existe para la fecha : [{0}].!</value>
+  </data>
+  <data name="KARDEX_ValidaCantidadES" xml:space="preserve">
+    <value>¡ El tipo de operación seleccioado no genera registro en KARDEX!.</value>
+  </data>
+  <data name="VALIDACIONProductoPrecio" xml:space="preserve">
+    <value>¡ Producto no tiene precio registrado.!</value>
+  </data>
+  <data name="INVENTARIO_ProcesoValidaDocumento" xml:space="preserve">
+    <value>¡ Documento a emitir no tiene configuración para controlar stocks.!</value>
+  </data>
+  <data name="VALIDACIONMailEnvio" xml:space="preserve">
+    <value>¡ Correo electrónico registrado es incorrecto : [{0}].!</value>
+  </data>
+  <data name="VALIDACIONCajaAutomatica" xml:space="preserve">
+    <value>No tiene configurado la apertura de caja de forma automática.</value>
+  </data>
+</root>

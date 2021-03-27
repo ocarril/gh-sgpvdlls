@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{36557F37-7635-409A-86F0-658D961D5B8B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CROM.Tools.Comun</RootNamespace>
+    <AssemblyName>CROM.Tools.Comun</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>CROM.Tools.Comun.snk</AssemblyOriginatorKeyFile>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DocumentFormat.OpenXml, Version=2.7.2.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\DocumentFormat.OpenXml.2.7.2\lib\net40\DocumentFormat.OpenXml.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\log4net.2.0.8\lib\net40-client\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Azure.KeyVault.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Microsoft.Azure.KeyVault.Core.1.0.0\lib\net40\Microsoft.Azure.KeyVault.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.WindowsAzure.Storage, Version=9.3.2.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\WindowsAzure.Storage.9.3.3\lib\net45\Microsoft.WindowsAzure.Storage.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="zxing, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.0.16.5\lib\net45\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.5.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\ZXing.Net.0.16.5\lib\net45\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="attributes\LetterCase.cs" />
+    <Compile Include="azure\BlobStorageServiceFile.cs" />
+    <Compile Include="azure\StorageUtils.cs" />
+    <Compile Include="constants\ConstantsComercial.cs" />
+    <Compile Include="entities\DTODeleteRequest.cs" />
+    <Compile Include="entities\DTOResponseProcedure.cs" />
+    <Compile Include="helpers\HelpPathFiles.cs" />
+    <Compile Include="helpers\HelpSUNAT.cs" />
+    <Compile Include="security\BEUsuarioPermisoResponse.cs" />
+    <Compile Include="entities\BEVersionModels.cs" />
+    <Compile Include="entities\ComboListItem.cs" />
+    <Compile Include="entities\CulturasRegionales.cs" />
+    <Compile Include="entities\DTODatoAtributo.cs" />
+    <Compile Include="extensions\CacheExtensions.cs" />
+    <Compile Include="extensions\DataReaderExtensions.cs" />
+    <Compile Include="extensions\DataTableExtensions.cs" />
+    <Compile Include="extensions\DateTimeExtensions.cs" />
+    <Compile Include="extensions\ObjectExtensions.cs" />
+    <Compile Include="extensions\StringExtensions.cs" />
+    <Compile Include="helpers\Extensors.cs" />
+    <Compile Include="helpers\HelpColor.cs" />
+    <Compile Include="helpers\HelpCrypto.cs" />
+    <Compile Include="helpers\HelpCulture.cs" />
+    <Compile Include="helpers\HelpDataBases.cs" />
+    <Compile Include="helpers\HelpDocumentos.cs" />
+    <Compile Include="helpers\HelpEventos.cs" />
+    <Compile Include="helpers\Helper.cs" />
+    <Compile Include="helpers\HelpImages.cs" />
+    <Compile Include="helpers\HelpLogging.cs" />
+    <Compile Include="helpers\HelpMaestras.cs" />
+    <Compile Include="helpers\HelpException.cs" />
+    <Compile Include="helpers\HelpMail.cs" />
+    <Compile Include="helpers\HelpTime.cs" />
+    <Compile Include="entities\OperationResultModels.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HelpMessages.Designer.cs">
+      <DependentUpon>HelpMessages.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="ResourceIconos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResourceIconos.resx</DependentUpon>
+    </Compile>
+    <Compile Include="entities\ReturnValor.cs" />
+    <Compile Include="security\AccessTokenUtils.cs" />
+    <Compile Include="security\BEUsuarioPermisoRequest.cs" />
+    <Compile Include="security\BELoginModel.cs" />
+    <Compile Include="security\BEUsuarioValidoResponse.cs" />
+    <Compile Include="security\DatoValidoUserSecurity.cs" />
+    <Compile Include="security\EncryptFunction.cs" />
+    <Compile Include="security\MethodToken.cs" />
+    <Compile Include="security\StringExtensions.cs" />
+    <Compile Include="security\TokenBE.cs" />
+    <Compile Include="constants\ConstantsWeb.cs" />
+    <Compile Include="helpers\HelperWeb.cs" />
+    <Compile Include="settings\GlobalSettings.cs" />
+    <Compile Include="utils\excel\CellData.cs" />
+    <Compile Include="utils\excel\DefinedNameVal.cs" />
+    <Compile Include="utils\EnumeradorExcel.cs" />
+    <Compile Include="utils\excel\EstilosPlanit.cs" />
+    <Compile Include="utils\excel\ExcelUtil.cs" />
+    <Compile Include="utils\excel\ExportaExcel.cs" />
+    <Compile Include="utils\excel\NumberFormat.cs" />
+    <Compile Include="utils\excel\RowData.cs" />
+    <Compile Include="utils\excel\Style.cs" />
+    <Compile Include="utils\excel\WorkSheet.cs" />
+    <Compile Include="web\HelpComboBox.cs" />
+    <Compile Include="web\HelperIdioma.cs" />
+    <Compile Include="web\HelperThemas.cs" />
+    <Compile Include="web\HelpGridView.cs" />
+    <Compile Include="web\IdiomaDataType.cs" />
+    <Compile Include="web\Menus.cs" />
+    <Compile Include="web\ThemasType.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="HelpMessages.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>HelpMessages.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ResourceIconos.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>ResourceIconos.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="resources\Agenda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Usuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Options.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Sistemas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\OpcionaRol.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\RolaUsuarios.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Save.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Find02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\DeleteG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\Undo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resources\New.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="resources\AddItem.png" />
+    <None Include="CROM.Tools.Comun.snk" />
+    <None Include="resources\Annulled.png" />
+    <None Include="resources\Aduana.png" />
+    <Content Include="resources\BackGroundSeguridad.png" />
+    <None Include="resources\Logout2.png" />
+    <None Include="resources\Login2.png" />
+    <None Include="resources\Body.txt" />
+    <Content Include="resources\Calc.png" />
+    <None Include="resources\Calender.png" />
+    <Content Include="resources\Cancel.png" />
+    <None Include="resources\Carpeta.png" />
+    <Content Include="resources\Clientes.png" />
+    <Content Include="resources\Clientes2.png" />
+    <None Include="resources\ClientesChi.png" />
+    <None Include="resources\CodeBar.png" />
+    <Content Include="resources\DatabaseBACKUP.png" />
+    <Content Include="resources\DeleteItem.png" />
+    <Content Include="resources\Detailed.png" />
+    <None Include="resources\Devolucion.png" />
+    <Content Include="resources\DocumenCopy.png" />
+    <Content Include="resources\DocumenSeries.png" />
+    <Content Include="resources\Documentos.png" />
+    <Content Include="resources\Documents.png" />
+    <None Include="resources\EditItem.png" />
+    <Content Include="resources\DocumenUndo.png" />
+    <Content Include="resources\Dolar01.png" />
+    <None Include="resources\Empleados.png" />
+    <None Include="resources\Feriados.png" />
+    <None Include="resources\Find01.png" />
+    <None Include="resources\EditG2.png" />
+    <Content Include="resources\FondoGestionComercial.jpg" />
+    <None Include="resources\Justificaciones.png" />
+    <None Include="resources\Horarios.png" />
+    <None Include="resources\FondoImpresionFoto.jpg" />
+    <Content Include="resources\LeerMarcaciones.png" />
+    <None Include="resources\Left01.png" />
+    <None Include="resources\MovimientosDoc.png" />
+    <None Include="resources\LogoComun.png" />
+    <None Include="resources\Letras.png" />
+    <None Include="resources\MSExcel.png" />
+    <Content Include="resources\Ok.png" />
+    <None Include="resources\OKChecked.png" />
+    <None Include="resources\Personal.png" />
+    <None Include="resources\Pagos.png" />
+    <None Include="resources\Paint.png" />
+    <Content Include="resources\PersonalAgenda.png" />
+    <Content Include="resources\PersonalAsistencia.png" />
+    <Content Include="resources\PersonalMarcas.png" />
+    <Content Include="resources\Printer.png" />
+    <None Include="resources\ProducReload.png" />
+    <Content Include="resources\Productos.png" />
+    <None Include="resources\Productos2.png" />
+    <None Include="resources\ProductosChi.png" />
+    <Content Include="resources\RefreshS.png" />
+    <Content Include="resources\Reload.png" />
+    <None Include="resources\Seriados.png" />
+    <None Include="resources\Reports.png" />
+    <None Include="resources\Reports2.png" />
+    <None Include="resources\Salir.png" />
+    <Content Include="resources\Settings.png" />
+    <Content Include="resources\Soles01.png" />
+    <None Include="resources\TablasMaestras.png" />
+    <Content Include="resources\Telefono.png" />
+    <None Include="resources\TelefonoChi.png" />
+    <Content Include="resources\Transportista.png" />
+    <None Include="resources\VehSalida.png" />
+    <None Include="resources\VehIngreso.png" />
+    <None Include="resources\View.png" />
+    <None Include="resources\Right01.png" />
+    <None Include="resources\Seguridad.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="windows\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

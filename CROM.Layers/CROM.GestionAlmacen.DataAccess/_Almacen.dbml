@@ -1,0 +1,1896 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_GC_MAGESET_SFS_20201106" Class="_AlmacenDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAP01-OCARRIL\SQLEXPRESSCROM;Initial Catalog=BD_GC_MAGESET_SFS_20201106;Persist Security Info=True;User ID=sa;Connect Timeout=30;TrustServerCertificate=False" SettingsObjectName="CROM.GestionAlmacen.DataAccess.Properties.Settings" SettingsPropertyName="BD_GC_MAGESET_SFS_20201106ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="Almacen.omgc_D_Deposito" Method="omgc_D_Deposito">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoSeriadoRetirar" Method="omgc_U_ProductoSeriadoRetirar">
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoRegistro" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaVencimiento" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_NumeroLote" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_NumeroSerie" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_CodigoPersonaProveedor" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Cantidad" Type="System.Decimal" DbType="Decimal(15,4)" />
+    <Parameter Name="prm_EstadoVendido" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_EstaComprometido" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_FechaVenta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_NumeroComprobanteVenta" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_FechaComprometido" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_NumeroComprobanteComprom" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_NumeroComprobanteCompra" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_CodigoPersonaComprometido" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_Grupo" Method="omgc_D_Grupo">
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_Inventario" Method="omgc_D_Inventario">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_InventarioDocumReg" Method="omgc_D_InventarioDocumReg">
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_InventarioSerie" Method="omgc_D_InventarioSerie">
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_numConteo" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_Marca" Method="omgc_D_Marca">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaEdita" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_Modelo" Method="omgc_D_Modelo">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaEdita" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_Periodo" Method="omgc_D_Periodo">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_ProductoSeriado" Method="omgc_D_ProductoSeriado">
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_ProductoSeriadoDetalle" Method="omgc_D_ProductoSeriadoDetalle">
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_Deposito" Method="omgc_I_Deposito">
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" Direction="InOut" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloObservacion" Type="System.String" DbType="VarChar(400)" />
+    <Parameter Name="prm_indPrincipal" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_I_DepositoResult">
+      <Column Name="" Member="Column1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_I_Grupo" Method="omgc_I_Grupo">
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codGrupoRef" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codRegLineaProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegMaterial" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegUnidadMedida" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_Inventario" Method="omgc_I_Inventario">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_cntOrigStockFisico" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_cntOrigStockMerma" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_cntOrigStockSobrante" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_desAgrupacion" Type="System.String" DbType="VarChar(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_InventarioDocumReg" Method="omgc_I_InventarioDocumReg">
+    <Parameter Name="prm_codInventarioDocumReg" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_strPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_InventarioSerie" Method="omgc_I_InventarioSerie">
+    <Parameter Name="prm_codInventarioSerie" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indExisteFisico" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_numConteo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_Marca" Method="omgc_I_Marca">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codMarcaKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_codRegPais" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_nomContacto" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_gloDescripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaCrea" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="omgc_I_MarcaResult">
+      <Column Name="ErrorCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_I_Modelo" Method="omgc_I_Modelo">
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModeloKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_gloDescripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaCrea" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="omgc_I_ModeloResult">
+      <Column Name="ErrorCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_I_Periodo" Method="omgc_I_Periodo">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_indModalidad" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_fecInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_Producto" Method="omgc_I_Producto">
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoProducto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(350)" />
+    <Parameter Name="prm_DescripcionAbreviada" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_Observacion" Type="System.String" DbType="VarChar(400)" />
+    <Parameter Name="prm_DatoAdicional_01" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_DatoAdicional_02" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguColor" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoCuenta" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_EditaDescripcion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EditaValorVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EditaValorCosto" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsComboDeOferta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsListaPrecio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsPerecible" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsVerificacionStock" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsConNumeroSeriado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_PesoTotal" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="prm_StockMinimo" Type="System.Decimal" DbType="Decimal(15,3)" />
+    <Parameter Name="prm_StockMaximo" Type="System.Decimal" DbType="Decimal(15,3)" />
+    <Parameter Name="prm_indEsGarantizado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_Producto_Output" Method="omgc_I_Producto_Output">
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_CodigoProducto" Type="System.String" DbType="VarChar(20)" Direction="InOut" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(350)" />
+    <Parameter Name="prm_DescripcionAbreviada" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_Observacion" Type="System.String" DbType="VarChar(400)" />
+    <Parameter Name="prm_DatoAdicional_01" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_DatoAdicional_02" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguColor" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoCuenta" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_EditaDescripcion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EditaValorVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EditaValorCosto" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsComboDeOferta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsListaPrecio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsPerecible" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsVerificacionStock" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsConNumeroSeriado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_PesoTotal" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="prm_StockMinimo" Type="System.Decimal" DbType="Decimal(15,3)" />
+    <Parameter Name="prm_StockMaximo" Type="System.Decimal" DbType="Decimal(15,3)" />
+    <Parameter Name="prm_indEsGarantizado" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_ProductoExistencia" Method="omgc_I_ProductoExistencia">
+    <Parameter Name="prm_codProductoExistencia" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegmaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_ProductoExistencia_StockInicial" Method="omgc_I_ProductoExistencia_StockInicial">
+    <Parameter Name="prm_codProductoExistencia" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_StockInicial" Type="System.Decimal" DbType="Decimal(16,4)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegmaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SALDO_StockFisico" Type="System.Decimal" DbType="Decimal(16,4)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_ProductoSeriado" Method="omgc_I_ProductoSeriado">
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_CodigoRegistro" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaVencimiento" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_NumeroLote" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_NumeroSerie" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_CodigoPersonaProveedor" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Cantidad" Type="System.Decimal" DbType="Decimal(15,4)" />
+    <Parameter Name="prm_EstadoVendido" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_EstaComprometido" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_FechaVenta" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_CodigoPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_NumeroComprobanteVenta" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_FechaComprometido" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_NumeroComprobanteComprom" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_NumeroComprobanteCompra" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_CodigoPersonaComprometido" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_perInventario" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_indRegularizar" Type="System.Boolean" DbType="Bit" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_IU_ProductoProveedor" Method="omgc_IU_ProductoProveedor">
+    <Parameter Name="prm_codProductoProveedor" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPerProveedor" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_S_Deposito" Method="omgc_S_Deposito">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_DepositoResult">
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="indPrincipal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="auxcodPersonaEmpreNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="auxcodEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="auxcodPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Deposito_Paged" Method="omgc_S_Deposito_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_Deposito_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="indPrincipal" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="auxcodPersonaEmpreNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="auxcodEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="auxcodPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Grupo" Method="omgc_S_Grupo">
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_codRegLineaProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegMaterialProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_GrupoResult">
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupoRef" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegLineaProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegLineaProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegMaterialProd" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="codRegMaterialProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegUnidadMedida" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Inventario" Method="omgc_S_Inventario">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_Conteo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desAgrupacion" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="omgc_S_InventarioResult">
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CodigoProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo01" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo01Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo01EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo01FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Conteo02" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo02Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo02EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo02FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Conteo03" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo03Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo03EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo03FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Conteo04" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo04Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo04EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo04FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CierreConteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CierreFechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CierreEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CierreEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="SALDO_StockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="SALDO_StockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockFisico" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="ConteoEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desAgrupacion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Inventario_Cerrar" Method="omgc_S_Inventario_Cerrar">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_Conteo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desAgrupacion" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="omgc_S_Inventario_CerrarResult">
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConteoEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConteoEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ConteoFechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ConteoSeriado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CierreConteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CierreFechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CierreEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CierreEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SALDO_StockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="SALDO_StockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockFisico" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ConteoRealizado" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="ValorCosto" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorVenta" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desAgrupacion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Inventario_Cons_Paged" Method="omgc_S_Inventario_Cons_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="p_codProducto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="p_desAgrupacion" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="omgc_S_Inventario_Cons_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="ConteoEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ConteoEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ConteoFechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ConteoSeriado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CierreConteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CierreFechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CierreEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CierreEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SALDO_StockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="SALDO_StockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockFisico" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="ConteoRealizado" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="ValorCosto" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorVenta" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desAgrupacion" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="cntTransacciones" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Inventario_ConsSerie_Paged" Method="omgc_S_Inventario_ConsSerie_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codInventario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_Inventario_ConsSerie_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codInventarioSerie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoRegistro" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoSeriado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstadoMercaderiaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indExisteFisico" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="numConteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteCompra" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteComprom" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteVenta" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="EstadoVendido" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FechaVenta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaComprometido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Inventario_Id" Method="omgc_S_Inventario_Id">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_Inventario_IdResult">
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Periodo" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo01" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo01Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo01EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo01FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Conteo02" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo02Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo02EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo02FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Conteo03" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo03Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo03EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo03FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Conteo04" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Conteo04Empleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Conteo04EmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Conteo04FechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CierreConteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CierreFechaHora" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CierreEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CierreEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockFisico" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="cntOrigStockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Inventario_MermaSobrante" Method="omgc_S_Inventario_MermaSobrante">
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_desAgrupacion" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codigoProducto" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="omgc_S_Inventario_MermaSobranteResult">
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="indEsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="numConteoCierre" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleadoCierre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SALDO_StockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="SALDO_StockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="monValorCosto" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="monValorVenta" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_InventarioSerie" Method="omgc_S_InventarioSerie">
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_numConteo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_InventarioSerieResult">
+      <Column Name="codInventarioSerie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoSeriado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="indExisteFisico" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="numConteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroLote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderiaNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoRegistro" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_InventarioSerie_codPeriodo" Method="omgc_S_InventarioSerie_codPeriodo">
+    <Parameter Name="prm_codPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_numConteo" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_InventarioSerie_codPeriodoResult">
+      <Column Name="codInventarioSerie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codInventario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoSeriado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="indExisteFisico" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="numConteo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroLote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderiaNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoRegistro" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Marca" Method="omgc_S_Marca">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codMarcaKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codRegPais" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_MarcaResult">
+      <Column Name="codMarca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codMarcaKEY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegPais" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="nomContacto" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="gloDescripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Marca_Paged" Method="omgc_S_Marca_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codMarcaKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codRegPais" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_Marca_PagedResult">
+      <Column Name="codMarca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codMarcaKEY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="codPersonaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegPais" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="nomContacto" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Modelo" Method="omgc_S_Modelo">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModeloKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_ModeloResult">
+      <Column Name="codModelo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codModeloKEY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gloDescripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Modelo_Paged" Method="omgc_S_Modelo_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModeloKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_Modelo_PagedResult">
+      <Column Name="codModelo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codModeloKEY" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="gloDescripcion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Periodo" Method="omgc_S_Periodo">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_codPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PeriodoResult">
+      <Column Name="codPeriodo" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(115) NOT NULL" CanBeNull="false" />
+      <Column Name="indModalidad" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="fecInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecApertura" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto" Method="omgc_S_Producto">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_Todos" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_ProductoResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codGrupoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="DatoAdicional_01" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DatoAdicional_02" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codMarcaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codModelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModeloNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguSectorAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguColor" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguColorNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguCategoProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoCuenta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EditaDescripcion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorCosto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsComboDeOferta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsListaPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PalabrasClaves" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMinimo" Type="System.Decimal" DbType="Decimal(15,3)" CanBeNull="true" />
+      <Column Name="StockMaximo" Type="System.Decimal" DbType="Decimal(15,3)" CanBeNull="true" />
+      <Column Name="indEsGarantizado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StockFisico" Type="System.Decimal" DbType="Decimal(38,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockInicial" Type="System.Decimal" DbType="Decimal(38,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockSobrante" Type="System.Decimal" DbType="Decimal(38,3) NOT NULL" CanBeNull="false" />
+      <Column Name="StoskComprometido" Type="System.Decimal" DbType="Decimal(38,3) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codListaPrecio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="ValorCosto" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="ValorVenta" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="fecUltimoPrecio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="codDepositoNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_CodBarras" Method="omgc_S_Producto_CodBarras">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_Producto_CodBarrasResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProveedores" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codMarcaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegistroMoneda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="monPrecioVenta" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="canStockFisico" Type="System.Decimal" DbType="Decimal(16,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_Codigo" Method="omgc_S_Producto_Codigo">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoProducto" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="omgc_S_Producto_CodigoResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codGrupoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="DatoAdicional_01" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DatoAdicional_02" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguColor" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCuenta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EditaDescripcion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorCosto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsComboDeOferta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsListaPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PalabrasClaves" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMinimo" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMaximo" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
+      <Column Name="indEsGarantizado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorCosto" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorVenta" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="fecUltimoPrecio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DescuentoMaximo" Type="System.Decimal" DbType="Decimal(10,4) NOT NULL" CanBeNull="false" />
+      <Column Name="codListaPrecio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MargenUtilidad" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="MediaPorcentaje" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="PorcenComision" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="PorcenComisionMax" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="codProductoPrecio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_Id" Method="omgc_S_Producto_Id">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_Producto_IdResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="DatoAdicional_01" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DatoAdicional_02" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguColor" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoCuenta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EditaDescripcion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorCosto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsComboDeOferta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsListaPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PalabrasClaves" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMinimo" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMaximo" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
+      <Column Name="indEsGarantizado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorCosto" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorVenta" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="fecUltimoPrecio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DescuentoMaximo" Type="System.Decimal" DbType="Decimal(10,4) NOT NULL" CanBeNull="false" />
+      <Column Name="codListaPrecio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MargenUtilidad" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="MediaPorcentaje" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="PorcenComision" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="PorcenComisionMax" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="codProductoPrecio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_Inventario" Method="omgc_S_Producto_Inventario">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <ElementType Name="omgc_S_Producto_InventarioResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codGrupoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="DatoAdicional_01" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DatoAdicional_02" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codMarcaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codModelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModeloNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguSectorAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguColor" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguColorNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguCategoProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoCuenta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EditaDescripcion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorCosto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsComboDeOferta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsListaPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PalabrasClaves" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="cntInventariar" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_NumSerie" Method="omgc_S_Producto_NumSerie">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_Todos" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_NumeroSerie" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="omgc_S_Producto_NumSerieResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codGrupoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="DatoAdicional_01" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DatoAdicional_02" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codMarcaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codModelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModeloNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguSectorAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguColor" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguColorNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguCategoProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoCuenta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EditaDescripcion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorCosto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsComboDeOferta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsListaPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PalabrasClaves" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMinimo" Type="System.Decimal" DbType="Decimal(15,3)" CanBeNull="true" />
+      <Column Name="StockMaximo" Type="System.Decimal" DbType="Decimal(15,3)" CanBeNull="true" />
+      <Column Name="indEsGarantizado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="StockFisico" Type="System.Decimal" DbType="Decimal(16,4)" CanBeNull="true" />
+      <Column Name="StockInicial" Type="System.Decimal" DbType="Decimal(16,4)" CanBeNull="true" />
+      <Column Name="StockSobrante" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="StoskComprometido" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_Paged" Method="omgc_S_Producto_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codDeposito" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_PalabrasClaves" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_S_Producto_PagedResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="codMarcaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codModeloNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegTipoProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codRegCategoProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMinimo" Type="System.Decimal" DbType="Decimal(15,3)" CanBeNull="true" />
+      <Column Name="StockMaximo" Type="System.Decimal" DbType="Decimal(15,3)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorCosto" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="ValorVenta" Type="System.Decimal" DbType="Decimal(18,5)" CanBeNull="true" />
+      <Column Name="fecUltimoPrecio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="StockFisico" Type="System.Decimal" DbType="Decimal(38,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockInicial" Type="System.Decimal" DbType="Decimal(38,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockSobrante" Type="System.Decimal" DbType="Decimal(38,3) NOT NULL" CanBeNull="false" />
+      <Column Name="StoskComprometido" Type="System.Decimal" DbType="Decimal(38,3) NOT NULL" CanBeNull="false" />
+      <Column Name="codDepositoNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_SinListaPrecio" Method="omgc_S_Producto_SinListaPrecio">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_VentaCompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoLista" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="omgc_S_Producto_SinListaPrecioResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DestinoProducto" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_StockInicial" Method="omgc_S_Producto_StockInicial">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_S_Producto_StockInicialResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codGrupodesNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="DatoAdicional_01" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DatoAdicional_02" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codMarcaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codModelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModeloNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguSectorAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguColor" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguColorNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguCategoProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoCuenta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EditaDescripcion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorCosto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsComboDeOferta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsListaPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PalabrasClaves" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_Valorizado" Method="omgc_S_Producto_Valorizado">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecInicio" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="prm_fecFinal" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="prm_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_Producto_ValorizadoResult">
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVentaNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobante" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoComprobanteNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="IncidenciaEnStocks" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="codDepositoNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteExt" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="FechaDeEmision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="UnitValorCosto" Type="System.Decimal" DbType="Decimal(12,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockFisico" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDeOperacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDeOperacionNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="EntidadRazonSocial" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegCategoProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_ProductoExistencia" Method="omgc_S_ProductoExistencia">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="omgc_S_ProductoExistenciaResult">
+      <Column Name="codProductoExistencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="auxcodDepositoNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="StockInicial" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockFisico" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StoskComprometido" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMerma" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+      <Column Name="StockSobrante" Type="System.Decimal" DbType="Decimal(10,3) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_ProductoSeriado" Method="omgc_S_ProductoSeriado">
+    <Parameter Name="prm_codPerEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_CodigoRegistro" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_NumeroComprobanteComprom" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_NumeroComprobanteVenta" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_NumeroComprobanteCompra" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_EstaComprometido" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EstadoVendido" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_ProductoSeriadoResult">
+      <Column Name="codProductoSeriado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoRegistro" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codDeposito" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaVencimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NumeroLote" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaProveedor" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="EstadoVendido" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaCliente" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EstaComprometido" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="FechaVenta" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteVenta" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="FechaComprometido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="NumeroComprobanteComprom" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteCompra" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CodigoPersonaComprometido" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoPersonaProveedorNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPersonaClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaEmpreNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="CodigoPuntoVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoPersonaComprometidoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codDepositoNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderiaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="perInventario" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="indRegularizar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_U_Deposito" Method="omgc_U_Deposito">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloObservacion" Type="System.String" DbType="VarChar(400)" />
+    <Parameter Name="prm_indPrincipal" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Grupo" Method="omgc_U_Grupo">
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersonaEmpre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codGrupoRef" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codRegLineaProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegMaterialProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Inventario" Method="omgc_U_Inventario">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_NumeroConteo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Conteo" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_ConteoEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_cntTransacciones" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Inventario_Cerrar" Method="omgc_U_Inventario_Cerrar">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_CierreConteo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CierreEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_SALDO_StockMerma" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_SALDO_StockSobrante" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Inventario_Cerrar_Deshacer" Method="omgc_U_Inventario_Cerrar_Deshacer">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Periodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_InventarioSerie" Method="omgc_U_InventarioSerie">
+    <Parameter Name="prm_codInventarioSerie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codInventario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indExisteFisico" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_numConteo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Marca" Method="omgc_U_Marca">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codMarcaKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_codRegPais" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_nomContacto" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_gloDescripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaEdita" Type="System.String" DbType="VarChar(40)" />
+    <ElementType Name="omgc_U_MarcaResult">
+      <Column Name="ErrorCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_U_Modelo" Method="omgc_U_Modelo">
+    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModeloKEY" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_gloDescripcion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaEdita" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Periodo" Method="omgc_U_Periodo">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_indModalidad" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_fecInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Periodo_Aperturar" Method="omgc_U_Periodo_Aperturar">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_fecApertura" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Periodo_Cierre" Method="omgc_U_Periodo_Cierre">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPeriodo" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_fecCierre" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_Producto" Method="omgc_U_Producto">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoProducto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(350)" />
+    <Parameter Name="prm_DescripcionAbreviada" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_Observacion" Type="System.String" DbType="VarChar(400)" />
+    <Parameter Name="prm_DatoAdicional_01" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_DatoAdicional_02" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguColor" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoCuenta" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_EditaDescripcion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EditaValorVenta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EditaValorCosto" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsComboDeOferta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsListaPrecio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsPerecible" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsVerificacionStock" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsConNumeroSeriado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_PesoTotal" Type="System.Decimal" DbType="Decimal(18,4)" />
+    <Parameter Name="prm_StockMinimo" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_StockMaximo" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_indEsGarantizado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_U_ProductoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoExistencia_StockComprometido" Method="omgc_U_ProductoExistencia_StockComprometido">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_StockComprometido" Type="System.Decimal" DbType="Decimal(16,3)" />
+    <Parameter Name="prm_IndicadorOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegmaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SALDO_StockComprometido" Type="System.Decimal" DbType="Decimal(16,4)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoExistencia_StockFisico" Method="omgc_U_ProductoExistencia_StockFisico">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_StockFisico" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_IndicadorOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_NumDocumento" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_CodigoEntidad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_SegMaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SALDO_StockFisico" Type="System.Decimal" DbType="Decimal(10,3)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoExistencia_StockFisicoConsig" Method="omgc_U_ProductoExistencia_StockFisicoConsig">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_StockFisico" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_IndicadorOperador" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegMaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SALDO_StockFisico" Type="System.Decimal" DbType="Decimal(10,3)" Direction="InOut" />
+    <Parameter Name="prm_StockComprometido" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoExistencia_StockFisicoINVAnterior" Method="omgc_U_ProductoExistencia_StockFisicoINVAnterior">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_StockFisico" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_StockMerma" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_StockSobrante" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegMaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_U_ProductoExistencia_StockFisicoINVAnteriorResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoExistencia_StockInicial" Method="omgc_U_ProductoExistencia_StockInicial">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_StockInicial" Type="System.Decimal" DbType="Decimal(16,4)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegmaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_U_ProductoExistencia_StockInicialResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoExistenciaStockFisicoInventario" Method="omgc_U_ProductoExistenciaStockFisicoInventario">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_StockFisico" Type="System.Decimal" DbType="Decimal(10,3)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegmaquinaIP" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SALDO_StockMerma" Type="System.Decimal" DbType="Decimal(10,3)" Direction="InOut" />
+    <Parameter Name="prm_SALDO_StockSobrante" Type="System.Decimal" DbType="Decimal(10,3)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoSeriado" Method="omgc_U_ProductoSeriado">
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaVencimiento" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_NumeroLote" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_NumeroSerie" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_U_ProductoSeriado_Consignacion" Method="omgc_U_ProductoSeriado_Consignacion">
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_D_Producto" Method="omgc_D_Producto">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_SegMaquina" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_D_ProductoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_D_ProductoExistencia" Method="omgc_D_ProductoExistencia">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_S_Producto_Empresa" Method="omgc_S_Producto_Empresa">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_CodigoProducto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codDeposito" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="omgc_S_Producto_EmpresaResult">
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProductoRefer" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codGrupo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codGrupoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionComercial" Type="System.String" DbType="VarChar(350) NOT NULL" CanBeNull="false" />
+      <Column Name="DescripcionAbreviada" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Observacion" Type="System.String" DbType="VarChar(400)" CanBeNull="true" />
+      <Column Name="DatoAdicional_01" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="DatoAdicional_02" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codMarca" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codMarcaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codModelo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModeloNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DestinadoACompra" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DestinadoAVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguSectorAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMetodoAlmNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguCentroProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguColor" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguColorNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguCategoProd" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguCategoProdNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguUnidadMedNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoCuenta" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="EditaDescripcion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorVenta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EditaValorCosto" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsComboDeOferta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsListaPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsPerecible" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsVerificacionStock" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsConNumeroSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="PalabrasClaves" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="PesoTotal" Type="System.Decimal" DbType="Decimal(18,4) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMinimo" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
+      <Column Name="StockMaximo" Type="System.Decimal" DbType="Decimal(15,3) NOT NULL" CanBeNull="false" />
+      <Column Name="indEsGarantizado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorCosto" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorVenta" Type="System.Decimal" DbType="Decimal(18,5) NOT NULL" CanBeNull="false" />
+      <Column Name="fecUltimoPrecio" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="DescuentoMaximo" Type="System.Decimal" DbType="Decimal(10,4) NOT NULL" CanBeNull="false" />
+      <Column Name="codListaPrecio" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="MargenUtilidad" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="MediaPorcentaje" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="PorcenComision" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="PorcenComisionMax" Type="System.Decimal" DbType="Decimal(10,4)" CanBeNull="true" />
+      <Column Name="codProductoPrecio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_ProductoProveedor" Method="omgc_S_ProductoProveedor">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPerProveedor" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_ProductoProveedorResult">
+      <Column Name="codProductoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_ProductoProveedor_Paged" Method="omgc_S_ProductoProveedor_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPerProveedor" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_ProductoProveedor_PagedResult">
+      <Column Name="codProductoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_D_ProductoProveedor" Method="omgc_D_ProductoProveedor">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoProveedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPerProveedor" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_segUsuarioElimina" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquinaElimina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Almacen.omgc_I_ProductoFoto" Method="omgc_I_ProductoFoto">
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_imgFotografia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="prm_desFotografia" Type="System.String" DbType="VarChar(35)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquinaIP" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_I_ProductoFotoResult">
+      <Column Name="ErrorCode" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ErrorMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_S_ProductoFoto" Method="omgc_S_ProductoFoto">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoFoto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_ProductoFotoResult">
+      <Column Name="codProductoFoto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="imgFotografia" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="desFotografia" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Almacen.omgc_D_ProductoFoto" Method="omgc_D_ProductoFoto">
+    <Parameter Name="prm_codProductoFoto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+</Database>

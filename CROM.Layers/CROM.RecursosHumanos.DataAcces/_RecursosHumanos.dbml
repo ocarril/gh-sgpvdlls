@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_GC_MAGESET_SFS_20201106" Class="_RecursosHumanosDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAP01-OCARRIL\SQLEXPRESSCROM;Initial Catalog=BD_GC_MAGESET_SFS_20201106;Persist Security Info=True;User ID=sa;Connect Timeout=30;TrustServerCertificate=False" SettingsObjectName="CROM.RecursosHumanos.DataAcces.Properties.Settings" SettingsPropertyName="BD_GC_MAGESET_SFS_20201106ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="RecursosHumanos.omgc_D_Empleado" Method="omgc_D_Empleado">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_UserElimina" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_MaquinaElimina" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_D_EmpleadoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="RecursosHumanos.omgc_I_Empleado" Method="omgc_I_Empleado">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPersonaNatural" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codRegAreaEmpleado" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegCategoria" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegEstadoCivil" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegGrupoSanguineo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_fecNacimiento" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_fecAltaLaboral" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_fecBajaLaboral" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_monSueldoBasico" Type="System.Decimal" DbType="Decimal(15,4)" />
+    <Parameter Name="p_porComisionXVenta" Type="System.Decimal" DbType="Decimal(10,4)" />
+    <Parameter Name="p_indSexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="p_indVendedor" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_codPlanilla" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desCorreoElectronico" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="omgc_I_EmpleadoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="RecursosHumanos.omgc_S_Empleado_Paged" Method="omgc_S_Empleado_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codEmpresaRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPlanilla" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_codRegEstadoCivil" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codRegAreaEmpleado" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codRegCategoria" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_indSexo" Type="System.String" DbType="VarChar(1)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_Empleado_PagedResult">
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPlanilla" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="desApellidos" Type="System.String" DbType="VarChar(81) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombres" Type="System.String" DbType="VarChar(91) NOT NULL" CanBeNull="false" />
+      <Column Name="fecNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="indSexo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="fecAltaLaboral" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecBajaLaboral" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="desCorreoElectronico" Type="System.String" DbType="VarChar(80) NOT NULL" CanBeNull="false" />
+      <Column Name="indVendedor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAreaEmpleadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegCategoriaNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstadoCivilNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegGrupoSanguineoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="RecursosHumanos.omgc_U_Empleado" Method="omgc_U_Empleado">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPersonaNatural" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codRegAreaEmpleado" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegCategoria" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegEstadoCivil" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegGrupoSanguineo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_fecNacimiento" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_fecAltaLaboral" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_fecBajaLaboral" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_monSueldoBasico" Type="System.Decimal" DbType="Decimal(15,4)" />
+    <Parameter Name="p_porComisionXVenta" Type="System.Decimal" DbType="Decimal(10,4)" />
+    <Parameter Name="p_indSexo" Type="System.Char" DbType="Char(1)" />
+    <Parameter Name="p_indVendedor" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_codPlanilla" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desCorreoElectronico" Type="System.String" DbType="VarChar(80)" />
+    <ElementType Name="omgc_U_EmpleadoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="RecursosHumanos.omgc_S_Empleado" Method="omgc_S_Empleado">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codEmpresaRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPersonaNatural" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPlanilla" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_EmpleadoResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaNatural" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoPaterno" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ApellidoMaterno" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Nombre1" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Nombre2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="desApellidos" Type="System.String" DbType="VarChar(81) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombres" Type="System.String" DbType="VarChar(91) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAreaEmpleado" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegCategoria" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegEstadoCivil" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegGrupoSanguineo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="fecNacimiento" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAltaLaboral" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecBajaLaboral" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="monSueldoBasico" Type="System.Decimal" DbType="Decimal(15,4) NOT NULL" CanBeNull="false" />
+      <Column Name="porComisionXVenta" Type="System.Decimal" DbType="Decimal(10,4) NOT NULL" CanBeNull="false" />
+      <Column Name="indSexo" Type="System.Char" DbType="Char(1) NOT NULL" CanBeNull="false" />
+      <Column Name="indVendedor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codPlanilla" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="desCorreoElectronico" Type="System.String" DbType="VarChar(80)" CanBeNull="true" />
+      <Column Name="codPersonaNaturalNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codNombreComercialNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAreaEmpleadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegCategoriaNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstadoCivilNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegGrupoSanguineoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="desImagenNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

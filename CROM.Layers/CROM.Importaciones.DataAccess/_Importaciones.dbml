@@ -1,0 +1,634 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_ComercialMechatronics" Class="_ImportacionesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MUAKS-PC\CROMSYSTEM;Initial Catalog=BD_ComercialMechatronics;User ID=sa" SettingsObjectName="CROM.Importaciones.DataAccess.Properties.Settings" SettingsPropertyName="BD_ComercialMechatronicsConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="Importaciones.omgc_D_OIDocumento" Method="omgc_D_OIDocumento">
+    <Parameter Name="prm_codOIDocumento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_I_OIDocumento" Method="omgc_I_OIDocumento">
+    <Parameter Name="prm_codOIDocumento" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombreArchivo" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_I_OIDUAProducto" Method="omgc_I_OIDUAProducto">
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_decCantidadFOB" Type="System.Decimal" DbType="Decimal(10,2)" />
+    <Parameter Name="prm_decPrecioUniFOB" Type="System.Decimal" DbType="Decimal(13,2)" />
+    <Parameter Name="prm_decTotalUniFOB" Type="System.Decimal" DbType="Decimal(13,2)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OIDocumento" Method="omgc_U_OIDocumento">
+    <Parameter Name="prm_codOIDocumento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombreArchivo" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OrdenImportacion" Method="omgc_U_OrdenImportacion">
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_numOrdenImportacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloObservacion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="prm_fecEmitido" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_I_OrdenImportacion" Method="omgc_I_OrdenImportacion">
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_numOrdenImportacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloObservacion" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="prm_fecEmitido" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_D_OrdenImportacion" Method="omgc_D_OrdenImportacion">
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIProveedores" Method="omgc_S_OIProveedores">
+    <Parameter Name="prm_codPersonaEntidad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstado" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_OIProveedoresResult">
+      <Column Name="codPersonaEntidad" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="cntDocumentos" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_D_OIDocumReg" Method="omgc_D_OIDocumReg">
+    <Parameter Name="prm_codOIDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_I_OIDocumReg" Method="omgc_I_OIDocumReg">
+    <Parameter Name="prm_codOIDocumReg" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OIDocumReg" Method="omgc_U_OIDocumReg">
+    <Parameter Name="prm_codOIDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_D_PlantillaCosto" Method="omgc_D_PlantillaCosto">
+    <Parameter Name="prm_codPlantillaCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizac" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OIDUAProducto" Method="omgc_U_OIDUAProducto">
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_decCantidadFOB" Type="System.Decimal" DbType="Decimal(18,0)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_I_PlantillaCosto" Method="omgc_I_PlantillaCosto">
+    <Parameter Name="prm_codPlantillaCosto" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizac" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_numOrden" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_S_PlantillaCosto" Method="omgc_S_PlantillaCosto">
+    <Parameter Name="prm_codPlantillaCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizac" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PlantillaCostoResult">
+      <Column Name="codPlantillaCosto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermoNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCosto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCostoNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNacionalizac" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNacionalizacNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="numOrden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_U_PlantillaCosto" Method="omgc_U_PlantillaCosto">
+    <Parameter Name="prm_codPlantillaCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizac" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_numOrden" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_D_OIDUASerie" Method="omgc_D_OIDUASerie">
+    <Parameter Name="prm_codOIDUASerie" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_I_OIDUASerie" Method="omgc_I_OIDUASerie">
+    <Parameter Name="prm_codOIDUASerie" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OIDUASerie" Method="omgc_U_OIDUASerie">
+    <Parameter Name="prm_codOIDUASerie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProductoSeriado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUASerieProducto" Method="omgc_S_OIDUASerieProducto">
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_OIDUASerieProductoResult">
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUAProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoSeriado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteCompra" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderiaNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUASerie" Method="omgc_S_OIDUASerie">
+    <Parameter Name="prm_codOIDUASerie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_OIDUASerieResult">
+      <Column Name="codOIDUASerie" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUAProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoSeriado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteCompra" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegEstadoMercaderiaNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIFacturas" Method="omgc_S_OIFacturas">
+    <Parameter Name="prm_codPersonaEntidad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstado" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_OIFacturasResult">
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteExt" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="FechaDeEmision" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(161)" CanBeNull="true" />
+      <Column Name="EntidadRazonSocial" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDocumReg" Method="omgc_S_OIDocumReg">
+    <Parameter Name="prm_codOIDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_OIDocumRegResult">
+      <Column Name="codOIDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOrdenImportacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(161)" CanBeNull="true" />
+      <Column Name="EntidadRazonSocial" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteExt" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUAProducto" Method="omgc_S_OIDUAProducto">
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_OIDUAProductoResult">
+      <Column Name="codOIDUAProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="decCantidadFOB" Type="System.Decimal" DbType="Decimal(10,2) NOT NULL" CanBeNull="false" />
+      <Column Name="decPrecioUniFOB" Type="System.Decimal" DbType="Decimal(24,9)" CanBeNull="true" />
+      <Column Name="decTotalUniFOB" Type="System.Decimal" DbType="Decimal(24,9)" CanBeNull="true" />
+      <Column Name="decFactor" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="decPrecioUniCosto" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="decTotalUniCosto" Type="System.Decimal" DbType="Decimal(38,13)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desProducto" Type="System.String" DbType="VarChar(356)" CanBeNull="true" />
+      <Column Name="decCantidadPendiente" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_D_OIDUA" Method="omgc_D_OIDUA">
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_I_OIDUA" Method="omgc_I_OIDUA">
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegCanal" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_numOIDUA" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_fecEmision" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecPago" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_decFactor" Type="System.Decimal" DbType="Decimal(12,4)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OIDUA" Method="omgc_U_OIDUA">
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegCanal" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_numOIDUA" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_fecEmision" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecPago" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_decFactor" Type="System.Decimal" DbType="Decimal(12,4)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OIDUADato" Method="omgc_U_OIDUADato">
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_DocumRegDetaGasto" Method="omgc_U_DocumRegDetaGasto">
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_usuario" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_S_DocumRegDetaGasto" Method="omgc_S_DocumRegDetaGasto">
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_DocumRegDetaGastoResult">
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomProveedor" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(43) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoItemDetalle" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="monSoles" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="monCostoDolar" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monDolar" Type="System.Decimal" DbType="Decimal(26,9)" CanBeNull="true" />
+      <Column Name="codOIDUA" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="numOIDUA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="codRegResumenCosto" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegResumenCostoPadre" Type="System.String" DbType="VarChar(8)" CanBeNull="true" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_DUADetalleCosto" Method="omgc_S_DUADetalleCosto">
+    <Parameter Name="prm_fechaInicio" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fechaFinal" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_codPersonaProv" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_DUADetalleCostoResult">
+      <Column Name="IdDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaEmision" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NombreEmpresa" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Item" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoCambio" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MoneNacional" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="MoneInternacional" Type="System.Decimal" DbType="Decimal(26,9)" CanBeNull="true" />
+      <Column Name="CostoReferenciado" Type="System.String" DbType="VarChar(41)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_D_OIDUACosto" Method="omgc_D_OIDUACosto">
+    <Parameter Name="prm_codOIDUACosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_D_OIDUAProducto" Method="omgc_D_OIDUAProducto">
+    <Parameter Name="prm_codOIDUAProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_usuario" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUA" Method="omgc_S_OIDUA">
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_usuario" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_S_OIDUAResult">
+      <Column Name="codOIDUA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOrdenImportacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoEstadoNombre" Type="System.String" DbType="NVarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegCanal" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegCanalNombre" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="numOIDUA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fecEmision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecPago" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="decFactor" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="desOIDUA" Type="System.String" DbType="VarChar(41)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_I_OIDUACosto" Method="omgc_I_OIDUACosto">
+    <Parameter Name="prm_codOIDUACosto" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_decMontoCosto" Type="System.Decimal" DbType="Decimal(13,2)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_codRegMoneda" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_U_OIDUACosto" Method="omgc_U_OIDUACosto">
+    <Parameter Name="prm_codOIDUACosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_decMontoCosto" Type="System.Decimal" DbType="Decimal(13,2)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_codRegMoneda" Type="System.String" DbType="VarChar(17)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUACostoId" Method="omgc_S_OIDUACostoId">
+    <Parameter Name="prm_codOIDUACosto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_OIDUACostoIdResult">
+      <Column Name="codOIDUACosto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCosto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUANumero" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="fecEmisionDUA" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCostoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="decMontoCosto" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desOrigenDesde" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="monTipoCambioDUA" Type="System.Decimal" DbType="Decimal(13,4)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUACostoDetalle" Method="omgc_S_OIDUACostoDetalle">
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_OIDUACostoDetalleResult">
+      <Column Name="codOIDUA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUACosto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCosto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCostoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="fecEmision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="desProveedor" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="desCosto" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="cntCantidad" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monUnitPrecioVenta" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="monTotalDocumento" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="monTipoCambioVta" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monTipoCambioCmp" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDocumento" Method="omgc_S_OIDocumento">
+    <Parameter Name="prm_codOIDocumento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_OIDocumentoResult">
+      <Column Name="codOIDocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOrdenImportacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="desNombreArchivo" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="desVistaParcial" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIProveedorGasto" Method="omgc_S_OIProveedorGasto">
+    <ElementType Name="omgc_S_OIProveedorGastoResult">
+      <Column Name="codPersonaEntidad" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEntidadNombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_DUADetalleCostoPage" Method="omgc_S_DUADetalleCostoPage">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenadoPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_fechaInicio" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fechaFinal" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_codPersonaProv" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_DUADetalleCostoPageResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="IdDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobante" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="FechaEmision" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="NombreEmpresa" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="Item" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="TipoCambio" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="Cantidad" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="MoneNacional" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="MoneInternacional" Type="System.Decimal" DbType="Decimal(26,9)" CanBeNull="true" />
+      <Column Name="CostoReferenciado" Type="System.String" DbType="VarChar(43)" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUACosto" Method="omgc_S_OIDUACosto">
+    <Parameter Name="prm_codOIDUACosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_OIDUACostoResult">
+      <Column Name="codOIDUACosto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOIDUANumero" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="codRegResumenCosto" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegResumenCostoNombre" Type="System.String" DbType="VarChar(123)" CanBeNull="true" />
+      <Column Name="decMontoCosto" Type="System.Decimal" DbType="Decimal(38,6)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="OInumOrdenImportacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="OrigenDesde" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTipoCambio" Type="System.Decimal" DbType="Decimal(13,4)" CanBeNull="true" />
+      <Column Name="codRegMoneda" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.fcnValidarCierreDUA" Method="fcnValidarCierreDUA" IsComposable="true">
+    <Parameter Name="prm_codOIDUA" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Importaciones.omgc_S_PlantillaCosto_Paged" Method="omgc_S_PlantillaCosto_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codPlantillaCosto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegResumenCosto" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizac" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PlantillaCosto_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codPlantillaCosto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCosto" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegResumenCostoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNacionalizac" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNacionalizacNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="numOrden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OI" Method="omgc_S_OI">
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_numOrdenImportacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizacion" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_OIResult">
+      <Column Name="codOrdenImportacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numOrdenImportacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermoNombre" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="codRegNacionalizacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNacionalizacionNombre" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="codDocumentoEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoEstadoNombre" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="fecEmitido" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaEntidad" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="EntidadRazonSocial" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OI_Paged" Method="omgc_S_OI_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codOrdenImportacion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_numOrdenImportacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegIncotermo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionalizacion" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_OI_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codOrdenImportacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numOrdenImportacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegIncotermoNombre" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="codRegNacionalizacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNacionalizacionNombre" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="codDocumentoEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoEstadoNombre" Type="System.String" DbType="NVarChar(300)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="fecEmitido" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaEntidad" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="EntidadRazonSocial" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Importaciones.omgc_S_OIDUA_Paged" Method="omgc_S_OIDUA_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_fecInicio" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinal" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_numDUA" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_numOI" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codRegCanal" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegEstado" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegIncoterm" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegNacionaliz" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_OIDUA_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codOIDUA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOrdenImportacion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="numOIDUA" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="numOrdenImportacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="fecEmision" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="fecPago" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="decFactor" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="codRegCanalNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstadoDUANombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegDocumentoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecEmitido" Type="System.String" DbType="Char(10)" CanBeNull="true" />
+      <Column Name="codRegIncotermNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstadoOINombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNacionalizacionNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,648 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_GC_MAGESET_20180802" Class="_DBMLPersonasDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-HOME\SQLEXPRESS2014;Initial Catalog=BD_GC_MAGESET_20180802;User ID=sa" SettingsObjectName="CROM.TablasMaestras.DataAcces.Properties.Settings" SettingsPropertyName="BD_GC_MAGESET_20180802ConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="Maestros.omgc_D_Persona" Method="omgc_D_Persona">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_D_PersonaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_D_PersonasDomicilio" Method="omgc_D_PersonasDomicilio">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codEmpresaRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codPersonaDomicilio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaEdita" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_D_PersonasDomicilioResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_D_PersonaAsignacion" Method="omgc_D_PersonaAsignacion">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegAsignacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pUserUpdate" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_D_PersonaAsignacionResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_D_PersonaAtributo" Method="omgc_D_PersonaAtributo">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegTipoAtributo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_D_PersonaAtributoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_D_PersonaDatoAdicional" Method="omgc_D_PersonaDatoAdicional">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="puserLogin" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_D_PersonaDatoAdicionalResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_D_PersonaFotoLogo" Method="omgc_D_PersonaFotoLogo">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_D_PersonaFotoLogoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_I_Persona" Method="omgc_I_Persona">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegTipoEntidad" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegRubroComercial" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codPerEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_RazonSocial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_NombreComercial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_Observaciones" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_I_PersonaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_I_PersonasDomicilio" Method="omgc_I_PersonasDomicilio">
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegTipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegVia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloDireccion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_desNumero" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codRegNucleoUrb" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNucleoUrb" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="prm_codUbigeo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloReferencia" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_gloDireccionConcat" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_gloDireccionGeoCod" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_gloDireccionSunat" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_numLatitud" Type="System.Double" DbType="Float" />
+    <Parameter Name="prm_numLongitud" Type="System.Double" DbType="Float" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaCrea" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_I_PersonasDomicilioResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(43) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_I_PersonaFotoLogo" Method="omgc_I_PersonaFotoLogo">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_FotoLogoNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_FotoLogoBinary" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_I_PersonaFotoLogoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_I_PersonaDatoAdicional" Method="omgc_I_PersonaDatoAdicional">
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_ApellidoPaterno" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_ApellidoMaterno" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_Nombre1" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_Nombre2" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_codRegAreaEmpleado" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_I_PersonaDatoAdicionalResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_I_PersonaAsignacion" Method="omgc_I_PersonaAsignacion">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegAsignacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_SegMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_I_PersonaAsignacionResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_I_Persona_Output" Method="omgc_I_Persona_Output">
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegTipoEntidad" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegRubroComercial" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codPerEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_RazonSocial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_NombreComercial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_Observaciones" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_I_Persona_OutputResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_IU_PersonaAtributo" Method="omgc_IU_PersonaAtributo">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegTipoAtributo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DescripcionAtributo" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_SegMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_IU_PersonaAtributoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_P_Persona_Valida" Method="omgc_P_Persona_Valida">
+    <Parameter Name="prm_RazonSocial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_CodigoPersonaExist" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="prm_NombrePersonaExist" Type="System.String" DbType="VarChar(60)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Maestros.omgc_P_PersonaAtributo_Valida" Method="omgc_P_PersonaAtributo_Valida">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegTipoAtributo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DescripcionAtributo" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_CodigoPersonaExist" Type="System.String" DbType="VarChar(15)" Direction="InOut" />
+    <Parameter Name="prm_NombrePersonaExist" Type="System.String" DbType="VarChar(60)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Maestros.omgc_P_Registro_GenerarCodigo" Method="omgc_P_Registro_GenerarCodigo">
+    <Parameter Name="prm_codTabla" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_numNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_numLongitudNivel" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegistroPadre" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegistro" Type="System.String" DbType="VarChar(17)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Maestros.omgc_P_Registro_Ubigeo" Method="omgc_P_Registro_Ubigeo">
+    <Parameter Name="prm_codRegistro" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_desNombreUbigeos" Type="System.String" DbType="VarChar(400)" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaAsignacion" Method="omgc_S_PersonaAsignacion">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_PersonaAsignacionResult">
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAsignacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAsignacionNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaAsignacion_ID" Method="omgc_S_PersonaAsignacion_ID">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegAsignacion" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_PersonaAsignacion_IDResult">
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAsignacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAsignacionNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaAtributo_codPersona" Method="omgc_S_PersonaAtributo_codPersona">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_PersonaAtributo_codPersonaResult">
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAtributo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAtributoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoAtributo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoAtributoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoAtributoValor" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonasDomicilio_Page" Method="omgc_S_PersonasDomicilio_Page">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Direccion" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="prm_Activo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PersonasDomicilio_PageResult">
+      <Column Name="codPersonaDomicilio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codRegViaNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="gloDireccion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="desNumero" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegNucleoUrbNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="desNucleoUrb" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="codUbigeo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codUbigeoCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="codUbigeoNombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nomUbigeo" Type="System.String" DbType="VarChar(456) NOT NULL" CanBeNull="false" />
+      <Column Name="gloReferencia" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="gloDireccionConcat" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="gloDireccionGeoCod" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="gloDireccionSunat" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="numLongitud" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="numLatitud" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonasDomicilio" Method="omgc_S_PersonasDomicilio">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codPersonaDomicilio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Activo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PersonasDomicilioResult">
+      <Column Name="codPersonaDomicilio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codRegVia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegViaNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codRegNucleoUrb" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codRegNucleoUrbNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="gloDireccion" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="desNumero" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="desNucleoUrb" Type="System.String" DbType="VarChar(90)" CanBeNull="true" />
+      <Column Name="codUbigeo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codUbigeoCode" Type="System.String" DbType="VarChar(8) NOT NULL" CanBeNull="false" />
+      <Column Name="codUbigeoNombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="codUbigeoProv" Type="System.String" DbType="VarChar(6) NOT NULL" CanBeNull="false" />
+      <Column Name="codUbigeoDpto" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="gloReferencia" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="gloDireccionConcat" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="gloDireccionGeoCod" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="gloDireccionSunat" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="numLatitud" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="numLongitud" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaFotoLogo_ID" Method="omgc_S_PersonaFotoLogo_ID">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_PersonaFotoLogo_IDResult">
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="FotoLogoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="FotoLogoBinary" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaDatoAdicional_ID" Method="omgc_S_PersonaDatoAdicional_ID">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_PersonaDatoAdicional_IDResult">
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguAreaEmpleado" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="ApellidoPaterno" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ApellidoMaterno" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Nombre1" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Nombre2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegurEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaDatoAdicional_codEmpresa" Method="omgc_S_PersonaDatoAdicional_codEmpresa">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codPerEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_PersonaDatoAdicional_codEmpresaResult">
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="ApellidoPaterno" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="ApellidoMaterno" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Nombre1" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="Nombre2" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="codRegAreaEmpleado" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegAreaEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegurEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaAtributo_ID" Method="omgc_S_PersonaAtributo_ID">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegTipoAtributo" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_PersonaAtributo_IDResult">
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAtributo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAtributoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoAtributo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoAtributoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegAtributoValor" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GestionComercial.omgc_S_DocumReg_Vendedor" Method="omgc_S_DocumReg_Vendedor">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegDestinoComp" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_DocumReg_VendedorResult">
+      <Column Name="codEmpleadoVendedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomVendedor" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desDato01" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="desDato02" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="CantidadDocumento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_U_Persona" Method="omgc_U_Persona">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoArguTipoEntidad" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguRubroComercial" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_RazonSocial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_NombreComercial" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_Observaciones" Type="System.String" DbType="VarChar(500)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_U_PersonaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_U_PersonasDomicilio" Method="omgc_U_PersonasDomicilio">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersonaDomicilio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegTipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codRegVia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloDireccion" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_desNumero" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_codRegNucleoUrb" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNucleoUrb" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="prm_codUbigeo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloReferencia" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_gloDireccionConcat" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_gloDireccionGeoCod" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_gloDireccionSunat" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_numLatitud" Type="System.Double" DbType="Float" />
+    <Parameter Name="prm_numLongitud" Type="System.Double" DbType="Float" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_segMaquinaEdita" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_U_PersonasDomicilioResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(43) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_U_Persona_CROM" Method="omgc_U_Persona_CROM">
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_EsClienteCROM" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_WordKey" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_Usuario" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_U_Persona_CROMResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_U_PersonaFotoLogo" Method="omgc_U_PersonaFotoLogo">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_FotoLogoNombre" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_FotoLogoBinary" Type="System.Data.Linq.Binary" DbType="VarBinary(MAX)" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_U_PersonaFotoLogoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_Persona" Method="omgc_S_Persona">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoEntidad" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguAsignacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_ApellidosRazonSocial" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoArguAreaEmpleado" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoria" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguTipoAtributo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DescripcionAtributo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PersonaResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoEntidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegRubroComercial" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegRubroComercialNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegAreaEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPerEmpresa" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPerEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreComercial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="desDomicilio" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="desTelefono" Type="System.String" DbType="VarChar(752) NOT NULL" CanBeNull="false" />
+      <Column Name="desNumDocumento" Type="System.String" DbType="VarChar(501) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_Persona_ID" Method="omgc_S_Persona_ID">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_Persona_IDResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoEntidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegRubroComercial" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegRubroComercialNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPerEmpresa" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPerEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreComercial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="EsClienteCROM" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_Persona_Paged" Method="omgc_S_Persona_Paged">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_CodigoArguTipoEntidad" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguAsignacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_ApellidosRazonSocial" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoArguAreaEmpleado" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguCategoria" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguTipoAtributo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_DescripcionAtributo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_Persona_PagedResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoEntidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegRubroComercial" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegRubroComercialNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegAreaEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPerEmpresa" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPerEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NombreComercial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="desDomicilio" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="desTelefono" Type="System.String" DbType="VarChar(752) NOT NULL" CanBeNull="false" />
+      <Column Name="desNumDocumento" Type="System.String" DbType="VarChar(501) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_PersonaAtributo_Paged" Method="omgc_S_PersonaAtributo_Paged">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegAtributo" Type="System.String" DbType="VarChar(17)" />
+    <ElementType Name="omgc_S_PersonaAtributo_PagedResult">
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAtributo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegAtributoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoAtributo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoAtributoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoAtributoValor" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_Persona_EmpresaEmision" Method="omgc_S_Persona_EmpresaEmision">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_NumRUC" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_Persona_EmpresaEmisionResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegRubroComercialNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="nomRazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nomComercial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="cntDomicilio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codPersonaDomicilio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoStr" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="desDomicilio" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="codUbigeo" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="nomUbigeo" Type="System.String" DbType="VarChar(456) NOT NULL" CanBeNull="false" />
+      <Column Name="desTelefono" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="codRegTipoDocumentoEntidad" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="tipoDocumento" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="desNumDocumento" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indClienteCROM" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Maestros.omgc_S_Persona_codEmpresa" Method="omgc_S_Persona_codEmpresa">
+    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPerEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_S_Persona_codEmpresaResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoEntidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegRubroComercial" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegRubroComercialNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="desApellidos" Type="System.String" DbType="VarChar(81) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombres" Type="System.String" DbType="VarChar(91) NOT NULL" CanBeNull="false" />
+      <Column Name="nomRazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nomComercial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_SIS" Class="DBML_AccesoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-HOME\SQLEXPRESS2014;Initial Catalog=BD_SIS;Persist Security Info=True;User ID=sa" SettingsObjectName="CROM.Seguridad.DataAcces.Properties.Settings" SettingsPropertyName="BD_SISConnectionString5" Provider="System.Data.SqlClient" />
+  <Function Name="Seguridad.omgc_pro_SII_Auditoria" Method="omgc_pro_SII_Auditoria">
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_desLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_desMensaje" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="p_desTipo" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_fecRegistroApp" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_nomMaquinaIP" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_numVeces" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_pro_SIS_Auditoria" Method="omgc_pro_SIS_Auditoria">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_fecInicio" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="p_fecFinal" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="omgc_pro_SIS_AuditoriaResult">
+      <Column Name="codAuditoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codRolNombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="codUsuarioNombre" Type="System.String" DbType="VarChar(82) NOT NULL" CanBeNull="false" />
+      <Column Name="desLogin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="desMensaje" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="desTipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="fecRegistroApp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nomMaquinaIP" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_pro_SIS_Usuario_DetectLoginPassword" Method="omgc_pro_SIS_Usuario_DetectLoginPassword">
+    <Parameter Name="p_LoginUsuario" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_pro_SIS_Usuario_DetectLoginPasswordResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(34) NOT NULL" CanBeNull="false" />
+      <Column Name="clvPassword" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="indPasswordReset" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indBloqueoUpdate" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="fecBloqueoUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_pro_SIS_Usuario_LoginValidated" Method="omgc_pro_SIS_Usuario_LoginValidated">
+    <Parameter Name="p_LoginUsuario" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_pro_SIS_Usuario_LoginValidatedResult">
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="desLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="clvPassword" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombres" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desApellidos" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desPregunta" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="desRespuesta" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="desTelefono" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="desCorreo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="indRestricPorPais" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleado" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="indVendedor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indCambioPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indAccesoGerencial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indCambiaDescuento" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indCambiaCodPersona" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indJefeCaja" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indUsuarioSistema" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="codArguPais" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEditaPWD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="indPasswordReset" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="fecBloqueoUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="urlPhotoUser" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="indOrigenUser" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+      <Column Name="codGUID" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="codRolNombre" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="NVarChar(MAX)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_pro_SIU_Usuario_fecBloqueoUpdate" Method="omgc_pro_SIU_Usuario_fecBloqueoUpdate">
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_flagBloquea" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_pro_SIU_Usuario_fecBloqueoUpdateResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(28) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_pro_SIU_Usuario_indPasswordReset" Method="omgc_pro_SIU_Usuario_indPasswordReset">
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_password" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_pro_SIU_Usuario_indPasswordResetResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(28) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_pro_SIU_Usuario_PasswordExterno" Method="omgc_pro_SIU_Usuario_PasswordExterno">
+    <Parameter Name="p_desLogin" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_clvPassword" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(25)" />
+    <ElementType Name="omgc_pro_SIU_Usuario_PasswordExternoResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_UsuarioObjeto" Method="usp_sis_R_UsuarioObjeto">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_tipObjeto" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_nomAction" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="usp_sis_R_UsuarioObjetoResult">
+      <Column Name="ID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codOpcionPadre" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codOpcionNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codOpcionDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codOpcionPadreNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="desEnlaceURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desEnlaceWIN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desEnlacePadre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indVer" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indNuevo" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indEditar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indEliminar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indImprime" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indImporta" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indExporta" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indOtro" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="nomIcono" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="indTipoObjeto" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="numOrden" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codElementoID" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="numOrdenPadre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

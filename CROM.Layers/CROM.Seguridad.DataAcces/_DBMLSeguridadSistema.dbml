@@ -1,0 +1,985 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_SIS" Class="_DBMLSeguridadSistemaDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAP01-OCARRIL\SQLEXPRESSCROM;Initial Catalog=BD_SIS;User ID=sa" SettingsObjectName="CROM.Seguridad.DataAcces.Properties.Settings" SettingsPropertyName="BD_SISConnectionString1" Provider="System.Data.SqlClient" />
+  <Function Name="Seguridad.omgc_mnt_Delete_Opcion" Method="omgc_mnt_Delete_Opcion">
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Delete_Rol" Method="omgc_mnt_Delete_Rol">
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_usuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Delete_RolOpcion" Method="omgc_mnt_Delete_RolOpcion">
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Delete_Sistema" Method="omgc_mnt_Delete_Sistema">
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Find_Opcion" Method="omgc_mnt_Find_Opcion">
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="omgc_mnt_Find_OpcionResult">
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcionPadre" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="desEnlaceWIN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desEnlaceURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="numOrden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomIcono" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="indTipoObjeto" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codElementoID" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Find_Rol" Method="omgc_mnt_Find_Rol">
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="omgc_mnt_Find_RolResult">
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Find_RolOpcion" Method="omgc_mnt_Find_RolOpcion">
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="omgc_mnt_Find_RolOpcionResult">
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="indVer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indNuevo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEditar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEliminar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImprime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indExporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indOtro" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Find_Sistema" Method="omgc_mnt_Find_Sistema">
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="omgc_mnt_Find_SistemaResult">
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_GetAll_EmpresaPaged" Method="omgc_mnt_GetAll_EmpresaPaged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_numRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAll_EmpresaPagedResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomRazonSocial" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="numRUC" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="nomLogo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nomContacto" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="desCorreo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desPaginaWeb" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codEmpresaKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_GetAll_EmpresaSistemaPaged" Method="omgc_mnt_GetAll_EmpresaSistemaPaged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAll_EmpresaSistemaPagedResult">
+      <Column Name="codEmpresaSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="fecInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecFinal" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="nomEmpresa" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_GetAll_EmpresaUsuario_Paged" Method="omgc_mnt_GetAll_EmpresaUsuario_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAll_EmpresaUsuario_PagedResult">
+      <Column Name="codEmpresaUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuarioKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="nomEmpresa" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nomUsuario" Type="System.String" DbType="VarChar(82) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_GetAll_Rol" Method="omgc_mnt_GetAll_Rol">
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAll_RolResult">
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_GetAll_RolOpcion" Method="omgc_mnt_GetAll_RolOpcion">
+    <Parameter Name="p_CodSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="omgc_mnt_GetAll_RolOpcionResult">
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="indVer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indNuevo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEditar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEliminar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImprime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indExporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indOtro" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indMenu" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcionNombre" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="codOpcionPadre" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codRolNombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="codOpcionEnlaceURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codOpcionEnlaceWIN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codOpcionDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_GetAll_Sistema" Method="omgc_mnt_GetAll_Sistema">
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAll_SistemaResult">
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Insert_Opcion" Method="omgc_mnt_Insert_Opcion">
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcionPadre" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_desEnlaceWIN" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_desEnlaceURL" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indMenu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_numOrden" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_nomIcono" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_indTipoObjeto" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_codElementoID" Type="System.String" DbType="VarChar(70)" />
+    <ElementType Name="omgc_mnt_Insert_OpcionResult">
+      <Column Name="codError" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Insert_Rol" Method="omgc_mnt_Insert_Rol">
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" Direction="InOut" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Insert_RolOpcion" Method="omgc_mnt_Insert_RolOpcion">
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indVer" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indNuevo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indEditar" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indEliminar" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indImprime" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indImporta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indExporta" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indOtro" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Insert_Sistema" Method="omgc_mnt_Insert_Sistema">
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" Direction="InOut" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Update_Opcion" Method="omgc_mnt_Update_Opcion">
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcionPadre" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_desEnlaceWIN" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_desEnlaceURL" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indMenu" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_numOrden" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_nomIcono" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_indTipoObjeto" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_codElementoID" Type="System.String" DbType="VarChar(70)" />
+    <ElementType Name="omgc_mnt_Update_OpcionResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Update_Rol" Method="omgc_mnt_Update_Rol">
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_Update_Sistema" Method="omgc_mnt_Update_Sistema">
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.usp_sis_C_Empresa" Method="usp_sis_C_Empresa">
+    <Parameter Name="p_nomRazonSocial" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="p_numRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_nomLogo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_nomContacto" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="p_desCorreo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_desPaginaWeb" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaCrea" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_C_EmpresaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_C_EmpresaSistema" Method="usp_sis_C_EmpresaSistema">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_fecInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p_fecFinal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p_numTiempoToken" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaCrea" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_C_EmpresaSistemaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_C_EmpresaUsuario" Method="usp_sis_C_EmpresaUsuario">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaCrea" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_C_EmpresaUsuarioResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(51) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_C_Usuario" Method="usp_sis_C_Usuario">
+    <Parameter Name="p_desLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_clvPassword" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="p_desNombres" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_desApellidos" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_desPregunta" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="p_desRespuesta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_desTelefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_desCorreo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_indRestricPorPais" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_codEmpleado" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_indVendedor" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indCambioPrecio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indAccesoGerencial" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indCambiaDescuento" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indCambiacodPer" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indJefeCaja" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indUsuarioSistema" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_codArguPais" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_urlPhotoUser" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="p_indOrigenUser" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="p_codGUID" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_codSistemaKey" Type="System.Guid" DbType="UniqueIdentifier" />
+    <Parameter Name="p_codRolDefecto" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_segMaquinaIP" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_C_UsuarioResult">
+      <Column Name="codError" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(39) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_C_UsuarioRol" Method="usp_sis_C_UsuarioRol">
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.usp_sis_D_Empresa" Method="usp_sis_D_Empresa">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_segUsuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_D_EmpresaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_D_EmpresaSistema" Method="usp_sis_D_EmpresaSistema">
+    <Parameter Name="p_codEmpresaSistema" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_segUsuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_D_EmpresaSistemaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_D_EmpresaUsuario" Method="usp_sis_D_EmpresaUsuario">
+    <Parameter Name="p_codEmpresaUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_segUsuario" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_D_EmpresaUsuarioResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_D_RolOpcion" Method="usp_sis_D_RolOpcion">
+    <Parameter Name="p_codRolOpcion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_sis_D_RolOpcionResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_D_Usuario" Method="usp_sis_D_Usuario">
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.usp_sis_D_UsuarioRol" Method="usp_sis_D_UsuarioRol">
+    <Parameter Name="p_codUsuarioRol" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_sis_D_UsuarioRolResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Empresa" Method="usp_sis_R_Empresa">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_sis_R_EmpresaResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomRazonSocial" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="numRUC" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="nomLogo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nomContacto" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="desCorreo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desPaginaWeb" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codEmpresaKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="indEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Empresa_Paged" Method="usp_sis_R_Empresa_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_numRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_Empresa_PagedResult">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="nomRazonSocial" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="numRUC" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="nomLogo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="nomContacto" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="desCorreo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desPaginaWeb" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codEmpresaKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_EmpresaSistema" Method="usp_sis_R_EmpresaSistema">
+    <Parameter Name="p_codEmpresaSistema" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_sis_R_EmpresaSistemaResult">
+      <Column Name="codEmpresaSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="fecInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecFinal" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="numTiempoToken" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="indEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_EmpresaSistema_Paged" Method="usp_sis_R_EmpresaSistema_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_EmpresaSistema_PagedResult">
+      <Column Name="codEmpresaSistema" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="fecInicio" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="fecFinal" Type="System.DateTime" DbType="Date NOT NULL" CanBeNull="false" />
+      <Column Name="nomEmpresa" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nomSistema" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="numTiempoToken" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_EmpresaUsuario" Method="usp_sis_R_EmpresaUsuario">
+    <Parameter Name="p_codEmpresaUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="usp_sis_R_EmpresaUsuarioResult">
+      <Column Name="codEmpresaUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuarioKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaCrea" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="indEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuarioNombre" Type="System.String" DbType="VarChar(82) NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuarioLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_EmpresaUsuario_Paged" Method="usp_sis_R_EmpresaUsuario_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_EmpresaUsuario_PagedResult">
+      <Column Name="codEmpresaUsuario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuarioKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="desLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nomEmpresa" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="nomUsuario" Type="System.String" DbType="VarChar(82) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Opcion_Paged" Method="usp_sis_R_Opcion_Paged">
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcionPadre" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desEnlace" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_tipObjeto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desNombrePadre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_Opcion_PagedResult">
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcionPadre" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="codObjetoPadreNombre" Type="System.String" DbType="VarChar(35)" CanBeNull="true" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desEnlaceURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desEnlaceWin" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nomIcono" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="indMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indTipoObjeto" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="numOrden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codElementoID" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Rol_Paged" Method="usp_sis_R_Rol_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_gloDescripcion" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_Rol_PagedResult">
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_RolOpcion" Method="usp_sis_R_RolOpcion">
+    <Parameter Name="p_codRolOpcion" Type="System.Int32" DbType="Int" />
+    <ElementType Name="usp_sis_R_RolOpcionResult">
+      <Column Name="codRolOpcion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="indVer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indNuevo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEditar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEliminar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImprime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indExporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indOtro" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_RolOpcion_Paged" Method="usp_sis_R_RolOpcion_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indVisualiza" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_RolOpcion_PagedResult">
+      <Column Name="codRolOpcion" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcionNombre" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="codElementoID" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="desEnlaceURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desEnlaceWIN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indTipoObjeto" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="nomIcono" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="numOrden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRolNombre" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="indVer" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indNuevo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEditar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEliminar" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImprime" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indExporta" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indOtro" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Sistema_Paged" Method="usp_sis_R_Sistema_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_gloDescripcion" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_Sistema_PagedResult">
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaKey" Type="System.Guid" DbType="UniqueIdentifier NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Usuario" Method="usp_sis_R_Usuario">
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_desLogin" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_desCorreo" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_UsuarioResult">
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="desLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="clvPassword" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombres" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desApellidos" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desPregunta" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="desRespuesta" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="desTelefono" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="desCorreo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="indRestricPorPais" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleado" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="indVendedor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indCambioPrecio" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indAccesoGerencial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indCambiaDescuento" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indCambiaCodPersona" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indJefeCaja" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indUsuarioSistema" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="codArguPais" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEditaPWD" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="indPasswordReset" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="fecBloqueoUpdate" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="urlPhotoUser" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="indOrigenUser" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Usuario_Paged" Method="usp_sis_R_Usuario_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpleado" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desLogin" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_desCorreo" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_Usuario_PagedResult">
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="desLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="desNombres" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desApellidos" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="desCorreo" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleado" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="desTelefono" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="indVendedor" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indPasswordReset" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indLockUser" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_UsuarioRol" Method="usp_sis_R_UsuarioRol">
+    <Parameter Name="p_codUsuarioRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <ElementType Name="usp_sis_R_UsuarioRolResult">
+      <Column Name="codUsuarioRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_UsuarioRol_Paged" Method="usp_sis_R_UsuarioRol_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuarioRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="usp_sis_R_UsuarioRol_PagedResult">
+      <Column Name="codUsuarioRol" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codUsuarioNombre" Type="System.String" DbType="VarChar(82) NOT NULL" CanBeNull="false" />
+      <Column Name="desLogin" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRolNombre" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_U_Empresa" Method="usp_sis_U_Empresa">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_nomRazonSocial" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="p_numRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_nomLogo" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_nomContacto" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="p_desCorreo" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_desPaginaWeb" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaEdita" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_U_EmpresaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_U_EmpresaSistema" Method="usp_sis_U_EmpresaSistema">
+    <Parameter Name="p_codEmpresaSistema" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_fecInicio" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p_fecFinal" Type="System.DateTime" DbType="Date" />
+    <Parameter Name="p_numTiempoToken" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaEdita" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_U_EmpresaSistemaResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_U_EmpresaUsuario" Method="usp_sis_U_EmpresaUsuario">
+    <Parameter Name="p_codEmpresaUsuario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaEdita" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="usp_sis_U_EmpresaUsuarioResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_U_Usuario" Method="usp_sis_U_Usuario">
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_desLogin" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_desNombres" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_desApellidos" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_desPregunta" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="p_desRespuesta" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_desTelefono" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_desCorreo" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_indRestricPorPais" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_codEmpleado" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_indVendedor" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indCambioPrecio" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indAccesoGerencial" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indCambiaDescuento" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indCambiacodPersona" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indJefeCaja" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indUsuarioSistema" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_codArguPais" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_urlPhotoUser" Type="System.String" DbType="VarChar(250)" />
+    <ElementType Name="usp_sis_U_UsuarioResult">
+      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_U_UsuarioRol" Method="usp_sis_U_UsuarioRol">
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Seguridad.omgc_mnt_GetAll_Opcion" Method="omgc_mnt_GetAll_Opcion">
+    <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_desDescripcion" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_TipoObjeto" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_mnt_GetAll_OpcionResult">
+      <Column Name="codOpcion" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codOpcionPadre" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(35) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombreFull" Type="System.String" DbType="VarChar(74) NOT NULL" CanBeNull="false" />
+      <Column Name="desDescripcion" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="desEnlaceWIN" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desEnlaceURL" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indMenu" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indTipoObjeto" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="indEstado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_R_Auditoria_Paged" Method="usp_sis_R_Auditoria_Paged">
+    <Parameter Name="p_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_OrdenPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_fecINICIO" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="p_fecFINAL" Type="System.String" DbType="VarChar(8)" />
+    <ElementType Name="usp_sis_R_Auditoria_PagedResult">
+      <Column Name="codAuditoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codSistema" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="nomRazonSocial" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="codSistemaNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="codRol" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codRolNombre" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="codUsuario" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="codUsuarioNombre" Type="System.String" DbType="VarChar(82) NOT NULL" CanBeNull="false" />
+      <Column Name="desLogin" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="desMensaje" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="desTipo" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="fecRegistroApp" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecRegistroBD" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="nomMaquinaIP" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

@@ -1,0 +1,580 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="BDOxinetAsistencia" Class="_CROMTimeDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=XNTSRV09\SQLSRV2008DEV;Initial Catalog=BDOxinetAsistencia;User ID=sa" SettingsObjectName="CROM.Asistencia.DataAcces.Properties.Settings" SettingsPropertyName="BDOxinetAsistenciaConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="Asistencia.omgc_mnt_DeleteFormatosRelojes" Method="omgc_mnt_DeleteFormatosRelojes">
+    <Parameter Name="prm_CodigoFormato" Type="System.String" DbType="VarChar(15)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_DeleteHorario" Method="omgc_mnt_DeleteHorario">
+    <Parameter Name="prm_CodigoHorario" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_DeleteJustificaciones" Method="omgc_mnt_DeleteJustificaciones">
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_DeletePersonasAgenda" Method="omgc_mnt_DeletePersonasAgenda">
+    <Parameter Name="prm_Item" Type="System.String" DbType="VarChar(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetAllFromFormatosRelojes" Method="omgc_mnt_GetAllFromFormatosRelojes">
+    <Parameter Name="prm_CodigoFormato" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAllFromFormatosRelojesResult">
+      <Column Name="CodigoFormato" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroLong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroDeta" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTarjetaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTarjetaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionFechaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionFechaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionAnioIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionAnioFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMesIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMesFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionDiaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionDiaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionHoraIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionHoraFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMinutoIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMinutoFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionSegundoIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionSegundoFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTeclaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTeclaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetByIdCodeFormatosRelojes" Method="omgc_mnt_GetByIdCodeFormatosRelojes">
+    <Parameter Name="prm_CodigoFormato" Type="System.String" DbType="VarChar(15)" />
+    <ElementType Name="omgc_mnt_GetByIdCodeFormatosRelojesResult">
+      <Column Name="CodigoFormato" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroLong" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RegistroDeta" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTarjetaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTarjetaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionFechaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionFechaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionAnioIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionAnioFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMesIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMesFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionDiaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionDiaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionHoraIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionHoraFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMinutoIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionMinutoFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionSegundoIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionSegundoFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTeclaIni" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="PosicionTeclaFin" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetByIdCodeHorario" Method="omgc_mnt_GetByIdCodeHorario">
+    <Parameter Name="prm_CodigoHorario" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_mnt_GetByIdCodeHorarioResult">
+      <Column Name="CodigoHorario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="HorasLabor" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="HEntrada" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="HSalida" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Tolerancia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoHorario" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHorarioRefer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiaSabado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinAlmuerzo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RefrigerioSalida" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="RefrigerioEntrada" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetByIdCodeJustificaciones" Method="omgc_mnt_GetByIdCodeJustificaciones">
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <ElementType Name="omgc_mnt_GetByIdCodeJustificacionesResult">
+      <Column Name="CodigoJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="EsRemunerable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsEspecial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EnlaceJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTeclaReloj" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguNombreReloj" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguComputa" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetByIdCodePersonasAgenda" Method="omgc_mnt_GetByIdCodePersonasAgenda">
+    <Parameter Name="prm_Item" Type="System.String" DbType="VarChar(10)" />
+    <ElementType Name="omgc_mnt_GetByIdCodePersonasAgendaResult">
+      <Column Name="Item" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Anio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFinal" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertFormatosRelojes" Method="omgc_mnt_InsertFormatosRelojes">
+    <Parameter Name="prm_CodigoFormato" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_RegistroLong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_RegistroDeta" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_PosicionTarjetaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionTarjetaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionFechaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionFechaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionAnioIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionAnioFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMesIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMesFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionDiaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionDiaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionHoraIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionHoraFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMinutoIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMinutoFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionSegundoIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionSegundoFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionTeclaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionTeclaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertJustificaciones" Method="omgc_mnt_InsertJustificaciones">
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_EsRemunerable" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsEspecial" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsEliminado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EnlaceJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_CodigoArguTeclaReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguNombreReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguComputa" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_UpdateFormatosRelojes" Method="omgc_mnt_UpdateFormatosRelojes">
+    <Parameter Name="prm_CodigoFormato" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_RegistroLong" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_RegistroDeta" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="prm_PosicionTarjetaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionTarjetaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionFechaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionFechaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionAnioIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionAnioFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMesIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMesFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionDiaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionDiaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionHoraIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionHoraFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMinutoIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionMinutoFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionSegundoIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionSegundoFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionTeclaIni" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_PosicionTeclaFin" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_UpdateJustificaciones" Method="omgc_mnt_UpdateJustificaciones">
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_EsRemunerable" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsEspecial" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EsEliminado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_EnlaceJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_CodigoArguTeclaReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguNombreReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguComputa" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_UpdatePersonasAgenda" Method="omgc_mnt_UpdatePersonasAgenda">
+    <Parameter Name="prm_Item" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_CodigoPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Anio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaFinal" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetAllFromCalendarios" Method="omgc_mnt_GetAllFromCalendarios">
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAllFromCalendariosResult">
+      <Column Name="CodigoCalendario" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Anio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertCalendarios" Method="omgc_mnt_InsertCalendarios">
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_Anio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_UpdateCalendarios" Method="omgc_mnt_UpdateCalendarios">
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_Anio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_DeleteCalendarios" Method="omgc_mnt_DeleteCalendarios">
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetByIdCodeCalendarios" Method="omgc_mnt_GetByIdCodeCalendarios">
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <ElementType Name="omgc_mnt_GetByIdCodeCalendariosResult">
+      <Column Name="CodigoCalendario" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="Anio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertPersonasAgenda" Method="omgc_mnt_InsertPersonasAgenda">
+    <Parameter Name="prm_Item" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="prm_CodigoPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Anio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaFinal" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertCalendariosDias" Method="omgc_mnt_InsertCalendariosDias">
+    <Parameter Name="prm_Registro" Type="System.String" DbType="VarChar(10)" Direction="InOut" />
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="prm_CodigoArguDiaSemana" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_FechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaFinal" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoHorario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_UpdateCalendariosDias" Method="omgc_mnt_UpdateCalendariosDias">
+    <Parameter Name="prm_Registro" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="prm_CodigoArguDiaSemana" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_FechaInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaFinal" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoHorario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_DeleteCalendariosDias" Method="omgc_mnt_DeleteCalendariosDias">
+    <Parameter Name="prm_Registro" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetAllFromPersonasAgenda" Method="omgc_mnt_GetAllFromPersonasAgenda">
+    <Parameter Name="prm_CodigoPersona" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAllFromPersonasAgendaResult">
+      <Column Name="Item" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoJustificacionNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="Anio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFinal" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_DeleteMarcaciones" Method="omgc_mnt_DeleteMarcaciones">
+    <Parameter Name="prm_IdRegistro" Type="System.String" DbType="VarChar(14)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetAllFromMarcaciones" Method="omgc_mnt_GetAllFromMarcaciones">
+    <Parameter Name="prm_NumeroMarcacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_FechaHoraINI" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaHoraFIN" Type="System.DateTime" DbType="DateTime" />
+    <ElementType Name="omgc_mnt_GetAllFromMarcacionesResult">
+      <Column Name="IdRegistro" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroMarcacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaTexto" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoReloj" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="TeclaReloj" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Edicion" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetByIdCodeMarcaciones" Method="omgc_mnt_GetByIdCodeMarcaciones">
+    <Parameter Name="prm_IdRegistro" Type="System.String" DbType="VarChar(14)" />
+    <ElementType Name="omgc_mnt_GetByIdCodeMarcacionesResult">
+      <Column Name="IdRegistro" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroMarcacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaTexto" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoReloj" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="TeclaReloj" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Edicion" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertMarcaciones" Method="omgc_mnt_InsertMarcaciones">
+    <Parameter Name="prm_IdRegistro" Type="System.String" DbType="VarChar(14)" Direction="InOut" />
+    <Parameter Name="prm_NumeroMarcacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_FechaTexto" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Hora" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_FechaHora" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_TeclaReloj" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Edicion" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_UpdateMarcaciones" Method="omgc_mnt_UpdateMarcaciones">
+    <Parameter Name="prm_IdRegistro" Type="System.String" DbType="VarChar(14)" />
+    <Parameter Name="prm_NumeroMarcacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_FechaTexto" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Hora" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_FechaHora" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_TeclaReloj" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Edicion" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_pro_GetByIdCodeMarcaciones" Method="omgc_pro_GetByIdCodeMarcaciones">
+    <Parameter Name="prm_NumeroMarcacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_FechaHora" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Hora" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="omgc_pro_GetByIdCodeMarcacionesResult">
+      <Column Name="IdRegistro" Type="System.String" DbType="VarChar(14) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroMarcacion" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaTexto" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Hora" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaHora" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoReloj" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="TeclaReloj" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Edicion" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertMarcajes" Method="omgc_mnt_InsertMarcajes">
+    <Parameter Name="prm_NumeroMarcacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_FechaTexto" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_Hora" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_FechaHora" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_TeclaReloj" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_UpdateHorario" Method="omgc_mnt_UpdateHorario">
+    <Parameter Name="prm_CodigoHorario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_HorasLabor" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="prm_HEntrada" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_HSalida" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_Tolerancia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoHorario" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoHorarioRefer" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_DiaSabado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_MinAlmuerzo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_RefrigerioSalida" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_RefrigerioEntrada" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertHorario" Method="omgc_mnt_InsertHorario">
+    <Parameter Name="prm_CodigoHorario" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_HorasLabor" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="prm_HEntrada" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_HSalida" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_Tolerancia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguTipoHorario" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoHorarioRefer" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_DiaSabado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_MinAlmuerzo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_RefrigerioSalida" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_RefrigerioEntrada" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_InsertMarcacionesInterno" Method="omgc_mnt_InsertMarcacionesInterno">
+    <Parameter Name="prm_IdRegistro" Type="System.String" DbType="VarChar(14)" Direction="InOut" />
+    <Parameter Name="prm_NumeroMarcacion" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_CodigoReloj" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_TeclaReloj" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Edicion" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(20)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Asistencia.omgc_pro_GetAllFrom_Reportes" Method="omgc_pro_GetAllFrom_Reportes">
+    <ElementType Name="omgc_pro_GetAllFrom_ReportesResult">
+      <Column Name="CodigoReporte" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="ReporteName" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="Orden" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetAllFromHorario" Method="omgc_mnt_GetAllFromHorario">
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_CodigoArguTipoHorario" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAllFromHorarioResult">
+      <Column Name="CodigoHorario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="HorasLabor" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="HEntrada" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="HSalida" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Tolerancia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoHorario" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoHorarioNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoHorarioRefer" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="DiaSabado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="MinAlmuerzo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="RefrigerioSalida" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="RefrigerioEntrada" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetAllFromJustificaciones" Method="omgc_mnt_GetAllFromJustificaciones">
+    <Parameter Name="prm_CodigoJustificacion" Type="System.String" DbType="Char(3)" />
+    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAllFromJustificacionesResult">
+      <Column Name="CodigoJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="Descripcion" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="EsRemunerable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsEspecial" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EsEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="EnlaceJustificacion" Type="System.String" DbType="Char(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTeclaReloj" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguNombreReloj" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguComputa" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Asistencia.omgc_mnt_GetAllFromCalendariosDias" Method="omgc_mnt_GetAllFromCalendariosDias">
+    <Parameter Name="prm_CodigoCalendario" Type="System.String" DbType="Char(4)" />
+    <Parameter Name="prm_CodigoArguDiaSemana" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Registro" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoTabla" Type="System.String" DbType="VarChar(5)" />
+    <ElementType Name="omgc_mnt_GetAllFromCalendariosDiasResult">
+      <Column Name="CodigoCalendario" Type="System.String" DbType="Char(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguDiaSemana" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguDiaSemanaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="Registro" Type="System.String" DbType="VarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaFinal" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHorario" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoHorarioNombre" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaHoraEdita" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

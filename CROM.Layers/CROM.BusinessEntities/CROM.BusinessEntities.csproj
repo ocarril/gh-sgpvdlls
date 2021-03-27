@@ -1,0 +1,359 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8C78A9D4-C630-46E7-9709-53736F411FC0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CROM.BusinessEntities</RootNamespace>
+    <AssemblyName>CROM.BusinessEntities</AssemblyName>
+    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>CROM.BusinessEntities.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Almacen\DTO\DTOProductoEmision.cs" />
+    <Compile Include="Almacen\DTO\DTOProductoProveedorResponse.cs" />
+    <Compile Include="Almacen\DTO\DTOProductoResponse.cs" />
+    <Compile Include="Almacen\DTO\DTOMarca.cs" />
+    <Compile Include="Almacen\DTO\DTOModelo.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEMarca.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEModelo.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEProducto.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEDeposito.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEGrupo.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEInventario.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEInventarioDocumReg.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEInventarioSerie.cs" />
+    <Compile Include="Almacen\DTO\Entidades\Otras\BEParteAtributo.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEPeriodo.cs" />
+    <Compile Include="Almacen\DTO\DTOProducto.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEProductoExistencia.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEProductoFoto.cs" />
+    <Compile Include="Almacen\DTO\DTOProductoGrupo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Almacen\DTO\Entidades\BEProductoKardex.cs" />
+    <Compile Include="Almacen\DTO\Entidades\Otras\BEProductoParte.cs" />
+    <Compile Include="Almacen\DTO\Entidades\Otras\BEProductoParteAtributo.cs" />
+    <Compile Include="Almacen\DTO\Entidades\Otras\BEProductoParteCompuesta.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEProductoPrecio.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEProductoProveedor.cs" />
+    <Compile Include="Almacen\DTO\Entidades\BEProductoSeriado.cs" />
+    <Compile Include="Almacen\ModuloAlmacen.cs" />
+    <Compile Include="Asistencia\BECalendario.cs" />
+    <Compile Include="Asistencia\BECalendarioDia.cs" />
+    <Compile Include="Asistencia\Otros\BEConfiguracionSistema.cs" />
+    <Compile Include="Asistencia\BEFormatoReloj.cs" />
+    <Compile Include="Asistencia\BEHorario.cs" />
+    <Compile Include="Asistencia\BEJustificacion.cs" />
+    <Compile Include="Asistencia\BEMarcacion.cs" />
+    <Compile Include="Asistencia\BEMarcaje.cs" />
+    <Compile Include="Asistencia\BEPersonaAgenda.cs" />
+    <Compile Include="Asistencia\BESysReporte.cs" />
+    <Compile Include="Asistencia\BETimeEmpleado.cs" />
+    <Compile Include="Asistencia\BETimeMarcacion.cs" />
+    <Compile Include="Comercial\request\DTOParteDiarioRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegPagoCreditoRequest.cs" />
+    <Compile Include="Comercial\request\DTOParteDiarioTurnoRequest.cs" />
+    <Compile Include="Comercial\response\DTODocumRegPagoCreditoResponse.cs" />
+    <Compile Include="Comercial\response\DTOParteDiarioResponse.cs" />
+    <Compile Include="Comercial\response\DTOParteDiarioTurnoResponse.cs" />
+    <Compile Include="SUNAT\BESendBillDocumentRequest.cs" />
+    <Compile Include="SUNAT\FirmadoResponse.cs" />
+    <Compile Include="SUNAT\IDocumentoElectronico.cs" />
+    <Compile Include="SUNAT\request\BESettingsSendSUNATRequest.cs" />
+    <Compile Include="SUNAT\response\BEDocumentoSUNATPagoCreditoResponse.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\SunatCosts.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\SunatTransaction.cs" />
+    <Compile Include="SUNAT\ubl21\constans\EspacioNombres.cs" />
+    <Compile Include="SUNAT\ubl21\constans\Formatos.cs" />
+    <Compile Include="BEBase.cs" />
+    <Compile Include="BEBaseRequest.cs" />
+    <Compile Include="Caja\Entidades\BECajaRegistro.cs" />
+    <Compile Include="Caja\Entidades\BECuentaBancaria.cs" />
+    <Compile Include="Caja\Entidades\BEFormaDePago.cs" />
+    <Compile Include="Caja\ModuloCajaBanco.cs" />
+    <Compile Include="Caja\request\DTOCajaRegistroConciliarRequest.cs" />
+    <Compile Include="Caja\request\DTOCajaRegistroRequest.cs" />
+    <Compile Include="Caja\request\DTOCuentaBancariaReques.cs" />
+    <Compile Include="Caja\response\DTOCajaRegistroResponse.cs" />
+    <Compile Include="Caja\response\DTOCuentaBancariaResponse.cs" />
+    <Compile Include="Comercial\DTO\DTOImpuestoResponse.cs" />
+    <Compile Include="Comercial\DTO\DTODocumentoSerieResponse.cs" />
+    <Compile Include="Comercial\DTO\DTODocumentoImpuestoResponse.cs" />
+    <Compile Include="Comercial\DTO\DTODocumentoResponse.cs" />
+    <Compile Include="Comercial\request\DTOCuentaCorrienteRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumentoDashBoardRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegBaseRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegCOTIZARequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegDetalleRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegFCTBVTProvRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegGUIAREMRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegFCTBVTRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegNINNSLRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegUpdateCancelPayRequest.cs" />
+    <Compile Include="Comercial\request\DTODocumRegUpdateDesasignaRefers.cs" />
+    <Compile Include="Comercial\request\DTODocumRegUpdateCodEstadoRequest.cs" />
+    <Compile Include="Comercial\request\DTOParteDiarioCloseRequest.cs" />
+    <Compile Include="Comercial\request\DTOUltimoNumeroRequest.cs" />
+    <Compile Include="Comercial\response\DTOCuentaCorrienteResponse.cs" />
+    <Compile Include="Comercial\response\DTODocumentoDashBoardResponse.cs" />
+    <Compile Include="Comercial\response\DTODocumRegPrintResponse.cs" />
+    <Compile Include="Comercial\response\DTODocumentoEstadoResponse.cs" />
+    <Compile Include="Comercial\response\DTODocumRegDetalleResponseSave.cs" />
+    <Compile Include="Comercial\response\DTODocumRegReferenciaResponse.cs" />
+    <Compile Include="Comercial\response\DTOSunatDocumRegResponse.cs" />
+    <Compile Include="Comercial\request\DTODocumRegNCRNDBRequest.cs" />
+    <Compile Include="Comercial\response\DTODocumRegResponse.cs" />
+    <Compile Include="Comercial\DTO\DTOTipoDeCambio.cs" />
+    <Compile Include="Comercial\DTO\DTODocumRegForReferencia.cs" />
+    <Compile Include="Comercial\response\DTODocumRegDetalleResponse.cs" />
+    <Compile Include="Comercial\DTO\DTODocumentoSerieEmpleadoResponse.cs" />
+    <Compile Include="Comercial\DTO\DTOProductoPrecioResponse.cs" />
+    <Compile Include="Comercial\DTO\DTODocumento.cs" />
+    <Compile Include="Comercial\DTO\DTODocumentoSerie.cs" />
+    <Compile Include="Comercial\response\DTODocumRegPagedResponse.cs" />
+    <Compile Include="Comercial\Entidades\BEDocumentoSerieEmpleado.cs" />
+    <Compile Include="Maestros\DTO\DTOPersonaAtributo.cs" />
+    <Compile Include="Maestros\DTO\DTOEmpresaEmisorResponse.cs" />
+    <Compile Include="Maestros\DTO\DTOPersonaContactoResponse.cs" />
+    <Compile Include="Maestros\DTO\DTOPersonaResponse.cs" />
+    <Compile Include="Maestros\DTO\DTOPersonasDomicilioResponse.cs" />
+    <Compile Include="Maestros\DTO\DTOTablaRegistro.cs" />
+    <Compile Include="Maestros\DTO\vwDocumRegVendedor.cs" />
+    <Compile Include="Comercial\Entidades\BEComprobanteEmision.cs" />
+    <Compile Include="Comercial\Entidades\BEComprobanteEmisionDetalle.cs" />
+    <Compile Include="Comercial\Entidades\Otros\BEComprobanteEmisionDetalleNrosDeSerie.cs" />
+    <Compile Include="Comercial\Entidades\Otros\BEComprobanteEmisionDetalleResumen.cs" />
+    <Compile Include="Comercial\Entidades\BEComprobanteEmisionImpuesto.cs" />
+    <Compile Include="Comercial\Entidades\BEDocumento.cs" />
+    <Compile Include="Comercial\Entidades\BEDocumentoImpuesto.cs" />
+    <Compile Include="Comercial\Entidades\BEDocumentoSerie.cs" />
+    <Compile Include="Comercial\Entidades\BECondicion.cs" />
+    <Compile Include="Comercial\Entidades\BECuentaCorriente.cs" />
+    <Compile Include="Comercial\Entidades\BEDocumentoEstado.cs" />
+    <Compile Include="Comercial\Entidades\BEDocumRegSerie.cs" />
+    <Compile Include="Comercial\Entidades\Otros\BEGastoDeAduana.cs" />
+    <Compile Include="Comercial\Entidades\BELetraDeCambio.cs" />
+    <Compile Include="Comercial\Entidades\BEListaDePrecio.cs" />
+    <Compile Include="Comercial\Entidades\BEListaDePrecioDetalle.cs" />
+    <Compile Include="Comercial\Entidades\BEParteDiario.cs" />
+    <Compile Include="Comercial\Entidades\BEParteDiarioTurno.cs" />
+    <Compile Include="Comercial\Entidades\BEPuntoDeVenta.cs" />
+    <Compile Include="Comercial\Entidades\BETipoDeCambio.cs" />
+    <Compile Include="Comercial\Entidades\BEImpuesto.cs" />
+    <Compile Include="Comercial\ModuloComercial.cs" />
+    <Compile Include="Importaciones\DTO\DTOAsignaCosto.cs" />
+    <Compile Include="Importaciones\DTO\DTOCostoDetalle.cs" />
+    <Compile Include="Importaciones\DTO\DTODocumento.cs" />
+    <Compile Include="Importaciones\DTO\DTODUA.cs" />
+    <Compile Include="Importaciones\DTO\DTODUAProdu.cs" />
+    <Compile Include="Importaciones\DTO\DTOProveedor.cs" />
+    <Compile Include="Importaciones\Entidades\BEOIDocumento.cs" />
+    <Compile Include="Importaciones\Entidades\BEOIDocumReg.cs" />
+    <Compile Include="Importaciones\Entidades\BEOIDUA.cs" />
+    <Compile Include="Importaciones\Entidades\BEOIDUACosto.cs" />
+    <Compile Include="Importaciones\Entidades\BEOIDUAProducto.cs" />
+    <Compile Include="Importaciones\Entidades\BEOIDUASerie.cs" />
+    <Compile Include="Importaciones\Entidades\BEOrdenImportacion.cs" />
+    <Compile Include="Importaciones\Entidades\BEPlantillaCosto.cs" />
+    <Compile Include="Importaciones\ModuloImportaciones.cs" />
+    <Compile Include="Maestros\Entidades\BEAuditoriaSistema.cs" />
+    <Compile Include="Maestros\Entidades\BEConfiguracion.cs" />
+    <Compile Include="Maestros\Entidades\BEFeriado.cs" />
+    <Compile Include="Maestros\Entidades\BEPersona.cs" />
+    <Compile Include="Maestros\Entidades\BEPersonaAsignacion.cs" />
+    <Compile Include="Maestros\Entidades\BEPersonaAtributo.cs" />
+    <Compile Include="Maestros\Entidades\BEPersonaDomicilio.cs" />
+    <Compile Include="Maestros\Entidades\Otras\BEPersonaCalendario.cs" />
+    <Compile Include="Maestros\Entidades\BEPersonaDato.cs" />
+    <Compile Include="Maestros\Entidades\BEPersonaFotoLogo.cs" />
+    <Compile Include="Maestros\Entidades\BERegistro.cs" />
+    <Compile Include="Maestros\Entidades\BEReporteSistema.cs" />
+    <Compile Include="Maestros\Entidades\BETabla.cs" />
+    <Compile Include="Maestros\Entidades\BEUbigeo.cs" />
+    <Compile Include="Maestros\ModuloMaestros.cs" />
+    <Compile Include="Parqueo\Entidades\BEMovimiento.cs" />
+    <Compile Include="Parqueo\Entidades\BETarifa.cs" />
+    <Compile Include="Parqueo\Entidades\BEVehiculo.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proyectos\DTO\DTODocumentoPry.cs" />
+    <Compile Include="Proyectos\DTO\DTODocumReg.cs" />
+    <Compile Include="Proyectos\DTO\DTOEquipo.cs" />
+    <Compile Include="Proyectos\DTO\DTOMantenimiento.cs" />
+    <Compile Include="Proyectos\DTO\DTOProyecto.cs" />
+    <Compile Include="Proyectos\ModuloProyectos.cs" />
+    <Compile Include="Proyectos\Entidades\BEProyecto.cs" />
+    <Compile Include="Proyectos\Entidades\BEPYDocumento.cs" />
+    <Compile Include="Proyectos\Entidades\BEPyDocumReg.cs" />
+    <Compile Include="Proyectos\Entidades\BEPyEquipo.cs" />
+    <Compile Include="Proyectos\Entidades\BEPyMantenimiento.cs" />
+    <Compile Include="RecursosHumanos\BaseFiltroRH.cs" />
+    <Compile Include="RecursosHumanos\DTO\DTOEmpleadoResponse.cs" />
+    <Compile Include="RecursosHumanos\BEEmpleado.cs" />
+    <Compile Include="Comercial\DTO\vwComprobanteEmision.cs" />
+    <Compile Include="Comercial\DTO\vwProductoConsignacion.cs" />
+    <Compile Include="Comercial\DTO\vwProductoInventario.cs" />
+    <Compile Include="RecursosHumanos\DTO\BEEmpleadoRequest.cs" />
+    <Compile Include="RecursosHumanos\DTO\BEEmpleadoResponse.cs" />
+    <Compile Include="SUNAT\request\BEArchivoSunatRequest.cs" />
+    <Compile Include="SUNAT\response\BEDocumentoSUNATRelacionadoResponse.cs" />
+    <Compile Include="SUNAT\response\BEDocumentoSUNATLeyendaResponse.cs" />
+    <Compile Include="SUNAT\request\BEUnsubscribeDocumentValidRequest.cs" />
+    <Compile Include="SUNAT\request\BEUnsubscribeDocumentRequest.cs" />
+    <Compile Include="SUNAT\request\BEUpdateSunatSentXMLRequest.cs" />
+    <Compile Include="SUNAT\request\BEUpdateSunatValidXMLRequest.cs" />
+    <Compile Include="SUNAT\request\BEBuscaSunatSelectRequest.cs" />
+    <Compile Include="SUNAT\request\BEBuscaSunatRequest.cs" />
+    <Compile Include="SUNAT\request\BEFacturaDetalleRequest.cs" />
+    <Compile Include="SUNAT\request\BEFacturaRequest.cs" />
+    <Compile Include="SUNAT\response\BEFacturaDetalleResponse.cs" />
+    <Compile Include="SUNAT\response\BEFacturaPendienteResponse.cs" />
+    <Compile Include="SUNAT\response\BEFacturaResponse.cs" />
+    <Compile Include="SUNAT\response\DTOCertificadoDigitalResponse.cs" />
+    <Compile Include="SUNAT\response\DTODocumRegFEDetalleResponse.cs" />
+    <Compile Include="SUNAT\response\DTODocumRegFEResponse.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\CarrierParty.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\DespatchLine.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\DespatchLineItem.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\PostalAddress.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\ShipmentStage.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\TransportEquipment.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\TransportHandlingUnit.cs" />
+    <Compile Include="SUNAT\ubl21\basic\InvoicedQuantity.cs" />
+    <Compile Include="SUNAT\ubl21\basic\OrderTypeCode.cs" />
+    <Compile Include="SUNAT\ubl21\basic\PartyIdentificationId.cs" />
+    <Compile Include="SUNAT\ubl21\DespatchAdvice.cs" />
+    <Compile Include="SUNAT\ubl21\interfaces\IEstructuraXml.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\AccountingSupplierParty.cs" />
+    <Compile Include="SUNAT\ubl21\agregateSunat\AdditionalInformation.cs" />
+    <Compile Include="SUNAT\ubl21\agregateSunat\AdditionalMonetaryTotal.cs" />
+    <Compile Include="SUNAT\ubl21\agregateSunat\AdditionalProperty.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\AgentParty.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\Country.cs" />
+    <Compile Include="SUNAT\ubl21\structures\DigitalSignatureAttachment.cs" />
+    <Compile Include="SUNAT\ubl21\extension\ExtensionContent.cs" />
+    <Compile Include="SUNAT\ubl21\structures\ExternalReference.cs" />
+    <Compile Include="SUNAT\ubl21\structures\InvoiceDocumentReference.cs" />
+    <Compile Include="SUNAT\ubl21\structures\OrderReference.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\Party.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\PartyIdentification.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\PartyLegalEntity.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\PartyName.cs" />
+    <Compile Include="SUNAT\ubl21\basic\PayableAmount.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\Shipment.cs" />
+    <Compile Include="SUNAT\ubl21\structures\SignatoryParty.cs" />
+    <Compile Include="SUNAT\ubl21\structures\SignatureCac.cs" />
+    <Compile Include="SUNAT\ubl21\agregateSunat\SunatEmbededDespatchAdvice.cs" />
+    <Compile Include="SUNAT\ubl21\aggregate\SunatRoadTransport.cs" />
+    <Compile Include="SUNAT\ubl21\extension\UblExtension.cs" />
+    <Compile Include="SUNAT\ubl21\extension\UblExtensions.cs" />
+    <Compile Include="Temporales\BEDocumRegDetalleTMP.cs" />
+    <Compile Include="Temporales\request\BEUpdateDetallecodRegMonedaRequest.cs" />
+    <Compile Include="Temporales\request\BEInsertDetalleRequest.cs" />
+    <Compile Include="Temporales\request\BEBuscaDetalleRequest.cs" />
+    <Compile Include="Temporales\response\BEDocumRegDetalleTMPResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="CROM.BusinessEntities.snk" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

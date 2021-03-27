@@ -1,0 +1,490 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Database Name="BD_CROMGestionParqueo" Class="_ParqueoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=XNTWS27;Initial Catalog=BD_CROMGestionParqueo;User ID=sa" SettingsObjectName="CROM.GestionParqueo.DataAccess.Properties.Settings" SettingsPropertyName="BD_CROMGestionParqueoConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="Parqueo.omgc_mnt_Delete_Tarifa" Method="omgc_mnt_Delete_Tarifa">
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="Char(5)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Delete_Vehiculo" Method="omgc_mnt_Delete_Vehiculo">
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="Char(10)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Insert_Vehiculo" Method="omgc_mnt_Insert_Vehiculo">
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="p_codPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegMarcaModelo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegColorInterno" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegColorExterno" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegTipoAbono" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codNroChasis" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_codNroMotor" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_perAnio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_gloObservacion" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Find_Tarifa" Method="omgc_mnt_Find_Tarifa">
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="Char(5)" />
+    <ElementType Name="omgc_mnt_Find_TarifaResult">
+      <Column Name="codTarifa" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioBase" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoMinimo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioAdicional1" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoAplicaDesde" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioAdicional2" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoFrecuencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="perHoraDeEstadia" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perHoraAplicaDespuesDe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoTolerancia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_GetAll_Tarifa" Method="omgc_mnt_GetAll_Tarifa">
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAll_TarifaResult">
+      <Column Name="codTarifa" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioBase" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoMinimo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioAdicional1" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoAplicaDesde" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioAdicional2" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoFrecuencia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="perHoraDeEstadia" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="perHoraAplicaDespuesDe" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="perMinutoTolerancia" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Update_Tarifa" Method="omgc_mnt_Update_Tarifa">
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codProducto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_monPrecioBase" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perMinutoMinimo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_monPrecioAdicional1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perMinutoAplicaDesde" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_monPrecioAdicional2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perMinutoFrecuencia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_perHoraDeEstadia" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perHoraAplicaDespuesDe" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_perMinutoTolerancia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Insert_Tarifa" Method="omgc_mnt_Insert_Tarifa">
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="Char(5)" Direction="InOut" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codProducto" Type="System.String" DbType="VarChar(20)" />
+    <Parameter Name="p_desNombre" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="p_monPrecioBase" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perMinutoMinimo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_monPrecioAdicional1" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perMinutoAplicaDesde" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_monPrecioAdicional2" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perMinutoFrecuencia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_perHoraDeEstadia" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_perHoraAplicaDespuesDe" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_perMinutoTolerancia" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Update_Vehiculo" Method="omgc_mnt_Update_Vehiculo">
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="p_codPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegMarcaModelo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegColorInterno" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegColorExterno" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegTipoAbono" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codNroChasis" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_codNroMotor" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="p_perAnio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_gloObservacion" Type="System.String" DbType="VarChar(1000)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Find_Vehiculo" Method="omgc_mnt_Find_Vehiculo">
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="omgc_mnt_Find_VehiculoResult">
+      <Column Name="codVehiculo" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaCliente" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMarcaModelo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegColorInterno" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegColorExterno" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoAbono" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codNroChasis" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="codNroMotor" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="perAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMarcaModeloNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegColorExternoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegColorInternoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoAbonoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_GetAll_Vehiculo" Method="omgc_mnt_GetAll_Vehiculo">
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegMarcaModelo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegColorExterno" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_mnt_GetAll_VehiculoResult">
+      <Column Name="codVehiculo" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaCliente" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMarcaModelo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegColorInterno" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegColorExterno" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoAbono" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codNroChasis" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="codNroMotor" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="perAnio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(1000)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMarcaModeloNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegColorExternoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegColorInternoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoAbonoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Update_Movimiento" Method="omgc_mnt_Update_Movimiento">
+    <Parameter Name="p_codMovimiento" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegSectorParqueo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_fecHoraIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="p_monTarifaBase" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_gloObservacion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indAbonado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Insert_Movimiento" Method="omgc_mnt_Insert_Movimiento">
+    <Parameter Name="p_codMovimiento" Type="System.String" DbType="Char(20)" Direction="InOut" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="Char(10)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegSectorParqueo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_fecHoraIngreso" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="p_monTarifaBase" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_gloObservacion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indAbonado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_mnt_Insert_MovimientoResult">
+      <Column Name="Column1" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Delete_Movimiento" Method="omgc_mnt_Delete_Movimiento">
+    <Parameter Name="p_codMovimiento" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="p_UsuarioEdita" Type="System.String" DbType="VarChar(40)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_pro_UpdateindCancelado_Movimiento" Method="omgc_pro_UpdateindCancelado_Movimiento">
+    <Parameter Name="p_codMovimiento" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="p_indCancelado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_pro_UpdateindFacturado_Movimiento" Method="omgc_pro_UpdateindFacturado_Movimiento">
+    <Parameter Name="p_codMovimiento" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="p_indFacturado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_codDocumento" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="p_numDocumento" Type="System.String" DbType="VarChar(16)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_pro_UpdateFecHoraSalida_Movimiento" Method="omgc_pro_UpdateFecHoraSalida_Movimiento">
+    <Parameter Name="p_codMovimiento" Type="System.String" DbType="Char(20)" />
+    <Parameter Name="p_fecHoraSalida" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="p_perTotalHora" Type="System.String" DbType="Char(7)" />
+    <Parameter Name="p_perTotalHoraFraccion" Type="System.String" DbType="Char(7)" />
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="Char(5)" />
+    <Parameter Name="p_monTarifaBase" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_monTotalTarifado" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_monTotalNoche" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_monTotalDscto" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_monMontoPagado" Type="System.Decimal" DbType="Decimal" />
+    <Parameter Name="p_gloObservacion" Type="System.String" DbType="VarChar(100)" />
+    <Parameter Name="p_indAbonado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="p_segMaquinaOrigen" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Parqueo.omgc_pro_FindFecHoraSalida_Movimiento" Method="omgc_pro_FindFecHoraSalida_Movimiento">
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="Char(10)" />
+    <ElementType Name="omgc_pro_FindFecHoraSalida_MovimientoResult">
+      <Column Name="codMovimiento" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codVehiculo" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegSectorParqueo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codPersonaCliente" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="fecHoraIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecHoraSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="perTotalHora" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="perTotalHoraFraccion" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="codTarifa" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="monTarifaBase" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="monTotalTarifado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalNoche" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalDscto" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monMontoPagado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indAbonado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indFacturado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaEmpresa" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codVehiculoNombre" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegSectorParqueoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codTarifaNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codRegEstadoDocumento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="CodigoParte" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="indCancelado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_GetAll_Movimiento" Method="omgc_mnt_GetAll_Movimiento">
+    <Parameter Name="p_FechaIngreso_Desde" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="p_FechaIngreso_Hasta" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="p_indAbonado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indFacturado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="p_TotalOcupados" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <ElementType Name="omgc_mnt_GetAll_MovimientoResult">
+      <Column Name="codMovimiento" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codVehiculo" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegSectorParqueo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codPersonaCliente" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="fecHoraIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecHoraSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="perTotalHora" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="perTotalHoraFraccion" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="codTarifa" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="monTarifaBase" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="monTotalTarifado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalNoche" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalDscto" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monMontoPagado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indAbonado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indFacturado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaEmpresa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codVehiculoNombre" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPersonaClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegSectorParqueoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codTarifaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codRegEstadoDocumento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="CodigoParte" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="indCancelado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_rpt_GetAll_Movimiento" Method="omgc_rpt_GetAll_Movimiento">
+    <Parameter Name="p_FechaIngreso_Desde" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="p_FechaIngreso_Hasta" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="p_codPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codVehiculo" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codRegTipoVehiculo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codPersonaCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codTarifa" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="p_indAbonado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_indFacturado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(30)" />
+    <ElementType Name="omgc_rpt_GetAll_MovimientoResult">
+      <Column Name="codMovimiento" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codVehiculo" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegSectorParqueo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codPersonaCliente" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="fecHoraIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecHoraSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="perTotalHora" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="perTotalHoraFraccion" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="codTarifa" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="monTarifaBase" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="monTotalTarifado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalNoche" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalDscto" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monMontoPagado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indAbonado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indFacturado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaEmpresa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codVehiculoNombre" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPersonaClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegSectorParqueoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codTarifaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codRegEstadoDocumento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="CodigoParte" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="indCancelado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Parqueo.omgc_mnt_Find_Movimiento" Method="omgc_mnt_Find_Movimiento">
+    <Parameter Name="p_codMovimiento" Type="System.String" DbType="Char(20)" />
+    <ElementType Name="omgc_mnt_Find_MovimientoResult">
+      <Column Name="codMovimiento" Type="System.String" DbType="Char(20) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresa" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codVehiculo" Type="System.String" DbType="Char(10) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoVehiculo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegSectorParqueo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codPersonaCliente" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="fecHoraIngreso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecHoraSalida" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="perTotalHora" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="perTotalHoraFraccion" Type="System.String" DbType="Char(7)" CanBeNull="true" />
+      <Column Name="codTarifa" Type="System.String" DbType="Char(5) NOT NULL" CanBeNull="false" />
+      <Column Name="monTarifaBase" Type="System.Decimal" DbType="Decimal(0,0) NOT NULL" CanBeNull="false" />
+      <Column Name="monTotalTarifado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalNoche" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monTotalDscto" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="monMontoPagado" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indAbonado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indFacturado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaHoraCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaEmpresa" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codVehiculoNombre" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoVehiculoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPersonaClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegSectorParqueoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codTarifaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codRegEstadoDocumento" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(0,0)" CanBeNull="true" />
+      <Column Name="CodigoParte" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="indCancelado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>

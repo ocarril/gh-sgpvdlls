@@ -1,0 +1,436 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_ComercialMechatronics" Class="_ProyectoDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=MUAKS-PC\CROMSYSTEM;Initial Catalog=BD_ComercialMechatronics;User ID=sa" SettingsObjectName="CROM.Proyectos.DataAccess.Properties.Settings" SettingsPropertyName="BD_ComercialMechatronicsConnectionString" Provider="System.Data.SqlClient" />
+  <Function Name="Proyectos.omgc_D_PYDocumento" Method="omgc_D_PYDocumento">
+    <Parameter Name="prm_codPYDocumento" Type="System.Int32" DbType="Int" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_U_PYDocumento" Method="omgc_U_PYDocumento">
+    <Parameter Name="prm_codPYDocumento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombreArchivo" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_desGlosa" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segFechaCrea" Type="System.DateTime" DbType="DateTime" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_I_Proyecto" Method="omgc_I_Proyecto">
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codPerCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_fecInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecFinal" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_S_Proyecto" Method="omgc_S_Proyecto">
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPerCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstado" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <ElementType Name="omgc_S_ProyectoResult">
+      <Column Name="codProyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPerCliente" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="fecInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecFinal" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_U_Proyecto" Method="omgc_U_Proyecto">
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPerCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_fecInicio" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecFinal" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_I_PYDocumento" Method="omgc_I_PYDocumento">
+    <Parameter Name="prm_codPYDocumento" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombreArchivo" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_desGlosa" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segFechaCrea" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_S_PYDocumento" Method="omgc_S_PYDocumento">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenadoPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_codPYDocumento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_nomCliente" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_desNombreArchivo" Type="System.String" DbType="VarChar(35)" />
+    <Parameter Name="prm_desGlosa" Type="System.String" DbType="VarChar(35)" />
+    <ElementType Name="omgc_S_PYDocumentoResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codPYDocumento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="desNombreArchivo" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="desGlosa" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codProyectoNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codProyectoCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegEstadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="desVistaParcial" Type="System.String" DbType="VarChar(11)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_D_PyDocumReg" Method="omgc_D_PyDocumReg">
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_D_PyEquipo" Method="omgc_D_PyEquipo">
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_D_PyMantenimiento" Method="omgc_D_PyMantenimiento">
+    <Parameter Name="prm_codPyMantenimiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_I_PyDocumReg" Method="omgc_I_PyDocumReg">
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloNota" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_U_PyDocumReg" Method="omgc_U_PyDocumReg">
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloNota" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_U_PyEquipo" Method="omgc_U_PyEquipo">
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecCompra" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecInstalacion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecVencGarantia" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloNota" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_U_PyMantenimiento" Method="omgc_U_PyMantenimiento">
+    <Parameter Name="prm_codPyMantenimiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecProgramada" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecRealizada" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloObservacion" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codEmpleadoResp" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_S_PyDocumReg" Method="omgc_S_PyDocumReg">
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PyDocumRegResult">
+      <Column Name="codPyDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gloNota" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_I_PyMantenimiento" Method="omgc_I_PyMantenimiento">
+    <Parameter Name="prm_codPyMantenimiento" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecProgramada" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecRealizada" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloObservacion" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codEmpleadoResp" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_S_Proyecto_Paged" Method="omgc_S_Proyecto_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenadoPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codPerCliente" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codRegEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_desNombre" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_fecInicio" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinal" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_Proyecto_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codProyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPerCliente" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="desNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="fecInicio" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecFinal" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codProyectoCliente" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegEstadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_D_Proyecto" Method="omgc_D_Proyecto">
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_S_DocumReg_codCliente" Method="omgc_S_DocumReg_codCliente">
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_DocumReg_codClienteResult">
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="desmonDocumento" Type="System.String" DbType="VarChar(157)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_S_PyDocumReg_Paged" Method="omgc_S_PyDocumReg_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenadoPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PyDocumReg_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codPyDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gloNota" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="fecEmision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="desMoneda" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="monTotal" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="monTCVenta" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumEstado" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_S_DocumRegDetalle_codProyecto" Method="omgc_S_DocumRegDetalle_codProyecto">
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_DocumRegDetalle_codProyectoResult">
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="cntCantidad" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioVenta" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="desProducto" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="indSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_I_PyEquipo" Method="omgc_I_PyEquipo">
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecCompra" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecInstalacion" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_fecVencGarantia" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_gloNota" Type="System.String" DbType="VarChar(250)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Proyectos.omgc_S_PyEquipo_Paged" Method="omgc_S_PyEquipo_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenadoPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecIniCompra" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinCompra" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecIniGarantia" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinGarantia" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PyEquipo_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codPyEquipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPyDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecCompra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecInstalacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecVencGarantia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codDocumEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gloNota" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="cntCantidad" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioVenta" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="indSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumEstadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_S_PyEquipo" Method="omgc_S_PyEquipo">
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPyDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumRegDetalle" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecIniCompra" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinCompra" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecIniGarantia" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinGarantia" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PyEquipoResult">
+      <Column Name="codPyEquipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPyDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecCompra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecInstalacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecVencGarantia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codDocumEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gloNota" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="cntCantidad" Type="System.Decimal" DbType="Decimal(16,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monPrecioVenta" Type="System.Decimal" DbType="Decimal(17,6)" CanBeNull="true" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="indSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumEstadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_S_PyMantenimiento_Paged" Method="omgc_S_PyMantenimiento_Paged">
+    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_OrdenadoPor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codPyMantenimiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codEmpleadoResp" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecIniProgram" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinProgram" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PyMantenimiento_PagedResult">
+      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
+      <Column Name="codPyMantenimiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecProgramada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecRealizada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codDocumEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codPyEquipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpleadoResp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codProyectoNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumEstadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCompra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecInstalacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecVencGarantia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="codPerClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="Proyectos.omgc_S_PyMantenimiento" Method="omgc_S_PyMantenimiento">
+    <Parameter Name="prm_codPyMantenimiento" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codProyecto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codPyEquipo" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codEmpleadoResp" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_fecIniProgram" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_fecFinProgram" Type="System.String" DbType="VarChar(8)" />
+    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_PyMantenimientoResult">
+      <Column Name="codPyMantenimiento" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codProyecto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="fecProgramada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecRealizada" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codDocumEstado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="gloObservacion" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codPyEquipo" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpleadoResp" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codProyectoNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumEstadoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecCompra" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecInstalacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecVencGarantia" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
+      <Column Name="codPerClienteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indSeriado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+</Database>
