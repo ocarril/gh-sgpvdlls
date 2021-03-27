@@ -19,7 +19,7 @@
                 // This enables the storage emulator when running locally using the Azure compute emulator.
                 if (account == "{StorageAccountName}")
                 {
-                    return CloudStorageAccount.DevelopmentStorageAccount;
+                    return CloudStorageAccount.DevelopmentStorageAccount; 
                 }
 
                 //string key = CloudConfigurationManager.GetSetting("StorageAccountAccessKey");
