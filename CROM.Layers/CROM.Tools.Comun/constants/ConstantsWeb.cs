@@ -247,6 +247,8 @@
           { 3024,  "Documento [ {0} - {1} ] FUE enviado a SUNAT con EXITO."},
           { 3025,  "Documento [ {0} - {1} ] NO FUÉ enviado a SUNAT con EXITO." },
           { 3026,  "No se ha generado documento XML de [ {0} - {1} ] para enviar a SUNAT." },
+          { 3027,  "Archivos planos SUNAT del documento no se ha creado con EXITO." },
+          { 3028,  "Archivos para SFS creados OK N°: [{0}] - : [{1}]" },
         };
 
     }
