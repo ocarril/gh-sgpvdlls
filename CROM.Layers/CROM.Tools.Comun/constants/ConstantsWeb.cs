@@ -29,6 +29,8 @@
         public const string DEFAULT_Clave = "OMcrGCpn$";
         public const string DEFAULT_SeguridadKey = "CROMGCPN";
 
+        public const string DEFAULT_OK = "OK";
+
         // ESTADO DE LA LETRA DE CAMBIO
         public const int DEFAULT_EstadoDeLetra_POR_PAGAR = 52;
         public const int DEFAULT_EstadoDeLetra_PAGADA_CANCELADA = 53;
@@ -249,6 +251,10 @@
           { 3026,  "No se ha generado documento XML de [ {0} - {1} ] para enviar a SUNAT." },
           { 3027,  "Archivos planos SUNAT del documento no se ha creado con EXITO." },
           { 3028,  "Archivos para SFS creados OK N°: [{0}] - : [{1}]" },
+          { 3029,  "Documento [ {0} - {1} / .ZIP ] FUE creado con EXITO."},
+          { 3030,  "No se ha creado Zip de Documento [ {0} - {1} ]."},
+          { 3031,  "Documento [ {2} ] CREADO, FIRMADO por Enviar a SUNAT N°: [{0}] - [{1}]"},
+          { 3032,  "Documento [ {2} ] CREADO, FIRMADO y ENVIADO a  SUNAT N°: [{0}] - [{1}]"},
         };
 
     }

@@ -24,10 +24,13 @@ namespace CROM.BusinessEntities.SUNAT.request
 
         public string PathRutaSendWSSigned { get; set; }
 
+        public string PathRutaIMGCodBarras { get; set; }
+
 
         public string PathRutaCertificado { get; set; }
 
         public string PasswordCertificado { get; set; }
+
 
         public string PathRutaSendWSXMLFile { get; set; }
 
@@ -41,5 +44,10 @@ namespace CROM.BusinessEntities.SUNAT.request
         [JsonIgnore]
         public string UserLoginCurrent { get; set; }
 
+        [JsonIgnore]
+        public bool indEnvioDirectoSUNAT { get; set; }
+
+        [JsonIgnore]
+        public string numDocumento { get; set; }
     }
 }

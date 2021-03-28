@@ -243,5 +243,7 @@
         public string numContenedor { get; set; }
 
         #endregion
+
+        public string nomFileCodBarras { get; set; }
     }
 }

@@ -2299,6 +2299,7 @@ namespace CROM.GestionComercial.BusinessLogic
                     comprobanteEmisionDetalle.SegUsuarioCrea = comprobanteEmision.SegUsuarioCrea;
                     comprobanteEmisionDetalle.SegMaquina = comprobante.segMaquinaCrea;
                     comprobanteEmisionDetalle.UnitDescuento = comprobanteEmisionDetalle.UnitDescuento / 100;
+
                     /*  G U A R D A - En DocumRegDetallee  */
                     SUCEDE_DETALLE = oiComprobanteEmisionDetalleData.Insert(comprobanteEmisionDetalle);
                     if (SUCEDE_DETALLE < 1 || !SUCEDE_DETALLE.HasValue)
@@ -2630,27 +2631,30 @@ namespace CROM.GestionComercial.BusinessLogic
 
                         // SE ASIGNA EL ID del Documento Emitido a los DOCUMENTOS Referenciados
                         string refEstadoDocum = string.Empty;
-                        if (comprobante.Abreviatura == HelpDocumentos.Tipos.NCR.ToString() ||
+                        if (//comprobante.Abreviatura == HelpDocumentos.Tipos.NCR.ToString() ||
                             comprobante.Abreviatura == HelpDocumentos.Tipos.NDB.ToString())
                             refEstadoDocum = itemComprobantesREF.CodigoArguEstEMIDefault;
                         else
                             refEstadoDocum = itemComprobantesREF.CodigoArguEstPRODefault;
 
-                        String[] documentosORIGEN = comprobanteEmision.NumeroComprobanteORIGEN.Trim().Split(new Char[] { ' ' });
-                        foreach (string IdNumeroORIGEN in documentosORIGEN)
+                        if (comprobante.Abreviatura != HelpDocumentos.Tipos.NCR.ToString())
                         {
-                            /*  G U A R D A - En comprobanteEmision - UpdateRefAsigna  */
-                            SUCEDE_DOC_REFER = comprobanteEmisionData.UpdateRefAsigna(comprobanteEmision.codDocumReg,
-                                                                                      comprobanteEmision.CodigoComprobanteORIGEN,
-                                                                                      IdNumeroORIGEN,
-                                                                                      comprobanteEmision.SegUsuarioCrea,
-                                                                                      refEstadoDocum,
-                                                                                      comprobanteEmision.codMotivoNCR);
-                            if (!SUCEDE_DOC_REFER)
+                            String[] documentosORIGEN = comprobanteEmision.NumeroComprobanteORIGEN.Trim().Split(new Char[] { ' ' });
+                            foreach (string IdNumeroORIGEN in documentosORIGEN)
                             {
-                                returnValor.Exitosa = SUCEDE_DOC_REFER;
-                                returnValor.Message = HelpMessages.gc_DOCUM_NroDefinido;
-                                return returnValor;
+                                /*  G U A R D A - En comprobanteEmision - UpdateRefAsigna  */
+                                SUCEDE_DOC_REFER = comprobanteEmisionData.UpdateRefAsigna(comprobanteEmision.codDocumReg,
+                                                                                          comprobanteEmision.CodigoComprobanteORIGEN,
+                                                                                          IdNumeroORIGEN,
+                                                                                          comprobanteEmision.SegUsuarioCrea,
+                                                                                          refEstadoDocum,
+                                                                                          comprobanteEmision.codMotivoNCR);
+                                if (!SUCEDE_DOC_REFER)
+                                {
+                                    returnValor.Exitosa = SUCEDE_DOC_REFER;
+                                    returnValor.Message = HelpMessages.gc_DOCUM_NroDefinido;
+                                    return returnValor;
+                                }
                             }
                         }
                     }
