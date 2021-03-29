@@ -244,37 +244,85 @@
 
         #region DATOS DE LA GUIA DE REMISION
 
-        public string desTotalCaja { get; set; }
+        public string numTotalBultos { get; set; }
 
-        public string desTotalPeso { get; set; }
+        public decimal cntPesoTotalBrutoBienes { get; set; }
+
+        public DateTime? fecInicioTraslado { get; set; }
+
+        public string gloNota { get; set; }
+
+        public string numOrderReferenceGuiaBaja { get; set; }
 
         public string codRegMotivoGuia { get; set; }
 
-        public string desDireccioDePartida { get; set; }
+        public string codMotivoTraslado { get; set; }
+
+        public string codMotivoTrasladoNombre { get; set; }
+
+
+        public string numMinuta { get; set; }
+
+
+        public int? codModalidadTransporte { get; set; }
+
+        public string codModalidadTransporteKey { get; set; }
+
+        public string codModalidadTransporteNombre { get; set; }
+
+
+        #region DATOS DOMICILIO DE PARTIDA
+
+        public int? codPersonaDomicilioPartida { get; set; }
+
+        public string codDomicilioPartidaUbigeo { get; set; }
+
+        public string codDomicilioPartidaUbigeoNombre { get; set; }
+
+        public string desDomicilioPartidaRegistrado { get; set; }
+
+        public string codPersonaDomicilioPartidaNombre { get; set; }
+
+
+        #endregion
+
+        #region  DATOS DEL TRANSPORTISTA - INICIO
 
         public string codPersonaTransporte { get; set; }
 
-        public string codRegTipoDomicilioTransporte { get; set; }
+        public string codPersonaTransporteNombre { get; set; }
 
-        public string codUbigeoTransporte { get; set; }
+        public string codPersonaTransporteTipoDocumento { get; set; }
 
-        public DateTime? fecInicioTraslado { get; set; }
+        public string codPersonaTransporteTipoDocumentoNombre { get; set; }
+
+        public string codPersonaTransporteNumDocumento { get; set; }
+
+
+        public string numPlacaVehiculo { get; set; }
+
+        public string numLicenciaConducir { get; set; }
 
         public string desTransporteConstancia { get; set; }
 
         public string desTransporteMarca { get; set; }
 
-        public string desTransporteLicencia { get; set; }
-
-        public string desTransportePlaca { get; set; }
-
-        public string desNota03 { get; set; }
 
         public int? codPersonaDomicilioTransportista { get; set; }
 
-        public int? codPersonaDomicilioPartida { get; set; }
+        public string codPersonaDomicilioTransportistaNombre { get; set; }
 
-        public int? codModalidadTransporte { get; set; }
+        public string codUbigeoTransporte { get; set; }
+
+        public string codUbigeoTransporteNombre { get; set; }
+
+        public string codRegTipoDomicilioTransporte { get; set; }
+
+
+        #endregion FIN DATOS DEL TRANSPORTISTA
+
+        #region DATOS ADICIONALES COMPLETE
+
 
         public string numContenedor { get; set; }
 
@@ -282,30 +330,19 @@
 
         public string indTransbordoProgramado { get; set; }
 
-        public string codRegTipoDocumentoTransportista { get; set; }
+        public int? codDocumentoTributario { get; set; }
 
+        public string numAdditionalDocumentReference { get; set; }
 
+        public string codEntidadProveedorNumDoc { get; set; }
 
-        public string numMinuta { get; set; }
+        public string codEntidadProveedorTipDoc { get; set; }
 
-        public string codRegMotivoGuiaNombre { get; set; }
+        public string codEntidadProveedorNombre { get; set; }
 
-        public string codPersonaTransporteNombre { get; set; }
+        public string codUnidMedPesoTotalBrutoBienes { get; set; }
 
-        public string codUbigeoTransporteNombre { get; set; }
-
-        public string codPersonaDomicilioTransportistaNombre { get; set; }
-
-        public string codPersonaDomicilioPartidaNombre { get; set; }
-
-        public string codModalidadTransporteNombre { get; set; }
-
-        public string codRegTipoDocumentoTransportistaNombre { get; set; }
-
-        public string codRegTipoDocumentoTransportistaNumero { get; set; }
-
-        public string desUbigeoDePartida { get; set; }
-
+        #endregion
 
         #endregion
 
