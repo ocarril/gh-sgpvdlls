@@ -255,6 +255,8 @@
           { 3030,  "No se ha creado Zip de Documento [ {0} - {1} ]."},
           { 3031,  "Documento [ {2} ] CREADO, FIRMADO por Enviar a SUNAT N°: [{0}] - [{1}]"},
           { 3032,  "Documento [ {2} ] CREADO, FIRMADO y ENVIADO a  SUNAT N°: [{0}] - [{1}]"},
+          { 3033,  "La generación de archivos DATA para el facturador SUNAT NO fue exitoso : [{0}] "},
+          { 3034,  "Documento no tiene detalle de pagos/cuotas a CRÉDITO  : [ {0} ] - [ {1} ]"},
         };
 
     }
