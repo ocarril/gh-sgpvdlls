@@ -58,9 +58,12 @@
         public const string CONTENT_TYPE_JSON_UTF8 = "application/json;charset=utf-8";
         public const string CONTENT_TYPE_OGC_SLD_XML = "application/vnd.ogc.sld+xml";
 
-        public const string REST_API_JSON_EXTENSION = "json";
-        public const string REST_API_XML_EXTENSION = "xml";
-        public const string REST_API_ZIP_EXTENSION = "zip";
+        public const string FILE_JSON_EXTENSION = ".json";
+        public const string FILE_XML_EXTENSION = ".xml";
+        public const string FILE_ZIP_EXTENSION = ".zip";
+        public const string FILE_PDF_EXTENSION = ".zip";
+        public const string FILE_XLSX_EXTENSION = ".xlsx";
+
         public const string REQUEST_HEADER_AUTHORIZATION_SCHEME = "Bearer";
         public const string URI_SEGMENT_SEPARATOR = "/";
         public const string URI_PARAMETER_SEPARATOR = "?";
@@ -253,10 +256,25 @@
           { 3028,  "Archivos para SFS creados OK N°: [{0}] - : [{1}]" },
           { 3029,  "Documento [ {0} - {1} / .ZIP ] FUE creado con EXITO."},
           { 3030,  "No se ha creado Zip de Documento [ {0} - {1} ]."},
-          { 3031,  "Documento [ {2} ] CREADO, FIRMADO por Enviar a SUNAT N°: [{0}] - [{1}]"},
-          { 3032,  "Documento [ {2} ] CREADO, FIRMADO y ENVIADO a  SUNAT N°: [{0}] - [{1}]"},
-          { 3033,  "La generación de archivos DATA para el facturador SUNAT NO fue exitoso : [{0}] "},
-          { 3034,  "Documento no tiene detalle de pagos/cuotas a CRÉDITO  : [ {0} ] - [ {1} ]"},
+          { 3031,  "Documento [ {2} ] CREADO, FIRMADO por Enviar a SUNAT N°: [ {0} ] - [ {1} ]"},
+          { 3032,  "Documento [ {2} ] CREADO, FIRMADO y ENVIADO a  SUNAT N°: [ {0} ] - [ {1} ]"},
+          { 3033,  "La generación de archivos DATA para el facturador SUNAT NO fue exitoso : [ {0} ] "},
+          { 3034,  "Documento SUNAT no tiene detalle de pagos/cuotas a CRÉDITO  : [ {0} ] - [ {1} ]"},
+          { 3035,  "Documento SUNAT: [ {0} ], enviado por correo satisfactoriamente al cliente: [ {1} ]."},
+          { 3036,  "Documento SUNAT: [ {0} ], NO se envió por correo satisfactoriamente."},
+          { 3037,  "Documento SUNAT: [ {0} ], ya fue enviado. Tiene archivo de RPTA: [ {1} ]"},
+          { 3038,  "Documento SUNAT: [ {0} ] XML VALIDADO en SFS N°: [ {1} ]"},
+          { 3039,  "La actualización por validación XML de SFS NO FUE EXITOSO : [ {0} ] "},
+          { 3040,  "Error al momento de leer el archivo : [ {0} ] - Documento: [ {1} ]"},
+          { 3041,  "Archivo de BAJA XML VALIDADO en SFS N°: [ {0} ] - : [ {1} ]"},
+          { 3042,  "Archivos para SFS creados OK N°: [ {0} ] - : [ {1} ]"},
+          { 3043,  "La generación de archivos DATA para el facturador SUNAT NO FUE EXITOSO : [{0}] "},
+          { 3044,  "No existe documento seleccionado para dar de BAJA."},
+          { 3045,  "Comunicación de baja: [ {0} ], creado satisfactoriamente."},
+          { 3046,  "Comunicación de baja no creado."},
+          { 3047,  "La actualización por envio de SFS NO FUE EXITOSO : [ {0} ]"},
+          { 3048,  "ZIP BAJA ENVIADO-PROCESADO por SFS N°: [ {0} ] - : [ {1} ]"},
+          { 3049,  "ZIP BAJA ENVIADO por SFS N°: [ {0} ] - : [ {1} ]"},
         };
 
     }

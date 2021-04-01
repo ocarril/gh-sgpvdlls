@@ -26,6 +26,7 @@
         public const string SUNAT_TipoDocumento_BOLETO_SERV_TRANSP_INTERPROV = "16";
         public const string SUNAT_TipoDocumento_COMPROBANTE_RETENCION = "20";
         public const string SUNAT_TipoDocumento_GUIA_REMISION_TRANSPORTISTA = "31";
+        public const string SUNAT_TipoDocumento_SOLICITUD_BAJA = "99";
 
         public const string SUNAT_TipoDocumento_IDENTIDAD_SIN_RUC = "0";
         public const string SUNAT_TipoDocumento_IDENTIDAD_DNI = "1";
@@ -44,6 +45,7 @@
         public const string SUNAT_FOLDER_REPOPDF = "PDF";
         public const string SUNAT_FOLDER_RPTA = "RPTA";
         public const string SUNAT_FOLDER_ENVIO = "ENVIO";
+        public const string SUNAT_FOLDER_BAJA = "BAJA";
 
         public const string SUNAT_NIVEL_GLOBAL = "Global";
         public const string SUNAT_NIVEL_ITEM = "Item";
@@ -61,6 +63,7 @@
         public const string SUNAT_FILE_ADICIONAL = ".ACA";
         public const string SUNAT_FILE_PAGO = ".PAG";
         public const string SUNAT_FILE_PAGDETA = ".DPA";
+        public const string SUNAT_FILE_BAJA_CBA = ".CBA";
 
     }
 }

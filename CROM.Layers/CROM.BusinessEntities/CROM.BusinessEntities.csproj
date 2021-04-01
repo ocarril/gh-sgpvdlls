@@ -149,8 +149,13 @@
     <Compile Include="SUNAT\BESendBillDocumentRequest.cs" />
     <Compile Include="SUNAT\FirmadoResponse.cs" />
     <Compile Include="SUNAT\IDocumentoElectronico.cs" />
+    <Compile Include="SUNAT\request\BEGenerarApiConsultaTokenRequest.cs" />
+    <Compile Include="SUNAT\request\BEGenerarApiConsultaValidDocumentRequest.cs" />
     <Compile Include="SUNAT\request\BESettingsSendSUNATRequest.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATPagoCreditoResponse.cs" />
+    <Compile Include="SUNAT\response\BEGenerarApiConsultaTokenResponse.cs" />
+    <Compile Include="SUNAT\response\BEGenerarApiConsultaValidDocumentRespone.cs" />
+    <Compile Include="SUNAT\response\BEGenerarApiConsultaValidDocumentResponse.cs" />
     <Compile Include="SUNAT\ubl21\aggregate\SunatCosts.cs" />
     <Compile Include="SUNAT\ubl21\aggregate\SunatTransaction.cs" />
     <Compile Include="SUNAT\ubl21\constans\EspacioNombres.cs" />
