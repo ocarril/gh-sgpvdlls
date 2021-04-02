@@ -68,7 +68,7 @@
             hasErrors = false;
             byte[] byteData = (!string.IsNullOrWhiteSpace(postData) ? Encoding.UTF8.GetBytes(postData) : null);
 
-            return ProcessRequest(url, method, byteData, contentType, null, null, null, ref hasErrors);
+            return ProcessRequest(url, method, byteData, contentType, null, null, null,-1, ref hasErrors);
         }
 
         public static string ProcessRequest(string url, string method, byte[] byteData, string contentType,
@@ -76,20 +76,21 @@
         {
             hasErrors = false;
 
-            return ProcessRequest(url, method, byteData, contentType, null, null, null, ref hasErrors);
+            return ProcessRequest(url, method, byteData, contentType, null, null, null,-1, ref hasErrors);
         }
 
         public static string ProcessRequest(string url, string method, string postData, string contentType,
                                             Dictionary<string, string> requestHeaders, 
                                             string credentialUserName, 
-                                            string credentialPassword,
+                                            string credentialPassword, 
+                                            int requestTimeout,
                                             ref bool hasErrors)
         {
             hasErrors = false;
             byte[] byteData = (!string.IsNullOrWhiteSpace(postData) ? Encoding.UTF8.GetBytes(postData) : null);
 
             return ProcessRequest(url, method, byteData, contentType, requestHeaders, credentialUserName,
-                                  credentialPassword, 
+                                  credentialPassword, requestTimeout,
                                   ref hasErrors);
         }
 
@@ -97,11 +98,22 @@
                                             Dictionary<string, string> requestHeaders, 
                                             string credentialUserName, 
                                             string credentialPassword,
+                                             int requestTimeout,
                                             ref bool hasErrors)
         {
+            ServicePointManager.SecurityProtocol |= SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12 | SecurityProtocolType.Ssl3;
+
             hasErrors = false;
             HttpWebRequest myHttpWebRequest = (HttpWebRequest)WebRequest.Create(url);
-            myHttpWebRequest.Timeout = System.Threading.Timeout.Infinite;
+            if (requestTimeout >= 0)
+            {
+                myHttpWebRequest.Timeout = requestTimeout;
+                myHttpWebRequest.ContinueTimeout = requestTimeout;
+                myHttpWebRequest.ReadWriteTimeout = requestTimeout;
+            }
+            else
+                myHttpWebRequest.Timeout = System.Threading.Timeout.Infinite;
+
             myHttpWebRequest.Method = method;
 
             if (!string.IsNullOrWhiteSpace(credentialUserName) && !string.IsNullOrWhiteSpace(credentialPassword))
@@ -119,6 +131,7 @@
                     myHttpWebRequest.Headers.Add(requestHeader.Key, requestHeader.Value);
                 }
             }
+
             if ((method.ToLower() == WebConstants.METHOD_POST.ToLower() ||
                 method.ToLower() == WebConstants.METHOD_PUT.ToLower()) &&
                 byteData != null)
@@ -134,6 +147,19 @@
 
             try
             {
+                if (requestHeaders != null)
+                {
+                    foreach (KeyValuePair<string, string> requestHeader in requestHeaders)
+                    {
+                        string[] valorExist = myHttpWebRequest.Headers.GetValues(requestHeader.Key);
+                        if (valorExist != null)
+                            if (valorExist.Length > 0)
+                                continue;
+
+                        myHttpWebRequest.Headers.Add(requestHeader.Key, requestHeader.Value);
+                    }
+                }
+
                 using (HttpWebResponse myHttpWebResponse = (HttpWebResponse)myHttpWebRequest.GetResponse())
                 {
                     using (Stream responseStream = myHttpWebResponse.GetResponseStream())
@@ -158,12 +184,6 @@
                 reader.Close();
                 if (string.IsNullOrEmpty(respStr))
                     respStr = ex.Message;
-                //var responseBody = ((HttpWebResponse)ex.Response).StatusDescription; //.Content.ReadAsStringAsync();
-
-                    //ResponseHttpClient jsonResul = JsonConvert.DeserializeObject<ResponseHttpClient>(ex.Response.ContentLength);
-                    ////string message = responseBody.;
-                    //HttpWebResponse response = (HttpWebResponse)ex.GetResponse();
-                    //Stream stream = response.GetResponseStream();
 
                 HelpLogging.Write(TraceLevel.Error,string.Concat( "HelpWebUtils.", MethodBase.GetCurrentMethod().Name), ex);
                 hasErrors = true;
@@ -181,8 +201,9 @@
                 hasErrors = true;
                 return null;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
+                HelpLogging.Write(TraceLevel.Error, string.Concat("HelpWebUtils.", MethodBase.GetCurrentMethod().Name), ex);
                 throw;
             }
         }

@@ -66,6 +66,7 @@ namespace CROM.Tools.Comun
             string strEMAIL_Server = string.Empty;
             string strEMAIL_CredUsuario = string.Empty;
             string strEMAIL_CredClave = string.Empty;
+            string strEMAIL_Subject= string.Empty;
             int strEMAIL_Puerto = 0;
 
             if (pCuentaCorreoEnvio == null)
@@ -75,6 +76,7 @@ namespace CROM.Tools.Comun
                 strEMAIL_CredUsuario = GlobalSettings.GetEMAIL_CredencialUser();
                 strEMAIL_CredClave = GlobalSettings.GetEMAIL_CredencialPass();
                 strEMAIL_Puerto = GlobalSettings.GetEMAIL_SmtpPort();
+                strEMAIL_Subject = string.Format(GlobalSettings.GetEMAIL_Asunto(), " - ", pSubject);
             }
             else
             {
@@ -83,12 +85,13 @@ namespace CROM.Tools.Comun
                 strEMAIL_CredUsuario = pCuentaCorreoEnvio.CredencialUser;
                 strEMAIL_CredClave = pCuentaCorreoEnvio.CredencialPass;
                 strEMAIL_Puerto = pCuentaCorreoEnvio.SmtpPort;
+                strEMAIL_Subject = string.Concat(pCuentaCorreoEnvio.EmailSubject, pSubject);
             }
 
             MailMessage correo = new MailMessage
             {
                 From = new MailAddress(strEMAIL_CredUsuario, pSubject, Encoding.UTF8),
-                Subject = string.Format(GlobalSettings.GetEMAIL_Asunto(), " - ", pSubject),
+                Subject = strEMAIL_Subject,
                 SubjectEncoding = System.Text.Encoding.UTF8,
                 Body = pBody,
                 IsBodyHtml = true,
@@ -183,6 +186,7 @@ namespace CROM.Tools.Comun
             pUserLogin = string.Empty;
             Nota = string.Empty;
             Host = string.Empty;
+            EmailSubject = string.Empty;
         }
 
         public string CredencialUser { get; set; }
@@ -194,6 +198,8 @@ namespace CROM.Tools.Comun
         public int SmtpPort { get; set; }
 
         public bool EnabledSSL { get; set; }
+
+        public string EmailSubject { get; set; }
 
         [JsonIgnore]
         public string Nota { get; set; }

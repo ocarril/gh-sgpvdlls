@@ -246,21 +246,6 @@
             return ConfigurationManager.AppSettings["DEFAULT_LinkTipoCambio"].ToString();
         }
 
-        public static string GetDEFAULT_PATH_CERT_DIGIT()
-        {
-            return ConfigurationManager.AppSettings["DEFAULT_PATH_CERT_DIGIT"].ToString();
-        }
-
-        public static string GetDEFAULT_WS_SOAP_GUIAREM()
-        {
-            return ConfigurationManager.AppSettings["DEFAULT_WS_SOAP_GUIAREM"].ToString();
-        }
-
-        public static string GetDEFAULT_WS_SOAP_FCTBVTNDNC()
-        {
-            return ConfigurationManager.AppSettings["DEFAULT_WS_SOAP_FCTBVTNDNC"].ToString();
-        }
-
         #region LLAVES DE AZURE-CLOUD
 
         public static string GetDEFAULT_AccountAzure()

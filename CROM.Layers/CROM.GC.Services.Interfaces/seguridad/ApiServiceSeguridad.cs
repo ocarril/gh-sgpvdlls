@@ -174,7 +174,7 @@
                                                                          WebConstants.METHOD_POST,
                                                                          JsonConvert.SerializeObject(pDataPermiso),
                                                                          WebConstants.CONTENT_TYPE_JSON, headers,
-                                                                         string.Empty, string.Empty,
+                                                                         string.Empty, string.Empty, -1,
                                                                          ref hasError);
 
                 lstPermisos = JsonConvert.DeserializeObject<List<BEUsuarioPermisoResponse>>(responseBody);

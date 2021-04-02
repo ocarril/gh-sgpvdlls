@@ -154,7 +154,6 @@
     <Compile Include="SUNAT\request\BESettingsSendSUNATRequest.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATPagoCreditoResponse.cs" />
     <Compile Include="SUNAT\response\BEGenerarApiConsultaTokenResponse.cs" />
-    <Compile Include="SUNAT\response\BEGenerarApiConsultaValidDocumentRespone.cs" />
     <Compile Include="SUNAT\response\BEGenerarApiConsultaValidDocumentResponse.cs" />
     <Compile Include="SUNAT\ubl21\aggregate\SunatCosts.cs" />
     <Compile Include="SUNAT\ubl21\aggregate\SunatTransaction.cs" />

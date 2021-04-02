@@ -3,7 +3,7 @@
     using Newtonsoft.Json;
 
 
-    class BEGenerarApiConsultaValidDocumentRequest
+    public class BEGenerarApiConsultaValidDocumentRequest
     {
         public BEGenerarApiConsultaValidDocumentRequest()
         {
@@ -37,5 +37,12 @@
         [JsonProperty("monto")]
         public string Monto { get; set; }
 
+
+
+        [JsonIgnore]
+        public string Token { get; set; }
+
+        [JsonIgnore]
+        public string UrlApiConsultaSUNAT { get; set; }
     }
 }

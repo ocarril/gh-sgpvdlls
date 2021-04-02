@@ -57,6 +57,7 @@
         public const string CONTENT_TYPE_TEXT_XML = "text/xml;charset=UTF-8";
         public const string CONTENT_TYPE_JSON_UTF8 = "application/json;charset=utf-8";
         public const string CONTENT_TYPE_OGC_SLD_XML = "application/vnd.ogc.sld+xml";
+        public const string CONTENT_TYPE_X_WWW_FORM = "application/x-www-form-urlencoded";
 
         public const string FILE_JSON_EXTENSION = ".json";
         public const string FILE_XML_EXTENSION = ".xml";
@@ -187,7 +188,9 @@
           { 1005,  "Error de Límites de Uso del Servicio." },
           { 1006,  "Error. Valor de cabecera no existe." },
           { 1007,  "Error de Dato de autorización." },
-          { 1008,  "Alerta. La sesión ya ha caducado." }
+          { 1008,  "Alerta. La sesión ya ha caducado." },
+          { 1010,  "WS Sunat de consulta no respondio con éxito." },
+
         };
 
         public static Dictionary<int, string> ValidacionDatosSEGURIDAD = new Dictionary<int, string>()
