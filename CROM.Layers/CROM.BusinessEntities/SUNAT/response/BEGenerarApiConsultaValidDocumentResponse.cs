@@ -54,5 +54,11 @@
         [JsonProperty("observaciones")]
         public List<string> Observaciones { get; set; }
 
+
+        [JsonProperty("flagAnalisisOK")]
+        public bool FlagAnalisisOK { get; set; }
+
+        [JsonProperty("message")]
+        public string Message { get; set; }
     }
 }

@@ -386,5 +386,14 @@
         public string nomDocumento { get; set; }
 
 
+        #region VALIDACION DE DOCUMENTO REGISTRADO EN SUNAT
+
+        public DateTime? fecValidWSoapSunat { get; set; }
+
+        public string desValidWSoapSunat { get; set; }
+
+        public bool indValidWSoapSunat { get; set; }
+
+        #endregion
     }
 }

@@ -149,6 +149,7 @@
     <Compile Include="SUNAT\BESendBillDocumentRequest.cs" />
     <Compile Include="SUNAT\FirmadoResponse.cs" />
     <Compile Include="SUNAT\IDocumentoElectronico.cs" />
+    <Compile Include="SUNAT\request\BEDocumentValidWSoapSunatRequest.cs" />
     <Compile Include="SUNAT\request\BEGenerarApiConsultaTokenRequest.cs" />
     <Compile Include="SUNAT\request\BEGenerarApiConsultaValidDocumentRequest.cs" />
     <Compile Include="SUNAT\request\BESettingsSendSUNATRequest.cs" />

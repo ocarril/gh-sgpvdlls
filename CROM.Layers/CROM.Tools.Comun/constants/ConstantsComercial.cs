@@ -1,4 +1,6 @@
-﻿namespace CROM.Tools.Comun.constants
+﻿using System.Collections.Generic;
+
+namespace CROM.Tools.Comun.constants
 {
     public static class ConstantsComercial
     {
@@ -31,14 +33,14 @@
         public const string SUNAT_TipoDocumento_IDENTIDAD_SIN_RUC = "0";
         public const string SUNAT_TipoDocumento_IDENTIDAD_DNI = "1";
         public const string SUNAT_TipoDocumento_IDENTIDAD_CE = "4";
-        public const string SUNAT_TipoDocumento_IDENTIDAD_RUC= "6";
+        public const string SUNAT_TipoDocumento_IDENTIDAD_RUC = "6";
         public const string SUNAT_TipoDocumento_IDENTIDAD_PASAPORTE = "7";
         public const string SUNAT_TipoDocumento_IDENTIDAD_CDI = "A";
 
         public const string SUNAT_ModalidadTransporte_PUBLICO = "01";
         public const string SUNAT_ModalidadTransporte_PRIVADO = "02";
 
-        public const string SUNAT_FOLDER_BARRAS= "BARRAS";
+        public const string SUNAT_FOLDER_BARRAS = "BARRAS";
         public const string SUNAT_FOLDER_DATA = "DATA";
         public const string SUNAT_FOLDER_FIRMA = "FIRMA";
         public const string SUNAT_FOLDER_REPO = "REPO";
@@ -65,5 +67,34 @@
         public const string SUNAT_FILE_PAGDETA = ".DPA";
         public const string SUNAT_FILE_BAJA_CBA = ".CBA";
 
+
+        public static Dictionary<string, string> ConsultaWS_estadoCp = new Dictionary<string, string>()
+        {
+          { "0",  "NO EXISTE. (COMPROBANTE NO INFORMADO)" },
+          { "1",  "ACEPTADO. (COMPROBANTE ACEPTADO)." },
+          { "2",  "ANULADO. (COMUNICADO EN UNA BAJA)" },
+          { "3",  "AUTORIZADO. (CON AUTORIZACIÓN DE IMPRENTA)" },
+          { "4",  "NO AUTORIZADO. (NO AUTORIZADO POR IMPRENTA)" }
+        };
+
+        public static Dictionary<string, string> ConsultaWS_estadoRuc = new Dictionary<string, string>()
+        {
+          { "00",  "ACTIVO" },
+          { "01",  "BAJA PROVISIONAL" },
+          { "02",  "BAJA PROV. POR OFICIO" },
+          { "03",  "SUSPENSION TEMPORAL" },
+          { "10",  "BAJA DEFINITIVA" },
+          { "11",  "BAJA DE OFICIO" },
+          { "22",  "INHABILITADO-VENT.UNICA" }
+        };
+
+        public static Dictionary<string, string> ConsultaWS_condDomiRuc = new Dictionary<string, string>()
+        {
+          { "00",  "HABIDO" },
+          { "09",  "PENDIENTE" },
+          { "11",  "POR VERIFICAR" },
+          { "12",  "NO HABIDO" },
+          { "20",  "NO HALLADO" }
+        };
     }
 }

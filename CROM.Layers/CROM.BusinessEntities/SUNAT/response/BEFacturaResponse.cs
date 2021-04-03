@@ -303,5 +303,14 @@
 
         #endregion
 
+
+        #region VALIDACION DE DOCUMENTO REGISTRADO EN SUNAT
+
+        public DateTime? fecValidWSoapSunat { get; set; }
+
+        public bool indValidWSoapSunat { get; set; }
+
+        #endregion
+
     }
 }
