@@ -36,6 +36,7 @@ namespace CROM.BusinessEntities.Comercial.request
             numContenedor = string.Empty;
             desTotalCaja = string.Empty;
             desTotalPeso = string.Empty;
+            codRegUnidadMedidaGlobal = string.Empty;
 
         }
 
@@ -124,5 +125,6 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public string codRegTipoDocumentoTransportista { get; set; }
 
+        public string codRegUnidadMedidaGlobal { get; set; }
     }
 }

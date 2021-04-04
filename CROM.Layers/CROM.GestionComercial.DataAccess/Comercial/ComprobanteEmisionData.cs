@@ -124,7 +124,7 @@ namespace CROM.GestionComercial.DataAccess
                        comprobanteEmision.codRegTipoDocumentoEntidad,
                        comprobanteEmision.codPersonaDomicilio,
                        comprobanteEmision.codDocumentoEstado,
-                      Convert.ToByte(comprobanteEmision.indOrigen),
+                       Convert.ToByte(comprobanteEmision.indOrigen),
                        comprobanteEmision.numDiasCredito,
                        comprobanteEmision.codDocumentoSerie,
                        comprobanteEmision.codDocumentoSerieOrigen,
@@ -144,7 +144,9 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.codPuerto,
                         comprobanteEmision.indTransbordoProgramado,
                         comprobanteEmision.codRegTipoDocumentoTransportista,
-                        comprobanteEmision.fecInicioTraslado
+                        comprobanteEmision.fecInicioTraslado,
+
+                        comprobanteEmision.codRegUnidadMedidaGlobal
 
                        );
                     comprobanteEmision.codDocumReg = codigoRetorno.HasValue ? codigoRetorno.Value : 0;
@@ -280,7 +282,9 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.codPuerto,
                         comprobanteEmision.indTransbordoProgramado,
                         comprobanteEmision.codRegTipoDocumentoTransportista,
-                        comprobanteEmision.fecInicioTraslado
+                        comprobanteEmision.fecInicioTraslado,
+
+                        comprobanteEmision.codRegUnidadMedidaGlobal
                     );
                 }
             }

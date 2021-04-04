@@ -54,6 +54,7 @@
             pTotalLetras = string.Empty;
             pCodBarras = string.Empty;
             pLogoEmpresa = string.Empty;
+            codRegUnidadMedidaGlobal = string.Empty;
             LstDocumRegDetalle = new List<DTODocumRegFEDetalleResponse>();
             LstDocumRegPagoCredito = new List<DTODocumRegPagoCreditoResponse>();
         }
@@ -385,6 +386,7 @@
 
         public string nomDocumento { get; set; }
 
+        public string codRegUnidadMedidaGlobal { get; set; }
 
         #region VALIDACION DE DOCUMENTO REGISTRADO EN SUNAT
 

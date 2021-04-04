@@ -33,7 +33,7 @@ namespace CROM.GestionComercial.DataAccess
     #endregion
 		
 		public _GestionComercialDataContext() : 
-				base(global::CROM.GestionComercial.DataAccess.Properties.Settings.Default.BD_GC_MAGESET_SFS_20201106ConnectionString1, mappingSource)
+				base(global::CROM.GestionComercial.DataAccess.Properties.Settings.Default.BD_GC_MAGESET_SFS_20201106ConnectionString2, mappingSource)
 		{
 			OnCreated();
 		}
@@ -992,6 +992,43 @@ namespace CROM.GestionComercial.DataAccess
 			return ((ISingleResult<omgc_S_DocumReg_UniqueResult>)(result.ReturnValue));
 		}
 		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="GestionComercial.omgc_S_DocumReg_Id")]
+		public ISingleResult<omgc_S_DocumReg_IdResult> omgc_S_DocumReg_Id([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codDocumReg)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codDocumReg);
+			return ((ISingleResult<omgc_S_DocumReg_IdResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="GestionComercial.omgc_S_DocumReg_IdPrint")]
+		public ISingleResult<omgc_S_DocumReg_IdPrintResult> omgc_S_DocumReg_IdPrint([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codDocumReg, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string prm_numRUC)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codDocumReg, prm_numRUC);
+			return ((ISingleResult<omgc_S_DocumReg_IdPrintResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="GestionComercial.omgc_S_DocumReg")]
+		public ISingleResult<omgc_S_DocumRegResult> omgc_S_DocumReg(
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpresa, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(8)")] string prm_FechaDeEmisionInicio, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(8)")] string prm_FechaDeEmisionFinal, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(4)")] string prm_CodigoPuntoVenta, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string prm_CodigoComprobante, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguEstadoDocu, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguDestinoComp, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string prm_CodigoPersonaEntidad, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpleado, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguMoneda, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(7)")] string prm_CodigoParte, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codCondicionVenta, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codCondicionCompra, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> prm_Estado, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguTipoDeOperacion, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> prm_indInternacional)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_FechaDeEmisionInicio, prm_FechaDeEmisionFinal, prm_CodigoPuntoVenta, prm_CodigoComprobante, prm_CodigoArguEstadoDocu, prm_CodigoArguDestinoComp, prm_CodigoPersonaEntidad, prm_codEmpleado, prm_CodigoArguMoneda, prm_CodigoParte, prm_codCondicionVenta, prm_codCondicionCompra, prm_Estado, prm_CodigoArguTipoDeOperacion, prm_indInternacional);
+			return ((ISingleResult<omgc_S_DocumRegResult>)(result.ReturnValue));
+		}
+		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="GestionComercial.omgc_I_DocumReg")]
 		public ISingleResult<omgc_I_DocumRegResult> omgc_I_DocumReg(
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpresa, 
@@ -1096,9 +1133,10 @@ namespace CROM.GestionComercial.DataAccess
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pcodPuerto, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pindTransbordoProgramado, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string pcodRegTipoDocumentoTransportista, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pfecInicioTraslado)
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pfecInicioTraslado, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string pcodRegUnidadMedidaGlobal)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codEmpresaRUC, prm_codDocumReg, prm_CodigoPuntoVenta, prm_CodigoComprobante, prm_NumeroComprobante, prm_CodigoArguEstadoDocu, prm_CodigoArguDestinoComp, prm_CodigoPersonaEntidad, prm_codEmpleado, prm_FechaDeEmision, prm_FechaDeVencimiento, prm_CodigoArguMoneda, prm_ValorIGV, prm_ValorTipoCambioVTA, prm_ValorTipoCambioCMP, prm_ValorTotalBruto, prm_ValorTotalDescuento, prm_ValorTotalVenta, prm_ValorTotalImpuesto, prm_ValorTotalPrecioVenta, prm_ValorTotalPrecioExtran, prm_CodigoArguMotivoGuia, prm_CodigoPersonaTransporte, prm_DireccioDePartida, prm_TransporteMarca, prm_TransportePlaca, prm_TransporteConstancia, prm_TransporteLicencia, prm_CodigoComprobanteORIGEN, prm_NumeroComprobanteORIGEN, prm_FechaComprobanteORIGEN, prm_ValorTipoCambioORIGEN, prm_DocOrdenDeCompra, prm_DocGuiaDeSalida, prm_DocPedidoAdquisicion, prm_DocLetrasCambio, prm_EntidadRazonSocial, prm_EntidadDireccion, prm_EntidadNumeroRUC, prm_CodigoArguTipoDomicil, prm_Observaciones, prm_codCondicionVenta, prm_codCondicionCompra, prm_CodigoComprobanteSecun, prm_NumeroComprobanteSecun, prm_CodigoPuntoVentaSecun, prm_codEmpleadoVendedor, prm_CodigoComprobanteFact, prm_NumeroSerie, prm_NumeroMinuta, prm_codDepositoDestino, prm_NumeroComprobanteExt, prm_DocEsGravado, prm_DocExigeDocAnexo, prm_DocEsFacturable, prm_Estado, prm_SegUsuarioCrea, prm_Nota01, prm_Nota02, prm_Nota03, prm_CodigoArguTipoDeOperacion, prm_FechaDeEntrega, prm_CodigoArguUbigeo, prm_EntidadDireccionUbigeo, prm_CodigoPersonaContacto, prm_codDepositoOrigen, prm_indInternacional, prm_perTributario, prm_codRegTipoDomicilioTransporte, prm_codRegUbigeoTransporte, prm_desDireccionTransporte, prm_desTotalCaja, prm_desTotalPeso, prm_indImprimeFirma, prm_indImprimeSinIGV, pcodMotivoNCR, pcodMotivoNDB, pgloMotivoSustento, psumOtrosCargos, psumTotalAnticipos, pcodRegTipoDocumentoEntidad, pcodPersonaDomicilio, pcodDocumentoEstado, pindOrigen, pnumDiasCredito, pcodDocumentoSerie, pcodDocumentoSerieOrigen, pindAplicaDetraccion, pcodCuentaBancariaDetraccion, pcodBienDetraccion, pcodFormaDePago, pprcDetraccion, pmtoDetraccion, psegMaquina, pcodPersonaDomicilioTransportista, pcodPersonaDomicilioPartida, pcodModalidadTransporte, pnumContenedor, pcodPuerto, pindTransbordoProgramado, pcodRegTipoDocumentoTransportista, pfecInicioTraslado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codEmpresaRUC, prm_codDocumReg, prm_CodigoPuntoVenta, prm_CodigoComprobante, prm_NumeroComprobante, prm_CodigoArguEstadoDocu, prm_CodigoArguDestinoComp, prm_CodigoPersonaEntidad, prm_codEmpleado, prm_FechaDeEmision, prm_FechaDeVencimiento, prm_CodigoArguMoneda, prm_ValorIGV, prm_ValorTipoCambioVTA, prm_ValorTipoCambioCMP, prm_ValorTotalBruto, prm_ValorTotalDescuento, prm_ValorTotalVenta, prm_ValorTotalImpuesto, prm_ValorTotalPrecioVenta, prm_ValorTotalPrecioExtran, prm_CodigoArguMotivoGuia, prm_CodigoPersonaTransporte, prm_DireccioDePartida, prm_TransporteMarca, prm_TransportePlaca, prm_TransporteConstancia, prm_TransporteLicencia, prm_CodigoComprobanteORIGEN, prm_NumeroComprobanteORIGEN, prm_FechaComprobanteORIGEN, prm_ValorTipoCambioORIGEN, prm_DocOrdenDeCompra, prm_DocGuiaDeSalida, prm_DocPedidoAdquisicion, prm_DocLetrasCambio, prm_EntidadRazonSocial, prm_EntidadDireccion, prm_EntidadNumeroRUC, prm_CodigoArguTipoDomicil, prm_Observaciones, prm_codCondicionVenta, prm_codCondicionCompra, prm_CodigoComprobanteSecun, prm_NumeroComprobanteSecun, prm_CodigoPuntoVentaSecun, prm_codEmpleadoVendedor, prm_CodigoComprobanteFact, prm_NumeroSerie, prm_NumeroMinuta, prm_codDepositoDestino, prm_NumeroComprobanteExt, prm_DocEsGravado, prm_DocExigeDocAnexo, prm_DocEsFacturable, prm_Estado, prm_SegUsuarioCrea, prm_Nota01, prm_Nota02, prm_Nota03, prm_CodigoArguTipoDeOperacion, prm_FechaDeEntrega, prm_CodigoArguUbigeo, prm_EntidadDireccionUbigeo, prm_CodigoPersonaContacto, prm_codDepositoOrigen, prm_indInternacional, prm_perTributario, prm_codRegTipoDomicilioTransporte, prm_codRegUbigeoTransporte, prm_desDireccionTransporte, prm_desTotalCaja, prm_desTotalPeso, prm_indImprimeFirma, prm_indImprimeSinIGV, pcodMotivoNCR, pcodMotivoNDB, pgloMotivoSustento, psumOtrosCargos, psumTotalAnticipos, pcodRegTipoDocumentoEntidad, pcodPersonaDomicilio, pcodDocumentoEstado, pindOrigen, pnumDiasCredito, pcodDocumentoSerie, pcodDocumentoSerieOrigen, pindAplicaDetraccion, pcodCuentaBancariaDetraccion, pcodBienDetraccion, pcodFormaDePago, pprcDetraccion, pmtoDetraccion, psegMaquina, pcodPersonaDomicilioTransportista, pcodPersonaDomicilioPartida, pcodModalidadTransporte, pnumContenedor, pcodPuerto, pindTransbordoProgramado, pcodRegTipoDocumentoTransportista, pfecInicioTraslado, pcodRegUnidadMedidaGlobal);
 			prm_codDocumReg = ((System.Nullable<int>)(result.GetParameterValue(2)));
 			return ((ISingleResult<omgc_I_DocumRegResult>)(result.ReturnValue));
 		}
@@ -1207,47 +1245,11 @@ namespace CROM.GestionComercial.DataAccess
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pcodPuerto, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(30)")] string pindTransbordoProgramado, 
 					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string pcodRegTipoDocumentoTransportista, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pfecInicioTraslado)
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="DateTime")] System.Nullable<System.DateTime> pfecInicioTraslado, 
+					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string pcodRegUnidadMedidaGlobal)
 		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codEmpresaRUC, prm_codDocumReg, prm_CodigoPuntoVenta, prm_CodigoComprobante, prm_NumeroComprobante, prm_CodigoArguEstadoDocu, prm_CodigoArguDestinoComp, prm_CodigoPersonaEntidad, prm_codEmpleado, prm_FechaDeEmision, prm_FechaDeVencimiento, prm_CodigoArguMoneda, prm_ValorIGV, prm_ValorTipoCambioVTA, prm_ValorTipoCambioCMP, prm_ValorTotalBruto, prm_ValorTotalDescuento, prm_ValorTotalVenta, prm_ValorTotalImpuesto, prm_ValorTotalPrecioVenta, prm_ValorTotalPrecioExtran, prm_CodigoArguMotivoGuia, prm_CodigoPersonaTransporte, prm_DireccioDePartida, prm_TransporteMarca, prm_TransportePlaca, prm_TransporteConstancia, prm_TransporteLicencia, prm_CodigoComprobanteORIGEN, prm_NumeroComprobanteORIGEN, prm_FechaComprobanteORIGEN, prm_ValorTipoCambioORIGEN, prm_DocOrdenDeCompra, prm_DocGuiaDeSalida, prm_DocPedidoAdquisicion, prm_DocLetrasCambio, prm_EntidadRazonSocial, prm_EntidadDireccion, prm_EntidadNumeroRUC, prm_CodigoArguTipoDomicil, prm_Observaciones, prm_codCondicionVenta, prm_codCondicionCompra, prm_CodigoComprobanteSecun, prm_NumeroComprobanteSecun, prm_CodigoPuntoVentaSecun, prm_codEmpleadoVendedor, prm_CodigoComprobanteFact, prm_NumeroSerie, prm_NumeroMinuta, prm_codDepositoDestino, prm_NumeroComprobanteExt, prm_DocEsGravado, prm_DocExigeDocAnexo, prm_DocEsFacturable, prm_Estado, prm_SegUsuarioEdita, prm_Nota01, prm_Nota02, prm_Nota03, prm_CodigoArguTipoDeOperacion, prm_FechaDeEntrega, prm_CodigoArguUbigeo, prm_EntidadDireccionUbigeo, prm_CodigoPersonaContacto, prm_codDepositoOrigen, prm_indInternacional, prm_perTributario, prm_codRegTipoDomicilioTransporte, prm_codRegUbigeoTransporte, prm_desDireccionTransporte, prm_desTotalCaja, prm_desTotalPeso, prm_indImprimeFirma, prm_indImprimeSinIGV, pcodMotivoNCR, pcodMotivoNDB, pgloMotivoSustento, psumOtrosCargos, psumTotalAnticipos, pcodRegTipoDocumentoEntidad, pcodPersonaDomicilio, pcodDocumentoEstado, pindOrigen, pnumDiasCredito, pcodDocumentoSerie, pcodDocumentoSerieOrigen, pindAplicaDetraccion, pcodCuentaBancariaDetraccion, pcodBienDetraccion, pcodFormaDePago, pprcDetraccion, pmtoDetraccion, psegMaquina, pcodPersonaDomicilioTransportista, pcodPersonaDomicilioPartida, pcodModalidadTransporte, pnumContenedor, pcodPuerto, pindTransbordoProgramado, pcodRegTipoDocumentoTransportista, pfecInicioTraslado);
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codEmpresaRUC, prm_codDocumReg, prm_CodigoPuntoVenta, prm_CodigoComprobante, prm_NumeroComprobante, prm_CodigoArguEstadoDocu, prm_CodigoArguDestinoComp, prm_CodigoPersonaEntidad, prm_codEmpleado, prm_FechaDeEmision, prm_FechaDeVencimiento, prm_CodigoArguMoneda, prm_ValorIGV, prm_ValorTipoCambioVTA, prm_ValorTipoCambioCMP, prm_ValorTotalBruto, prm_ValorTotalDescuento, prm_ValorTotalVenta, prm_ValorTotalImpuesto, prm_ValorTotalPrecioVenta, prm_ValorTotalPrecioExtran, prm_CodigoArguMotivoGuia, prm_CodigoPersonaTransporte, prm_DireccioDePartida, prm_TransporteMarca, prm_TransportePlaca, prm_TransporteConstancia, prm_TransporteLicencia, prm_CodigoComprobanteORIGEN, prm_NumeroComprobanteORIGEN, prm_FechaComprobanteORIGEN, prm_ValorTipoCambioORIGEN, prm_DocOrdenDeCompra, prm_DocGuiaDeSalida, prm_DocPedidoAdquisicion, prm_DocLetrasCambio, prm_EntidadRazonSocial, prm_EntidadDireccion, prm_EntidadNumeroRUC, prm_CodigoArguTipoDomicil, prm_Observaciones, prm_codCondicionVenta, prm_codCondicionCompra, prm_CodigoComprobanteSecun, prm_NumeroComprobanteSecun, prm_CodigoPuntoVentaSecun, prm_codEmpleadoVendedor, prm_CodigoComprobanteFact, prm_NumeroSerie, prm_NumeroMinuta, prm_codDepositoDestino, prm_NumeroComprobanteExt, prm_DocEsGravado, prm_DocExigeDocAnexo, prm_DocEsFacturable, prm_Estado, prm_SegUsuarioEdita, prm_Nota01, prm_Nota02, prm_Nota03, prm_CodigoArguTipoDeOperacion, prm_FechaDeEntrega, prm_CodigoArguUbigeo, prm_EntidadDireccionUbigeo, prm_CodigoPersonaContacto, prm_codDepositoOrigen, prm_indInternacional, prm_perTributario, prm_codRegTipoDomicilioTransporte, prm_codRegUbigeoTransporte, prm_desDireccionTransporte, prm_desTotalCaja, prm_desTotalPeso, prm_indImprimeFirma, prm_indImprimeSinIGV, pcodMotivoNCR, pcodMotivoNDB, pgloMotivoSustento, psumOtrosCargos, psumTotalAnticipos, pcodRegTipoDocumentoEntidad, pcodPersonaDomicilio, pcodDocumentoEstado, pindOrigen, pnumDiasCredito, pcodDocumentoSerie, pcodDocumentoSerieOrigen, pindAplicaDetraccion, pcodCuentaBancariaDetraccion, pcodBienDetraccion, pcodFormaDePago, pprcDetraccion, pmtoDetraccion, psegMaquina, pcodPersonaDomicilioTransportista, pcodPersonaDomicilioPartida, pcodModalidadTransporte, pnumContenedor, pcodPuerto, pindTransbordoProgramado, pcodRegTipoDocumentoTransportista, pfecInicioTraslado, pcodRegUnidadMedidaGlobal);
 			return ((int)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="GestionComercial.omgc_S_DocumReg_Id")]
-		public ISingleResult<omgc_S_DocumReg_IdResult> omgc_S_DocumReg_Id([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codDocumReg)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codDocumReg);
-			return ((ISingleResult<omgc_S_DocumReg_IdResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="GestionComercial.omgc_S_DocumReg_IdPrint")]
-		public ISingleResult<omgc_S_DocumReg_IdPrintResult> omgc_S_DocumReg_IdPrint([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpresa, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codDocumReg, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(20)")] string prm_numRUC)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_codDocumReg, prm_numRUC);
-			return ((ISingleResult<omgc_S_DocumReg_IdPrintResult>)(result.ReturnValue));
-		}
-		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="GestionComercial.omgc_S_DocumReg")]
-		public ISingleResult<omgc_S_DocumRegResult> omgc_S_DocumReg(
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpresa, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(8)")] string prm_FechaDeEmisionInicio, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Char(8)")] string prm_FechaDeEmisionFinal, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(4)")] string prm_CodigoPuntoVenta, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(3)")] string prm_CodigoComprobante, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguEstadoDocu, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguDestinoComp, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string prm_CodigoPersonaEntidad, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codEmpleado, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguMoneda, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(7)")] string prm_CodigoParte, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codCondicionVenta, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> prm_codCondicionCompra, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> prm_Estado, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(17)")] string prm_CodigoArguTipoDeOperacion, 
-					[global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> prm_indInternacional)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), prm_codEmpresa, prm_FechaDeEmisionInicio, prm_FechaDeEmisionFinal, prm_CodigoPuntoVenta, prm_CodigoComprobante, prm_CodigoArguEstadoDocu, prm_CodigoArguDestinoComp, prm_CodigoPersonaEntidad, prm_codEmpleado, prm_CodigoArguMoneda, prm_CodigoParte, prm_codCondicionVenta, prm_codCondicionCompra, prm_Estado, prm_CodigoArguTipoDeOperacion, prm_indInternacional);
-			return ((ISingleResult<omgc_S_DocumRegResult>)(result.ReturnValue));
 		}
 	}
 	
@@ -19455,32 +19457,6 @@ namespace CROM.GestionComercial.DataAccess
 		}
 	}
 	
-	public partial class omgc_I_DocumRegResult
-	{
-		
-		private int _NUM_FILA_AFECTADA;
-		
-		public omgc_I_DocumRegResult()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_FILA_AFECTADA", DbType="Int NOT NULL")]
-		public int NUM_FILA_AFECTADA
-		{
-			get
-			{
-				return this._NUM_FILA_AFECTADA;
-			}
-			set
-			{
-				if ((this._NUM_FILA_AFECTADA != value))
-				{
-					this._NUM_FILA_AFECTADA = value;
-				}
-			}
-		}
-	}
-	
 	public partial class omgc_S_DocumReg_IdResult
 	{
 		
@@ -27366,6 +27342,32 @@ namespace CROM.GestionComercial.DataAccess
 				if ((this._desTotalPeso != value))
 				{
 					this._desTotalPeso = value;
+				}
+			}
+		}
+	}
+	
+	public partial class omgc_I_DocumRegResult
+	{
+		
+		private int _NUM_FILA_AFECTADA;
+		
+		public omgc_I_DocumRegResult()
+		{
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_NUM_FILA_AFECTADA", DbType="Int NOT NULL")]
+		public int NUM_FILA_AFECTADA
+		{
+			get
+			{
+				return this._NUM_FILA_AFECTADA;
+			}
+			set
+			{
+				if ((this._NUM_FILA_AFECTADA != value))
+				{
+					this._NUM_FILA_AFECTADA = value;
 				}
 			}
 		}

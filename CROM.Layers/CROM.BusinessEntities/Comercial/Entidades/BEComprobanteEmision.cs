@@ -279,6 +279,7 @@ namespace CROM.BusinessEntities.Comercial
 
         public int numDiasCredito { get; set; }
 
+        public string codRegUnidadMedidaGlobal { get; set; }
 
         #region PROPIEDADES POR DETRACCIONS
 
