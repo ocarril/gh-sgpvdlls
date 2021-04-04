@@ -351,6 +351,7 @@
 
         public string codPersonaAval { get; set; }
 
+        public string codRegUnidadMedidaGlobal { get; set; }
 
         #region PROPIEDADES POR DETRACCION
 

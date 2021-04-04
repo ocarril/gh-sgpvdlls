@@ -255,6 +255,8 @@ namespace CROM.BusinessEntities.Comercial.response
         public string codFormaDePagoNombre { get; set; }
 
         public bool indFormaPagoRegistra { get; set; }
+
+        public bool indImprimePDF { get; set; }
     }
 
 }
