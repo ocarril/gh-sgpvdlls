@@ -73,6 +73,11 @@
         public bool flagUpdated { get; set; }
 
         public bool flagValidated { get; set; }
+
+        public string gloMotivoBaja { get; set; }
+
+        public string NumeroCorrelative { get; set; }
+
     }
 
 }

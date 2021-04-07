@@ -25,6 +25,9 @@
         public const string DEFAULT_TIPO_MONEDA_SOLES = "GTMND001";
         public const string DEFAULT_TIPO_MONEDA_DOLAR = "GTMND002";
 
+        // MONEDA - TIPO DE MONEDA SEGUN SUNAT
+        public const string DEFAULT_TIPO_UNIDAD_MEDIDA_GRE = "PMEDI009";
+
         public const string DEFAULT_Owner = "OMGC$";
         public const string DEFAULT_Clave = "OMcrGCpn$";
         public const string DEFAULT_SeguridadKey = "CROMGCPN";
@@ -64,6 +67,7 @@
         public const string FILE_ZIP_EXTENSION = ".zip";
         public const string FILE_PDF_EXTENSION = ".zip";
         public const string FILE_XLSX_EXTENSION = ".xlsx";
+        public const string FILE_PNG_EXTENSION = ".png";
 
         public const string REQUEST_HEADER_AUTHORIZATION_SCHEME = "Bearer";
         public const string URI_SEGMENT_SEPARATOR = "/";
@@ -72,6 +76,7 @@
         public const string PAIS_ORIGEN = "es-PE";
 
         public const string PathImages = "Content/Images/";
+        public const string PathLogos = "Content/logos/";
 
         public const string URI_SEGURIDAD_POST_VALIDATE_USER = "/api/security/getvalidateuser";
         public const string URI_SEGURIDAD_POST_LIST_USER_OBJECTS_GRANTS = "/api/security/listuserobjectsgrants";

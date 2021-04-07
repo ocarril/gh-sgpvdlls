@@ -200,6 +200,8 @@
 
         public string EmisorDomicilio { get; set; }
 
+        public string EmisorTipoDocumento { get; set; }
+
         #endregion
 
         #region DATOS DE ENVIO DE CORREO DEL DOCUMENTO AL CLIENTE
@@ -247,7 +249,7 @@
 
         public string numTotalBultos { get; set; }
 
-        public decimal cntPesoTotalBrutoBienes { get; set; }
+        public string cntPesoTotalBrutoBienes { get; set; }
 
         public DateTime? fecInicioTraslado { get; set; }
 
