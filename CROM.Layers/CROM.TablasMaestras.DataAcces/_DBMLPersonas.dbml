@@ -526,47 +526,6 @@
       <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="Maestros.omgc_S_Persona_Paged" Method="omgc_S_Persona_Paged">
-    <Parameter Name="pcodEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_TamPagina" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_OrdenPor" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="prm_OrdenTipo" Type="System.String" DbType="VarChar(4)" />
-    <Parameter Name="prm_CodigoArguTipoEntidad" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguAsignacion" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_ApellidosRazonSocial" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoPersona" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_CodigoPersonaEmpresa" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_CodigoArguAreaEmpleado" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguCategoria" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguTipoAtributo" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_DescripcionAtributo" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
-    <ElementType Name="omgc_S_Persona_PagedResult">
-      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="codPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="codRegTipoEntidad" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="codRegRubroComercial" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
-      <Column Name="codRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codRegRubroComercialNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codRegAreaEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codPerEmpresa" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
-      <Column Name="codPerEmpresaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="RazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="NombreComercial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="Observaciones" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
-      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="segFechaHoraEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="SegMaquinaOrigen" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="SegEliminado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="desDomicilio" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
-      <Column Name="desTelefono" Type="System.String" DbType="VarChar(752) NOT NULL" CanBeNull="false" />
-      <Column Name="desNumDocumento" Type="System.String" DbType="VarChar(501) NOT NULL" CanBeNull="false" />
-      <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
-    </ElementType>
-  </Function>
   <Function Name="Maestros.omgc_S_PersonaAtributo_Paged" Method="omgc_S_PersonaAtributo_Paged">
     <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
     <Parameter Name="prm_NumPagina" Type="System.Int32" DbType="Int" />

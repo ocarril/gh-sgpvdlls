@@ -218,5 +218,7 @@
     <Parameter Name="prm_desNombreUbigeos" Type="System.String" DbType="VarChar(400)" Direction="InOut" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Maestros.omgc_P_Tabla_Sys" Method="omgc_P_Tabla_Sys" />
+  <Function Name="Maestros.omgc_P_Tabla_Sys" Method="omgc_P_Tabla_Sys" IsComposable="true">
+    <Return Type="object" />
+  </Function>
 </Database>

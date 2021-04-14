@@ -87,66 +87,66 @@ namespace CROM.TablasMaestras.DataAcces
             return lstPersonas;
         }
 
-        public List<DTOPersonaResponse> ListPaged(BaseFiltroPersona pFiltro)
-        {
-            List<DTOPersonaResponse> lstPersonas = new List<DTOPersonaResponse>();
-            try
-            {
-                using (_DBMLPersonasDataContext SQLDC = new _DBMLPersonasDataContext(conexion))
-                {
-                    var resul = SQLDC.omgc_S_Persona_Paged(pFiltro.codEmpresa,
-                                                            pFiltro.jqCurrentPage,
-                                                            pFiltro.jqPageSize,
-                                                            pFiltro.jqSortColumn,
-                                                            pFiltro.jqSortOrder,
-                                                            pFiltro.codRegTipoEntidad,
-                                                            pFiltro.codRegAsignacion,
-                                                            pFiltro.desNombre,
-                                                            pFiltro.codigoEntidad,
-                                                            pFiltro.codPersonaRefer,
-                                                            pFiltro.codRegAreaEmpresa,
-                                                            pFiltro.codRegCategoria,
-                                                            pFiltro.codRegTipoAtributo,
-                                                            pFiltro.desValor,
-                                                            pFiltro.indActivo);
-                    foreach (var item in resul)
-                    {
-                        lstPersonas.Add(new DTOPersonaResponse()
-                        {
-                            codEmpresa = item.codEmpresa,
-                            CodigoPersona = item.codPersona,
-                            CodigoArguTipoEntidad = item.codRegTipoEntidad,
-                            CodigoArguRubroComercial = item.codRegRubroComercial,
-                            CodigoPersonaEmpresa = item.codPerEmpresa,
+        //public List<DTOPersonaResponse> ListPaged(BaseFiltroPersona pFiltro)
+        //{
+        //    List<DTOPersonaResponse> lstPersonas = new List<DTOPersonaResponse>();
+        //    try
+        //    {
+        //        using (_DBMLPersonasDataContext SQLDC = new _DBMLPersonasDataContext(conexion))
+        //        {
+        //            var resul = SQLDC.omgc_S_Persona_Paged(pFiltro.codEmpresa,
+        //                                                    pFiltro.jqCurrentPage,
+        //                                                    pFiltro.jqPageSize,
+        //                                                    pFiltro.jqSortColumn,
+        //                                                    pFiltro.jqSortOrder,
+        //                                                    pFiltro.codRegTipoEntidad,
+        //                                                    pFiltro.codRegAsignacion,
+        //                                                    pFiltro.desNombre,
+        //                                                    pFiltro.codigoEntidad,
+        //                                                    pFiltro.codPersonaRefer,
+        //                                                    pFiltro.codRegAreaEmpresa,
+        //                                                    pFiltro.codRegCategoria,
+        //                                                    pFiltro.codRegTipoAtributo,
+        //                                                    pFiltro.desValor,
+        //                                                    pFiltro.indActivo);
+        //            foreach (var item in resul)
+        //            {
+        //                lstPersonas.Add(new DTOPersonaResponse()
+        //                {
+        //                    codEmpresa = item.codEmpresa,
+        //                    CodigoPersona = item.codPersona,
+        //                    CodigoArguTipoEntidad = item.codRegTipoEntidad,
+        //                    CodigoArguRubroComercial = item.codRegRubroComercial,
+        //                    CodigoPersonaEmpresa = item.codPerEmpresa,
 
-                            CodigoArguTipoEntidadNombre = item.codRegTipoEntidadNombre,
-                            CodigoArguRubroComercialNombre = item.codRegRubroComercialNombre,
-                            CodigoPersonaEmpresaNombre = item.codPerEmpresaNombre,
-                            desDomicilio = item.desDomicilio,
-                            desNumDocumento = item.desNumDocumento,
-                            desTelefono = item.desTelefono,
+        //                    CodigoArguTipoEntidadNombre = item.codRegTipoEntidadNombre,
+        //                    CodigoArguRubroComercialNombre = item.codRegRubroComercialNombre,
+        //                    CodigoPersonaEmpresaNombre = item.codPerEmpresaNombre,
+        //                    desDomicilio = item.desDomicilio,
+        //                    desNumDocumento = item.desNumDocumento,
+        //                    desTelefono = item.desTelefono,
 
-                            RazonSocial = item.RazonSocial,
-                            NombreComercial = item.NombreComercial,
-                            Observaciones = item.Observaciones,
-                            segUsuarioEdita = item.segUsuarioEdita,
-                            segFechaEdita = item.segFechaHoraEdita,
-                            segMaquinaEdita = item.SegMaquinaOrigen,
-                            Estado = item.Estado,
+        //                    RazonSocial = item.RazonSocial,
+        //                    NombreComercial = item.NombreComercial,
+        //                    Observaciones = item.Observaciones,
+        //                    segUsuarioEdita = item.segUsuarioEdita,
+        //                    segFechaEdita = item.segFechaHoraEdita,
+        //                    segMaquinaEdita = item.SegMaquinaOrigen,
+        //                    Estado = item.Estado,
 
-                            ROWNUM = item.ROWNUM.HasValue ? item.ROWNUM.Value : 0,
-                            TOTALROWS = item.TOTALROWS.HasValue ? item.TOTALROWS.Value : 0
+        //                    ROWNUM = item.ROWNUM.HasValue ? item.ROWNUM.Value : 0,
+        //                    TOTALROWS = item.TOTALROWS.HasValue ? item.TOTALROWS.Value : 0
 
-                        });
-                    }
-                }
-            }
-            catch (Exception)
-            {
-                throw;
-            }
-            return lstPersonas;
-        }
+        //                });
+        //            }
+        //        }
+        //    }
+        //    catch (Exception)
+        //    {
+        //        throw;
+        //    }
+        //    return lstPersonas;
+        //}
 
         /// <summary>
         /// Retorna un LISTA de registros de la Entidad Maestros.Personas clientes CROM

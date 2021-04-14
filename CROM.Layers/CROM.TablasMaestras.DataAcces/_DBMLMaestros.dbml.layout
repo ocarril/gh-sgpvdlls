@@ -2,10 +2,10 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="_DBMLMaestros">
   <DataContextMoniker Name="/_DBMLMaestrosDataContext" />
   <nestedChildShapes>
-    <classShape Id="570de62f-220f-4c20-8d14-8e959d24e5e9" absoluteBounds="1.375, 0.75, 2, 4.0785139973958326">
+    <classShape Id="570de62f-220f-4c20-8d14-8e959d24e5e9" absoluteBounds="0.5, 0.75, 2, 4.0785139973958326">
       <DataClassMoniker Name="/_DBMLMaestrosDataContext/TablasMaestrasRegistro" />
       <nestedChildShapes>
-        <elementListCompartment Id="35e919c6-efd1-46fe-bfe1-33a9dd2786c2" absoluteBounds="1.3900000000000001, 1.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="35e919c6-efd1-46fe-bfe1-33a9dd2786c2" absoluteBounds="0.51500000000000012, 1.21, 1.9700000000000002, 3.518513997395833" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
   </nestedChildShapes>

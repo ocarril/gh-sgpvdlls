@@ -140,12 +140,14 @@
     <Compile Include="Asistencia\BESysReporte.cs" />
     <Compile Include="Asistencia\BETimeEmpleado.cs" />
     <Compile Include="Asistencia\BETimeMarcacion.cs" />
+    <Compile Include="Comercial\request\DTODocumRegUnsubscribeDocumentRequest.cs" />
     <Compile Include="Comercial\request\DTOParteDiarioRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegPagoCreditoRequest.cs" />
     <Compile Include="Comercial\request\DTOParteDiarioTurnoRequest.cs" />
     <Compile Include="Comercial\response\DTODocumRegPagoCreditoResponse.cs" />
     <Compile Include="Comercial\response\DTOParteDiarioResponse.cs" />
     <Compile Include="Comercial\response\DTOParteDiarioTurnoResponse.cs" />
+    <Compile Include="Maestros\DTO\DTOPersonaPagedResponse.cs" />
     <Compile Include="SUNAT\BESendBillDocumentRequest.cs" />
     <Compile Include="SUNAT\FirmadoResponse.cs" />
     <Compile Include="SUNAT\IDocumentoElectronico.cs" />

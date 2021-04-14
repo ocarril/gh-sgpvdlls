@@ -13,10 +13,12 @@
         }
 
         public List<DocumRegBajaSelect> LstCodDocumRegBaja { get; set; }
-        
+
         public DateTime fecEnvioBaja { get; set; }
 
-        public string  gloMotivoBaja { get; set; }
+        public string gloMotivoBaja { get; set; }
+
+        public string codRegMotivoAnulacion { get; set; }
 
 
         [JsonIgnore]
@@ -59,24 +61,52 @@
             numSerie = string.Empty;
             numDocumento = string.Empty;
         }
+        public int codEmpresa { get; set; }
 
         public int codDocumReg { get; set; }
-        
-        public string codTipoComprobante { get; set; }
 
         public string numSerie { get; set; }
 
         public string numDocumento { get; set; }
 
+        public string codTipoComprobante { get; set; }
+
         public Nullable<DateTime> fecEmision { get; set; }
+
+        public TimeSpan horEmision { get; set; }
+
+        public DateTime? segFechaEdita { get; set; }
+
+        public string segUsuarioEdita { get; set; }
+
+        #region DATOS ADICIONALES
+
+        public string ublVersionId { get; set; }
+
+        public string customizationId { get; set; }
+
+        public DateTime fecEmisionDT { get; set; }
+
+        public string EmisorNumRUC { get; set; }
+
+        public string EmisorNombre { get; set; }
+
+        public string EmisorTipoDocumento { get; set; }
+
+        #endregion
 
         public bool flagUpdated { get; set; }
 
         public bool flagValidated { get; set; }
 
+        #region DATOS INPUT
+
         public string gloMotivoBaja { get; set; }
 
         public string NumeroCorrelative { get; set; }
+
+        #endregion
+
 
     }
 

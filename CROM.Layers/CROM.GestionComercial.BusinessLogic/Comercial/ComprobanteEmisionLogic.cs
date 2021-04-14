@@ -2886,7 +2886,8 @@ namespace CROM.GestionComercial.BusinessLogic
                     }
 
                     if (comprobanteEmision.NumeroComprobanteORIGEN != null)
-                        if (comprobanteEmision.CodigoComprobanteORIGEN != null && comprobanteEmision.NumeroComprobanteORIGEN.Trim().Length > 0)
+                        if (comprobanteEmision.CodigoComprobanteORIGEN != null && 
+                            comprobanteEmision.NumeroComprobanteORIGEN.Trim().Length > 0)
                         {
                             BEDocumento itemComprobantesREF = new BEDocumento();
                             itemComprobantesREF = new DocumentoLogic().Find(comprobanteEmision.CodigoComprobanteORIGEN,

@@ -93,21 +93,21 @@ namespace CROM.TablasMaestras.BussinesLogic
             return lstPersona;
         }
 
-        public List<DTOPersonaResponse> ListPaged(BaseFiltroPersona pFiltro)
-        {
-            List<DTOPersonaResponse> lstPersonas = new List<DTOPersonaResponse>();
-            try
-            {
-                lstPersonas = oPersonasData.ListPaged(pFiltro);
-            }
-            catch (Exception ex)
-            {
-                var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, 
-                                                              pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
-                throw new Exception(returnValor.Message);
-            }
-            return lstPersonas;
-        }
+        //public List<DTOPersonaResponse> ListPaged(BaseFiltroPersona pFiltro)
+        //{
+        //    List<DTOPersonaResponse> lstPersonas = new List<DTOPersonaResponse>();
+        //    try
+        //    {
+        //        lstPersonas = oPersonasData.ListPaged(pFiltro);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, 
+        //                                                      pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
+        //        throw new Exception(returnValor.Message);
+        //    }
+        //    return lstPersonas;
+        //}
 
         public List<DTOEmpresaPersonaResponse> ListEmpresaEmision(int pcodEmpresa, string pnumRUC)
         {
