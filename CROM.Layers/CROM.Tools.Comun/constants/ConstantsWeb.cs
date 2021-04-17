@@ -75,8 +75,8 @@
         public const string ValorParametroIncorrecto = "El Valor del Parámetro \"{0}\" es incorrecto.";
         public const string PAIS_ORIGEN = "es-PE";
 
-        public const string PathImages = "Content/Images/";
-        public const string PathLogos = "Content/logos/";
+        public const string PathImages = @"Content\Images\";
+        public const string PathLogos = @"content\logos\";
 
         public const string URI_SEGURIDAD_POST_VALIDATE_USER = "/api/security/getvalidateuser";
         public const string URI_SEGURIDAD_POST_LIST_USER_OBJECTS_GRANTS = "/api/security/listuserobjectsgrants";

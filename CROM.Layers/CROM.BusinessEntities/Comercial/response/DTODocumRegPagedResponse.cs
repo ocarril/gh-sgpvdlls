@@ -31,6 +31,8 @@ namespace CROM.BusinessEntities.Comercial.response
             gloMotivoSustento = string.Empty;
 
             codBienDetraccionNombre = string.Empty;
+            indAbreviaturaDest = string.Empty;
+            indAbreviaturaOrig = string.Empty;
         }
 
 
@@ -216,6 +218,10 @@ namespace CROM.BusinessEntities.Comercial.response
         public string keyMotivoNDB { get; set; }
         public string codMotivoNCRNombre { get; set; }
         public string codMotivoNDBNombre { get; set; }
+
+        public string indAbreviaturaOrig { get; set; }
+
+        public string indAbreviaturaDest { get; set; }
 
         #endregion
 

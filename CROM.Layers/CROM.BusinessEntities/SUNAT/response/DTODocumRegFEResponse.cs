@@ -60,44 +60,94 @@
         }
 
         public int codDocumRegSunat { get; set; }
+
         public int codDocumReg { get; set; }
+
         public string DRC_Doc_TipoDocumento { get; set; }
 
         public string numDocumento { get; set; }
+
         public string DRC_Doc_Serie { get; set; }
+
         public string DRC_Doc_Numero { get; set; }
+
         public string DRC_tipOperacion { get; set; }
+
         public string DRC_fecEmision { get; set; }
+
         public string DRC_horEmision { get; set; }
+
         public DateTime DRC_fecVencimiento { get; set; }
+
         public string DRC_codLocalEmisor { get; set; }
 
         public string DRC_tipDocUsuario { get; set; }
+
         public string DRC_numDocUsuario { get; set; }
+
         public string DRC_rznSocialUsuario { get; set; }
+
         public string cliEntidadcodUbigeo { get; set; }
+
+        #region DATOS RELACIONADO A SUNAT - ENVIO
 
         public string DRC_tipMoneda { get; set; }
 
-        public decimal DRC_sumTotBruto { get; set; }
-        public decimal DRC_sumTotTributos { get; set; }
-        public decimal DRC_sumTotValVenta { get; set; }
-        public decimal DRC_sumPrecioVenta { get; set; }
-        public decimal DRC_sumDescTotal { get; set; }
-        public decimal DRC_sumOtrosCargos { get; set; }
-        public decimal DRC_sumTotalAnticipos { get; set; }
-        public decimal DRC_sumImpVenta { get; set; }
         public string DRC_ublVersionId { get; set; }
+
         public string DRC_customizationId { get; set; }
+
         public bool DRC_Anulado { get; set; }
+
         public bool DRC_Activada { get; set; }
+
         public bool DRC_DeBaja { get; set; }
+
         public int DRC_Doc_Contingencia { get; set; }
+
         public string DRC_Firma { get; set; }
+
         public string DRC_CodBarras { get; set; }
 
         public string DRC_NomArchivo { get; set; }
+
         public string DRC_RptaSunat { get; set; }
+
+        public bool flagEnviadoSUNAT { get; set; }
+
+        public Nullable<DateTime> fecEnviadoSUNAT { get; set; }
+
+        public string segUsuarioEnviadoSUNAT { get; set; }
+
+        public bool flagParaEnvioSUNAT { get; set; }
+
+        #endregion
+
+        #region DATOS DE VALORES MONETARIOS/IMPUESTOS DEL DOCUMENTO
+
+        public decimal DRC_sumTotBruto { get; set; }
+
+        public decimal DRC_sumTotTributos { get; set; }
+
+        public decimal DRC_sumTotValVenta { get; set; }
+
+        public decimal DRC_sumPrecioVenta { get; set; }
+
+        public decimal DRC_sumDescTotal { get; set; }
+
+        public decimal DRC_sumOtrosCargos { get; set; }
+
+        public decimal DRC_sumTotalAnticipos { get; set; }
+
+        public decimal DRC_sumImpVenta { get; set; }
+
+        public decimal prcImpuestoGV { get; set; }
+
+        public decimal? monTipoCambioVTA { get; set; }
+
+        public decimal? monTipoCambioCMP { get; set; }
+
+        #endregion
 
         public string gloObservaciones { get; set; }
 
@@ -109,27 +159,47 @@
 
         public List<DTODocumRegPagoCreditoResponse> LstDocumRegPagoCredito { get; set; }
 
-        #region // DATOS DEL DOCUMENTO DE REFERENCIA
+        #region DATOS DEL DOCUMENTO DE REFERENCIA
 
         public int? RefcodDocumReg { get; set; }
+
         public string RefcodDocumento { get; set; }
+
         public string RefnumDocumentoOrig { get; set; }
+
         public decimal? RefmonTipoCambioVTA { get; set; }
+
         public string ReftipoDocumento { get; set; }
+
         public string ReftipoDocumentoNombre { get; set; }
 
-
         public string RefnumSerie { get; set; }
+
         public string RefnumDocumento { get; set; }
+
         public Nullable<DateTime> ReffecEmision { get; set; }
+
         public int? codMotivoNCR { get; set; }
+
         public int? codMotivoNDB { get; set; }
+
         public string RefMotivo { get; set; }
 
         public string keyMotivoNCR { get; set; }
+
         public string keyMotivoNDB { get; set; }
+
         public string codMotivoNCRNombre { get; set; }
+
         public string codMotivoNDBNombre { get; set; }
+
+        public string numDocumentoOrig { get; set; }
+
+        public string codDocumentoDestino { get; set; }
+
+        public string codDocumentoDestinoNombre { get; set; }
+
+        public string numDocumentoDestino { get; set; }
 
         #endregion
 
@@ -149,13 +219,7 @@
 
         public string codRegMonedaSimbolo { get; set; }
 
-        public decimal prcImpuestoGV { get; set; }
-
         public string codCondicionVentaNombre { get; set; }
-
-        public decimal? monTipoCambioVTA { get; set; }
-
-        public decimal? monTipoCambioCMP { get; set; }
 
         public string codDocumentoOrigen { get; set; }
 
@@ -177,7 +241,23 @@
 
         public string codEmpleadoNombre { get; set; }
 
+        public string codDocumento { get; set; }
+
+        public string codAbreviatura { get; set; }
+
+        public string nomDocumento { get; set; }
+
+        public bool indCanceladoPagado { get; set; }
+
+        public string fecPagadoCancelado { get; set; }
+
         #endregion
+
+        public string pTotalLetras { get; set; }
+
+        public string pCodBarras { get; set; }
+
+        public string pLogoEmpresa { get; set; }
 
         #region DATOS DE LA EMPRESA EMISOR DEL DOCUMENTO
 
@@ -212,20 +292,7 @@
 
         #endregion
 
-        public bool indCanceladoPagado { get; set; }
-
-        public string fecPagadoCancelado { get; set; }
-
-        public bool flagEnviadoSUNAT { get; set; }
-
-        public Nullable<DateTime> fecEnviadoSUNAT { get; set; }
-
-        public string segUsuarioEnviadoSUNAT { get; set; }
-
-        public bool flagParaEnvioSUNAT { get; set; }
-
-
-        #region PROPIEDADES POR DETRACCIONES
+        #region DATOS O PROPIEDADES POR LAS DETRACCIONES
 
         public bool indAplicaDetraccion { get; set; }
 
@@ -247,6 +314,8 @@
 
         #region DATOS DE LA GUIA DE REMISION
 
+        public string codRegUnidadMedidaGlobal { get; set; }
+
         public string numTotalBultos { get; set; }
 
         public string cntPesoTotalBrutoBienes { get; set; }
@@ -263,9 +332,7 @@
 
         public string codMotivoTrasladoNombre { get; set; }
 
-
         public string numMinuta { get; set; }
-
 
         public int? codModalidadTransporte { get; set; }
 
@@ -326,7 +393,6 @@
 
         #region DATOS ADICIONALES COMPLETE
 
-
         public string numContenedor { get; set; }
 
         public string codPuerto { get; set; }
@@ -349,20 +415,6 @@
 
         #endregion
 
-        public string codDocumentoDestino { get; set; }
-
-        public string codDocumentoDestinoNombre { get; set; }
-
-        public string numDocumentoDestino { get; set; }
-
-
-        public string pTotalLetras { get; set; }
-
-        public string pCodBarras { get; set; }
-
-        public string pLogoEmpresa { get; set; }
-
-
         #region DATOS DE PAGO A CREDITO
 
         public bool indFormaPagoRegistra { get; set; }
@@ -379,18 +431,7 @@
 
         #endregion
 
-
-        public string numDocumentoOrig { get; set; }
-
-        public string codDocumento { get; set; }
-
-        public string codAbreviatura { get; set; }
-
-        public string nomDocumento { get; set; }
-
-        public string codRegUnidadMedidaGlobal { get; set; }
-
-        #region VALIDACION DE DOCUMENTO REGISTRADO EN SUNAT
+        #region DATOS DE VALIDACION DE DOCUMENTO REGISTRADO EN SUNAT
 
         public DateTime? fecValidWSoapSunat { get; set; }
 
@@ -399,5 +440,6 @@
         public bool indValidWSoapSunat { get; set; }
 
         #endregion
+
     }
 }
