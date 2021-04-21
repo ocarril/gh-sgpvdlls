@@ -18,211 +18,238 @@ namespace CROM.BusinessEntities.Comercial.response
     {
         public DTODocumRegPrintResponse()
         {
-            listaComprobanteEmisionDetalle = new List<BEComprobanteEmisionDetalle>();
+
+            CodigoPersonaEmpre = string.Empty;
+            nomRazonSocialEntidad = string.Empty;
+            codRegTipoDomicilio = string.Empty;
+            desEntidadDireccion = string.Empty;
+            numEntidadRUC = string.Empty;
+
+            listaComprobanteEmisionDetalle = new List<DTODocumRegDetallePrintResponse>();
             listaComprobanteEmisionImpuestos = new List<BEComprobanteEmisionImpuesto>();
             listaComprobanteEmisionDetalleNrosDeSerie = new List<BEComprobanteEmisionDetalleNrosDeSerie>();
             listaDocumentoPagoCredito = new List<BEDocumentoSUNATPagoCreditoResponse>();
-
-            CodigoPersonaEmpre = string.Empty;
-            EntidadRazonSocial = string.Empty;
-            CodigoArguTipoDomicil = string.Empty;
-            EntidadDireccion = string.Empty;
-            EntidadNumeroRUC = string.Empty;
         }
 
         public int codEmpresa { get; set; }
         public string codEmpresaRUC { get; set; }
         public int codDocumReg { get; set; }
+
+        public string codRegDestinoDocumento { get; set; }
         public string CodigoPersonaEmpre { get; set; }
-        public string CodigoPuntoVenta { get; set; }
-        public string CodigoComprobante { get; set; }
+        public string codPuntoDeVenta { get; set; }
+        public string codDocumento { get; set; }
+        public string numDocumento { get; set; }
+        public string codRegEstadoDocumento { get; set; }
         public int codDocumentoSerie { get; set; }
-        public string NumeroComprobante { get; set; }
-        public string CodigoArguEstadoDocu { get; set; }
-        public string CodigoArguDestinoComp { get; set; }
-        public string CodigoPersonaEntidad { get; set; }
+        public string codRegMoneda { get; set; }
+        public string codRegMonedaNombre { get; set; }
+        public string codRegMonedaSimbolo { get; set; }
+
+
         public int? codEmpleado { get; set; }
 
-        #region CAMPOS DE FECHA
+        #region ATRIBUTOS DE TIPOS FECHA
 
-        public DateTime FechaDeEmision { get; set; }
-        public Nullable<System.DateTime> FechaDeVencimiento { get; set; }
-        public Nullable<System.DateTime> FechaDeCancelacion { get; set; }
-        public Nullable<System.DateTime> FechaDeAnulacion { get; set; }
-        public Nullable<System.DateTime> FechaDeDeclaracion { get; set; }
+        public DateTime fecDeEmision { get; set; }
+        public Nullable<System.DateTime> fecDeVencimiento { get; set; }
+        public Nullable<System.DateTime> fecDeCancelacion { get; set; }
+        public Nullable<System.DateTime> fecDeAnulacion { get; set; }
+        public Nullable<System.DateTime> fecDeDeclaracion { get; set; }
 
         #endregion
 
-        public string CodigoArguMoneda { get; set; }
+        public string codParteDiario { get; set; }
 
-        public decimal ValorIGV { get; set; } // MEMORIA
+        #region ATRIBUTOS DE VALORES MONETARIOS Y PORCENTAJES
 
-        public string CodigoParte { get; set; }
-        public decimal ValorTotalBruto { get; set; }
-        public decimal ValorTotalDescuento { get; set; }
-        public decimal ValorTotalVenta { get; set; }
-        public decimal ValorTotalImpuesto { get; set; }
-        public decimal ValorTotalPrecioVenta { get; set; }//
-        public decimal ValorTotalPrecioExtran { get; set; }// 
-        public decimal ValorTotalVentaGravada { get; set; }//
-        public decimal ValorTotalImpuestoGravada { get; set; }//
-        public decimal ValorTotalHistorico { get; set; }//
+        public decimal prcValorIGV { get; set; }
+        public decimal mtoValorTotalBruto { get; set; }
+        public decimal mtoValorTotalDescuento { get; set; }
+        public decimal mtoValorTotalVenta { get; set; }
+        public decimal mtoValorTotalImpuesto { get; set; }
+        public decimal mtoValorTotalPrecioVenta { get; set; }
+        public decimal mtoValorTotalPrecioExtran { get; set; }
+        public decimal mtoValorTotalVentaGravada { get; set; }
+        public decimal mtoValorTotalImpuestoGravada { get; set; }
+        public decimal mtoValorTotalHistorico { get; set; }
 
-        public string CodigoComprobanteDESTINO { get; set; }
-        public string NumeroComprobanteDESTINO { get; set; }//
-        public string CodigoComprobanteORIGEN { get; set; }
-        public string NumeroComprobanteORIGEN { get; set; }//
+        public decimal? sumOtrosCargos { get; set; }
+        public decimal? sumTotalAnticipos { get; set; }
+        public decimal? sumImpVenta { get; set; }
+        public decimal mtoTipoCambioVTA { get; set; }
+        public decimal mtoTipoCambioCMP { get; set; }
 
-        public Nullable<DateTime> FechaComprobanteORIGEN { get; set; }
+        #endregion
 
-        public decimal ValorTipoCambioORIGEN { get; set; }
+        public string codnumDocumentoNCR { get; set; }
+        public string numDocumentoNCR { get; set; }
+        public string codnumDocumentoNDB { get; set; }
+        public string numDocumentoNDB { get; set; }
 
-        public int? codDocumentoSerieOrigen { get; set; }
+        public string numDocOrdenDeCompra { get; set; }
+        public string numDocGuiaDeSalida { get; set; }
+        public string numDocPedidoAdquisicion { get; set; }
+        public string numDocLetrasCambio { get; set; }
 
-        public int? codDocumRegOrigen { get; set; }
+        public string gloObservaciones { get; set; }
 
-        public string CodigoComprobanteNCR { get; set; }
-        public string NumeroComprobanteNCR { get; set; }//
-        public string CodigoComprobanteNDB { get; set; }
-        public string NumeroComprobanteNDB { get; set; }//
 
-        public string DocOrdenDeCompra { get; set; }
-        public string DocGuiaDeSalida { get; set; }
-        public string DocPedidoAdquisicion { get; set; }
-        public string DocLetrasCambio { get; set; }
-        public string Observaciones { get; set; }
+        #region ATRIBUTOS DE LA EMPRESA CLIENTE-PROVEEDOR
 
-        public string EntidadRazonSocial { get; set; }
-        public string CodigoArguTipoDomicil { get; set; }
-        public string EntidadDireccion { get; set; }
-        public string EntidadNumeroRUC { get; set; }
+        public string codPersonaEntidad { get; set; }
+        public string numEntidadRUC { get; set; }
+        public string codRegTipoEntidad { get; set; }
+        public string codRegTipoEntidadNombre { get; set; }
+        public string nomRazonSocialEntidad { get; set; }
+        public string codRegTipoDomicilio { get; set; }
+        public string codRegTipoDomicilioNombre { get; set; }
+        public string desEntidadDireccion { get; set; }
+        public string codRegTipoDocumentoEntidad { get; set; }
+        public int? codPersonaDomicilio { get; set; }
 
-        public string CodigoComprobanteSecun { get; set; }
-        public string NumeroComprobanteSecun { get; set; }
-        public string CodigoPuntoVentaSecun { get; set; }
+        public string codPersonaEntidadContacto { get; set; }
+        public string codPersonaEntidadContactoNombre { get; set; }
+        public string codUbigeoEntidad { get; set; }
+        public string desDireccionUbigeoEntidad { get; set; }
+
+        #endregion
+
+        public string codDocumentoSecun { get; set; }
+        public string numDocumentoSecun { get; set; }
+        public string codPuntoVentaSecun { get; set; }
 
         public int? codEmpleadoVendedor { get; set; }
-        public string CodigoComprobanteFact { get; set; }
-        public string NumeroSerie { get; set; }
-        public string NumeroMinuta { get; set; }
-        public string CodigoArguDepositoDesti { get; set; }//
-        public string CodigoArguDepositoOrigen { get; set; }//
-        public string NumeroComprobanteExt { get; set; }//
+        public string codEmpleadoVendedorNombre { get; set; }
 
-        public bool DocEsGravado { get; set; }//MEMORIA
-        public bool DocExigeDocAnexo { get; set; }//MEMORIA
-        public bool DocEsFacturable { get; set; }//MEMORIA
-        public decimal ValorTipoCambioVTA { get; set; }//
-        public decimal ValorTipoCambioCMP { get; set; }//
-
-        public bool CHECKED_DECLARA { get; set; }//MEMORIA
-        public string CodigoArguAnulacion { get; set; }
-
-        public string CodigoArguTipoDeOperacion { get; set; }
-        public string Nota01 { get; set; }
-        public string Nota02 { get; set; }
+        public string codDocumentoFact { get; set; }
+        public string numDocumentoSerie { get; set; }
+        public string numDocumentoMinuta { get; set; }
 
 
-        public Nullable<DateTime> FechaDeEntrega { get; set; }
-        public Nullable<DateTime> FechaDeRecibido { get; set; }
-        public string CodigoArguUbigeo { get; set; }
-        public string EntidadDireccionUbigeo { get; set; }
-
-        public bool Estado { get; set; }
-
-        public DateTime FechaDeProceso { get; set; }
-        public string CodigoRegistroUnico { get; set; }
-        public int SegAnio { get; set; }
-        public Int16 SegMes { get; set; }
-        public Int16 SegDia { get; set; }
-        public string SegUsuarioCrea { get; set; }
-        public string SegUsuarioEdita { get; set; }
-        public DateTime SegFechaCrea { get; set; }
-        public Nullable<DateTime> SegFechaEdita { get; set; }
-        public string SegMaquina { get; set; }
-        public int? codGastoDeAduana { get; set; }
-
-        public string CodigoPersonaEmpreNombre { get; set; }
-        public string CodigoPuntoVentaNombre { get; set; }
-        public string CodigoComprobanteNombre { get; set; }
-        public string CodigoArguEstadoDocuNombre { get; set; }
-        public string CodigoArguDestinoCompNombre { get; set; }
-        public string CodigoPersonaEntidadNombre { get; set; }
-        public string CodigoArguMonedaNombre { get; set; }
-        public string CodigoArguMotivoGuiaNombre { get; set; }
-        public string CodigoPersonaTransporteNombre { get; set; }
-        public string CodigoPersonaTransporteRUC { get; set; }
-        public string CodigoArguAnulacionNombre { get; set; }
-        public string CodigoArguTipoDomicilNombre { get; set; }
-        public string CondicionVentaNombre { get; set; }
-        public string CondicionCompraNombre { get; set; }
-        public string CodigoPuntoVentaSecunNombre { get; set; }
-        public string CodigoArguTipoDeOperacionNombre { get; set; }
-
-        public string auxcodEmpleadoVendedorNombre { get; set; }
-        public string auxcodEmpleadoNombre { get; set; }
-
-        public List<BEComprobanteEmisionDetalle> listaComprobanteEmisionDetalle { get; set; }
-        public List<BEComprobanteEmisionImpuesto> listaComprobanteEmisionImpuestos { get; set; }
-        public List<BEComprobanteEmisionDetalleNrosDeSerie> listaComprobanteEmisionDetalleNrosDeSerie { get; set; }
-        public List<BEDocumentoSUNATPagoCreditoResponse> listaDocumentoPagoCredito { get; set; }
-
-        public string CodigoPersonaEntidadContacto { get; set; }
-        public string CodigoPersonaEntidadContactoNombre { get; set; }
-
-        public string REF_CodigoPersonaEntidadContactoTelefono { get; set; }
-        public string REF_CodigoPersonaEntidadContactoEmail { get; set; }
-        public string REF_CodigoPersonaVendedorArea { get; set; }
-        public string REF_CodigoPersonaVendedorEmail { get; set; }
-        public string REF_CodigoPersonaVendedorTelefono { get; set; }
-        public string REF_CodigoArguMonedaSimbolo { get; set; }
-        public string REF_ValorTotalPrecioVentaLetras { get; set; }
-        public string REF_TextoDeLeyenda { get; set; }
-
-        public string CodigoComprobanteDESTINONombre { get; set; }
-        public string CodigoComprobanteORIGENNombre { get; set; }
-        public string CodigoArguDepositoDestiNombre { get; set; }
-        public string CodigoArguDepositoOrigenNombre { get; set; }
-
-        public int REF_TotalItems { get; set; }
-        public int REF_TotalLetras { get; set; }
-
+        public string numDocumentoExterno { get; set; }
+        public bool indDocEsGravado { get; set; }
+        public bool indDocExigeDocAnexo { get; set; }
+        public bool indDocEsFacturable { get; set; }
         public bool indInternacional { get; set; }
         public string perTributario { get; set; }
 
-        public string auxcodRegTipoDomicilioTransporteNombre { get; set; }
-        public string auxcodRegUbigeoTransporteNombre { get; set; }
 
-        public string auxcodRegTipoEntidad { get; set; }
-        public string auxcodRegTipoEntidadNombre { get; set; }
-        public string auxEntidadNumeroDNI { get; set; }
-        public string auxCuentaBancariaPago { get; set; }
+        #region DATOS DE ANULACION
 
-        #region /*13-SET-2015 Indicadores para visualizar o no Firma-Sello y IGV Desagregado*/
+        public string codRegAnulacion { get; set; }
+        public string codRegAnulacionNombre { get; set; }
+
+        #endregion
+
+
+        public int? codGastoDeAduana { get; set; }
+        public string codRegDestinoDocumentoNombre { get; set; }
+        public string codPuntoDeVentaNombre { get; set; }
+        public string codDocumentoNombre { get; set; }
+        public string codRegEstadoDocumentoNombre { get; set; }
+
+        public string codRegTipoDeOperacion { get; set; }
+        public string desNota01 { get; set; }
+        public string desNota02 { get; set; }
+
+
+        public Nullable<DateTime> fecDeEntrega { get; set; }
+        public Nullable<DateTime> fecDeRecibido { get; set; }
+
+        public int? codCondicionVenta { get; set; }
+        public int? codCondicionCompra { get; set; }
+        public string codCondicionVentaNombre { get; set; }
+        public string codCondicionCompraNombre { get; set; }
+        public string codRegTipoDeOperacionNombre { get; set; }
+
+
+        public List<DTODocumRegDetallePrintResponse> listaComprobanteEmisionDetalle { get; set; }
+
+        public List<BEComprobanteEmisionImpuesto> listaComprobanteEmisionImpuestos { get; set; }
+
+        public List<BEComprobanteEmisionDetalleNrosDeSerie> listaComprobanteEmisionDetalleNrosDeSerie { get; set; }
+
+        public List<BEDocumentoSUNATPagoCreditoResponse> listaDocumentoPagoCredito { get; set; }
+
+        public string codEmpleadoVendedorTelefono { get; set; }
+        public string codEmpleadoVendedorEmail { get; set; }
+
+        #region ARIBUTOS DEL DOCUMENTO ORIGEN
+
+        public int? codDocumRegOrigen { get; set; }
+
+        public string codDepositoOrigen { get; set; }
+
+        public string codDepositoOrigenNombre { get; set; }
+
+        public string codDocumentoOrigen { get; set; }
+
+        public string codDocumentoOrigenNombre { get; set; }
+
+        public string numDocumentoOrigen { get; set; }
+
+        public Nullable<DateTime> fecDocumentoOrigen { get; set; }
+
+        public decimal monTipoCambioOrigen { get; set; }
+
+        public int? codDocumentoSerieOrigen { get; set; }
+
+        #endregion
+
+        #region ATRIBUTOS DEL DOCUMENTO DESTINO
+
+        public string codDepositoDestino { get; set; }
+
+        public string codDepositoDestinoNombre { get; set; }
+
+        public string codDocumentoDestino { get; set; }
+
+        public string numDocumentoDestino { get; set; }
+
+        public string codDocumentoDestinoNombre { get; set; }
+
+        #endregion
+
+        #region APTRIBUTOS Indicadores para visualizar o no Firma-Sello y IGV Desagregado - 13-SET-2015
 
         public bool indImprimeFirma { get; set; }
         public bool indImprimeSinIGV { get; set; }
 
         #endregion
 
-        #region  /*Tabla: GestionComercial.DocumentoMovAdicional - GUIA DE REMISIONES */
+        #region  ARIBUTOS DE LA GUIA DE REMISIONES - Tabla: GestionComercial.DocumentoMovAdicional 
 
         public string desTotalCaja { get; set; }
+
         public string desTotalPeso { get; set; }
-        public string CodigoArguMotivoGuia { get; set; }
-        public string DireccioDePartida { get; set; }
-        public string CodigoPersonaTransporte { get; set; }
+
+        public string codRegMotivoGuia { get; set; }
+
+        public string gloDireccioDePartida { get; set; }
+
+        public string codPersonaTransporte { get; set; }
+
         public string codRegTipoDomicilioTransporte { get; set; }
+
         public string codRegUbigeoTransporte { get; set; }
 
         public DateTime? fecInicioTraslado { get; set; }
-        public string TransporteConstancia { get; set; }
-        public string TransporteMarca { get; set; }
-        public string TransporteLicencia { get; set; }
-        public string TransportePlaca { get; set; }
-        public string Nota03 { get; set; }
+
+        public string desTransporteConstancia { get; set; }
+
+        public string desTransporteMarca { get; set; }
+
+        public string desTransporteLicencia { get; set; }
+
+        public string desTransportePlaca { get; set; }
+
+        public string desNota03 { get; set; }
 
         public int? codPersonaDomicilioTransportista { get; set; }
+
+        public string codRegTipoDomicilioTransporteNombre { get; set; }
+
 
         public int? codPersonaDomicilioPartida { get; set; }
 
@@ -236,10 +263,6 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string codRegTipoDocumentoTransportista { get; set; }
 
-        public string codRegMotivoGuiaNombre { get; set; }
-
-        public string codPersonaTransporteNombre { get; set; }
-
         public string codUbigeoTransporteNombre { get; set; }
 
         public string codPersonaDomicilioTransportistaNombre { get; set; }
@@ -252,32 +275,28 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string desUbigeoDePartida { get; set; }
 
-
-
-        public bool indInventarioAutomatico { get; set; }
-        public string strInventarioAutomatico { get; set; }
         public string desDireccionTransporte { get; set; }
+
+
+        public string codRegMotivoGuiaNombre { get; set; }
+        public string codPersonaTransporteNombre { get; set; }
+        public string codoPersonaTransporteRUC { get; set; }
 
         #endregion
 
-        public int? codCondicionVenta { get; set; }
-        public int? codCondicionCompra { get; set; }
 
         [JsonIgnore]
         public string codEmpleadoPlanilla { get; set; }
 
-        public decimal? sumOtrosCargos { get; set; }
 
-        public decimal? sumTotalAnticipos { get; set; }
-
-        public decimal? sumImpVenta { get; set; }
-
-
-        #region  /*DATOS NOTA DE CREDITO/DEBITO - SUNAT      */      
+        #region  ATRIBUTOS DE ENVIO A SUNAT -FACT - BLT - NOTA DE CREDITO/DEBITO -      */      
 
         public int? codMotivoNCR { get; set; }
+
         public int? codMotivoNDB { get; set; }
+
         public string gloMotivoSustento { get; set; }
+
         public bool flagParaEnvioSUNAT { get; set; }
 
         public bool flagEnviadoSUNAT { get; set; }
@@ -292,11 +311,10 @@ namespace CROM.BusinessEntities.Comercial.response
 
         #endregion
 
-        public string codRegTipoDocumentoEntidad { get; set; }
 
-        public int? codPersonaDomicilio { get; set; }
 
         public int? codDocumentoEstado { get; set; }
+        public string codTipoDocumentoSUNAT { get; set; }
 
         public Int16 indOrigen { get; set; }
 
@@ -304,10 +322,11 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string nomReporteDocumSerie { get; set; }
 
+
+
         public string pathLogoEmpresa { get; set; }
+        public string desValorTotalPrecioVentaLetras { get; set; }
 
-
-        public string codTipoDocumentoSUNAT { get; set; }
 
 
         #region PROPIEDADES POR DETRACCIONES
@@ -332,8 +351,7 @@ namespace CROM.BusinessEntities.Comercial.response
 
         #endregion
 
-
-        #region DATOS DE PAGO A CREDITO
+        #region ATRIBUTOS DE PAGO A CREDITO
 
         public bool indFormaPagoRegistra { get; set; }
 
@@ -347,48 +365,26 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string tipMonedaMtoNetoPendientePago { get; set; }
 
+
         #endregion
 
-    }
+        #region ATRIBUTOS DE AUDITORIA
 
-    public class DTODocumRegPrintBase
-    {
-        public DTODocumRegPrintBase()
-        {
-            FirmaDeVendedor = string.Empty;
-            EmisorCorreoE = string.Empty;
-            EmisorDomicilio = string.Empty;
-            EmisorPropaganda = string.Empty;
-            EmisorRazonSocial = string.Empty;
-            EmisorTelefon01 = string.Empty;
-            EmisorTelefon02 = string.Empty;
-            EmisorUbigeo = string.Empty;
-            EmisorWebSite = string.Empty;
-            TiempoEntrega = string.Empty;
-            LogoAdicionalEmpresa = string.Empty;
-        }
+        public bool indActivo { get; set; }
+        public DateTime fecDeProceso { get; set; }
+        public string codRegistroUnicoGUID { get; set; }
+        public int segAnio { get; set; }
+        public Int16 segMes { get; set; }
+        public Int16 segDia { get; set; }
+        public string segUsuarioCrea { get; set; }
+        public string segUsuarioEdita { get; set; }
+        public DateTime segFechaCrea { get; set; }
+        public Nullable<DateTime> segFechaEdita { get; set; }
+        public string segMaquina { get; set; }
 
-        public string EmisorRazonSocial { get; set; }
+        #endregion
 
-        public string EmisorDomicilio { get; set; }
 
-        public string EmisorUbigeo { get; set; }
-
-        public string EmisorTelefon01 { get; set; }
-
-        public string EmisorTelefon02 { get; set; }
-
-        public string EmisorWebSite { get; set; }
-
-        public string EmisorCorreoE { get; set; }
-
-        public string EmisorPropaganda { get; set; }
-
-        public string TiempoEntrega { get; set; }
-
-        public string FirmaDeVendedor { get; set; }
-
-        public string LogoAdicionalEmpresa { get; set; }
 
     }
 

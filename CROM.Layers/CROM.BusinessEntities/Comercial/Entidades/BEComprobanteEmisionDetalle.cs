@@ -125,5 +125,6 @@ namespace CROM.BusinessEntities.Comercial
 
         public string gloObservacion { get; set; }
 
+
     }
 } 

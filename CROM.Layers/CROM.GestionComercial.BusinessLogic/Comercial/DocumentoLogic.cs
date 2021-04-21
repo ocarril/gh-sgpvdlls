@@ -446,6 +446,8 @@ namespace CROM.GestionComercial.BusinessLogic
                         oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
                         tx.Complete();
                     }
+                    else
+                        oReturnValor.Message = ResultInsert.ErrorMessage;
                 }
             }
             catch (Exception ex)

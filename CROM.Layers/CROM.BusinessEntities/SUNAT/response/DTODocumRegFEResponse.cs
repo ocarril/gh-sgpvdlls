@@ -97,11 +97,7 @@
 
         public string DRC_customizationId { get; set; }
 
-        public bool DRC_Anulado { get; set; }
-
         public bool DRC_Activada { get; set; }
-
-        public bool DRC_DeBaja { get; set; }
 
         public int DRC_Doc_Contingencia { get; set; }
 
@@ -122,6 +118,21 @@
         public bool flagParaEnvioSUNAT { get; set; }
 
         #endregion
+
+        #region DATOS DE ANULACION
+
+
+        public bool DRC_Anulado { get; set; }
+
+        public bool DRC_DeBaja { get; set; }
+
+        public string codRegAnulacion { get; set; }
+
+        public string codRegAnulacionNombre { get; set; }
+
+
+        #endregion
+
 
         #region DATOS DE VALORES MONETARIOS/IMPUESTOS DEL DOCUMENTO
 
@@ -440,6 +451,7 @@
         public bool indValidWSoapSunat { get; set; }
 
         #endregion
+
 
     }
 }
