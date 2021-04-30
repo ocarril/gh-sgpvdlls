@@ -158,6 +158,8 @@
     <Compile Include="SUNAT\request\BEGenerarApiConsultaValidDocumentRequest.cs" />
     <Compile Include="SUNAT\request\BESettingsSendSUNATRequest.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATPagoCreditoResponse.cs" />
+    <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioDetalleResponse.cs" />
+    <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioResponse.cs" />
     <Compile Include="SUNAT\response\BEGenerarApiConsultaTokenResponse.cs" />
     <Compile Include="SUNAT\response\BEGenerarApiConsultaValidDocumentResponse.cs" />
     <Compile Include="SUNAT\ubl21\aggregate\SunatCosts.cs" />

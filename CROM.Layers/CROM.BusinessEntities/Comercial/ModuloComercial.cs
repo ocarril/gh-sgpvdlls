@@ -912,6 +912,43 @@ namespace CROM.BusinessEntities.Comercial
     }
 
 
+    public class FiltroDocumRegSummaryDailyPage : BEBuscadorBaseRequest
+    {
+        public FiltroDocumRegSummaryDailyPage()
+        {
+            codDocumento = string.Empty;
+            codPuntoVenta = string.Empty;
+            numDocumento = string.Empty;
+            codEmpresaRUC = string.Empty;
+            desComercial = string.Empty;
+            perTributario = string.Empty;
+        }
+
+
+        public Nullable<DateTime> fecEmisionDate { get; set; }
+
+        public string codPuntoVenta { get; set; }
+
+        public string codDocumento { get; set; }
+
+        public string numDocumento { get; set; }
+
+        public string numDocumentoEntidad { get; set; }
+
+        public string desComercial { get; set; }
+
+        public string perTributario { get; set; }
+
+        public bool flagParaEnvioSUNAT { get; set; }
+
+        public bool flagEnviadoSUNAT { get; set; }
+
+        [JsonIgnore]
+        public string fecEmision { get; set; }
+
+    }
+
+
     public static class ConstantesGC
     {
         /// <summary>

@@ -283,6 +283,8 @@
           { 3047,  "La actualización por envio de SFS NO FUE EXITOSO : [ {0} ]"},
           { 3048,  "ZIP BAJA ENVIADO-PROCESADO por SFS N°: [ {0} ] - : [ {1} ]"},
           { 3049,  "ZIP BAJA ENVIADO por SFS N°: [ {0} ] - : [ {1} ]"},
+          { 3050,  "Documento N°: [ {0} - {1}-{2} ], fue ANULADO/DADO DE BAJA con éxito."},
+          { 3051,  "Documento N°: [ {0} - {1}-{2} ], NO fue ANULADO/DADO DE BAJA con éxito."},
         };
 
     }

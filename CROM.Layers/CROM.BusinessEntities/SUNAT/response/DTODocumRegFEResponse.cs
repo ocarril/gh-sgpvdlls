@@ -121,7 +121,6 @@
 
         #region DATOS DE ANULACION
 
-
         public bool DRC_Anulado { get; set; }
 
         public bool DRC_DeBaja { get; set; }
@@ -129,7 +128,6 @@
         public string codRegAnulacion { get; set; }
 
         public string codRegAnulacionNombre { get; set; }
-
 
         #endregion
 
@@ -157,6 +155,9 @@
         public decimal? monTipoCambioVTA { get; set; }
 
         public decimal? monTipoCambioCMP { get; set; }
+
+
+
 
         #endregion
 
@@ -451,7 +452,6 @@
         public bool indValidWSoapSunat { get; set; }
 
         #endregion
-
 
     }
 }
