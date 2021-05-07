@@ -17,6 +17,11 @@
 
     public class DocumRegSelect
     {
+        public DocumRegSelect()
+        {
+            nomArchivoSUNAT = string.Empty;
+        }
+
         public int codDocumReg { get; set; }
 
         public string nomArchivoSUNAT { get; set; }

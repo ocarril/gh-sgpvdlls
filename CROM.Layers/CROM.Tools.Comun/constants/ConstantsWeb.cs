@@ -252,9 +252,9 @@
           { 3016,  "No se ha encontrado ningun documento XML FIRMADO por SFS-SUNAT." },
           { 3017,  "No se ha encontrado ningun documento XML/ZIP RESPUESTA por SFS-SUNAT." },
           { 3018,  "El número de cuotas debe ser mayor que cero."},
-          { 3019,  "Seleccionar el tipo de plazo para cada cuota del credito."},
+          { 3019,  "Seleccionar el tipo de plazo para cada cuota del crédito."},
           { 3020,  "El valor pendiente de pago debe ser mayor que cero."},
-          { 3021,  "Seleccionar condición de forma de pago para el docuemnto."},
+          { 3021,  "Seleccionar condición de forma de pago para el documento."},
           { 3022,  "No ha seleccionados mínimo un N° de cuota para pagar el crédito."},
           { 3023,  "Servicio Web de la SUNAT para enviar Guia de remisión no esta disponible."},
           { 3024,  "Documento [ {0} - {1} ] FUE enviado a SUNAT con EXITO."},
@@ -285,6 +285,7 @@
           { 3049,  "ZIP BAJA ENVIADO por SFS N°: [ {0} ] - : [ {1} ]"},
           { 3050,  "Documento N°: [ {0} - {1}-{2} ], fue ANULADO/DADO DE BAJA con éxito."},
           { 3051,  "Documento N°: [ {0} - {1}-{2} ], NO fue ANULADO/DADO DE BAJA con éxito."},
+          { 3052,  "Correlativo para resumen diario no se ha generado."},
         };
 
     }

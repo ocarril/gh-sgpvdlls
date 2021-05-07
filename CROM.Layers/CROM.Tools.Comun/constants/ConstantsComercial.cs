@@ -99,5 +99,17 @@ namespace CROM.Tools.Comun.constants
           { "12",  "NO HABIDO" },
           { "20",  "NO HALLADO" }
         };
+
+
+        public static Dictionary<string, string> EstadoDelItemResumenDiario = new Dictionary<string, string>()
+        {
+          { "1",  "ADICIONAR" },
+          { "2",  "MODIFICAR" },
+          { "3",  "ANULADO" },
+          { "4",  "ANULADO EN EL DÍA (anulado antes de informar comprobante)" }
+        };
+ 
+ 
+ 
     }
 }

@@ -4,7 +4,7 @@ namespace CROM.BusinessEntities.SUNAT.response
     using System;
     using System.Collections.Generic;
 
-    public class BEDocumentoSUNATResumenDiarioResponse
+    public class BEDocumentoSUNATResumenDiarioResponse : BEBasePagedResponse
     {
         public BEDocumentoSUNATResumenDiarioResponse()
         {
@@ -16,6 +16,7 @@ namespace CROM.BusinessEntities.SUNAT.response
             gloNota = string.Empty;
             LstDocumentosBVTA = new List<BEDocumentoSUNATResumenDiarioDetalleResponse>();
         }
+        public int codDocumRegResumenDiario { get; set; }
 
         public string numRUCEmpresa { get; set; }
 
@@ -23,7 +24,7 @@ namespace CROM.BusinessEntities.SUNAT.response
 
         public DateTime fecProcesoVenta { get; set; }
 
-        public DateTime fecGeneraciónRD { get; set; }
+        public DateTime fecGeneracionRD { get; set; }
 
         public string nomFileSunat { get; set; }
 

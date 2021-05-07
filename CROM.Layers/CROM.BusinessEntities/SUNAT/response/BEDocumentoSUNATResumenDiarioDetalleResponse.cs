@@ -1,20 +1,40 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace CROM.BusinessEntities.SUNAT.response
+﻿namespace CROM.BusinessEntities.SUNAT.response
 {
-    public class BEDocumentoSUNATResumenDiarioDetalleResponse
+    using System;
+
+
+    public class BEDocumentoSUNATResumenDiarioDetalleResponse : BEBasePagedResponse
     {
         public BEDocumentoSUNATResumenDiarioDetalleResponse()
         {
-
+            codDocumento = string.Empty;
+            indAbreviatura = string.Empty;
+            numDocumento = string.Empty;
+            RD_codRegimenPercepcion = string.Empty;
+            RD_codTipDocUsuario = string.Empty;
+            RD_codTipoDocumento = string.Empty;
+            RD_codTipoDocumentoModifica = string.Empty;
+            RD_codTipoMoneda = string.Empty;
+            RD_codTributoIGV = string.Empty;
+            RD_codTributoIGVInter = string.Empty;
+            RD_codTributoISC = string.Empty;
+            RD_codTributoISCInter = string.Empty;
+            RD_codTributoOTRO = string.Empty;
+            RD_codTributoOTROInter = string.Empty;
+            RD_EstadoDelItem = string.Empty;
+            RD_nomTributoIGV = string.Empty;
+            RD_nomTributoISC = string.Empty;
+            RD_nomTributoOTRO = string.Empty;
+            RD_numDocumento = string.Empty;
+            RD_numDocumentoModifica = string.Empty;
+            RD_numDocUsuario = string.Empty;
+            RD_numSerie = string.Empty;
+            RD_numSerieModifica = string.Empty;
         }
+
         public int codEmpresa { get; set; }
         public string codDocumento { get; set; }
-        public string codAbreviatura { get; set; }
+        public string indAbreviatura { get; set; }
         public int codDocumReg { get; set; }
         public string numDocumento { get; set; }
 
@@ -96,6 +116,20 @@ namespace CROM.BusinessEntities.SUNAT.response
 
         public string RD_numDocumentoModifica { get; set; }
 
+        public string RD_codDocumentoModifica { get; set; }
+
+        public DateTime? RD_fecEmisionModifica { get; set; }
+
+        public decimal? RD_monTipoCambioVTAModifica { get; set; }
+
+        public decimal? RD_mtoDocRelacionadoModifica { get; set; }
+
+        public string RD_codMotivoNCR { get; set; }
+
+        public string RD_codMotivoNDB { get; set; }
+
+        public string RD_MotivoModifica { get; set; }
+
 
         /// <summary>
         /// Datos de la percepción incluida en la boleta de venta electrónica que se informa
@@ -111,7 +145,7 @@ namespace CROM.BusinessEntities.SUNAT.response
 
         public decimal RD_sumMontoIncluidaPercepcion { get; set; }
 
-
+        public bool flagEnviadoSUNAT { get; set; }
 
 
         public DateTime fecEmision { get; set; }
@@ -127,7 +161,7 @@ namespace CROM.BusinessEntities.SUNAT.response
         public string customizationId { get; set; }
         public decimal? monTipoCambioCMP { get; set; }
 
-        public DateTime? segFechaEdita { get; set; }
-        public string segUsuarioEdita { get; set; }
+        public string nomRazonSocial { get; set; }
+
     }
 }
