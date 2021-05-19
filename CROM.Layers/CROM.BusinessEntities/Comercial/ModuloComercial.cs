@@ -943,6 +943,8 @@ namespace CROM.BusinessEntities.Comercial
 
         public bool flagEnviadoSUNAT { get; set; }
 
+        public long? codDocumRegResumenDiario { get; set; }
+
         [JsonIgnore]
         public string fecEmision { get; set; }
 

@@ -41,5 +41,7 @@ namespace CROM.BusinessEntities.SUNAT.response
 
         public string verCustomizationID { get; set; }
 
+        public int cntDocuments { get; set; }
+
     }
 }

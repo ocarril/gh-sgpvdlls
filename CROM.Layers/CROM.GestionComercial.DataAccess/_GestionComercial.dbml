@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_GC_MAGESET_SFS_20201106" Class="_GestionComercialDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAP01-OCARRIL\SQLEXPRESSCROM;Initial Catalog=BD_GC_MAGESET_SFS_20201106;Persist Security Info=True;User ID=sa" SettingsObjectName="CROM.GestionComercial.DataAccess.Properties.Settings" SettingsPropertyName="BD_GC_MAGESET_SFS_20201106ConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAP01-OCARRIL\SQLEXPRESSCROM;Initial Catalog=BD_GC_MAGESET_SFS_20201106;User ID=sa" SettingsObjectName="CROM.GestionComercial.DataAccess.Properties.Settings" SettingsPropertyName="BD_GC_MAGESET_SFS_20201106ConnectionString1" Provider="System.Data.SqlClient" />
   <Function Name="GestionComercial.omgc_D_Condicion" Method="omgc_D_Condicion">
     <Parameter Name="prm_codCondicion" Type="System.Int32" DbType="Int" />
     <Parameter Name="prm_segUsuarioEdita" Type="System.String" DbType="VarChar(30)" />
@@ -2261,6 +2261,8 @@
       <Column Name="codRegTipoDocumentoTransportista" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
       <Column Name="codRegTipoDocumentoTransportistaNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
       <Column Name="fecInicioTraslado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codRegUnidadMedidaGlobal" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="desMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="fecCancelacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
       <Column Name="codGastoDeAduana" Type="System.Int32" DbType="Int" CanBeNull="true" />
@@ -2316,6 +2318,12 @@
       <Column Name="prcDetraccion" Type="System.Decimal" DbType="Decimal(8,4)" CanBeNull="true" />
       <Column Name="mtoDetraccion" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
       <Column Name="indActivoDetraccion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="numTotalCuotas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codCargoDescuento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mtoNetoPendientePago" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="codRegTipoPlazo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codPersonaBanco" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPersonaAval" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="GestionComercial.omgc_S_DocumReg_IdPrint" Method="omgc_S_DocumReg_IdPrint">
@@ -2444,6 +2452,7 @@
       <Column Name="desDireccionTransporte" Type="System.String" DbType="VarChar(360)" CanBeNull="true" />
       <Column Name="desTotalCaja" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
       <Column Name="desTotalPeso" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="desMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="auxcodRegTipoEntidad" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
       <Column Name="auxcodRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
       <Column Name="indImprimeFirma" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
@@ -2457,6 +2466,116 @@
       <Column Name="prcDetraccion" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
       <Column Name="mtoDetraccion" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
       <Column Name="indActivoDetraccion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GestionComercial.omgc_I_DocumReg" Method="omgc_I_DocumReg">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codEmpresaRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_CodigoComprobante" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroComprobante" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_CodigoArguEstadoDocu" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguDestinoComp" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersonaEntidad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaDeEmision" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaDeVencimiento" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoArguMoneda" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_ValorIGV" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_ValorTotalBruto" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalDescuento" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalVenta" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalImpuesto" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalPrecioVenta" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalPrecioExtran" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_CodigoArguMotivoGuia" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersonaTransporte" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_DireccioDePartida" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="prm_TransporteMarca" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_TransportePlaca" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_TransporteConstancia" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_TransporteLicencia" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_CodigoComprobanteORIGEN" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroComprobanteORIGEN" Type="System.String" DbType="VarChar(170)" />
+    <Parameter Name="prm_FechaComprobanteORIGEN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_ValorTipoCambioORIGEN" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_DocOrdenDeCompra" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_DocGuiaDeSalida" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DocPedidoAdquisicion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DocLetrasCambio" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_EntidadRazonSocial" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="prm_EntidadDireccion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_EntidadNumeroRUC" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="prm_CodigoArguTipoDomicil" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Observaciones" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_codCondicionVenta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codCondicionCompra" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoComprobanteSecun" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroComprobanteSecun" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_CodigoPuntoVentaSecun" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codEmpleadoVendedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoComprobanteFact" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroSerie" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_NumeroMinuta" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_codDepositoDestino" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_NumeroComprobanteExt" Type="System.String" DbType="VarChar(21)" />
+    <Parameter Name="prm_DocEsGravado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DocExigeDocAnexo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DocEsFacturable" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Nota01" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="prm_Nota02" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="prm_Nota03" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_CodigoArguTipoDeOperacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_FechaDeEntrega" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoArguUbigeo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_EntidadDireccionUbigeo" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_CodigoPersonaContacto" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codDepositoOrigen" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_indInternacional" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_perTributario" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_codRegTipoDomicilioTransporte" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegUbigeoTransporte" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_desDireccionTransporte" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_desTotalCaja" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_desTotalPeso" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_indImprimeFirma" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_indImprimeSinIGV" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pcodMotivoNCR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodMotivoNDB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pgloMotivoSustento" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="psumOtrosCargos" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="psumTotalAnticipos" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="pcodRegTipoDocumentoEntidad" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pcodPersonaDomicilio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pindOrigen" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="pnumDiasCredito" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodDocumentoSerie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodDocumentoSerieOrigen" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pindAplicaDetraccion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pcodCuentaBancariaDetraccion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodBienDetraccion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodFormaDePago" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pprcDetraccion" Type="System.Decimal" DbType="Decimal(8,4)" />
+    <Parameter Name="pmtoDetraccion" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="psegMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pcodPersonaDomicilioTransportista" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodPersonaDomicilioPartida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodModalidadTransporte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pnumContenedor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pcodPuerto" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pindTransbordoProgramado" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pcodRegTipoDocumentoTransportista" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pfecInicioTraslado" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="pcodRegUnidadMedidaGlobal" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pdesMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_I_DocumRegResult">
+      <Column Name="NUM_FILA_AFECTADA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
   <Function Name="GestionComercial.omgc_S_DocumReg" Method="omgc_S_DocumReg">
@@ -2590,6 +2709,7 @@
       <Column Name="perTributario" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
       <Column Name="codGastoDeAduana" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="codRegTipoDomicilioTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="desMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
       <Column Name="codRegTipoDomicilioTransporteNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
       <Column Name="codRegUbigeoTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
       <Column Name="codRegUbigeoTransporteNombre" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
@@ -2598,113 +2718,344 @@
       <Column Name="desTotalPeso" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
     </ElementType>
   </Function>
-  <Function Name="GestionComercial.omgc_I_DocumReg" Method="omgc_I_DocumReg">
+  <Function Name="GestionComercial.omgc_S_DocumReg_Id" Method="omgc_S_DocumReg_Id1">
     <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codEmpresaRUC" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="prm_CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" />
-    <Parameter Name="prm_CodigoComprobante" Type="System.String" DbType="VarChar(3)" />
-    <Parameter Name="prm_NumeroComprobante" Type="System.String" DbType="VarChar(16)" />
-    <Parameter Name="prm_CodigoArguEstadoDocu" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguDestinoComp" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoPersonaEntidad" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_codEmpleado" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_FechaDeEmision" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="prm_FechaDeVencimiento" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="prm_CodigoArguMoneda" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_ValorIGV" Type="System.Decimal" DbType="Decimal(6,4)" />
-    <Parameter Name="prm_ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(6,4)" />
-    <Parameter Name="prm_ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(6,4)" />
-    <Parameter Name="prm_ValorTotalBruto" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="prm_ValorTotalDescuento" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="prm_ValorTotalVenta" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="prm_ValorTotalImpuesto" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="prm_ValorTotalPrecioVenta" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="prm_ValorTotalPrecioExtran" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="prm_CodigoArguMotivoGuia" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoPersonaTransporte" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_DireccioDePartida" Type="System.String" DbType="VarChar(70)" />
-    <Parameter Name="prm_TransporteMarca" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_TransportePlaca" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_TransporteConstancia" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_TransporteLicencia" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_CodigoComprobanteORIGEN" Type="System.String" DbType="VarChar(3)" />
-    <Parameter Name="prm_NumeroComprobanteORIGEN" Type="System.String" DbType="VarChar(170)" />
-    <Parameter Name="prm_FechaComprobanteORIGEN" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="prm_ValorTipoCambioORIGEN" Type="System.Decimal" DbType="Decimal(6,4)" />
-    <Parameter Name="prm_DocOrdenDeCompra" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_DocGuiaDeSalida" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="prm_DocPedidoAdquisicion" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="prm_DocLetrasCambio" Type="System.String" DbType="VarChar(40)" />
-    <Parameter Name="prm_EntidadRazonSocial" Type="System.String" DbType="VarChar(90)" />
-    <Parameter Name="prm_EntidadDireccion" Type="System.String" DbType="VarChar(150)" />
-    <Parameter Name="prm_EntidadNumeroRUC" Type="System.String" DbType="VarChar(13)" />
-    <Parameter Name="prm_CodigoArguTipoDomicil" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_Observaciones" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="prm_codCondicionVenta" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codCondicionCompra" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoComprobanteSecun" Type="System.String" DbType="VarChar(3)" />
-    <Parameter Name="prm_NumeroComprobanteSecun" Type="System.String" DbType="VarChar(16)" />
-    <Parameter Name="prm_CodigoPuntoVentaSecun" Type="System.String" DbType="VarChar(4)" />
-    <Parameter Name="prm_codEmpleadoVendedor" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoComprobanteFact" Type="System.String" DbType="VarChar(3)" />
-    <Parameter Name="prm_NumeroSerie" Type="System.String" DbType="VarChar(150)" />
-    <Parameter Name="prm_NumeroMinuta" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_codDepositoDestino" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="prm_NumeroComprobanteExt" Type="System.String" DbType="VarChar(21)" />
-    <Parameter Name="prm_DocEsGravado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_DocExigeDocAnexo" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_DocEsFacturable" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
-    <Parameter Name="prm_Nota01" Type="System.String" DbType="VarChar(300)" />
-    <Parameter Name="prm_Nota02" Type="System.String" DbType="VarChar(300)" />
-    <Parameter Name="prm_Nota03" Type="System.String" DbType="VarChar(150)" />
-    <Parameter Name="prm_CodigoArguTipoDeOperacion" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_FechaDeEntrega" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="prm_CodigoArguUbigeo" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_EntidadDireccionUbigeo" Type="System.String" DbType="VarChar(60)" />
-    <Parameter Name="prm_CodigoPersonaContacto" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_codDepositoOrigen" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="prm_indInternacional" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_perTributario" Type="System.String" DbType="VarChar(6)" />
-    <Parameter Name="prm_codRegTipoDomicilioTransporte" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_codRegUbigeoTransporte" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_desDireccionTransporte" Type="System.String" DbType="VarChar(60)" />
-    <Parameter Name="prm_desTotalCaja" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="prm_desTotalPeso" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="prm_indImprimeFirma" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_indImprimeSinIGV" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="pcodMotivoNCR" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodMotivoNDB" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pgloMotivoSustento" Type="System.String" DbType="VarChar(150)" />
-    <Parameter Name="psumOtrosCargos" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="psumTotalAnticipos" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="pcodRegTipoDocumentoEntidad" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="pcodPersonaDomicilio" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodDocumentoEstado" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pindOrigen" Type="System.Byte" DbType="TinyInt" />
-    <Parameter Name="pnumDiasCredito" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodDocumentoSerie" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodDocumentoSerieOrigen" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pindAplicaDetraccion" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="pcodCuentaBancariaDetraccion" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodBienDetraccion" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodFormaDePago" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pprcDetraccion" Type="System.Decimal" DbType="Decimal(8,4)" />
-    <Parameter Name="pmtoDetraccion" Type="System.Decimal" DbType="Decimal(12,2)" />
-    <Parameter Name="psegMaquina" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pcodPersonaDomicilioTransportista" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodPersonaDomicilioPartida" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pcodModalidadTransporte" Type="System.Int32" DbType="Int" />
-    <Parameter Name="pnumContenedor" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pcodPuerto" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pindTransbordoProgramado" Type="System.String" DbType="VarChar(30)" />
-    <Parameter Name="pcodRegTipoDocumentoTransportista" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="pfecInicioTraslado" Type="System.DateTime" DbType="DateTime" />
-    <Parameter Name="pcodRegUnidadMedidaGlobal" Type="System.String" DbType="VarChar(17)" />
-    <ElementType Name="omgc_I_DocumRegResult">
-      <Column Name="NUM_FILA_AFECTADA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <ElementType Name="omgc_S_DocumReg_IdResult1">
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codDocumentoTipo" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="codRegDocumento" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstado" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegEstadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codDocumentoEstado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codTipoDocumentoSunat" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="codRegDestinoDocum" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegDestinoDocumNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleadoNombre" Type="System.String" DbType="VarChar(204) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDeOperacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDeOperacionNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="fecEmision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecVencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="fecProceso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="codParte" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="codCondicionVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codCondicionVentaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codCondicionCompra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codCondicionCompraNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleadoVendedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpleadoVendedorNombre" Type="System.String" DbType="VarChar(204) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoFact" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="gloObservaciones" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="desNota01" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="desNota02" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMoneda" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="prcIGV" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monTipoCambioVTA" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="monTipoCambioCMP" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="sumTotBruto" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sumDescTotal" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sumOtrosCargos" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="sumTotalAnticipos" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="sumImpVenta" Type="System.Decimal" DbType="Decimal(15,2)" CanBeNull="true" />
+      <Column Name="sumTotValVenta" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sumTotTributos" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sumPrecioVenta" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="sumPrecioVentaExtran" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoDestino" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="codDocumentoDestinoNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numDocumentoDestino" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoOrigen" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="codDocumentoOrigenNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="numDocumentoOrigen" Type="System.String" DbType="VarChar(170) NOT NULL" CanBeNull="false" />
+      <Column Name="fecDocumentoOrigen" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="monTipoCambioOrigen" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="codDocumentoNCR" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numDocumentoNCR" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoNDB" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numDocumentoNDB" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="numOrdenDeCompra" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="numGuiaDeSalida" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="numPedidoAdquisicion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="numLetrasCambio" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="numDocumentoExterno" Type="System.String" DbType="VarChar(21) NOT NULL" CanBeNull="false" />
+      <Column Name="numSerie" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="numMinuta" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumentoSecun" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="numDocumentoSecun" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codPuntoVentaSecun" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codPersonaEntidad" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegTipoEntidad" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="nomEntidadRazonSocial" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaDomicilio" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="nomEntidadDireccion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDomicilio" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDomicilioNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codUbigeo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="desEntidadDireccionUbigeo" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDocumentoEntidad" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="nomEntidadNumeroRUC" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaContacto" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPersonaContactoNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codMotivoNCR" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codMotivoNDB" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="gloMotivoSustento" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="codDepositoOrigen" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="codDepositoOrigenNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="codDepositoDestino" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="codDepositoDestinoNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="indDocEsGravado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indDocExigeDocAnexo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indDocEsFacturable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="indImprimeFirma" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indImprimeSinIGV" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indInternacional" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="perTributario" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="flagParaEnvioSUNAT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codRegMotivoGuia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegMotivoGuiaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPersonaTransporte" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPersonaTransporteNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaTransporteRUC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="gloDireccioDePartida" Type="System.String" DbType="VarChar(70) NOT NULL" CanBeNull="false" />
+      <Column Name="desTransporteMarca" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desTransportePlaca" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desTransporteConstancia" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desTransporteLicencia" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="desNota03" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDomicilioTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoDomicilioTransporteNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="desDireccionTransporte" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="desTotalCaja" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="desTotalPeso" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegUbigeoTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegUbigeoTransporteNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="codModalidadTransporte" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codModalidadTransporteNombre" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaDomicilioPartida" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codPersonaDomicilioTransportista" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codPersonaDomicilioTransportistaNombre" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="numContenedor" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuerto" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="indTransbordoProgramado" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegTipoDocumentoTransportista" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoDocumentoTransportistaNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecInicioTraslado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codRegUnidadMedidaGlobal" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="desMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="fecCancelacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codGastoDeAduana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codRegAnulacion" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegAnulacionNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="fecDeEntrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecDeRecibido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecDeDeclaracion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="flagEnviadoSUNAT" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="fecEnviadoSUNAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="fecParaEnvioSUNAT" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segUsuarioParaEnvioSUNAT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEnviadoSUNAT" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegistroUnico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segAnio" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="segMes" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="segDia" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquinaEdita" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="numDiasCredito" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codDocumentoSerie" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codDocumentoSerieOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codDocumRegOrigen" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="sumTotValorISC" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="sumTotValorTribOtros" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="sumTotValorIGV" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="flagPermiteEditar" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="SUNATindDeBaja" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATindAnulado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATdesNomArchivo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATfecCreateArchivo" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUNATdesFirmaDigestValue" Type="System.String" DbType="NVarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATfecRptaSunatFS" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUNATdesEmailEnviar" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATfecEmailEnviado" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SUNATindEmailEnvioExito" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATdesFirmaSignatureValue" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATdesCodBarras" Type="System.String" DbType="NVarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATdesRptaNomArchivo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SUNATdesRptaSunatFS" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="SUMTotalPagadoCajaMN" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="SUMTotalPagadoCajaMI" Type="System.Decimal" DbType="Decimal(38,2)" CanBeNull="true" />
+      <Column Name="indAplicaDetraccion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codBienDetraccionNombre" Type="System.String" DbType="VarChar(211) NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumRegDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codCuentaBancariaDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codBienDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codFormaDePagoDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prcDetraccion" Type="System.Decimal" DbType="Decimal(8,4)" CanBeNull="true" />
+      <Column Name="mtoDetraccion" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="indActivoDetraccion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="numTotalCuotas" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codCargoDescuento" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="mtoNetoPendientePago" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="codRegTipoPlazo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codPersonaBanco" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="codPersonaAval" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="GestionComercial.omgc_S_DocumReg_IdPrint" Method="omgc_S_DocumReg_IdPrint1">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_numRUC" Type="System.String" DbType="VarChar(20)" />
+    <ElementType Name="omgc_S_DocumReg_IdPrintResult1">
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoComprobante" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobanteNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumeroComprobante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguEstadoDocu" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguEstadoDocuNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguDestinoComp" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguDestinoCompNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPersonaEntidad" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaDeEmision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDeVencimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDeProceso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDeCancelacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDeAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodigoArguMoneda" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="REF_CodigoArguMonedaSimbolo" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorIGV" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalBruto" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalDescuento" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalVenta" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalImpuesto" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalPrecioVenta" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalPrecioExtran" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguMotivoGuia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMotivoGuiaNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaTransporte" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoPersonaTransporteNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaTransporteRUC" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="DireccioDePartida" Type="System.String" DbType="VarChar(370) NOT NULL" CanBeNull="false" />
+      <Column Name="TransporteMarca" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TransportePlaca" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TransporteConstancia" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="TransporteLicencia" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguAnulacion" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguAnulacionNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobanteDESTINO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteDESTINONombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteDESTINO" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobanteORIGEN" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteORIGENNombre" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteORIGEN" Type="System.String" DbType="VarChar(170) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaComprobanteORIGEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValorTipoCambioORIGEN" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteNCR" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteNCR" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobanteNDB" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteNDB" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="DocOrdenDeCompra" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="DocGuiaDeSalida" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DocPedidoAdquisicion" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DocLetrasCambio" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="EntidadRazonSocial" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="EntidadDireccion" Type="System.String" DbType="VarChar(450)" CanBeNull="true" />
+      <Column Name="EntidadNumeroRUC" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDomicil" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDomicilNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CodigoParte" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(200) NOT NULL" CanBeNull="false" />
+      <Column Name="codCondicionVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionVentaNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="codCondicionCompra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionCompraNombre" Type="System.String" DbType="VarChar(40) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobanteSecun" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteSecun" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVentaSecun" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codEmpleadoVendedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpleadoVendedorNombre" Type="System.String" DbType="VarChar(142) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobanteFact" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroMinuta" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoRegistroUnico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoDesti" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoDestiNombre" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="NumeroComprobanteExt" Type="System.String" DbType="VarChar(21) NOT NULL" CanBeNull="false" />
+      <Column Name="DocEsGravado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DocExigeDocAnexo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DocEsFacturable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegAnio" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SegMes" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SegDia" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Nota01" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Nota02" Type="System.String" DbType="VarChar(300) NOT NULL" CanBeNull="false" />
+      <Column Name="Nota03" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDeOperacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDeOperacionNombre" Type="System.String" DbType="VarChar(100) NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDeEntrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDeRecibido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodigoArguUbigeo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="EntidadDireccionUbigeo" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaContacto" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoPersonaContactoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaDeDeclaracion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoOrigen" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoOrigenNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="indInternacional" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="perTributario" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="codGastoDeAduana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codRegTipoDomicilioTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegTipoDomicilioTransporteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codRegUbigeoTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegUbigeoTransporteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="desDireccionTransporte" Type="System.String" DbType="VarChar(360)" CanBeNull="true" />
+      <Column Name="desTotalCaja" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="desTotalPeso" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="desMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="auxcodRegTipoEntidad" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="auxcodRegTipoEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="indImprimeFirma" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indImprimeSinIGV" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Column Name="indAplicaDetraccion" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumRegDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codCuentaBancariaDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codBienDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codBienDetraccionNombre" Type="System.String" DbType="VarChar(211) NOT NULL" CanBeNull="false" />
+      <Column Name="codFormaDePagoDetraccion" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="prcDetraccion" Type="System.Decimal" DbType="Decimal(12,4)" CanBeNull="true" />
+      <Column Name="mtoDetraccion" Type="System.Decimal" DbType="Decimal(12,2)" CanBeNull="true" />
+      <Column Name="indActivoDetraccion" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
     </ElementType>
   </Function>
   <Function Name="GestionComercial.omgc_U_DocumReg" Method="omgc_U_DocumReg">
@@ -2812,6 +3163,257 @@
     <Parameter Name="pcodRegTipoDocumentoTransportista" Type="System.String" DbType="VarChar(17)" />
     <Parameter Name="pfecInicioTraslado" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="pcodRegUnidadMedidaGlobal" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pdesMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="GestionComercial.omgc_I_DocumReg" Method="omgc_I_DocumReg1">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codEmpresaRUC" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codDocumReg" Type="System.Int32" DbType="Int" Direction="InOut" />
+    <Parameter Name="prm_CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_CodigoComprobante" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroComprobante" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_CodigoArguEstadoDocu" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguDestinoComp" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersonaEntidad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaDeEmision" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_FechaDeVencimiento" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoArguMoneda" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_ValorIGV" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_ValorTotalBruto" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalDescuento" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalVenta" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalImpuesto" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalPrecioVenta" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_ValorTotalPrecioExtran" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="prm_CodigoArguMotivoGuia" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersonaTransporte" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_DireccioDePartida" Type="System.String" DbType="VarChar(70)" />
+    <Parameter Name="prm_TransporteMarca" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_TransportePlaca" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_TransporteConstancia" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_TransporteLicencia" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_CodigoComprobanteORIGEN" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroComprobanteORIGEN" Type="System.String" DbType="VarChar(170)" />
+    <Parameter Name="prm_FechaComprobanteORIGEN" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_ValorTipoCambioORIGEN" Type="System.Decimal" DbType="Decimal(6,4)" />
+    <Parameter Name="prm_DocOrdenDeCompra" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_DocGuiaDeSalida" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DocPedidoAdquisicion" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_DocLetrasCambio" Type="System.String" DbType="VarChar(40)" />
+    <Parameter Name="prm_EntidadRazonSocial" Type="System.String" DbType="VarChar(90)" />
+    <Parameter Name="prm_EntidadDireccion" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_EntidadNumeroRUC" Type="System.String" DbType="VarChar(13)" />
+    <Parameter Name="prm_CodigoArguTipoDomicil" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_Observaciones" Type="System.String" DbType="VarChar(200)" />
+    <Parameter Name="prm_codCondicionVenta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codCondicionCompra" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoComprobanteSecun" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroComprobanteSecun" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="prm_CodigoPuntoVentaSecun" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_codEmpleadoVendedor" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoComprobanteFact" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_NumeroSerie" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_NumeroMinuta" Type="System.String" DbType="VarChar(25)" />
+    <Parameter Name="prm_codDepositoDestino" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_NumeroComprobanteExt" Type="System.String" DbType="VarChar(21)" />
+    <Parameter Name="prm_DocEsGravado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DocExigeDocAnexo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_DocEsFacturable" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(50)" />
+    <Parameter Name="prm_Nota01" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="prm_Nota02" Type="System.String" DbType="VarChar(300)" />
+    <Parameter Name="prm_Nota03" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="prm_CodigoArguTipoDeOperacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_FechaDeEntrega" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="prm_CodigoArguUbigeo" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_EntidadDireccionUbigeo" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_CodigoPersonaContacto" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codDepositoOrigen" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="prm_indInternacional" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_perTributario" Type="System.String" DbType="VarChar(6)" />
+    <Parameter Name="prm_codRegTipoDomicilioTransporte" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_codRegUbigeoTransporte" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_desDireccionTransporte" Type="System.String" DbType="VarChar(60)" />
+    <Parameter Name="prm_desTotalCaja" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_desTotalPeso" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="prm_indImprimeFirma" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_indImprimeSinIGV" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pcodMotivoNCR" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodMotivoNDB" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pgloMotivoSustento" Type="System.String" DbType="VarChar(150)" />
+    <Parameter Name="psumOtrosCargos" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="psumTotalAnticipos" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="pcodRegTipoDocumentoEntidad" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pcodPersonaDomicilio" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodDocumentoEstado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pindOrigen" Type="System.Byte" DbType="TinyInt" />
+    <Parameter Name="pnumDiasCredito" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodDocumentoSerie" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodDocumentoSerieOrigen" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pindAplicaDetraccion" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="pcodCuentaBancariaDetraccion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodBienDetraccion" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodFormaDePago" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pprcDetraccion" Type="System.Decimal" DbType="Decimal(8,4)" />
+    <Parameter Name="pmtoDetraccion" Type="System.Decimal" DbType="Decimal(12,2)" />
+    <Parameter Name="psegMaquina" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pcodPersonaDomicilioTransportista" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodPersonaDomicilioPartida" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pcodModalidadTransporte" Type="System.Int32" DbType="Int" />
+    <Parameter Name="pnumContenedor" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pcodPuerto" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pindTransbordoProgramado" Type="System.String" DbType="VarChar(30)" />
+    <Parameter Name="pcodRegTipoDocumentoTransportista" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pfecInicioTraslado" Type="System.DateTime" DbType="DateTime" />
+    <Parameter Name="pcodRegUnidadMedidaGlobal" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="pdesMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" />
+    <ElementType Name="omgc_I_DocumRegResult1">
+      <Column Name="NUM_FILA_AFECTADA" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+    </ElementType>
+  </Function>
+  <Function Name="GestionComercial.omgc_S_DocumReg" Method="omgc_S_DocumReg1">
+    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_FechaDeEmisionInicio" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="prm_FechaDeEmisionFinal" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="prm_CodigoPuntoVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="prm_CodigoComprobante" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="prm_CodigoArguEstadoDocu" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoArguDestinoComp" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoPersonaEntidad" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="prm_codEmpleado" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_CodigoArguMoneda" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_CodigoParte" Type="System.String" DbType="VarChar(7)" />
+    <Parameter Name="prm_codCondicionVenta" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_codCondicionCompra" Type="System.Int32" DbType="Int" />
+    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="prm_CodigoArguTipoDeOperacion" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="prm_indInternacional" Type="System.Boolean" DbType="Bit" />
+    <ElementType Name="omgc_S_DocumRegResult1">
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVenta" Type="System.String" DbType="VarChar(4) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPuntoVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoComprobante" Type="System.String" DbType="VarChar(3) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoComprobanteNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumeroComprobante" Type="System.String" DbType="VarChar(16) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguEstadoDocu" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguEstadoDocuNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoArguDestinoComp" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguDestinoCompNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPersonaEntidad" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaEntidadNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaDeEmision" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDeVencimiento" Type="System.DateTime" DbType="Date" CanBeNull="true" />
+      <Column Name="FechaDeProceso" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="FechaDeCancelacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDeAnulacion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodigoArguMoneda" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguMonedaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="ValorIGV" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTipoCambioVTA" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTipoCambioCMP" Type="System.Decimal" DbType="Decimal(6,4) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalBruto" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalDescuento" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalVenta" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalImpuesto" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalPrecioVenta" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="ValorTotalPrecioExtran" Type="System.Decimal" DbType="Decimal(12,2) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguMotivoGuia" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguMotivoGuiaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoPersonaTransporte" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoPersonaTransporteNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DireccioDePartida" Type="System.String" DbType="VarChar(70)" CanBeNull="true" />
+      <Column Name="TransporteMarca" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TransportePlaca" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TransporteConstancia" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="TransporteLicencia" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CodigoArguAnulacion" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="CodigoArguAnulacionNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteDESTINO" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteDESTINO" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteDESTINONombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteDESTINO1" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteORIGEN" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteORIGENNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteORIGEN" Type="System.String" DbType="VarChar(170)" CanBeNull="true" />
+      <Column Name="FechaComprobanteORIGEN" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ValorTipoCambioORIGEN" Type="System.Decimal" DbType="Decimal(6,4)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteNCR" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteNCR" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteNDB" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteNDB" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="DocOrdenDeCompra" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DocGuiaDeSalida" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DocPedidoAdquisicion" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="DocLetrasCambio" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="EntidadRazonSocial" Type="System.String" DbType="VarChar(90) NOT NULL" CanBeNull="false" />
+      <Column Name="EntidadDireccion" Type="System.String" DbType="VarChar(150) NOT NULL" CanBeNull="false" />
+      <Column Name="EntidadNumeroRUC" Type="System.String" DbType="VarChar(13) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDomicil" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDomicilNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="CodigoParte" Type="System.String" DbType="VarChar(7)" CanBeNull="true" />
+      <Column Name="Observaciones" Type="System.String" DbType="VarChar(200)" CanBeNull="true" />
+      <Column Name="codCondicionVenta" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionVentaNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="codCondicionCompra" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="CondicionCompraNombre" Type="System.String" DbType="VarChar(40)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteSecun" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteSecun" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="CodigoPuntoVentaSecun" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codEmpleadoVendedor" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpleadoVendedorNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="CodigoComprobanteFact" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="NumeroSerie" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="NumeroMinuta" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="CodigoRegistroUnico" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoDesti" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoDestiNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="NumeroComprobanteExt" Type="System.String" DbType="VarChar(21)" CanBeNull="true" />
+      <Column Name="DocEsGravado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DocExigeDocAnexo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="DocEsFacturable" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegAnio" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="SegMes" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="SegDia" Type="System.Byte" DbType="TinyInt NOT NULL" CanBeNull="false" />
+      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="Nota01" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Nota02" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="Nota03" Type="System.String" DbType="VarChar(150)" CanBeNull="true" />
+      <Column Name="CodigoArguTipoDeOperacion" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoArguTipoDeOperacionNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaDeEntrega" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="FechaDeRecibido" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodigoArguUbigeo" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="EntidadDireccionUbigeo" Type="System.String" DbType="VarChar(60) NOT NULL" CanBeNull="false" />
+      <Column Name="CodigoPersonaContacto" Type="System.String" DbType="VarChar(15)" CanBeNull="true" />
+      <Column Name="CodigoPersonaContactoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="FechaDeDeclaracion" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoOrigen" Type="System.String" DbType="VarChar(5)" CanBeNull="true" />
+      <Column Name="CodigoArguDepositoOrigenNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="indInternacional" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="perTributario" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="codGastoDeAduana" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codRegTipoDomicilioTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="desMotivoGuiaOtro" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegTipoDomicilioTransporteNombre" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="codRegUbigeoTransporte" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegUbigeoTransporteNombre" Type="System.String" DbType="VarChar(300)" CanBeNull="true" />
+      <Column Name="desDireccionTransporte" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="desTotalCaja" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+      <Column Name="desTotalPeso" Type="System.String" DbType="VarChar(30)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

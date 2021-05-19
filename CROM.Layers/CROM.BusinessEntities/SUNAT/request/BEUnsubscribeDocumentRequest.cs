@@ -107,7 +107,7 @@
 
         #endregion
 
-
+        public int codDocumentoEstado { get; set; }
     }
 
 }

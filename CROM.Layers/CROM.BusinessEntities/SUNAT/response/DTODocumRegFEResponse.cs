@@ -55,6 +55,7 @@
             pCodBarras = string.Empty;
             pLogoEmpresa = string.Empty;
             codRegUnidadMedidaGlobal = string.Empty;
+            desMotivoGuiaOtro = string.Empty;
             LstDocumRegDetalle = new List<DTODocumRegFEDetalleResponse>();
             LstDocumRegPagoCredito = new List<DTODocumRegPagoCreditoResponse>();
         }
@@ -275,7 +276,10 @@
 
         public string pathLogoEmpresa { get; set; }
 
+        public string EmisorRazonSocial { get; set; }
+
         public string EmisorNombre { get; set; }
+
         public string EmisorRUC { get; set; }
 
         public string EmisorUbigeo { get; set; }
@@ -293,6 +297,10 @@
         public string EmisorDomicilio { get; set; }
 
         public string EmisorTipoDocumento { get; set; }
+
+        public string EmisorPropaganda { get; set; }
+
+        public string LogoAdicionalEmpresa { get; set; }
 
         #endregion
 
@@ -352,6 +360,7 @@
 
         public string codModalidadTransporteNombre { get; set; }
 
+        public string desMotivoGuiaOtro { get; set; }
 
         #region DATOS DOMICILIO DE PARTIDA
 
@@ -453,5 +462,8 @@
 
         #endregion
 
+        public int codDocumentoEstado { get; set; }
+
+        public string codRegEstado { get; set; }
     }
 }

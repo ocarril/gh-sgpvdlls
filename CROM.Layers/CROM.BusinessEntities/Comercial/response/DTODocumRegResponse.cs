@@ -353,6 +353,8 @@
 
         public string codRegUnidadMedidaGlobal { get; set; }
 
+        public string desMotivoGuiaOtro { get; set; }
+
         #region PROPIEDADES POR DETRACCION
 
         public bool indAplicaDetraccion { get; set; }

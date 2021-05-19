@@ -245,5 +245,7 @@
         #endregion
 
         public string nomFileCodBarras { get; set; }
+
+        public long? codDocumRegResumenDiario { get; set; }
     }
 }

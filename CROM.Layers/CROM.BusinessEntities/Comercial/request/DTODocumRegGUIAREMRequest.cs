@@ -37,7 +37,7 @@ namespace CROM.BusinessEntities.Comercial.request
             desTotalCaja = string.Empty;
             desTotalPeso = string.Empty;
             codRegUnidadMedidaGlobal = string.Empty;
-
+            desMotivoGuiaOtro = string.Empty;
         }
 
         public Nullable<DateTime> fecVencimiento { get; set; }
@@ -126,5 +126,6 @@ namespace CROM.BusinessEntities.Comercial.request
         public string codRegTipoDocumentoTransportista { get; set; }
 
         public string codRegUnidadMedidaGlobal { get; set; }
+        public string desMotivoGuiaOtro { get; set; }
     }
 }

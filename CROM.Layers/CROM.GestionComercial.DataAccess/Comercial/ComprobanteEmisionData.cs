@@ -146,7 +146,8 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.codRegTipoDocumentoTransportista,
                         comprobanteEmision.fecInicioTraslado,
 
-                        comprobanteEmision.codRegUnidadMedidaGlobal
+                        comprobanteEmision.codRegUnidadMedidaGlobal,
+                        comprobanteEmision.desMotivoGuiaOtro
 
                        );
                     comprobanteEmision.codDocumReg = codigoRetorno.HasValue ? codigoRetorno.Value : 0;
@@ -284,7 +285,8 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.codRegTipoDocumentoTransportista,
                         comprobanteEmision.fecInicioTraslado,
 
-                        comprobanteEmision.codRegUnidadMedidaGlobal
+                        comprobanteEmision.codRegUnidadMedidaGlobal,
+                        comprobanteEmision.desMotivoGuiaOtro
                     );
                 }
             }
@@ -711,7 +713,8 @@ namespace CROM.GestionComercial.DataAccess
                             auxcodRegUbigeoTransporteNombre = item.codRegUbigeoTransporteNombre,
                             desDireccionTransporte = item.desDireccionTransporte,
                             desTotalCaja = item.desTotalCaja,
-                            desTotalPeso = item.desTotalPeso
+                            desTotalPeso = item.desTotalPeso,
+                            desMotivoGuiaOtro = item.desMotivoGuiaOtro
                         });
                     }
                 }
@@ -1098,7 +1101,8 @@ namespace CROM.GestionComercial.DataAccess
                             codPuerto = item.codPuerto,
                             indTransbordoProgramado = item.indTransbordoProgramado,
                             codRegTipoDocumentoTransportista = item.codRegTipoDocumentoTransportista,
-                            fecInicioTraslado = item.fecInicioTraslado
+                            fecInicioTraslado = item.fecInicioTraslado,
+                            desMotivoGuiaOtro = item.desMotivoGuiaOtro
                         };
                     }
                 }
@@ -1249,6 +1253,7 @@ namespace CROM.GestionComercial.DataAccess
                             auxcodRegTipoEntidadNombre = item.auxcodRegTipoEntidadNombre == null ? string.Empty : item.auxcodRegTipoEntidadNombre,
                             indImprimeFirma = item.indImprimeFirma.HasValue ? item.indImprimeFirma.Value : false,
                             indImprimeSinIGV = item.indImprimeSinIGV.HasValue ? item.indImprimeSinIGV.Value : false,
+                            desMotivoGuiaOtro = item.desMotivoGuiaOtro
                         };
                     }
                 }
