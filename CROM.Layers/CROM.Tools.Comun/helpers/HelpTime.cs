@@ -1,4 +1,4 @@
-﻿ namespace CROM.Tools.Comun
+﻿namespace CROM.Tools.Comun
 {
     using CROM.Tools.Comun.settings;
 
@@ -132,7 +132,7 @@
             double differenceInHours = 0;
             switch (prm_Frecuencia)
             {
-                case  TotalTiempo.Horas:
+                case TotalTiempo.Horas:
                     differenceInHours = ts.TotalHours;
                     break;
                 case TotalTiempo.Minutos:
@@ -230,7 +230,7 @@
         public static double CantidadTiempoEn_DECIMAL(string Hora)
         {
             int POSI_DOS_PUNTO = Hora.IndexOf(':');
-            double HORA = Convert.ToDouble(Hora.Substring(0, POSI_DOS_PUNTO ));
+            double HORA = Convert.ToDouble(Hora.Substring(0, POSI_DOS_PUNTO));
             double DECIMAL = Convert.ToDouble(Hora.Substring(POSI_DOS_PUNTO + 1, 2)) / 60;
             double HoraDecimal = HORA + DECIMAL;
             return HoraDecimal;
@@ -246,6 +246,25 @@
             DateTime dtDateTime = new DateTime(1970, 1, 1, 0, 0, 0, 0, DateTimeKind.Utc);
             dtDateTime = dtDateTime.AddMilliseconds(Convert.ToDouble(unixTimeStamp)).ToLocalTime();
             return dtDateTime;
+        }
+
+
+        public static DateTime AddTimeCurrentForDate(Nullable<DateTime> ValorFecha)
+        {
+            DateTime? DateTimeCurrent = null;
+            if (ValorFecha == null)
+            {
+                DateTimeCurrent = DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud());
+            }
+            else
+            {
+                //ToString("dd-MM-yyyy HH:mm:ss")
+                DateTimeCurrent = Extensors.ToDateTime(string.Concat(ValorFecha.Value.ToString("dd-MM-yyyy "), " ",
+                                                                     DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud())
+                                                                    .ToString("HH:mm:ss")));
+
+            }
+            return DateTimeCurrent.Value;
         }
 
     }

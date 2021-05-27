@@ -3,9 +3,11 @@ namespace CROM.GestionComercial.DataAccess
     using System;
     using System.Collections.Generic;
     using System.Configuration;
-
+    using System.Diagnostics;
+    using System.Reflection;
     using CROM.BusinessEntities.Comercial;
     using CROM.BusinessEntities.Comercial.DTO;
+    using CROM.Tools.Comun;
 
 
     /// <summary>
@@ -155,6 +157,9 @@ namespace CROM.GestionComercial.DataAccess
             }
             catch (Exception ex)
             {
+                HelpLogging.Write(TraceLevel.Info, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, ex.StackTrace,
+             comprobanteEmision.SegUsuarioEdita, comprobanteEmision.codEmpresa.ToString());
+
                 throw ex;
             }
             return comprobanteEmision.codDocumReg > 0 ? true : false;

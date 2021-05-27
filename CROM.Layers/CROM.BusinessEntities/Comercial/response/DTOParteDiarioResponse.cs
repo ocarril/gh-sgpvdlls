@@ -24,7 +24,6 @@ namespace CROM.BusinessEntities.Comercial.response
             codParteDiarioTurnoNombre = string.Empty;
             codPuntoVentaNombre = string.Empty;
             desHorario = string.Empty;
-            //lstCajaRegistro = new List<DTOCajaRegistroResponse>();
         }
 
         public string codParteDiario { get; set; }
@@ -46,6 +45,7 @@ namespace CROM.BusinessEntities.Comercial.response
         public string codParteDiarioTurnoNombre { get; set; }
         public string desHorario { get; set; }
 
-        //public List<DTOCajaRegistroResponse> lstCajaRegistro { get; set; }
+        public int cntRegPagos { get; set; }
+
     }
 } 

@@ -1218,6 +1218,9 @@ namespace CROM.GestionComercial.BusinessLogic
             ReturnValor objReturnValor = null;
             try
             {
+
+                comprobanteEmision.FechaDeEmision = HelpTime.AddTimeCurrentForDate(comprobanteEmision.FechaDeEmision);
+
                 string pMessage = string.Empty;
                 NumerodeComprobante(comprobanteEmision, comprobante, out pMessage);
 
@@ -1263,8 +1266,14 @@ namespace CROM.GestionComercial.BusinessLogic
 
                 using (TransactionScope transactionScope = new TransactionScope(TransactionScopeOption.Required))
                 {
+                    HelpLogging.Write(TraceLevel.Info, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, "ANTES DE INSERTAR",
+                                 comprobanteEmision.SegUsuarioEdita, comprobanteEmision.codEmpresa.ToString());
 
                     returnValor.Exitosa = objComprobanteEmisionData.Insert(comprobanteEmision);
+
+                    HelpLogging.Write(TraceLevel.Info, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, "DESPUES DE INSERTAR",
+                                 comprobanteEmision.SegUsuarioEdita, comprobanteEmision.codEmpresa.ToString());
+
 
                     objReturnValor = documentoLogic.UpdateUltimoDocumentoSerie(objComprobantesSeriesUpdate);
 
@@ -1288,11 +1297,13 @@ namespace CROM.GestionComercial.BusinessLogic
             }
             catch (Exception ex)
             {
-                string MessageError = string.Format("CodigoPersonaEmpre: {0}, CodigoPuntoVenta: {1}, ProcesoOK: {2}, CodigoPersonaRespon: {3}, SegMaquinaOrigen: {4},  ERROR: {5} ", 
+                string MessageError = string.Format("CodigoPersonaEmpre: {0}, CodigoPuntoVenta: {1}, ProcesoOK: {2}, " +
+                    "CodigoPersonaRespon: {3}, SegMaquinaOrigen: {4}, DATA DOCUM: [{6}],  ERROR: {5} ", 
                     comprobanteEmision.CodigoPersonaEmpre,
                     comprobanteEmision.CodigoPuntoVenta, false, 
                     comprobanteEmision.codEmpleado.ToString(), 
-                    comprobanteEmision.SegMaquina, ex.Message);
+                    comprobanteEmision.SegMaquina,
+                    JsonConvert.SerializeObject(comprobanteEmision), ex.Message);
 
                 HelpLogging.Write(TraceLevel.Error, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, MessageError, 
                                   comprobanteEmision.SegUsuarioEdita, comprobanteEmision.codEmpresa.ToString());
@@ -1318,6 +1329,8 @@ namespace CROM.GestionComercial.BusinessLogic
         {
             try
             {
+                comprobanteEmision.FechaDeEmision = HelpTime.AddTimeCurrentForDate(comprobanteEmision.FechaDeEmision);
+
                 comprobanteEmision.codEmpleadoVendedor = comprobanteEmision.listaComprobanteEmisionDetalle[0].codEmpleadoVendedor;
 
                 if (comprobanteEmision.CodigoPersonaEntidadContacto != null)
