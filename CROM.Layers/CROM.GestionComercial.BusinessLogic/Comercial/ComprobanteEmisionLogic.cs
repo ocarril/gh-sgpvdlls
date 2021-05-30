@@ -1254,6 +1254,9 @@ namespace CROM.GestionComercial.BusinessLogic
                                                      comprobanteEmision.ValorTipoCambioVTA,
                                                      comprobanteEmision.CodigoArguMoneda);
 
+                if (comprobanteEmision.CodigoArguEstadoDocu == "GCMPB009001")
+                    comprobanteEmision.codDocumentoEstado = comprobanteEmision.codDocumentoEstado == null ? 18 : comprobanteEmision.codDocumentoEstado;
+
                 BEDocumentoSerie objComprobantesSeriesUpdate = new BEDocumentoSerie
                 {
                     codEmpresa = comprobanteEmision.codEmpresa,

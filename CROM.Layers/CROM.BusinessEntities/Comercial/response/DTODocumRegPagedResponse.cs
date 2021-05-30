@@ -263,6 +263,8 @@ namespace CROM.BusinessEntities.Comercial.response
         public bool indFormaPagoRegistra { get; set; }
 
         public bool indImprimePDF { get; set; }
+
+        public bool indGeneraEnvioResumDiarioSFS { get; set; }
     }
 
 }
