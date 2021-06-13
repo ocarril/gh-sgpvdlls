@@ -161,7 +161,8 @@
             BAND_FACTURA_BOLETA = 1,
             BAND_NOTA_CRED_DEBI = 2,
             BAND_RESUMEN_DIARIO = 3,
-            BAND_GUIA_REMISION = 4
+            BAND_GUIA_REMISION = 4,
+            BAND_DOCUMENTO_EMIS = 5
         };
 
         public static Dictionary<int, string> MensajesServicios = new Dictionary<int, string>()
@@ -286,6 +287,18 @@
           { 3050,  "Documento N°: [ {0} - {1}-{2} ], fue ANULADO/DADO DE BAJA con éxito."},
           { 3051,  "Documento N°: [ {0} - {1}-{2} ], NO fue ANULADO/DADO DE BAJA con éxito."},
           { 3052,  "Correlativo para resumen diario no se ha generado."},
+          { 3053,  "[ {0} ] actualizado para envio por Resumen diario."},
+          { 3054,  "[ {0} ] validado y pendiente de envio por Resumen diario."},
+          { 3055,  "Se actualizaron para RESUMEN DIARIO: [ {0} ] de [ {1} ] Documentos electrónicos."},
+          { 3056,  "No se encontraron documentos electrónicos para RESUMEN DIARIO."},
+          { 3057,  "Resumen Diario [ {0} ] NO FUÉ enviado a SUNAT con EXITO." },
+          { 3058,  "Resumen Diario [ {0} ] .ZIP ] FUE creado con EXITO."},
+          { 3059,  "Servicio Web de la SUNAT para enviar Resumen Diario no esta disponible /ERROR."},
+          { 3060,  "Resumen Diario [ {0} ] FUE enviado a SUNAT con EXITO."},
+          { 3061,  "No se ha generado XML de resumen diario [ {0} ] para enviar a SUNAT." },
+          { 3062,  "Opción no válida para enviar resumen diario a SUNAT." },
+          { 3063,  "Se actualizó N° de tickect [{0}] para resumen diario: [{1}]." },
+          { 3064,  "NO Se actualizó N° de tickect para resumen diario: [{1}]." },
         };
 
     }

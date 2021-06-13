@@ -49,5 +49,8 @@ namespace CROM.BusinessEntities.SUNAT.request
 
         [JsonIgnore]
         public string numDocumento { get; set; }
+
+        [JsonIgnore]
+        public int indOrigenPeticion { get; set; }
     }
 }

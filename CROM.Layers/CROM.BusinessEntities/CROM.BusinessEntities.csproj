@@ -155,6 +155,7 @@
     <Compile Include="SUNAT\BESendBillDocumentRequest.cs" />
     <Compile Include="SUNAT\FirmadoResponse.cs" />
     <Compile Include="SUNAT\IDocumentoElectronico.cs" />
+    <Compile Include="SUNAT\request\BEUpdateResumenDiarioRequest.cs" />
     <Compile Include="SUNAT\request\BEBuscaSunatResumenDiarioRequest.cs" />
     <Compile Include="SUNAT\request\BETypeSummaryCorrelativeRequest.cs" />
     <Compile Include="SUNAT\request\BEDocumentoSUNATResumenDiarioUpadeRequest.cs" />

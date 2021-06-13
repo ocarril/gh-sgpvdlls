@@ -18,21 +18,22 @@ namespace CROM.Tools.Comun
     {
 
         public static string CrearCuerpo(string pTitulo, List<HelpMailDatos> pMailDatos, string pNota, string pEmpresa, string pListado = "")
-        {  
+        {
             string body = ResourceIconos.Body.ToString();
             StringBuilder lsDatos = new StringBuilder();
             body = body.Replace("@titulo", pTitulo);
             body = body.Replace("@fecha", DateTime.Today.ToShortDateString());
+
             foreach (var item in pMailDatos)
             {
-                if (item.titulo == "" || item.titulo==null)
+                if (item.titulo == "" || item.titulo == null)
                 {
                     lsDatos.AppendLine("<tr><td colspan='2' >" + item.descripcion + "</td></tr>");
 
                 }
                 else
                 {
-                     lsDatos.AppendLine("<tr><td >" + item.titulo + "</td><td style='width:80%;'>" + item.descripcion + "</td></tr>");
+                    lsDatos.AppendLine("<tr><td >" + item.titulo + "</td><td style='width:80%;'>" + item.descripcion + "</td></tr>");
                 }
             }
             body = body.Replace("@datos", lsDatos.ToString());
@@ -41,10 +42,9 @@ namespace CROM.Tools.Comun
             body = body.Replace("@anio", DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()).Year.ToString());
             body = body.Replace("@versionapp", ConfigurationManager.AppSettings["webpages:Version"].ToString());
 
-            if (pListado.Length > 0)
-            {
-                body = body.Replace("@listado", pListado);
-            }
+            pListado = string.IsNullOrWhiteSpace(pListado) ? string.Empty : pListado;
+
+            body = body.Replace("@listado", pListado);
 
             return body;
         }
