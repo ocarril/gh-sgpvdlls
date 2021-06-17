@@ -163,5 +163,8 @@
 
         public string nomRazonSocial { get; set; }
 
+        public string desFirmaDigestValue { get; set; }
+        public string desRptaNomArchivoXml { get; set; }
+        public DateTime? fecRptaSunatFSFecha { get; set; }
     }
-}
+}              

@@ -54,4 +54,38 @@
         public string Message { get; set; }
         public object ResponseData { get; set; }
     }
+
+    public class ReturnValorByte
+    {
+        /// <summary>
+        /// Gets or sets a value indicating whether this <see cref="Respuesta"/> is exitosa.
+        /// </summary>
+        /// <value><c>true</c> if exitosa; otherwise, <c>false</c>.</value>
+        public bool Exitosa { get; set; }
+
+        /// <summary>
+        /// Gets or sets the error message.
+        /// </summary>
+        /// <value>The error message.</value>
+        public string Message { get; set; }
+
+        /// <summary>
+        /// Gets or sets the el codigo de retorno.
+        /// </summary>
+        public string CodigoRetorno { get; set; }
+
+        /// <summary>
+        /// Gets or sets the el codigo de retorno Int.
+        /// </summary>
+        public int codRetorno { get; set; }
+
+        /// <summary>
+        /// Gets or sets the el Codigo de error.
+        /// </summary>
+        public string ErrorCode { get; set; }
+
+
+        public byte[] contentByte { get; set; }
+    }
+
 }

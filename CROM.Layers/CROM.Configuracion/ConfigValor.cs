@@ -1,12 +1,6 @@
 namespace CROM.Tools.Config
 {
-    using CROM.Tools.Comun;
     using CROM.Tools.Comun.settings;
-    using System;
-    using System.Collections.Generic;
-    using System.Configuration;
-    using System.Linq;
-    using System.Text;
 
     public static class ConfiguracionFileXML
     {
@@ -39,6 +33,9 @@ namespace CROM.Tools.Config
 
     public enum ConfigTool
     {
+        #region CODIGO COMENTADO
+
+
         /*
          * 
         DEFAULT_Doc_NotaIngreso,    //01
@@ -239,7 +236,9 @@ namespace CROM.Tools.Config
         DEFAULT_ConcatenaNumDias,           //184(2018-02-04)
         DEFAULT_LogoAdicionalEmp,           //185(2018-02-04)
 */
-        DEFAULT_ActualizaCostos
+        #endregion
+
+          DEFAULT_ActualizaCostos
         , DEFAULT_AlmacenPrincipal
         , DEFAULT_AperturaCajaAuto
         , DEFAULT_AsigCliente
@@ -429,7 +428,6 @@ namespace CROM.Tools.Config
         , DEFAULT_SFS_CONSULTA_API_GRNTY
         , DEFAULT_SFS_CONSULTA_API_SCOPE
         , DEFAULT_SFS_FLAG_BVT_RESUMEN
-        //, DEFAULT_SFS_WS_SOAP_GUIAREM_P
 
 
         , DEFAULT_SitioWEBPersona

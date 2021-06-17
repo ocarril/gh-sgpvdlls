@@ -17,6 +17,7 @@ namespace CROM.Tools.Config
     {
         #region /* Proceso de SELECT BY ID CODE */
         public static string cnxNombre { get; set; }
+
         /// <summary>
         /// Retorna una ENTIDAD de registro de la Entidad Maestros.Configuracion
         /// En la BASE de DATO la Tabla : [Maestros.Configuracion]
@@ -51,6 +52,37 @@ namespace CROM.Tools.Config
             return configuracion.desValor;
         }
 
+
+        public static string AppConfig(int codEmpresa, string pcodKeyConfig)
+        {
+            ConfigValor configuracion = new ConfigValor();
+            try
+            {
+                string conexion = GlobalSettings.GetBDCadenaConexion("cnxCROMSystema");
+                using (DBML_ConfigDataContext SQLDC = new DBML_ConfigDataContext(conexion))
+                {
+                    var resul = SQLDC.omgc_S_Configuracion(codEmpresa, null, pcodKeyConfig.ToString(), null, null);
+                    foreach (var item in resul)
+                    {
+                        configuracion = new ConfigValor()
+                        {
+                            desValor = item.desValor,
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                configuracion.desValor = string.IsNullOrEmpty(configuracion.desValor) ? string.Empty : configuracion.desValor;
+            }
+            return configuracion.desValor;
+        }
+
+
         public static List<ConfigValor> ListAppConfig(int codEmpresa)
         {
             List<ConfigValor> lstConfigValor = new List<ConfigValor>();
@@ -80,9 +112,6 @@ namespace CROM.Tools.Config
 
             return lstConfigValor;
         }
-
-
-
 
         #endregion
 
