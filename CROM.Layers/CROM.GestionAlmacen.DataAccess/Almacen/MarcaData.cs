@@ -35,13 +35,13 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_Marca(pFiltro.codEmpresa,
-                                                      null,
-                                                      null,
-                                                      string.Empty,
-                                                      string.Empty,
-                                                      pFiltro.desNombre,
-                                                      pFiltro.indActivo);
+                    var resul = SQLDC.usp_sgcfe_R_Marca(pFiltro.codEmpresa,
+                                                        null,
+                                                        null,
+                                                        string.Empty,
+                                                        null,
+                                                        pFiltro.desNombre,
+                                                        pFiltro.indActivo);
                     foreach (var item in resul)
                     {
                         BEMarca objMarca = new BEMarca();
@@ -50,11 +50,11 @@ namespace CROM.GestionAlmacen.DataAccess
                         objMarca.codMarcaKEY = item.codMarcaKEY;
                         objMarca.desNombre = item.desNombre;
                         objMarca.indActivo = item.indActivo;
-                        objMarca.segUsuarioCrea = item.segUsuarioCrea;
+                        objMarca.segUsuarioCrea = item.segUsuarioEdita;
                         objMarca.segUsuarioEdita = item.segUsuarioEdita;
-                        objMarca.segFechaCrea = item.segFechaCrea;
+                        objMarca.segFechaCrea = item.segFechaEdita.Value;
                         objMarca.segFechaEdita = item.segFechaEdita;
-                        objMarca.segMaquinaCrea = item.segMaquinaCrea;
+                        objMarca.segMaquinaCrea = item.segMaquinaEdita;
                         
                         lstMarca.Add(objMarca);
                     }
@@ -81,12 +81,12 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_Modelo(pFiltro.codEmpresa,
-                                                    pFiltro.codMarca,
-                                                      null,
-                                                      null,
-                                                      pFiltro.desNombre,
-                                                      pFiltro.indActivo);
+                    var resul = SQLDC.usp_sgcfe_R_Modelo(pFiltro.codEmpresa,
+                                                         pFiltro.codMarca,
+                                                         null,
+                                                         null,
+                                                         pFiltro.desNombre,
+                                                         pFiltro.indActivo);
                     foreach (var item in resul)
                     {
                         BEModelo objMarca = new BEModelo();

@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Almacen
+namespace CROM.BusinessEntities.Almacen.DTO
 {
     using CROM.BusinessEntities;
 
@@ -11,12 +11,11 @@ namespace CROM.BusinessEntities.Almacen
     /// Descripcion : Capa de Entidades 
     /// Archivo     : [ServicioTecnico.Marca.cs]
     /// </summary>
-    public class BEMarca : BEBaseEntidad
+    public class BEMarcaRequest : BEBaseEntidadRequest
     {
-        public BEMarca()
+        public BEMarcaRequest()
         {
             codPersona = string.Empty;
-            lstModelo = new List<BEModelo>();
             nomContacto = string.Empty;
             gloDescripcion = string.Empty;
             codMarcaKEY = string.Empty;
@@ -37,9 +36,7 @@ namespace CROM.BusinessEntities.Almacen
 
         public string codMarcaKEY { get; set; }
 
-        public List<BEModelo> lstModelo { get; set; }
-
-        public string codPersonaNombre { get; set; }
+        public bool indActivo { get; set; }
 
     }
 }

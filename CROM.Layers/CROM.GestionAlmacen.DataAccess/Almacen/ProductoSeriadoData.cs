@@ -285,14 +285,15 @@ namespace CROM.GestionAlmacen.DataAccess
         /// <summary>
         /// <param name="filtro"></param>
         /// <returns></returns>
-        public List<BEProductoSeriado> List(BaseFiltroAlmacen filtro) 
+        public List<BEProductoSeriado> List(BaseFiltroProductoSeriado filtro) 
         {
             List<BEProductoSeriado> lstProductoSeriado = new List<BEProductoSeriado>();
             try
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_ProductoSeriado(filtro.codEmpresaRUC, 
+                    var resul = SQLDC.usp_sgcfe_R_ProductoSeriado(filtro.codEmpresaRUC, 
+                                                             filtro.codEmpresa,
                                                              filtro.codDeposito, 
                                                              filtro.codPuntoVenta,
                                                              filtro.codItem, 

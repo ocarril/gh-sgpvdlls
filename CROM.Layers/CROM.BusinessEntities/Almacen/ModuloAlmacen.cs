@@ -258,7 +258,6 @@
         {
             codPersona = string.Empty;
             codMarcaKEY = string.Empty;
-            codRegPais = string.Empty;
             desNombre = string.Empty;
         }
 
@@ -266,7 +265,7 @@
 
         public string codMarcaKEY { get; set; }
 
-        public string codRegPais { get; set; }
+        public int? codPais { get; set; }
 
         public string desNombre { get; set; }
 
@@ -307,6 +306,31 @@
         public int? codProducto { get; set; }
 
         public bool? indActivo { get; set; }
+    }
+
+    public class BaseFiltroProductoSeriado: BEBuscadorBase
+    {
+        public BaseFiltroProductoSeriado()
+        {
+            codDeposito = string.Empty;
+            codPuntoVenta = string.Empty;
+            codItem = string.Empty;
+            numDocumentoCompra = string.Empty;
+            numDocumentoCompromiso = string.Empty;
+            numDocumentoVenta = string.Empty;
+            codRegEstadoMercaderia = string.Empty;
+        }
+
+        public string codDeposito               { get; set; }
+        public string codPuntoVenta             { get; set; }
+        public string codItem                   { get; set; }
+        public int? codProducto              { get; set; }
+        public string numDocumentoCompromiso    { get; set; }
+        public string numDocumentoVenta         { get; set; }
+        public string numDocumentoCompra       { get; set; }
+        public bool? indComprometido          { get; set; }
+        public bool? indVendido               { get; set; }
+        public string codRegEstadoMercaderia { get; set; }
     }
 
 }

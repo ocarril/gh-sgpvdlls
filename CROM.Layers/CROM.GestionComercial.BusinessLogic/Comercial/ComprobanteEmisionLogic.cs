@@ -468,7 +468,7 @@ namespace CROM.GestionComercial.BusinessLogic
                     itemDetalle.refCodigoArguMoneda = comprobanteEmision.CodigoArguMoneda;
 
                     if (comprobantes.IncidenciaEnStocks == 0)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -482,7 +482,7 @@ namespace CROM.GestionComercial.BusinessLogic
                             indVendido = null
                         });
                     else if (comprobantes.IncidenciaEnStocks == 1)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -496,7 +496,7 @@ namespace CROM.GestionComercial.BusinessLogic
                             indVendido = null
                         });
                     else if (comprobantes.IncidenciaEnStocks == -1)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -713,7 +713,7 @@ namespace CROM.GestionComercial.BusinessLogic
                     itemDetalle.refCodigoArguMoneda = comprobanteEmision.CodigoArguMoneda;
 
                     if (comprobantes.IncidenciaEnStocks == 0)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -727,7 +727,7 @@ namespace CROM.GestionComercial.BusinessLogic
                             indVendido = null
                         });
                     else if (comprobantes.IncidenciaEnStocks == 1)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -741,7 +741,7 @@ namespace CROM.GestionComercial.BusinessLogic
                             indVendido = null
                         });
                     else if (comprobantes.IncidenciaEnStocks == -1)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -954,7 +954,7 @@ namespace CROM.GestionComercial.BusinessLogic
                     itemDetalle.refCodigoArguMoneda = comprobanteEmision.CodigoArguMoneda;
 
                     if (comprobante.IncidenciaEnStocks == 0)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -968,7 +968,7 @@ namespace CROM.GestionComercial.BusinessLogic
                             indVendido = null
                         });
                     else if (comprobante.IncidenciaEnStocks == 1)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,
@@ -982,7 +982,7 @@ namespace CROM.GestionComercial.BusinessLogic
                             indVendido = null
                         });
                     else if (comprobante.IncidenciaEnStocks == -1)
-                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroAlmacen
+                        itemDetalle.listaProductoSeriados = productoLogic.ListProductoSeriado(new BaseFiltroProductoSeriado
                         {
                             codEmpresaRUC = comprobanteEmision.CodigoPersonaEmpre,
                             codPuntoVenta = comprobanteEmision.CodigoPuntoVenta,

@@ -268,24 +268,24 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_Producto(pFiltro.codEmpresa, 
-                                                      pFiltro.codPuntoVenta, 
-                                                      pFiltro.codDeposito, 
-                                                      pFiltro.codProductoRefer,
-                                                      pFiltro.codGrupo, 
-                                                      pFiltro.desNombre, 
-                                                      pFiltro.desComercial, 
-                                                      pFiltro.codMarca,
-                                                      pFiltro.codModelo,
-                                                      pFiltro.codRegTipo, 
-                                                      pFiltro.indDestinoCompra, 
-                                                      pFiltro.indDestinaVenta, 
-                                                      pFiltro.codRegCentroProducc, 
-                                                      pFiltro.codRegCategoria, 
-                                                      pFiltro.codRegUnidadMedida, 
-                                                      pFiltro.indEstado, 
-                                                      pFiltro.desPalabraClave,
-                                                      pFiltro.indTodos);
+                    var resul = SQLDC.usp_sgcfe_R_Producto(pFiltro.codEmpresa, 
+                                                           pFiltro.codPuntoVenta, 
+                                                           pFiltro.codDeposito, 
+                                                           pFiltro.codProductoRefer,
+                                                           pFiltro.codGrupo, 
+                                                           pFiltro.desNombre, 
+                                                           pFiltro.desComercial, 
+                                                           pFiltro.codMarca,
+                                                           pFiltro.codModelo,
+                                                           pFiltro.codRegTipo, 
+                                                           pFiltro.indDestinoCompra, 
+                                                           pFiltro.indDestinaVenta, 
+                                                           pFiltro.codRegCentroProducc, 
+                                                           pFiltro.codRegCategoria, 
+                                                           pFiltro.codRegUnidadMedida, 
+                                                           pFiltro.indEstado, 
+                                                           pFiltro.desPalabraClave,
+                                                           pFiltro.indTodos);
                     foreach (var item in resul)
                     {
                         lstProducto.Add(new DTOProductoResponse()
@@ -382,24 +382,24 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_Producto_NumSerie(pFiltro.codEmpresa,
-                                                               pFiltro.codDeposito, 
-                                                               pFiltro.codProductoRefer,
-                                                               pFiltro.codGrupo, 
-                                                               pFiltro.codMarca,
-                                                               pFiltro.codModelo, 
-                                                               pFiltro.desNombre, 
-                                                               pFiltro.desComercial,
-                                                               pFiltro.codRegTipo, 
-                                                               pFiltro.indDestinoCompra,
-                                                               pFiltro.indDestinaVenta, 
-                                                               pFiltro.codRegCentroProducc, 
-                                                               pFiltro.codRegCategoria,
-                                                               pFiltro.codRegUnidadMedida, 
-                                                               pFiltro.indEstado, 
-                                                               pFiltro.desPalabraClave,
-                                                               pFiltro.indTodos, 
-                                                               pFiltro.numSerieProducto);
+                    var resul = SQLDC.usp_sgcfe_R_Producto_NumSerie(pFiltro.codEmpresa,
+                                                                    pFiltro.codDeposito, 
+                                                                    pFiltro.codProductoRefer,
+                                                                    pFiltro.codGrupo, 
+                                                                    pFiltro.codMarca,
+                                                                    pFiltro.codModelo, 
+                                                                    pFiltro.desNombre, 
+                                                                    pFiltro.desComercial,
+                                                                    pFiltro.codRegTipo, 
+                                                                    pFiltro.indDestinoCompra,
+                                                                    pFiltro.indDestinaVenta, 
+                                                                    pFiltro.codRegCentroProducc, 
+                                                                    pFiltro.codRegCategoria,
+                                                                    pFiltro.codRegUnidadMedida, 
+                                                                    pFiltro.indEstado, 
+                                                                    pFiltro.desPalabraClave,
+                                                                    pFiltro.indTodos, 
+                                                                    pFiltro.numSerieProducto);
                     foreach (var item in resul)
                     {
                         lstProducto.Add(new DTOProductoResponse()
@@ -492,7 +492,7 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_Producto_Id(pcodEmpresa, prm_codProducto);
+                    var resul = SQLDC.usp_sgcfe_R_Producto_ID(pcodEmpresa, prm_codProducto);
                     foreach (var item in resul)
                     {
                         producto = new BEProducto();
@@ -576,7 +576,7 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_Producto_Codigo(pcodEmpresa, prm_codigoProducto);
+                    var resul = SQLDC.usp_sgcfe_R_Producto_Codigo(pcodEmpresa, prm_codigoProducto);
                     foreach (var item in resul)
                     {
                         producto = new BEProducto();

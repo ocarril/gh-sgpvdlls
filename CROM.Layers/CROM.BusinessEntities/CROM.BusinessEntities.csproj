@@ -99,11 +99,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacen\DTO\DTOMarcaResponse.cs" />
     <Compile Include="Almacen\DTO\DTOProductoEmision.cs" />
     <Compile Include="Almacen\DTO\DTOProductoProveedorResponse.cs" />
     <Compile Include="Almacen\DTO\DTOProductoResponse.cs" />
     <Compile Include="Almacen\DTO\DTOMarca.cs" />
     <Compile Include="Almacen\DTO\DTOModelo.cs" />
+    <Compile Include="Almacen\DTO\BEMarcaRequest.cs" />
     <Compile Include="Almacen\DTO\Entidades\BEMarca.cs" />
     <Compile Include="Almacen\DTO\Entidades\BEModelo.cs" />
     <Compile Include="Almacen\DTO\Entidades\BEProducto.cs" />

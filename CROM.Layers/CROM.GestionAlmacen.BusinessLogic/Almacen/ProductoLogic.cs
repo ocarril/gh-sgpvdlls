@@ -157,7 +157,13 @@ namespace CROM.GestionAlmacen.BusinessLogic
                         producto.listaProductoClave = listaProductoClave;
                     }
 
-                    producto.listaProductoProductoSeriados = oProductoSeriadosData.List(pFiltro);
+                    producto.listaProductoProductoSeriados = oProductoSeriadosData.List(new BaseFiltroProductoSeriado
+                    {
+                         codProducto = pFiltro.codProducto,
+                         codEmpresa=pFiltro.codEmpresa,
+                         codEmpresaRUC=pFiltro.codEmpresaRUC,
+                          
+                    });
 
                     pFiltro.fecInicio = HelpTime.ConvertYYYYMMDD(DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud())
                         .AddDays(DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()).DayOfYear * -1));
@@ -860,7 +866,7 @@ namespace CROM.GestionAlmacen.BusinessLogic
         /// <summary>
         /// <param name="pFiltro"></param>
         /// <returns></returns>
-        public List<BEProductoSeriado> ListProductoSeriado(BaseFiltroAlmacen pFiltro) 
+        public List<BEProductoSeriado> ListProductoSeriado(BaseFiltroProductoSeriado pFiltro) 
         {
             List<BEProductoSeriado> lstProductoSeriado = new List<BEProductoSeriado>();
             try
@@ -870,7 +876,7 @@ namespace CROM.GestionAlmacen.BusinessLogic
             catch (Exception ex)
             {
                 var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                                              pFiltro.segUsuarioEdita, pFiltro.codEmpresa.ToString());
+                                                              pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
                 throw new Exception(returnValor.Message);
             }
             return lstProductoSeriado;

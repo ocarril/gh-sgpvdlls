@@ -16,8 +16,7 @@ namespace CROM.BusinessEntities.Almacen
     public class BEGrupo : BEBase
     {
         public int codGrupo { get; set; }
-        public string codPersonaEmpre { get; set; }
-        public string codGrupoRef { get; set; }
+        public string codGrupoKey { get; set; }
         public string codRegLinea { get; set; }
         public string codRegMaterial { get; set; }
         public string codRegUnidadMedida { get; set; }

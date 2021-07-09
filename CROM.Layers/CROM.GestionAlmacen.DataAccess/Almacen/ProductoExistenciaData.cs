@@ -312,7 +312,7 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_ProductoExistencia(pFiltro.codEmpresa,
+                    var resul = SQLDC.usp_sgcfe_R_ProductoExistencia(pFiltro.codEmpresa,
                                                                 pFiltro.codProducto, 
                                                                 pFiltro.codDeposito);
                     foreach (var item in resul)
@@ -334,7 +334,7 @@ namespace CROM.GestionAlmacen.DataAccess
                             StockMerma = item.StockMerma,
                             StockSobrante = item.StockSobrante,
                             codDeposito = item.codDeposito,
-                            codPersonaEmpre = item.codPersonaEmpre,
+                            codEmpresa = pFiltro.codEmpresa,
                             auxcodDepositoNombre = item.auxcodDepositoNombre,
                             codProductoNombre = item.codProductoNombre
                         });

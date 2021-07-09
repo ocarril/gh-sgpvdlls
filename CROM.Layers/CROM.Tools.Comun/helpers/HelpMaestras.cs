@@ -36,7 +36,7 @@ namespace CROM.Tools.Comun
             PersonaAsignaciones,    //PASIG	Asignaciónes para Personas
             PersonaTipoAsignacion,  //PTIPO Tipo de Asignaciónes para Personas
             PersonaAtributos,       //PATRB	Atributos de Personas
-            ProducAtributoParte,    //PATRI	Atributos de las Partes
+            //ProducAtributoParte,    //PATRI	Atributos de las Partes
             ProducCategorias,       //PCATE	Categoría de Productos
             ProducColores,          //PCLRP	Colores
             CentroDeCostos,         //PCNTC	Centros de Costos
@@ -44,18 +44,18 @@ namespace CROM.Tools.Comun
             GastosAduaneros,        //GADUA	Gastos aduaneros
             ProducGarantias,        //PGRNT	Tipos de Garantia a Productos
             ProducLineas,           //PLINE	Lineas de Productos
-            ProducMateriales,       //PMATE	Materiales de Productos
+            //ProducMateriales,       //PMATE	Materiales de Productos
             ProducUnidadMedida,     //PMEDI	Unidades de Medida
             //ProducMarcas,           //PMRCA	Marcas y Modelos Registradas
             ProducMetodosAlmac,     //PMTDA	Métodos de Almacenamiento
-            ProducPartes,           //PPART	Partes del Producto
+            //ProducPartes,           //PPART	Partes del Producto
             PersonaProfesiones,     //PROFE	Profesiones de Empleados
             ProducSectoresAlmac,    //PSALM	Sectores de Almacenamiento
             ProducTipos,            //PTPRO	Tipo de Producto
             PersonaRubrosComerc,    //RUBRC	Rubros Comerciales
             PersonaGrupoSanguineo,  //PGRSN Grupos Sanguineos;
             TiposDeArchivos,        //TFILE	Tipos de Archivos
-            TablaDePaises,          //TPAIS	TABLA DE PAISES
+            //TablaDePaises,          //TPAIS	TABLA DE PAISES
             SectoresZonasDeParqueo, //SCPQA	Sectores/Zonas de parqueo
             TiposDeVehiculos,       //TVEHI	Tipos de Vehículos
             GCEstadosLetraCambio,   //ESTLC Estados de la letra de cambio
@@ -148,9 +148,9 @@ namespace CROM.Tools.Comun
                 case TM.PersonaAtributos:       //PATRB	Atributos de Personas
                     CodigoTabla = "PATRB";
                     break;
-                case TM.ProducAtributoParte:    //PATRI	Atributos de las Partes
-                    CodigoTabla = "PATRI";
-                    break;
+                //case TM.ProducAtributoParte:    //PATRI	Atributos de las Partes
+                //    CodigoTabla = "PATRI";
+                //    break;
                 case TM.ProducCategorias:       //PCATE	Categoría de Productos
                     CodigoTabla = "PCATE";
                     break;
@@ -172,9 +172,9 @@ namespace CROM.Tools.Comun
                 case TM.ProducLineas:           //PLINE	Lineas de Productos
                     CodigoTabla = "PLINE";
                     break;
-                case TM.ProducMateriales:       //PMATE	Materiales de Productos
-                    CodigoTabla = "PMATE";
-                    break;
+                //case TM.ProducMateriales:       //PMATE	Materiales de Productos
+                //    CodigoTabla = "PMATE";
+                //    break;
                 case TM.ProducUnidadMedida:     //PMEDI	Unidades de Medida
                     CodigoTabla = "PMEDI";
                     break;
@@ -184,9 +184,9 @@ namespace CROM.Tools.Comun
                 case TM.ProducMetodosAlmac:     //PMTDA	Métodos de Almacenamiento
                     CodigoTabla = "PMTDA";
                     break;
-                case TM.ProducPartes:           //PPART	Partes del Producto
-                    CodigoTabla = "PPART";
-                    break;
+                //case TM.ProducPartes:           //PPART	Partes del Producto
+                //    CodigoTabla = "PPART";
+                //    break;
                 case TM.PersonaProfesiones:     //PROFE	Profesiones de Empleados
                     CodigoTabla = "PROFE";
                     break;
@@ -205,9 +205,9 @@ namespace CROM.Tools.Comun
                 case TM.TiposDeArchivos:        //TFILE	Tipos de Archivos
                     CodigoTabla = "TFILE";
                     break;
-                case TM.TablaDePaises:         //UBIGE	UBIGEOS DE PAISES
-                    CodigoTabla = "TPAIS";
-                    break;
+                //case TM.TablaDePaises:         //UBIGE	UBIGEOS DE PAISES
+                //    CodigoTabla = "TPAIS";
+                //    break;
                 case TM.SectoresZonasDeParqueo: //Sectores/Zonas de parqueo
                     CodigoTabla = "SCPQA";
                     break;

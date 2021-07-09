@@ -70,6 +70,10 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_FILE_RESUMEN_BVTA_XML = "-RC-";
         public const string SUNAT_FILE_RESUMEN_REVER_XML = "-RR-";
 
+        public const string COMERCIAL_Path_Compras = "Compras";
+        public const string COMERCIAL_Path_Venta = "Ventas";
+        public const string COMERCIAL_Path_Internas = "Internas";
+
 
         public static Dictionary<string, string> ConsultaWS_estadoCp = new Dictionary<string, string>()
         {

@@ -29,93 +29,93 @@ namespace CROM.GestionAlmacen.BusinessLogic
 
         #region /* Proceso de INSERT RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo GrupoAux
-        /// En la BASE de DATO la Tabla : [Almacen.GrupoAux]
-        /// <summary>
-        /// <param name = >grupo</param>
-        public ReturnValor Insert(GrupoAux grupo)
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    returnValor.codRetorno = grupoData.Insert(grupo);
-                    if (returnValor.codRetorno != 0)
-                    {
-                        returnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.NEW);
-                        returnValor.Exitosa = true;
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                returnValor = HelpException.mTraerMensaje(ex);
-            }
-            return returnValor;
-        }
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo GrupoAux
+        ///// En la BASE de DATO la Tabla : [Almacen.GrupoAux]
+        ///// <summary>
+        ///// <param name = >grupo</param>
+        //public ReturnValor Insert(GrupoAux grupo)
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            returnValor.codRetorno = grupoData.Insert(grupo);
+        //            if (returnValor.codRetorno != 0)
+        //            {
+        //                returnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.NEW);
+        //                returnValor.Exitosa = true;
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        returnValor = HelpException.mTraerMensaje(ex);
+        //    }
+        //    return returnValor;
+        //}
 
         #endregion
 
         #region /* Proceso de UPDATE RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo GrupoAux
-        /// En la BASE de DATO la Tabla : [Almacen.GrupoAux]
-        /// <summary>
-        /// <param name="grupo"></param>
-        /// <returns></returns>
-        public ReturnValor Update(GrupoAux grupo)
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    returnValor.Exitosa = grupoData.Update(grupo);
-                    if (returnValor.Exitosa)
-                    {
-                        returnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                returnValor = HelpException.mTraerMensaje(ex);
-            }
-            return returnValor;
-        }
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo GrupoAux
+        ///// En la BASE de DATO la Tabla : [Almacen.GrupoAux]
+        ///// <summary>
+        ///// <param name="grupo"></param>
+        ///// <returns></returns>
+        //public ReturnValor Update(GrupoAux grupo)
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            returnValor.Exitosa = grupoData.Update(grupo);
+        //            if (returnValor.Exitosa)
+        //            {
+        //                returnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        returnValor = HelpException.mTraerMensaje(ex);
+        //    }
+        //    return returnValor;
+        //}
 
         #endregion
 
         #region /* Proceso de DELETE BY ID CODE */
 
-        /// <summary>
-        /// ELIMINA un registro de la Entidad Almacen.GrupoAux
-        /// En la BASE de DATO la Tabla : [Almacen.GrupoAux]
-        /// <summary>
-        /// <returns>bool</returns>
-        public ReturnValor Delete(int prm_codGrupo)
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    returnValor.Exitosa = grupoData.Delete(prm_codGrupo);
-                    if (returnValor.Exitosa)
-                    {
-                        returnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.DELETE);
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                returnValor = HelpException.mTraerMensaje(ex);
-            }
-            return returnValor;
-        }
+        ///// <summary>
+        ///// ELIMINA un registro de la Entidad Almacen.GrupoAux
+        ///// En la BASE de DATO la Tabla : [Almacen.GrupoAux]
+        ///// <summary>
+        ///// <returns>bool</returns>
+        //public ReturnValor Delete(int prm_codEmpresa, int prm_codGrupo)
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            returnValor.Exitosa = grupoData.Delete(prm_codEmpresa, prm_codGrupo);
+        //            if (returnValor.Exitosa)
+        //            {
+        //                returnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.DELETE);
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        returnValor = HelpException.mTraerMensaje(ex);
+        //    }
+        //    return returnValor;
+        //}
 
         #endregion
 
