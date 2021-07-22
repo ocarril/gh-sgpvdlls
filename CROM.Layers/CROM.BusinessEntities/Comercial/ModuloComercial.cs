@@ -903,7 +903,6 @@ namespace CROM.BusinessEntities.Comercial
 
         public string codPuntoVenta { get; set; }
 
-        public string nomEmpresaRUC { get; set; }
         public string nomRazonSocial { get; set; }
         public string numDocumento { get; set; }
 
@@ -945,7 +944,6 @@ namespace CROM.BusinessEntities.Comercial
 
         public long? codDocumRegResumenDiario { get; set; }
 
-        [JsonIgnore]
         public string fecEmision { get; set; }
 
     }

@@ -148,9 +148,6 @@ namespace CROM.Tools.Comun
                 case TM.PersonaAtributos:       //PATRB	Atributos de Personas
                     CodigoTabla = "PATRB";
                     break;
-                //case TM.ProducAtributoParte:    //PATRI	Atributos de las Partes
-                //    CodigoTabla = "PATRI";
-                //    break;
                 case TM.ProducCategorias:       //PCATE	Categoría de Productos
                     CodigoTabla = "PCATE";
                     break;
@@ -172,21 +169,12 @@ namespace CROM.Tools.Comun
                 case TM.ProducLineas:           //PLINE	Lineas de Productos
                     CodigoTabla = "PLINE";
                     break;
-                //case TM.ProducMateriales:       //PMATE	Materiales de Productos
-                //    CodigoTabla = "PMATE";
-                //    break;
                 case TM.ProducUnidadMedida:     //PMEDI	Unidades de Medida
                     CodigoTabla = "PMEDI";
                     break;
-                //case TM.ProducMarcas:           //PMRCA	Marcas y Modelos Registradas
-                //    CodigoTabla = "PMRCA";
-                //    break;
                 case TM.ProducMetodosAlmac:     //PMTDA	Métodos de Almacenamiento
                     CodigoTabla = "PMTDA";
                     break;
-                //case TM.ProducPartes:           //PPART	Partes del Producto
-                //    CodigoTabla = "PPART";
-                //    break;
                 case TM.PersonaProfesiones:     //PROFE	Profesiones de Empleados
                     CodigoTabla = "PROFE";
                     break;
@@ -205,10 +193,7 @@ namespace CROM.Tools.Comun
                 case TM.TiposDeArchivos:        //TFILE	Tipos de Archivos
                     CodigoTabla = "TFILE";
                     break;
-                //case TM.TablaDePaises:         //UBIGE	UBIGEOS DE PAISES
-                //    CodigoTabla = "TPAIS";
-                //    break;
-                case TM.SectoresZonasDeParqueo: //Sectores/Zonas de parqueo
+               case TM.SectoresZonasDeParqueo: //Sectores/Zonas de parqueo
                     CodigoTabla = "SCPQA";
                     break;
                 case TM.TiposDeVehiculos:       // Tipos de Vehículos
@@ -244,7 +229,22 @@ namespace CROM.Tools.Comun
                 case TM.TiposPlazosDePago: //TZNDM	Personas - Tipos de zonas/nucleos urbanos para domicilios
                     CodigoTabla = "TPLAZ";
                     break;
-                    
+                //case TM.ProducAtributoParte:    //PATRI	Atributos de las Partes
+                //    CodigoTabla = "PATRI";
+                //    break;
+                //case TM.ProducMateriales:       //PMATE	Materiales de Productos
+                //    CodigoTabla = "PMATE";
+                //    break;
+                //case TM.ProducMarcas:           //PMRCA	Marcas y Modelos Registradas
+                //    CodigoTabla = "PMRCA";
+                //    break;
+                //case TM.ProducPartes:           //PPART	Partes del Producto
+                //    CodigoTabla = "PPART";
+                //    break;
+                //case TM.TablaDePaises:         //UBIGE	UBIGEOS DE PAISES
+                //    CodigoTabla = "TPAIS";
+                //    break;
+
             }
             return CodigoTabla;
         }

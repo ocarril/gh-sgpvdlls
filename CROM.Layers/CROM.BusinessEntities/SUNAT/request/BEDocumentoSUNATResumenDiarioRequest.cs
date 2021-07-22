@@ -14,9 +14,9 @@
 
         public int codDocumRegResumenDiario { get; set; }
 
-        public DateTime fecProcesoVenta { get; set; }
+        public DateTime? fecProcesoVenta { get; set; }
 
-        public DateTime fecGeneracionRD { get; set; }
+        public DateTime? fecGeneracionRD { get; set; }
 
         public string nomFileSunat { get; set; }
 
@@ -24,6 +24,6 @@
 
         public string verCustomizationID { get; set; }
 
-
+        public string fecEmision { get; set; }
     }
 }
