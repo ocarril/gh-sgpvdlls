@@ -25,5 +25,7 @@
         public string FirmaSignatureValue { get; set; }
 
         public string NomArchivoTicket { get; set; }
+
+        public DateTime fecGeneracionRD { get; set; }
     }
 }

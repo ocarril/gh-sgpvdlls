@@ -83,7 +83,7 @@
         public string RD_nomTributoIGV { get; set; }
         public string RD_codTributoIGVInter { get; set; }
         public decimal prcImpuestoGV { get; set; }
-        public decimal RD_sumTotalIGV { get; set; }
+        public decimal RD_sumTributoIGV { get; set; }
 
 
         public string RD_codTributoOTRO { get; set; }
