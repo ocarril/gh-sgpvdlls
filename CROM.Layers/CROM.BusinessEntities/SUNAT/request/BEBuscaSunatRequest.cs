@@ -69,6 +69,8 @@
         
         public string codPlanilla { get; set; }
 
+        public string codTipoDocumento { get; set; }
+
         [JsonIgnore]
         public string numDocumento { get; set; }
 
@@ -77,6 +79,7 @@
 
         [JsonIgnore]
         public bool flagEnvioMailOk { get; set; }
+
     }
 
 }

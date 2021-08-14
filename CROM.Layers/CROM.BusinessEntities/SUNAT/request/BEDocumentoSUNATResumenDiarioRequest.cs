@@ -25,5 +25,7 @@
         public string verCustomizationID { get; set; }
 
         public string fecEmision { get; set; }
+
+        public bool indUpdateSigned { get; set; }
     }
 }

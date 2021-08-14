@@ -20,9 +20,10 @@
         [JsonIgnore]
         public string desDocumento { get; set; }
 
-
         [JsonIgnore]
         public string PathRutaSendWSCDRZIPFile { get; set; }
 
+        [JsonIgnore]
+        public string indTipoDocRpta { get; set; }
     }
 }

@@ -29,6 +29,7 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_TipoDocumento_COMPROBANTE_RETENCION = "20";
         public const string SUNAT_TipoDocumento_GUIA_REMISION_TRANSPORTISTA = "31";
         public const string SUNAT_TipoDocumento_SOLICITUD_BAJA = "99";
+        public const string SUNAT_TipoDocumento_RESUMEN_DIARIO = "RD";
 
         public const string SUNAT_TipoDocumento_IDENTIDAD_SIN_RUC = "0";
         public const string SUNAT_TipoDocumento_IDENTIDAD_DNI = "1";
