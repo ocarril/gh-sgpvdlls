@@ -72,24 +72,33 @@
 
         public decimal RD_sumPrecioVentaME { get; set; }
 
+        public decimal RD_sumTributoIGV { get; set; }
+
+        public decimal RD_sumTributoIVAP { get; set; }
+        
+
+        public decimal RD_sumOtrosCargos { get; set; }
+        public decimal RD_sumTributoOTRO { get; set; }
+        public decimal RD_sumTributoISC { get; set; }
+
+        public decimal RD_sumTotValVentaExonerad { get; set; }
+        public decimal RD_sumTotValVentaInafecta { get; set; }
+        public decimal RD_sumTotValVentaExportac { get; set; }
+        public decimal RD_sumTotValVentaGratuita { get; set; }
 
         public string RD_codTributoISC { get; set; }
         public string RD_nomTributoISC { get; set; }
         public string RD_codTributoISCInter { get; set; }
-        public decimal RD_sumTributoISC { get; set; }
 
 
         public string RD_codTributoIGV { get; set; }
         public string RD_nomTributoIGV { get; set; }
         public string RD_codTributoIGVInter { get; set; }
         public decimal prcImpuestoGV { get; set; }
-        public decimal RD_sumTributoIGV { get; set; }
-
 
         public string RD_codTributoOTRO { get; set; }
         public string RD_nomTributoOTRO { get; set; }
         public string RD_codTributoOTROInter { get; set; }
-        public decimal RD_sumTributoOTRO { get; set; }
 
         /// <summary>
         /// 01	Gravado
@@ -154,7 +163,6 @@
         public decimal sumDescTotal { get; set; }
         public decimal sumImpVenta { get; set; }
 
-        public decimal sumOtrosCargos { get; set; }
         public decimal sumTotalAnticipos { get; set; }
         public decimal sumTotTributos { get; set; }
         public string ublVersionId { get; set; }
@@ -166,5 +174,31 @@
         public string desFirmaDigestValue { get; set; }
         public string desRptaNomArchivoXml { get; set; }
         public DateTime? fecRptaSunatFSFecha { get; set; }
+
+
+        public string codRegEstadoNombre { get; set; }
+        public string codRegEstadoColor { get; set; }
+        public int codRegEstado { get; set; }
+        public string codDocumentoEstadoNombre { get; set; }
+
+        #region // FECHA DE PAGADO-CANCELADO / ANULADO
+
+        public Nullable<DateTime> fecPagadoCancelado { get; set; }
+
+        public Nullable<DateTime> fecPagadoCanceladoRegis { get; set; }
+
+        public Nullable<DateTime> fecAnulacion { get; set; }
+
+        public int cntRegCtaCte { get; set; }
+
+        public DateTime? fecVencimientoDT { get; set; }
+
+        public int numDiasVencimiento { get; set; }
+
+        #endregion
+
+        public bool flagPermiteDarDeBaja { get; set; }
+
+        public Nullable<DateTime> fecEnviadoSUNAT { get; set; }
     }
 }              

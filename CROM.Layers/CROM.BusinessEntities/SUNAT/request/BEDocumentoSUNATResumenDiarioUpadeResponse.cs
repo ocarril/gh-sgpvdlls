@@ -22,5 +22,9 @@
         [JsonIgnore]
         public string NombreArchivoRD { get; set; }
 
+        [JsonIgnore]
+        public string RptaNomArchivoXml { get; set; }
+        
+
     }
 }
