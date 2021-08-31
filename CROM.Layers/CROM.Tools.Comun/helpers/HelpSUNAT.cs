@@ -120,7 +120,7 @@
             return valor;
         }
         
-        public static string[] ObtenerRespuestaZIPSunat(string pRutaEnvioSUNAT, string pNumRUC, bool pLecturaFileZip)
+        public static string[] ObtenerRespuestaZIPSunat(string pRutaEnvioSUNAT, string pNumRUC, int pLecturaFileZip)
         {
             System.IO.FileInfo arch = new System.IO.FileInfo(pRutaEnvioSUNAT);
 
@@ -134,7 +134,7 @@
             }
         }
 
-        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, bool pLecturaFileZip)
+        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, int pLecturaFileZip)
         {
             string mensajeRpta = "";
             string mensajeRptaNota = "";
@@ -145,7 +145,7 @@
 
             try
             {
-                int PosicionFile = pLecturaFileZip ? 0 : 1;
+                int PosicionFile = pLecturaFileZip; // pLecturaFileZip ? 0 : 1;
                 using (ZipArchive zip = ZipFile.Open(pRutaEnvioSUNAT, ZipArchiveMode.Read))
                 {
 

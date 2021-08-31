@@ -200,5 +200,10 @@
         public bool flagPermiteDarDeBaja { get; set; }
 
         public Nullable<DateTime> fecEnviadoSUNAT { get; set; }
+
+        public bool FlagAnulado { get; set; }
+        public bool FlagDeBaja { get; set; }
+
+        public long? codDocumRegResumenDiario { get; set; }
     }
 }              

@@ -271,12 +271,12 @@
         }
 
 
-        public static bool GetDEFAULT_MODO_PROD_XML_RPTA()
+        public static int GetDEFAULT_MODO_PROD_XML_RPTA()
         {
 
             int valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_MODO_PROD_XML_RPTA"]);
 
-            return valorConfig == 1 ? true : false;
+            return valorConfig;
         }
 
 

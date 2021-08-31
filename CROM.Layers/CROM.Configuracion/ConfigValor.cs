@@ -430,6 +430,7 @@ namespace CROM.Tools.Config
         , DEFAULT_SFS_FLAG_BVT_RESUMEN
         , DEFAULT_SFS_NUM_DIA_PLAZO_RD
         , DEFAULT_SFS_NUM_DOCUMENTO_RD
+        , DEFAULT_SFS_FECHA_ENVIA_GRE_WS
 
 
         , DEFAULT_SitioWEBPersona

@@ -4,15 +4,15 @@
     using System;
     using System.Collections.Generic;
 
-    public class BEUnsubscribeDocumentRequest : BEBaseEntidadItem
+    public class BEUnsubscribeDocumentDailySummaryRequest : BEBaseEntidadItem
     {
-        public BEUnsubscribeDocumentRequest()
+        public BEUnsubscribeDocumentDailySummaryRequest()
         {
             gloMotivoBaja = string.Empty;
-            LstCodDocumRegBaja = new List<BEDocumRegBajaSelect>();
+            codRegMotivoAnulacion = string.Empty;
         }
 
-        public List<BEDocumRegBajaSelect> LstCodDocumRegBaja { get; set; }
+        public  int codDocumRegResumenDiario { get; set; }
 
         public DateTime fecEnvioBaja { get; set; }
 
@@ -21,41 +21,33 @@
         public string codRegMotivoAnulacion { get; set; }
 
 
-        [JsonIgnore]
-        public string NomArchivo { get; set; }
-
-        [JsonIgnore]
         public int codDocumReg { get; set; }
-
-
-        #region ATRIBUTOS PARA ACTUALIZAR RPTA SUNAT
-
-        [JsonIgnore]
-        public DateTime? RptaFecha_SFS { get; set; }
-
-        [JsonIgnore]
-        public string RptaSunatFSDescripcion { get; set; }
-
-
-        [JsonIgnore]
-        public string RptaSunatFSNote { get; set; }
-
-
-        [JsonIgnore]
-        public DateTime? RptaSunatFSFecha { get; set; }
-
-
-        [JsonIgnore]
-        public string NomArchivoTicket { get; set; }
-
-        #endregion
 
     }
 
-    public class BEDocumRegBajaSelect
+    public class BEUnsubscribeDocumentDailySummaryAcceptedRequest : BEBaseEntidadItem
+    {
+        public BEUnsubscribeDocumentDailySummaryAcceptedRequest()
+        {
+            RptaSunatFSDescripcion = string.Empty;
+
+        }
+
+
+        public int codDocumReg { get; set; }
+
+
+        public DateTime? RptaFecha_SFS { get; set; }
+
+        public string RptaSunatFSDescripcion { get; set; }
+
+
+    }
+
+    public class BEDocumRegBajaDailySummarySelect
     {
 
-        public BEDocumRegBajaSelect()
+        public BEDocumRegBajaDailySummarySelect()
         {
             codTipoComprobante = string.Empty;
             numSerie = string.Empty;
@@ -110,10 +102,10 @@
         public int codDocumentoEstado { get; set; }
     }
 
-    public class BEDocumRegBajaResponse
+    public class BEDocumRegBajaDailySummaryResponse
     {
 
-        public BEDocumRegBajaResponse()
+        public BEDocumRegBajaDailySummaryResponse()
         {
             segUsuarioEdita = string.Empty;
             numSerie = string.Empty;

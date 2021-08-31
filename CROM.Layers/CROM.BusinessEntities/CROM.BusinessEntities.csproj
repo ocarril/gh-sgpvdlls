@@ -159,6 +159,7 @@
     <Compile Include="SUNAT\IDocumentoElectronico.cs" />
     <Compile Include="SUNAT\request\BEDocumentoSUNATResumenDiarioUpadeResponse.cs" />
     <Compile Include="SUNAT\request\BEGetStatusTicketWSSunat.cs" />
+    <Compile Include="SUNAT\request\BEUnsubscribeDocumentDailySummaryRequest.cs" />
     <Compile Include="SUNAT\request\BEUpdateResumenDiarioRequest.cs" />
     <Compile Include="SUNAT\request\BEBuscaSunatResumenDiarioRequest.cs" />
     <Compile Include="SUNAT\request\BETypeSummaryCorrelativeRequest.cs" />
