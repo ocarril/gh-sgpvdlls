@@ -37,19 +37,19 @@ namespace CROM.Tools.Comun
             Color colorDefault = Color.White;
             try
             {
+                if (!string.IsNullOrWhiteSpace(hexString)){
+                    // REPLACE # OCCURENCES
+                    if (hexString.IndexOf('#') != -1)
+                        hexString = hexString.Replace("#", "");
 
-                // REPLACE # OCCURENCES
-                if (hexString.IndexOf('#') != -1)
-                    hexString = hexString.Replace("#", "");
+                    int RED, GREEN, BLUE = 0;
 
-                int RED, GREEN, BLUE = 0;
+                    RED = int.Parse(hexString.Substring(0, 2), NumberStyles.AllowHexSpecifier);
+                    GREEN = int.Parse(hexString.Substring(2, 2), NumberStyles.AllowHexSpecifier);
+                    BLUE = int.Parse(hexString.Substring(4, 2), NumberStyles.AllowHexSpecifier);
 
-                RED = int.Parse(hexString.Substring(0, 2), NumberStyles.AllowHexSpecifier);
-                GREEN = int.Parse(hexString.Substring(2, 2), NumberStyles.AllowHexSpecifier);
-                BLUE = int.Parse(hexString.Substring(4, 2), NumberStyles.AllowHexSpecifier);
-
-                colorDefault = Color.FromArgb(RED, GREEN, BLUE);
-
+                    colorDefault = Color.FromArgb(RED, GREEN, BLUE);
+                }
             }
             catch (Exception ex)
             {
