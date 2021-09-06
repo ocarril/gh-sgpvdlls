@@ -146,6 +146,57 @@
         public int codProducto { get; set; }
     }
 
+    
+
+    public class BaseFiltroProductoPaged : BEBuscadorBaseRequest
+    {
+
+        public BaseFiltroProductoPaged()
+        {
+            codPuntoVenta = string.Empty;
+            codDeposito = string.Empty;
+            keyProducto = string.Empty;
+            desNombre = string.Empty;
+            codRegUnidadMedida = string.Empty;
+            codProductoRefer = string.Empty;
+            codRegTipo = string.Empty;
+            desPalabraClave = string.Empty;
+        }
+
+        public string codPuntoVenta { get; set; }
+        public string codDeposito { get; set; }
+        public string keyProducto { get; set; }
+        public string codProductoRefer { get; set; }
+        public int? codGrupo { get; set; }
+        public string desNombre { get; set; }
+
+        public int? codMarca { get; set; }
+
+        public int? codModelo { get; set; }
+
+        public string codRegTipo { get; set; }
+
+        public bool? indDestinaVenta { get; set; }
+
+        public bool? indDestinoCompra { get; set; }
+
+        public int? codRegCentroProducc { get; set; }
+
+        public int? codRegCategoria { get; set; }
+
+        public string codRegUnidadMedida { get; set; }
+
+        public bool? indEstado { get; set; }
+
+        public string desPalabraClave { get; set; }
+
+        public bool? indSoloVerificaStock { get; set; }
+
+
+        [JsonIgnore]
+        public int codProducto { get; set; }
+    }
+
     public class BaseFiltroAlmacenCerrarInventario
     {
         public BaseFiltroAlmacenCerrarInventario()
@@ -289,6 +340,94 @@
 
         public bool? indActivo { get; set; }
     }
+
+
+    public class BaseFiltroSector : BEBuscadorBaseRequest
+    {
+
+        public BaseFiltroSector()
+        {
+            codSectorKEY = string.Empty;
+            desNombre = string.Empty;
+        }
+
+        public string codSectorKEY { get; set; }
+
+        public string desNombre { get; set; }
+
+        public bool? indActivo { get; set; }
+    }
+
+
+    public class BaseFiltroCategoria : BEBuscadorBaseRequest
+    {
+
+        public BaseFiltroCategoria()
+        {
+            codCategoriaKEY = string.Empty;
+            desNombre = string.Empty;
+        }
+
+        public string codCategoriaKEY { get; set; }
+
+        public string desNombre { get; set; }
+
+        public bool? indActivo { get; set; }
+    }
+
+
+    public class BaseFiltroLinea : BEBuscadorBaseRequest
+    {
+
+        public BaseFiltroLinea()
+        {
+            codCategoriaKEY = string.Empty;
+            desNombre = string.Empty;
+        }
+        public int? codCategoria { get; set; }
+
+        public string codCategoriaKEY { get; set; }
+
+        public string desNombre { get; set; }
+
+        public bool? indActivo { get; set; }
+    }
+
+
+    public class BaseFiltroCentroProduccion : BEBuscadorBaseRequest
+    {
+
+        public BaseFiltroCentroProduccion()
+        {
+            codCentroProduccionKEY = string.Empty;
+            desNombre = string.Empty;
+        }
+
+        public string codCentroProduccionKEY { get; set; }
+
+        public string desNombre { get; set; }
+
+        public bool? indActivo { get; set; }
+    }
+
+
+
+    public class BaseFiltroCentroCosto : BEBuscadorBaseRequest
+    {
+
+        public BaseFiltroCentroCosto()
+        {
+            codCentroCostoKEY = string.Empty;
+            desNombre = string.Empty;
+        }
+
+        public string codCentroCostoKEY { get; set; }
+
+        public string desNombre { get; set; }
+
+        public bool? indActivo { get; set; }
+    }
+
 
 
     public class BaseFiltroProductoProveedor : BEBuscadorBaseRequest

@@ -99,13 +99,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Almacen\request\BEProductoFotoRequest.cs" />
+    <Compile Include="Almacen\request\BEProductoProveedorRequest.cs" />
+    <Compile Include="Almacen\response\BEProductoFotoResponse.cs" />
+    <Compile Include="Almacen\response\BEProductoProveedorResponse.cs" />
+    <Compile Include="Almacen\response\BEProductoResponse.cs" />
+    <Compile Include="Almacen\request\BEProductoRequest.cs" />
     <Compile Include="Almacen\DTO\DTOMarcaResponse.cs" />
     <Compile Include="Almacen\DTO\DTOProductoEmision.cs" />
     <Compile Include="Almacen\DTO\DTOProductoProveedorResponse.cs" />
+    <Compile Include="Almacen\DTO\DTOProductoPagedResponse.cs" />
     <Compile Include="Almacen\DTO\DTOProductoResponse.cs" />
     <Compile Include="Almacen\DTO\DTOMarca.cs" />
     <Compile Include="Almacen\DTO\DTOModelo.cs" />
-    <Compile Include="Almacen\DTO\BEMarcaRequest.cs" />
+    <Compile Include="Almacen\request\BEMarcaRequest.cs" />
     <Compile Include="Almacen\DTO\Entidades\BEMarca.cs" />
     <Compile Include="Almacen\DTO\Entidades\BEModelo.cs" />
     <Compile Include="Almacen\DTO\Entidades\BEProducto.cs" />
@@ -142,6 +149,7 @@
     <Compile Include="Asistencia\BESysReporte.cs" />
     <Compile Include="Asistencia\BETimeEmpleado.cs" />
     <Compile Include="Asistencia\BETimeMarcacion.cs" />
+    <Compile Include="Comercial\request\BEProductoPrecioRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegEstadoRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegUnsubscribeDocumentRequest.cs" />
     <Compile Include="Comercial\request\DTOParteDiarioRequest.cs" />
@@ -153,6 +161,7 @@
     <Compile Include="Comercial\response\DTODocumRegEstadoResponse.cs" />
     <Compile Include="Comercial\response\DTOParteDiarioResponse.cs" />
     <Compile Include="Comercial\response\DTOParteDiarioTurnoResponse.cs" />
+    <Compile Include="Comercial\response\BEProductoPrecioResponse.cs" />
     <Compile Include="Maestros\DTO\DTOPersonaPagedResponse.cs" />
     <Compile Include="SUNAT\BESendBillDocumentRequest.cs" />
     <Compile Include="SUNAT\FirmadoResponse.cs" />

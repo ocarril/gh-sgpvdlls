@@ -132,45 +132,45 @@ namespace CROM.GestionAlmacen.DataAccess
             return lstProveedor;
         }
 
-        public List<DTOProductoProveedorResponse> ListPaged(BaseFiltroProductoProveedor filtro)
-        {
-            List<DTOProductoProveedorResponse> lstProveedor = new List<DTOProductoProveedorResponse>();
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                    var resul = SQLDC.omgc_S_ProductoProveedor_Paged(filtro.jqCurrentPage,
-                                                                     filtro.jqPageSize,
-                                                                     filtro.jqSortColumn,
-                                                                     filtro.jqSortOrder,
-                                                                     filtro.codEmpresa,
-                                                                     filtro.codProducto,
-                                                                     filtro.codPersonaProveedor,
-                                                                     filtro.indActivo);
-                    foreach (var item in resul)
-                    {
-                        lstProveedor.Add(new DTOProductoProveedorResponse()
-                        {
-                            ROWNUM = item.ROWNUM.Value,
-                            TOTALROWS = item.TOTALROWS.Value,                              
-                            codProductoProveedor = item.codProductoProveedor,
-                             codPersona= item.CodigoPersona,
-                            codigoProducto = item.CodigoProducto,
-                            codPersonaNombre = item.CodigoPersonaNombre,
-                            Estado = item.Estado,
-                            segFechaEdita = item.segFechaEdita,
-                            segUsuarioEdita = item.segUsuarioEdita,
+        //public List<DTOProductoProveedorResponse> ListPaged(BaseFiltroProductoProveedor filtro)
+        //{
+        //    List<DTOProductoProveedorResponse> lstProveedor = new List<DTOProductoProveedorResponse>();
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //            var resul = SQLDC.omgc_S_ProductoProveedor_Paged(filtro.jqCurrentPage,
+        //                                                             filtro.jqPageSize,
+        //                                                             filtro.jqSortColumn,
+        //                                                             filtro.jqSortOrder,
+        //                                                             filtro.codEmpresa,
+        //                                                             filtro.codProducto,
+        //                                                             filtro.codPersonaProveedor,
+        //                                                             filtro.indActivo);
+        //            foreach (var item in resul)
+        //            {
+        //                lstProveedor.Add(new DTOProductoProveedorResponse()
+        //                {
+        //                    ROWNUM = item.ROWNUM.Value,
+        //                    TOTALROWS = item.TOTALROWS.Value,                              
+        //                    codProductoProveedor = item.codProductoProveedor,
+        //                     codPersona= item.CodigoPersona,
+        //                    codigoProducto = item.CodigoProducto,
+        //                    codPersonaNombre = item.CodigoPersonaNombre,
+        //                    Estado = item.Estado,
+        //                    segFechaEdita = item.segFechaEdita,
+        //                    segUsuarioEdita = item.segUsuarioEdita,
 
-                        });
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return lstProveedor;
-        }
+        //                });
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return lstProveedor;
+        //}
 
 
         #endregion

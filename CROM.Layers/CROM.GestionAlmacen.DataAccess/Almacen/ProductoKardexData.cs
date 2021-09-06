@@ -231,7 +231,7 @@ namespace CROM.GestionAlmacen.DataAccess
                             codRegistroTipoMotivo = item.codRegistroTipoMotivo,
                             codRegistroTipoMotivoNombre = item.codRegistroTipoMotivoNombre,
                             codProductoRefer = item.codProductoRefer,
-                            codRegistroCategProducto = item.codRegistroCategProducto,
+                            codRegistroCategProducto = item.codRegistroCategProducto.HasValue? item.codRegistroCategProducto.Value.ToString():string.Empty,
                             codRegistroCategProductoNombre = item.codRegistroCategProductoNombre,
                             codRegistroUnidadMedida = item.codRegistroUnidadMedida,
                             codRegistroUnidadMedidaNombre = item.codRegistroUnidadMedidaNombre,

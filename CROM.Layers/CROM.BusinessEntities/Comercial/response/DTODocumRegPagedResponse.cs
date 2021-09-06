@@ -265,6 +265,12 @@ namespace CROM.BusinessEntities.Comercial.response
         public bool indImprimePDF { get; set; }
 
         public bool indGeneraEnvioResumDiarioSFS { get; set; }
+
+
+        public bool indCanceladoPagado { get; set; }
+
+        public string fecPagadoCancelado { get; set; }
+
     }
 
 }

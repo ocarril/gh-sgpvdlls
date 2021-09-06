@@ -465,5 +465,10 @@
         public int codDocumentoEstado { get; set; }
 
         public string codRegEstado { get; set; }
+
+        public int? RDD_EstadoDelItem { get; set; }
+        public DateTime? RDD_FechaEnvioSunat { get; set; }
+        public string imgEstado001Docum { get; set; }
+        public string imgEstado002Docum { get; set; }
     }
 }

@@ -1,5 +1,5 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_GC_MAGESET_20180802" Class="_ProduccionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-HOME\SQLEXPRESS2014;Initial Catalog=BD_GC_MAGESET_20180802;User ID=sa" SettingsObjectName="CROM.GestionAlmacen.DataAccess.Properties.Settings" SettingsPropertyName="BD_GC_MAGESET_20180802ConnectionString" Provider="System.Data.SqlClient" />
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="BD_GC_MAGESET_SFS_20201106" Class="_ProduccionDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAP01-OCARRIL\SQLEXPRESSCROM15;Initial Catalog=BD_GC_MAGESET_SFS_20201106;User ID=sa" SettingsObjectName="CROM.GestionAlmacen.DataAccess.Properties.Settings" SettingsPropertyName="BD_GC_MAGESET_SFS_20201106ConnectionString2" Provider="System.Data.SqlClient" />
   <Function Name="Produccion.omgc_D_ProductoKardex" Method="omgc_D_ProductoKardex">
     <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
     <Parameter Name="p_codDocumReg" Type="System.Int32" DbType="Int" />
@@ -37,79 +37,6 @@
     <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
     <Parameter Name="p_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
     <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Produccion.omgc_S_ProductoKardex" Method="omgc_S_ProductoKardex">
-    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="p_fecMovimiento_Desde" Type="System.String" DbType="Char(8)" />
-    <Parameter Name="p_fecMovimiento_Hasta" Type="System.String" DbType="Char(8)" />
-    <Parameter Name="p_codDeposito" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
-    <Parameter Name="p_codPersonaMovimi" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="p_codProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="p_codDocumento" Type="System.String" DbType="VarChar(3)" />
-    <Parameter Name="p_numDocumento" Type="System.String" DbType="VarChar(16)" />
-    <Parameter Name="p_codRegistroTipoMovimi" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="p_codRegistroTipoMotivo1" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="p_codRegistroTipoMotivo2" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="p_perInventario" Type="System.String" DbType="VarChar(6)" />
-    <ElementType Name="omgc_S_ProductoKardexResult">
-      <Column Name="codProductoKardex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="codDocumReg" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="fecMovimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="cntStockFisico" Type="System.Decimal" DbType="Decimal(16,4)" CanBeNull="true" />
-      <Column Name="cntStockComprometido" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
-      <Column Name="cntStockInicial" Type="System.Decimal" DbType="Decimal(22,4)" CanBeNull="true" />
-      <Column Name="cntStockConsignacion" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
-      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codProductoRefer" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
-      <Column Name="codRegistroCategProducto" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
-      <Column Name="codRegistroCategProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codRegistroUnidadMedida" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
-      <Column Name="codRegistroUnidadMedidaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codEmpresa" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
-      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
-      <Column Name="codPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="codRegistroTipoMovimi" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="codRegistroTipoMovimiNombre" Type="System.String" DbType="VarChar(111)" CanBeNull="true" />
-      <Column Name="codRegistroTipoMotivo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="codRegistroTipoMotivoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codPersonaMovimi" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="codPersonaMovimiNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="codDocumentoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
-      <Column Name="codItemDetalle" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
-      <Column Name="CodigoArguMoneda" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
-      <Column Name="cntEntrada" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
-      <Column Name="monCostoUnitEntrada" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="cntSalida" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
-      <Column Name="monCostoUnitSalida" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="cntDevolucion" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
-      <Column Name="monCostoUnitDevoluc" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="cntSaldo" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
-      <Column Name="monCostoUnitSaldo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
-      <Column Name="desRazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="perKardexAnio" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
-      <Column Name="codRegistroDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
-      <Column Name="codRegistroDepositoNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
-      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
-      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
-      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="codRegistroTipoMotivo1" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
-      <Column Name="codRegistroTipoMotivoNombre1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="perInventario" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
-      <Column Name="fecInventarioCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="codEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="codEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-    </ElementType>
   </Function>
   <Function Name="Produccion.omgc_S_ProductoKardex_codDocumReg" Method="omgc_S_ProductoKardex_codDocumReg">
     <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
@@ -244,5 +171,78 @@
     <Parameter Name="p_fecInventarioCierre" Type="System.DateTime" DbType="DateTime" />
     <Parameter Name="p_codEmpleado" Type="System.Int32" DbType="Int" />
     <Return Type="System.Int32" />
+  </Function>
+  <Function Name="Produccion.omgc_S_ProductoKardex" Method="omgc_S_ProductoKardex">
+    <Parameter Name="p_codEmpresa" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_fecMovimiento_Desde" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="p_fecMovimiento_Hasta" Type="System.String" DbType="Char(8)" />
+    <Parameter Name="p_codDeposito" Type="System.String" DbType="VarChar(5)" />
+    <Parameter Name="p_codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_codPersonaMovimi" Type="System.String" DbType="VarChar(15)" />
+    <Parameter Name="p_codProducto" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codDocumento" Type="System.String" DbType="VarChar(3)" />
+    <Parameter Name="p_numDocumento" Type="System.String" DbType="VarChar(16)" />
+    <Parameter Name="p_codRegistroTipoMovimi" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegistroTipoMotivo1" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_codRegistroTipoMotivo2" Type="System.String" DbType="VarChar(17)" />
+    <Parameter Name="p_indActivo" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_perInventario" Type="System.String" DbType="VarChar(6)" />
+    <ElementType Name="omgc_S_ProductoKardexResult">
+      <Column Name="codProductoKardex" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumRegDetalle" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codDocumReg" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="fecMovimiento" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="cntStockFisico" Type="System.Decimal" DbType="Decimal(16,4)" CanBeNull="true" />
+      <Column Name="cntStockComprometido" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="cntStockInicial" Type="System.Decimal" DbType="Decimal(22,4)" CanBeNull="true" />
+      <Column Name="cntStockConsignacion" Type="System.Decimal" DbType="Decimal(18,0)" CanBeNull="true" />
+      <Column Name="codProductoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codProductoRefer" Type="System.String" DbType="VarChar(20)" CanBeNull="true" />
+      <Column Name="codRegistroCategProducto" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codRegistroCategProductoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegistroUnidadMedida" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="codRegistroUnidadMedidaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codEmpresa" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpresaNombre" Type="System.String" DbType="VarChar(1) NOT NULL" CanBeNull="false" />
+      <Column Name="codPuntoDeVenta" Type="System.String" DbType="VarChar(4)" CanBeNull="true" />
+      <Column Name="codPuntoDeVentaNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="codRegistroTipoMovimi" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegistroTipoMovimiNombre" Type="System.String" DbType="VarChar(111)" CanBeNull="true" />
+      <Column Name="codRegistroTipoMotivo" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegistroTipoMotivoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codPersonaMovimi" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
+      <Column Name="codPersonaMovimiNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="codDocumento" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="codDocumentoNombre" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="numDocumento" Type="System.String" DbType="VarChar(16)" CanBeNull="true" />
+      <Column Name="codItemDetalle" Type="System.String" DbType="VarChar(3)" CanBeNull="true" />
+      <Column Name="CodigoArguMoneda" Type="System.String" DbType="VarChar(17)" CanBeNull="true" />
+      <Column Name="cntEntrada" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="monCostoUnitEntrada" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cntSalida" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="monCostoUnitSalida" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cntDevolucion" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="monCostoUnitDevoluc" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="cntSaldo" Type="System.Decimal" DbType="Decimal(10,3)" CanBeNull="true" />
+      <Column Name="monCostoUnitSaldo" Type="System.Decimal" DbType="Decimal(18,2)" CanBeNull="true" />
+      <Column Name="desRazonSocial" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="perKardexAnio" Type="System.Int16" DbType="SmallInt NOT NULL" CanBeNull="false" />
+      <Column Name="codRegistroDeposito" Type="System.String" DbType="VarChar(5) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegistroDepositoNombre" Type="System.String" DbType="VarChar(60)" CanBeNull="true" />
+      <Column Name="indActivo" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioCrea" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="segUsuarioEdita" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="segFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="segFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegistroTipoMotivo1" Type="System.String" DbType="VarChar(17) NOT NULL" CanBeNull="false" />
+      <Column Name="codRegistroTipoMotivoNombre1" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="perInventario" Type="System.String" DbType="VarChar(6)" CanBeNull="true" />
+      <Column Name="fecInventarioCierre" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="codEmpleado" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="codEmpleadoNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+    </ElementType>
   </Function>
 </Database>

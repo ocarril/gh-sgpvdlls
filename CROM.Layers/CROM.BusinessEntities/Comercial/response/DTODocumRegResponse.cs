@@ -375,5 +375,9 @@
 
         #endregion
 
+
+        public string imgEstado001Docum { get; set; }
+        public string imgEstado002Docum { get; set; }
+
     }
 }

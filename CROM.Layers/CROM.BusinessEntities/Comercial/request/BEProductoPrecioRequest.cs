@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Comercial
+namespace CROM.BusinessEntities.Comercial.request
 {
     using System;
     using System.Collections.Generic;
@@ -15,26 +15,23 @@ namespace CROM.BusinessEntities.Comercial
     /// Descripcion : Capa de Entidades 
     /// Archivo     : [GestionComercial.ProductoPrecio.cs]
     /// </summary>
-    public class DTOProductoPrecioResponse: BEBasePagedResponse
+    public class BEProductoPrecioRequest : BEBaseEntidadRequest
     {
-        public DTOProductoPrecioResponse()
+        public BEProductoPrecioRequest()
         {
-            codiListaPrecioNombre = string.Empty;
-            CodigoProducto = string.Empty;
-            codPuntoVentaNombre = string.Empty;
-            codRegMonedaNombre = string.Empty;
+            codPuntoVenta = string.Empty;
         }
 
         public int codProductoPrecio { get; set; }
 
-        public string CodigoProducto { get; set; }
-        public string codProductoNombre { get; set; }
+        public int codProducto { get; set; }
 
-        public string codPuntoVentaNombre { get; set; }
+        public string codPuntoVenta { get; set; }
 
-        public string codRegMonedaNombre { get; set; }
+        public string codRegMoneda { get; set; }
 
-        public string codiListaPrecioNombre { get; set; }
+
+        public string codiListaPrecio { get; set; }
 
         public decimal ValorCosto { get; set; }
 
@@ -50,9 +47,6 @@ namespace CROM.BusinessEntities.Comercial
 
         public decimal DescuentoMaximo { get; set; }
 
-        public bool indHistorico { get; set; }
-
-        public DateTime? segFechaInsert { get; set; }
-
+        public bool? indActivo { get; set; }
     }
 }

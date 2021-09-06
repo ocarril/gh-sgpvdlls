@@ -711,65 +711,65 @@ namespace CROM.GestionAlmacen.BusinessLogic
         /// <summary>
         /// <param name="pFiltro"></param>
         /// <returns></returns>
-        public List<BEProductoProveedor> ListProductoProveedores(BaseFiltroProductoProveedor pFiltro)
-        {
-            List<BEProductoProveedor> lstProductoProveedor = new List<BEProductoProveedor>();
-            try
-            {
-                lstProductoProveedor = oProductoProveedoresData.List(pFiltro);
-            }
-            catch (Exception ex)
-            {
-                var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                                              pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
-                throw new Exception(returnValor.Message);
-            }
-            return lstProductoProveedor;
-        }
+        //public List<BEProductoProveedor> ListProductoProveedores(BaseFiltroProductoProveedor pFiltro)
+        //{
+        //    List<BEProductoProveedor> lstProductoProveedor = new List<BEProductoProveedor>();
+        //    try
+        //    {
+        //        lstProductoProveedor = oProductoProveedoresData.List(pFiltro);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
+        //                                                      pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
+        //        throw new Exception(returnValor.Message);
+        //    }
+        //    return lstProductoProveedor;
+        //}
 
-        public OperationResult ListProductoProveedoresPaged(BaseFiltroProductoProveedor pFiltro)
-        {
-            OperationResult operationResult = new OperationResult();
-            try
-            {
-                var lstProductoProveedor = oProductoProveedoresData.ListPaged(pFiltro);
-                int totalRecords = lstProductoProveedor.Select(x => x.TOTALROWS).FirstOrDefault();
-                int totalPages = (int)Math.Ceiling((float)totalRecords / (float)pFiltro.jqPageSize);
+        //public OperationResult ListProductoProveedoresPaged(BaseFiltroProductoProveedor pFiltro)
+        //{
+        //    OperationResult operationResult = new OperationResult();
+        //    try
+        //    {
+        //        var lstProductoProveedor = oProductoProveedoresData.ListPaged(pFiltro);
+        //        int totalRecords = lstProductoProveedor.Select(x => x.TOTALROWS).FirstOrDefault();
+        //        int totalPages = (int)Math.Ceiling((float)totalRecords / (float)pFiltro.jqPageSize);
 
-                var jsonGrid = new
-                {
-                    PageCount = totalPages,
-                    CurrentPage = pFiltro.jqCurrentPage,
-                    RecordCount = totalRecords,
-                    Items = (
-                        from item in lstProductoProveedor
-                        select new
-                        {
-                            ID = item.codProductoProveedor,
-                            Row = new string[]
-                            {"", ""
-                            , item.codPersonaNombre
-                            , item.Estado.ToString()
-                            , string.IsNullOrEmpty(item.segUsuarioEdita)?string.Empty:item.segUsuarioEdita
-                            , item.segFechaEdita.HasValue?item.segFechaEdita.Value.ToString():string.Empty
-                      }
-                        }).ToArray()
-                };
+        //        var jsonGrid = new
+        //        {
+        //            PageCount = totalPages,
+        //            CurrentPage = pFiltro.jqCurrentPage,
+        //            RecordCount = totalRecords,
+        //            Items = (
+        //                from item in lstProductoProveedor
+        //                select new
+        //                {
+        //                    ID = item.codProductoProveedor,
+        //                    Row = new string[]
+        //                    {"", ""
+        //                    , item.codPersonaNombre
+        //                    , item.Estado.ToString()
+        //                    , string.IsNullOrEmpty(item.segUsuarioEdita)?string.Empty:item.segUsuarioEdita
+        //                    , item.segFechaEdita.HasValue?item.segFechaEdita.Value.ToString():string.Empty
+        //              }
+        //                }).ToArray()
+        //        };
 
-                operationResult.data = JsonConvert.SerializeObject(jsonGrid);
-                operationResult.isValid = true;
+        //        operationResult.data = JsonConvert.SerializeObject(jsonGrid);
+        //        operationResult.isValid = true;
 
                
-            }
-            catch (Exception ex)
-            {
-                var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                                              pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
-                throw new Exception(returnValor.Message);
-            }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
+        //                                                      pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
+        //        throw new Exception(returnValor.Message);
+        //    }
 
-            return operationResult;
-        }
+        //    return operationResult;
+        //}
 
         public BEProductoProveedor FindProductoProveedor(BaseFiltroProductoProveedor pFiltro)
         {

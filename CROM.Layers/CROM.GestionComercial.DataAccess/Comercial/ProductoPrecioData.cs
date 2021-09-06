@@ -38,7 +38,7 @@ namespace CROM.GestionComercial.DataAccess
             {
                 using (_GestionComercialDataContext SQLDC = new _GestionComercialDataContext(conexion))
                 {
-                    var resul = SQLDC.omgc_S_ProductoPrecio(filtro.codEmpresa, 
+                    var resul = SQLDC.omgc_S_ProductoPrecio(filtro.codEmpresa,
                                                             filtro.codProducto,
                                                             filtro.codProductoPrecio,
                                                             filtro.codListaPrecio,

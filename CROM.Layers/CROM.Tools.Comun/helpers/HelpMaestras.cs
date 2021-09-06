@@ -37,20 +37,21 @@ namespace CROM.Tools.Comun
             PersonaTipoAsignacion,  //PTIPO Tipo de Asignaciónes para Personas
             PersonaAtributos,       //PATRB	Atributos de Personas
             //ProducAtributoParte,    //PATRI	Atributos de las Partes
-            ProducCategorias,       //PCATE	Categoría de Productos
+
+                //////ProducCategorias,       //PCATE	Categoría de Productos
+                //////ProducLineas,           //PLINE	Lineas de Productos
+                //////ProducionCentro,        //PCNTP	Centro de Producciónes
+                //////ProducSectoresAlmac,    //PSALM	Sectores de Almacenamiento
             ProducColores,          //PCLRP	Colores
             CentroDeCostos,         //PCNTC	Centros de Costos
-            ProducionCentro,        //PCNTP	Centro de Producciónes
             GastosAduaneros,        //GADUA	Gastos aduaneros
             ProducGarantias,        //PGRNT	Tipos de Garantia a Productos
-            ProducLineas,           //PLINE	Lineas de Productos
             //ProducMateriales,       //PMATE	Materiales de Productos
             ProducUnidadMedida,     //PMEDI	Unidades de Medida
             //ProducMarcas,           //PMRCA	Marcas y Modelos Registradas
             ProducMetodosAlmac,     //PMTDA	Métodos de Almacenamiento
             //ProducPartes,           //PPART	Partes del Producto
             PersonaProfesiones,     //PROFE	Profesiones de Empleados
-            ProducSectoresAlmac,    //PSALM	Sectores de Almacenamiento
             ProducTipos,            //PTPRO	Tipo de Producto
             PersonaRubrosComerc,    //RUBRC	Rubros Comerciales
             PersonaGrupoSanguineo,  //PGRSN Grupos Sanguineos;
@@ -148,27 +149,27 @@ namespace CROM.Tools.Comun
                 case TM.PersonaAtributos:       //PATRB	Atributos de Personas
                     CodigoTabla = "PATRB";
                     break;
-                case TM.ProducCategorias:       //PCATE	Categoría de Productos
-                    CodigoTabla = "PCATE";
-                    break;
+                //case TM.ProducCategorias:       //PCATE	Categoría de Productos
+                //    CodigoTabla = "PCATE";
+                //    break;
                 case TM.ProducColores:          //PCLRP	Colores
                     CodigoTabla = "PCLRP";
                     break;
                 case TM.CentroDeCostos:         //PCNTC	Centros de Costos
                     CodigoTabla = "PCNTC";
                     break;
-                case TM.ProducionCentro:        //PCNTP	Centro de Producciónes
-                    CodigoTabla = "PCNTP";
-                    break;
+                //case TM.ProducionCentro:        //PCNTP	Centro de Producciónes
+                //    CodigoTabla = "PCNTP";
+                //    break;
                 case TM.GastosAduaneros:        //GADUA	Gastos aduaneros
                     CodigoTabla = "GADUA";
                     break;
                 case TM.ProducGarantias:        //PGRNT	Tipos de Garantia a Productos
                     CodigoTabla = "PGRNT";
                     break;
-                case TM.ProducLineas:           //PLINE	Lineas de Productos
-                    CodigoTabla = "PLINE";
-                    break;
+                //case TM.ProducLineas:           //PLINE	Lineas de Productos
+                //    CodigoTabla = "PLINE";
+                //    break;
                 case TM.ProducUnidadMedida:     //PMEDI	Unidades de Medida
                     CodigoTabla = "PMEDI";
                     break;
@@ -178,9 +179,9 @@ namespace CROM.Tools.Comun
                 case TM.PersonaProfesiones:     //PROFE	Profesiones de Empleados
                     CodigoTabla = "PROFE";
                     break;
-                case TM.ProducSectoresAlmac:    //PSALM	Sectores de Almacenamiento
-                    CodigoTabla = "PSALM";
-                    break;
+                //case TM.ProducSectoresAlmac:    //PSALM	Sectores de Almacenamiento
+                //    CodigoTabla = "PSALM";
+                //    break;
                 case TM.ProducTipos:            //PTPRO	Tipo de Producto
                     CodigoTabla = "PTPRO";
                     break;

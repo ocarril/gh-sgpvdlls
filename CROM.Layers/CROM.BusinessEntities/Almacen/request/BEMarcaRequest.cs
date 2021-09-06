@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Almacen.DTO
+namespace CROM.BusinessEntities.Almacen.request
 {
     using CROM.BusinessEntities;
 

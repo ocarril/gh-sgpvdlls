@@ -303,15 +303,15 @@ namespace CROM.GestionAlmacen.DataAccess
                             DatoAdicional_02 = item.DatoAdicional_02,
                             codMarca = item.codMarca,
                             codModelo = item.codModelo,
-                            CodigoArguTipoProducto = item.CodigoArguTipoProducto,
+                            CodigoArguTipoProducto = item.codRegTipoProducto,
                             DestinadoACompra = item.DestinadoACompra,
                             DestinadoAVenta = item.DestinadoAVenta,
-                            CodigoArguSectorAlm = item.CodigoArguSectorAlm,
-                            CodigoArguMetodoAlm = item.CodigoArguMetodoAlm,
-                            CodigoArguCentroProd = item.CodigoArguCentroProd,
-                            CodigoArguColor = item.CodigoArguColor,
-                            CodigoArguCategoProd = item.CodigoArguCategoProd,
-                            CodigoArguUnidadMed = item.CodigoArguUnidadMed,
+                            CodigoArguSectorAlm = item.codSector == null ? string.Empty : item.codSector.ToString(),
+                            CodigoArguMetodoAlm = item.codSectorNombre,
+                            CodigoArguCentroProd = item.codCentroProduccion == null ? string.Empty : item.codCentroProduccion.ToString(),
+                            CodigoArguColor = item.codRegColor,
+                            CodigoArguCategoProd = item.codCategoria.ToString(),
+                            CodigoArguUnidadMed = item.codRegUnidadMedida == null ? string.Empty : item.codRegUnidadMedida,
                             CodigoCuenta = item.CodigoCuenta,
                             EditaDescripcion = item.EditaDescripcion,
                             EditaValorVenta = item.EditaValorVenta,
@@ -331,13 +331,13 @@ namespace CROM.GestionAlmacen.DataAccess
                             codGrupoNombre = item.codGrupoNombre,
                             codMarcaNombre = item.codMarcaNombre,
                             codModeloNombre = item.codModeloNombre,
-                            CodigoArguTipoProductoNombre = item.CodigoArguTipoProductoNombre,
-                            CodigoArguSectorAlmNombre = item.CodigoArguSectorAlmNombre,
-                            CodigoArguMetodoAlmNombre = item.CodigoArguMetodoAlmNombre,
-                            CodigoArguCentroProdNombre = item.CodigoArguCentroProdNombre,
-                            CodigoArguColorNombre = item.CodigoArguColorNombre,
-                            CodigoArguCategoProdNombre = item.CodigoArguCategoProdNombre,
-                            CodigoArguUnidadMedNombre = item.CodigoArguUnidadMedNombre,
+                            CodigoArguTipoProductoNombre = item.codRegTipoProductoNombre,
+                            CodigoArguSectorAlmNombre = item.codSectorNombre,
+                            CodigoArguMetodoAlmNombre = item.codRegMetodoAlm,
+                            CodigoArguCentroProdNombre = item.codCentroProduccioNombre,
+                            CodigoArguColorNombre = item.codRegColorNombre,
+                            CodigoArguCategoProdNombre = item.codCategoriaNombre,
+                            CodigoArguUnidadMedNombre = item.codRegUnidadMedidaNombre,
                             PalabrasClaves = item.PalabrasClaves,
                             PesoTotal = item.PesoTotal,
                             StockMaximo = item.StockMaximo,
@@ -417,15 +417,15 @@ namespace CROM.GestionAlmacen.DataAccess
                             DatoAdicional_02 = item.DatoAdicional_02,
                             codMarca = item.codMarca,
                             codModelo = item.codModelo,
-                            CodigoArguTipoProducto = item.CodigoArguTipoProducto,
+                            CodigoArguTipoProducto = item.codRegTipoProducto,
                             DestinadoACompra = item.DestinadoACompra,
                             DestinadoAVenta = item.DestinadoAVenta,
-                            CodigoArguSectorAlm = item.CodigoArguSectorAlm,
-                            CodigoArguMetodoAlm = item.CodigoArguMetodoAlm,
-                            CodigoArguCentroProd = item.CodigoArguCentroProd,
-                            CodigoArguColor = item.CodigoArguColor,
-                            CodigoArguCategoProd = item.CodigoArguCategoProd,
-                            CodigoArguUnidadMed = item.CodigoArguUnidadMed,
+                            CodigoArguSectorAlm = item.codSector == null ? string.Empty : item.codSector.ToString(),
+                            CodigoArguMetodoAlm = item.codRegMetodoAlm,
+                            CodigoArguCentroProd = item.codCentroProduccion == null ? string.Empty : item.codCentroProduccion.ToString(),
+                            CodigoArguColor = item.codRegColor,
+                            CodigoArguCategoProd = item.codCategoria.ToString(),
+                            CodigoArguUnidadMed = item.codRegUnidadMedida,
                             CodigoCuenta = item.CodigoCuenta,
                             EditaDescripcion = item.EditaDescripcion,
                             EditaValorVenta = item.EditaValorVenta,
@@ -446,12 +446,12 @@ namespace CROM.GestionAlmacen.DataAccess
                             codModeloNombre = item.codModeloNombre,
 
                             CodigoArguTipoProductoNombre = item.CodigoArguTipoProductoNombre,
-                            CodigoArguSectorAlmNombre = item.CodigoArguSectorAlmNombre,
-                            CodigoArguMetodoAlmNombre = item.CodigoArguMetodoAlmNombre,
-                            CodigoArguCentroProdNombre = item.CodigoArguCentroProdNombre,
-                            CodigoArguColorNombre = item.CodigoArguColorNombre,
-                            CodigoArguCategoProdNombre = item.CodigoArguCategoProdNombre,
-                            CodigoArguUnidadMedNombre = item.CodigoArguUnidadMedNombre,
+                            CodigoArguSectorAlmNombre = item.codSectorNombre,
+                            CodigoArguMetodoAlmNombre = item.codRegMetodoAlmNombre,
+                            CodigoArguCentroProdNombre = item.codCentroProduccionNombre,
+                            CodigoArguColorNombre = item.codRegColorNombre,
+                            CodigoArguCategoProdNombre = item.codCategoriaNombre,
+                            CodigoArguUnidadMedNombre = item.codRegUnidadMedidaNombre,
                             PalabrasClaves = item.PalabrasClaves,
                             PesoTotal = item.PesoTotal,
                             StockMaximo = item.StockMaximo,
@@ -511,13 +511,13 @@ namespace CROM.GestionAlmacen.DataAccess
                         producto.codModelo = item.codModelo;
                         producto.DestinadoACompra = item.DestinadoACompra;
                         producto.DestinadoAVenta = item.DestinadoAVenta;
-                        producto.CodigoArguTipoProducto = item.CodigoArguTipoProducto == null ? string.Empty : item.CodigoArguTipoProducto;
-                        producto.CodigoArguSectorAlm = item.CodigoArguSectorAlm == null ? string.Empty : item.CodigoArguSectorAlm;
-                        producto.CodigoArguMetodoAlm = item.CodigoArguMetodoAlm == null ? string.Empty : item.CodigoArguMetodoAlm;
-                        producto.CodigoArguCentroProd = item.CodigoArguCentroProd == null ? string.Empty : item.CodigoArguCentroProd;
-                        producto.CodigoArguColor = item.CodigoArguColor == null ? string.Empty : item.CodigoArguColor;
-                        producto.CodigoArguCategoProd = item.CodigoArguCategoProd == null ? string.Empty : item.CodigoArguCategoProd;
-                        producto.CodigoArguUnidadMed = item.CodigoArguUnidadMed == null ? string.Empty : item.CodigoArguUnidadMed;
+                        producto.CodigoArguTipoProducto = item.codRegTipoProducto == null ? string.Empty : item.codRegTipoProducto;
+                        producto.CodigoArguSectorAlm = item.codSector == null ? string.Empty : item.codSector.ToString();
+                        producto.CodigoArguMetodoAlm = item.codRegMetodoAlm == null ? string.Empty : item.codRegMetodoAlm.ToString();
+                        producto.CodigoArguCentroProd = item.codCentroProduccion == null ? string.Empty : item.codCentroProduccion.ToString();
+                        producto.CodigoArguColor = item.codRegColor == null ? string.Empty : item.codRegColor;
+                        producto.CodigoArguCategoProd = item.codCategoria.ToString();
+                        producto.CodigoArguUnidadMed = item.codRegUnidadMedida == null ? string.Empty : item.codRegUnidadMedida;
                         producto.CodigoCuenta = item.CodigoCuenta == null ? string.Empty : item.CodigoCuenta;
                         producto.EditaDescripcion = item.EditaDescripcion;
                         producto.EditaValorVenta = item.EditaValorVenta;
@@ -593,15 +593,15 @@ namespace CROM.GestionAlmacen.DataAccess
                         producto.DatoAdicional_02 = item.DatoAdicional_02;
                         producto.codMarca = item.codMarca;
                         producto.codModelo = item.codModelo;
-                        producto.CodigoArguTipoProducto = item.CodigoArguTipoProducto == null ? string.Empty : item.CodigoArguTipoProducto;
+                        producto.CodigoArguTipoProducto = item.codRegTipoProducto == null ? string.Empty : item.codRegTipoProducto;
                         producto.DestinadoACompra = item.DestinadoACompra;
                         producto.DestinadoAVenta = item.DestinadoAVenta;
-                        producto.CodigoArguSectorAlm = item.CodigoArguSectorAlm == null ? string.Empty : item.CodigoArguSectorAlm;
-                        producto.CodigoArguMetodoAlm = item.CodigoArguMetodoAlm == null ? string.Empty : item.CodigoArguMetodoAlm;
-                        producto.CodigoArguCentroProd = item.CodigoArguCentroProd == null ? string.Empty : item.CodigoArguCentroProd;
-                        producto.CodigoArguColor = item.CodigoArguColor == null ? string.Empty : item.CodigoArguColor;
-                        producto.CodigoArguCategoProd = item.CodigoArguCategoProd == null ? string.Empty : item.CodigoArguCategoProd;
-                        producto.CodigoArguUnidadMed = item.CodigoArguUnidadMed == null ? string.Empty : item.CodigoArguUnidadMed;
+                        producto.CodigoArguSectorAlm = item.codSector == null ? string.Empty : item.codSector.ToString();
+                        producto.CodigoArguMetodoAlm = item.codRegMetodoAlm == null ? string.Empty : item.codRegMetodoAlm.ToString();
+                        producto.CodigoArguCentroProd = item.codCentroProduccion == null ? string.Empty : item.codCentroProduccion.ToString();
+                        producto.CodigoArguColor = item.codRegColor == null ? string.Empty : item.codRegColor;
+                        producto.CodigoArguCategoProd = item.codCategoria.ToString();
+                        producto.CodigoArguUnidadMed = item.codRegUnidadMedida == null ? string.Empty : item.codRegUnidadMedida;
                         producto.CodigoCuenta = item.CodigoCuenta == null ? string.Empty : item.CodigoCuenta;
                         producto.EditaDescripcion = item.EditaDescripcion;
                         producto.EditaValorVenta = item.EditaValorVenta;
@@ -681,15 +681,15 @@ namespace CROM.GestionAlmacen.DataAccess
                         producto.DatoAdicional_02 = item.DatoAdicional_02;
                         producto.codMarca = item.codMarca;
                         producto.codModelo = item.codModelo;
-                        producto.CodigoArguTipoProducto = item.CodigoArguTipoProducto == null ? string.Empty : item.CodigoArguTipoProducto;
+                        producto.CodigoArguTipoProducto = item.codRegTipoProducto == null ? string.Empty : item.codRegTipoProducto;
                         producto.DestinadoACompra = item.DestinadoACompra;
                         producto.DestinadoAVenta = item.DestinadoAVenta;
-                        producto.CodigoArguSectorAlm = item.CodigoArguSectorAlm == null ? string.Empty : item.CodigoArguSectorAlm;
-                        producto.CodigoArguMetodoAlm = item.CodigoArguMetodoAlm == null ? string.Empty : item.CodigoArguMetodoAlm;
-                        producto.CodigoArguCentroProd = item.CodigoArguCentroProd == null ? string.Empty : item.CodigoArguCentroProd;
-                        producto.CodigoArguColor = item.CodigoArguColor == null ? string.Empty : item.CodigoArguColor;
-                        producto.CodigoArguCategoProd = item.CodigoArguCategoProd == null ? string.Empty : item.CodigoArguCategoProd;
-                        producto.CodigoArguUnidadMed = item.CodigoArguUnidadMed == null ? string.Empty : item.CodigoArguUnidadMed;
+                        producto.CodigoArguSectorAlm = item.codSector == null ? string.Empty : item.codSector.ToString();
+                        producto.CodigoArguMetodoAlm = item.codRegMetodoAlm == null ? string.Empty : item.codRegMetodoAlm.ToString();
+                        producto.CodigoArguCentroProd = item.codCentroProduccion == null ? string.Empty : item.codCentroProduccion.ToString();
+                        producto.CodigoArguColor = item.codRegColor == null ? string.Empty : item.codRegColor;
+                        producto.CodigoArguCategoProd = item.codCategoria.ToString();
+                        producto.CodigoArguUnidadMed = item.codRegUnidadMedida == null ? string.Empty : item.codRegUnidadMedida;
                         producto.CodigoCuenta = item.CodigoCuenta == null ? string.Empty : item.CodigoCuenta;
                         producto.EditaDescripcion = item.EditaDescripcion;
                         producto.EditaValorVenta = item.EditaValorVenta;
@@ -705,16 +705,6 @@ namespace CROM.GestionAlmacen.DataAccess
                         producto.segFechaCrea = item.SegFechaCrea;
                         producto.segFechaEdita = item.SegFechaEdita;
                         producto.segMaquinaCrea = item.SegMaquina;
-                        //producto.codGrupoNombre = item.codGrupoNombre;
-                        //producto.codMarcaNombre = item.codMarcaNombre;
-                        //producto.codModeloNombre = item.codModeloNombre;
-                        //producto.CodigoArguTipoProductoNombre = item.CodigoArguTipoProductoNombre;
-                        //producto.CodigoArguSectorAlmNombre = item.CodigoArguSectorAlmNombre;
-                        //producto.CodigoArguMetodoAlmNombre = item.CodigoArguMetodoAlmNombre;
-                        //producto.CodigoArguCentroProdNombre = item.CodigoArguCentroProdNombre;
-                        //producto.CodigoArguColorNombre = item.CodigoArguColorNombre;
-                        //producto.CodigoArguCategoProdNombre = item.CodigoArguCategoProdNombre;
-                        //producto.CodigoArguUnidadMedNombre = item.CodigoArguUnidadMedNombre;
                         producto.PalabrasClaves = item.PalabrasClaves;
 
                         producto.PesoTotal = item.PesoTotal;
@@ -882,16 +872,16 @@ namespace CROM.GestionAlmacen.DataAccess
                             DatoAdicional_02 = item.DatoAdicional_02,
                             codMarca = item.codMarca,
                             codModelo= item.codModelo,
-                            CodigoArguTipoProducto = item.CodigoArguTipoProducto,
+                            CodigoArguTipoProducto = item.codRegTipoProducto,
                             DestinadoACompra = item.DestinadoACompra,
                             DestinadoAVenta = item.DestinadoAVenta,
-                            CodigoArguSectorAlm = item.CodigoArguSectorAlm,
+                            CodigoArguSectorAlm = item.codSector == null ? string.Empty : item.codSector.ToString(),
 
-                            CodigoArguMetodoAlm = item.CodigoArguMetodoAlm,
-                            CodigoArguCentroProd = item.CodigoArguCentroProd,
-                            CodigoArguColor = item.CodigoArguColor,
-                            CodigoArguCategoProd = item.CodigoArguCategoProd,
-                            CodigoArguUnidadMed = item.CodigoArguUnidadMed,
+                            CodigoArguMetodoAlm = item.codRegMetodoAlm == null ? string.Empty : item.codRegMetodoAlm.ToString(),
+                            CodigoArguCentroProd = item.codCentroProduccion == null ? string.Empty : item.codCentroProduccion.ToString(),
+                            CodigoArguColor = item.codRegColor == null ? string.Empty : item.codRegColor,
+                            CodigoArguCategoProd = item.codCategoria.ToString(),
+                            CodigoArguUnidadMed = item.codRegUnidadMedida == null ? string.Empty : item.codRegUnidadMedida,
                             CodigoCuenta = item.CodigoCuenta,
                             EditaDescripcion = item.EditaDescripcion,
                             EditaValorVenta = item.EditaValorVenta,
@@ -910,14 +900,14 @@ namespace CROM.GestionAlmacen.DataAccess
                             codGrupoNombre = item.codGrupodesNombre,
                             codMarcaNombre = item.codMarcaNombre,
                             codModeloNombre= item.codModeloNombre,
-                            CodigoArguTipoProductoNombre = item.CodigoArguTipoProductoNombre,
-                            CodigoArguSectorAlmNombre = item.CodigoArguSectorAlmNombre,
+                            CodigoArguTipoProductoNombre = item.codRegTipoProductoNombre,
+                            CodigoArguSectorAlmNombre = item.codSectorNombre,
 
-                            CodigoArguMetodoAlmNombre = item.CodigoArguMetodoAlmNombre,
-                            CodigoArguCentroProdNombre = item.CodigoArguCentroProdNombre,
-                            CodigoArguColorNombre = item.CodigoArguColorNombre,
-                            CodigoArguCategoProdNombre = item.CodigoArguCategoProdNombre,
-                            CodigoArguUnidadMedNombre = item.CodigoArguUnidadMedNombre,
+                            CodigoArguMetodoAlmNombre = item.codRegMetodoAlmNombre,
+                            CodigoArguCentroProdNombre = item.codCentroProduccionNombre,
+                            CodigoArguColorNombre = item.codRegColorNombre,
+                            CodigoArguCategoProdNombre = item.codCategoriaNombre,
+                            CodigoArguUnidadMedNombre = item.codRegUnidadMedidaNombre,
                             PalabrasClaves = item.PalabrasClaves,
                             PesoTotal = item.PesoTotal,
                              

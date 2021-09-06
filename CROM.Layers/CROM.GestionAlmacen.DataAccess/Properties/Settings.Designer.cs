@@ -119,5 +119,27 @@ namespace CROM.GestionAlmacen.DataAccess.Properties {
                 return ((string)(this["BD_GC_MAGESET_SFS_20201106ConnectionString1"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAP01-OCARRIL\\SQLEXPRESSCROM15;Initial Catalog=BD_GC_MAGESET_SFS_2020" +
+            "1106;User ID=sa")]
+        public string BD_GC_MAGESET_SFS_20201106ConnectionString2 {
+            get {
+                return ((string)(this["BD_GC_MAGESET_SFS_20201106ConnectionString2"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAP01-OCARRIL\\SQLEXPRESSCROM15;Initial Catalog=BD_GC_MAGESET_SFS_2020" +
+            "1106;User ID=sa;Password=uscrom77")]
+        public string BD_GC_MAGESET_SFS_20201106ConnectionString3 {
+            get {
+                return ((string)(this["BD_GC_MAGESET_SFS_20201106ConnectionString3"]));
+            }
+        }
     }
 }
