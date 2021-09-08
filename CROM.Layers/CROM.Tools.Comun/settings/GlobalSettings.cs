@@ -8,11 +8,6 @@
         #region VALORES PARA SEGURIDAD
 
 
-        public static string GetDEFAULT_Encriptacion()
-        {
-            return ConfigurationManager.AppSettings["DEFAULT_Encriptacion"].ToString();
-        }
-
         public static bool GetDEFAULT_ServicioWEB()
         {
             return ConfigurationManager.AppSettings["DEFAULT_ServicioWEB"] == "S" ? true : false;
@@ -21,11 +16,6 @@
         #endregion
 
         #region VALORES PARA CORREO ELECTRONICO
-
-        //public static string GetEMAIL_DeEnvio()
-        //{
-        //    return ConfigurationManager.AppSettings["EMAIL_DeEnvio"].ToString();
-        //}
 
         public static string GetEMAIL_CredencialPass()
         {
