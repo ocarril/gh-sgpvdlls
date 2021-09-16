@@ -1277,7 +1277,6 @@ namespace CROM.GestionComercial.BusinessLogic
                     HelpLogging.Write(TraceLevel.Info, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, "DESPUES DE INSERTAR",
                                  comprobanteEmision.SegUsuarioEdita, comprobanteEmision.codEmpresa.ToString());
 
-
                     objReturnValor = documentoLogic.UpdateUltimoDocumentoSerie(objComprobantesSeriesUpdate);
 
                     objReturnValor = AgregarTodaReferenciaComprobanteEmision(comprobanteEmision, comprobante);

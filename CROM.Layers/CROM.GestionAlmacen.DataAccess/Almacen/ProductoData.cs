@@ -23,233 +23,233 @@ namespace CROM.GestionAlmacen.DataAccess
 
         #region /* Proceso de INSERT RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo Producto
-        /// En la BASE de DATO la Tabla : [Almacen.Producto]
-        /// <summary>
-        /// <param name="producto"></param>
-        /// <returns></returns>
-        public int Insert(BEProducto producto)
-        {
-            int? codRetorno = -1;
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                    SQLDC.omgc_I_Producto(
-                        ref codRetorno,
-                        producto.codEmpresa,
-                        producto.CodigoProducto,
-                        producto.CodigoProductoRefer,
-                        producto.codGrupo,
-                        producto.Descripcion,
-                        producto.DescripcionComercial,
-                        producto.DescripcionAbreviada,
-                        producto.Observacion,
-                        producto.DatoAdicional_01,
-                        producto.DatoAdicional_02,
-                        producto.codMarca, 
-                        producto.codModelo,
-                        producto.CodigoArguTipoProducto,
-                        producto.DestinadoACompra,
-                        producto.DestinadoAVenta,
-                        producto.CodigoArguSectorAlm,
-                        producto.CodigoArguMetodoAlm,
-                        producto.CodigoArguCentroProd,
-                        producto.CodigoArguColor,
-                        producto.CodigoArguCategoProd,
-                        producto.CodigoCuenta,
-                        producto.CodigoArguUnidadMed,
-                        producto.EditaDescripcion,
-                        producto.EditaValorVenta,
-                        producto.EditaValorCosto,
-                        producto.EsComboDeOferta,
-                        producto.EsListaPrecio,
-                        producto.EsPerecible,
-                        producto.EsVerificacionStock,
-                        producto.EsConNumeroSeriado,
-                        producto.Estado,
-                        producto.segUsuarioCrea,
-                        producto.PalabrasClaves,
-                        producto.PesoTotal,
-                        producto.StockMinimo,
-                        producto.StockMaximo,
-                        producto.indEsGarantizado);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return codRetorno == null ? 0 : codRetorno.Value;
-        }
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo Producto
+        ///// En la BASE de DATO la Tabla : [Almacen.Producto]
+        ///// <summary>
+        ///// <param name="producto"></param>
+        ///// <returns></returns>
+        //public int Insert(BEProducto producto)
+        //{
+        //    int? codRetorno = -1;
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //            SQLDC.omgc_I_Producto(
+        //                ref codRetorno,
+        //                producto.codEmpresa,
+        //                producto.CodigoProducto,
+        //                producto.CodigoProductoRefer,
+        //                producto.codGrupo,
+        //                producto.Descripcion,
+        //                producto.DescripcionComercial,
+        //                producto.DescripcionAbreviada,
+        //                producto.Observacion,
+        //                producto.DatoAdicional_01,
+        //                producto.DatoAdicional_02,
+        //                producto.codMarca, 
+        //                producto.codModelo,
+        //                producto.CodigoArguTipoProducto,
+        //                producto.DestinadoACompra,
+        //                producto.DestinadoAVenta,
+        //                producto.CodigoArguSectorAlm,
+        //                producto.CodigoArguMetodoAlm,
+        //                producto.CodigoArguCentroProd,
+        //                producto.CodigoArguColor,
+        //                producto.CodigoArguCategoProd,
+        //                producto.CodigoCuenta,
+        //                producto.CodigoArguUnidadMed,
+        //                producto.EditaDescripcion,
+        //                producto.EditaValorVenta,
+        //                producto.EditaValorCosto,
+        //                producto.EsComboDeOferta,
+        //                producto.EsListaPrecio,
+        //                producto.EsPerecible,
+        //                producto.EsVerificacionStock,
+        //                producto.EsConNumeroSeriado,
+        //                producto.Estado,
+        //                producto.segUsuarioCrea,
+        //                producto.PalabrasClaves,
+        //                producto.PesoTotal,
+        //                producto.StockMinimo,
+        //                producto.StockMaximo,
+        //                producto.indEsGarantizado);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return codRetorno == null ? 0 : codRetorno.Value;
+        //}
 
-        public int InsertOutput(BEProducto producto)
-        {
-            string codigoRetorno = null;
-            int? codRetorno = -1;
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                    SQLDC.omgc_I_Producto_Output(
-                       ref codRetorno,
-                       ref codigoRetorno,
-                       producto.codEmpresa,
-                       producto.CodigoProductoRefer,
-                       producto.codGrupo,
-                       producto.Descripcion,
-                       producto.DescripcionComercial,
-                       producto.DescripcionAbreviada,
-                       producto.Observacion,
-                       producto.DatoAdicional_01,
-                       producto.DatoAdicional_02,
-                       producto.codMarca,
-                       producto.codModelo,
-                       producto.CodigoArguTipoProducto,
-                       producto.DestinadoACompra,
-                       producto.DestinadoAVenta,
-                       producto.CodigoArguSectorAlm,
-                       producto.CodigoArguMetodoAlm,
-                       producto.CodigoArguCentroProd,
-                       producto.CodigoArguColor,
-                       producto.CodigoArguCategoProd,
-                       producto.CodigoCuenta,
-                       producto.CodigoArguUnidadMed,
-                       producto.EditaDescripcion,
-                       producto.EditaValorVenta,
-                       producto.EditaValorCosto,
-                       producto.EsComboDeOferta,
-                       producto.EsListaPrecio,
-                       producto.EsPerecible,
-                       producto.EsVerificacionStock,
-                       producto.EsConNumeroSeriado,
-                       producto.Estado,
-                       producto.segUsuarioCrea,
-                       producto.PalabrasClaves,
-                       producto.PesoTotal,
-                       producto.StockMinimo,
-                       producto.StockMaximo,
-                       producto.indEsGarantizado);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            producto.CodigoProducto = codigoRetorno;
-            return codRetorno == null ? 0 : codRetorno.Value;
-        }
+        //public int InsertOutput(BEProducto producto)
+        //{
+        //    string codigoRetorno = null;
+        //    int? codRetorno = -1;
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //            SQLDC.omgc_I_Producto_Output(
+        //               ref codRetorno,
+        //               ref codigoRetorno,
+        //               producto.codEmpresa,
+        //               producto.CodigoProductoRefer,
+        //               producto.codGrupo,
+        //               producto.Descripcion,
+        //               producto.DescripcionComercial,
+        //               producto.DescripcionAbreviada,
+        //               producto.Observacion,
+        //               producto.DatoAdicional_01,
+        //               producto.DatoAdicional_02,
+        //               producto.codMarca,
+        //               producto.codModelo,
+        //               producto.CodigoArguTipoProducto,
+        //               producto.DestinadoACompra,
+        //               producto.DestinadoAVenta,
+        //               producto.CodigoArguSectorAlm,
+        //               producto.CodigoArguMetodoAlm,
+        //               producto.CodigoArguCentroProd,
+        //               producto.CodigoArguColor,
+        //               producto.CodigoArguCategoProd,
+        //               producto.CodigoCuenta,
+        //               producto.CodigoArguUnidadMed,
+        //               producto.EditaDescripcion,
+        //               producto.EditaValorVenta,
+        //               producto.EditaValorCosto,
+        //               producto.EsComboDeOferta,
+        //               producto.EsListaPrecio,
+        //               producto.EsPerecible,
+        //               producto.EsVerificacionStock,
+        //               producto.EsConNumeroSeriado,
+        //               producto.Estado,
+        //               producto.segUsuarioCrea,
+        //               producto.PalabrasClaves,
+        //               producto.PesoTotal,
+        //               producto.StockMinimo,
+        //               producto.StockMaximo,
+        //               producto.indEsGarantizado);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    producto.CodigoProducto = codigoRetorno;
+        //    return codRetorno == null ? 0 : codRetorno.Value;
+        //}
 
         #endregion
 
         #region /* Proceso de UPDATE RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo Producto
-        /// En la BASE de DATO la Tabla : [Almacen.Producto]
-        /// <summary>
-        /// <param name="producto"></param>
-        /// <returns></returns>
-        public bool Update(BEProducto producto, out string pMensaje)
-        {
-            int codigoRetorno = -1;
-            pMensaje = string.Empty;
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                 var resulSet = SQLDC.omgc_U_Producto(
-                        producto.codEmpresa,
-                        producto.codProducto,
-                        producto.CodigoProducto,
-                        producto.CodigoProductoRefer,
-                        producto.codGrupo,
-                        producto.Descripcion,
-                        producto.DescripcionComercial,
-                        producto.DescripcionAbreviada,
-                        producto.Observacion,
-                        producto.DatoAdicional_01,
-                        producto.DatoAdicional_02,
-                        producto.codMarca,
-                        producto.codModelo,
-                        producto.CodigoArguTipoProducto,
-                        producto.DestinadoACompra,
-                        producto.DestinadoAVenta,
-                        producto.CodigoArguSectorAlm,
-                        producto.CodigoArguMetodoAlm,
-                        producto.CodigoArguCentroProd,
-                        producto.CodigoArguColor,
-                        producto.CodigoArguCategoProd,
-                        producto.CodigoArguUnidadMed,
-                        producto.CodigoCuenta,
-                        producto.EditaDescripcion,
-                        producto.EditaValorVenta,
-                        producto.EditaValorCosto,
-                        producto.EsComboDeOferta,
-                        producto.EsListaPrecio,
-                        producto.EsPerecible,
-                        producto.EsVerificacionStock,
-                        producto.EsConNumeroSeriado,
-                        producto.Estado,
-                        producto.segUsuarioEdita,
-                        producto.PalabrasClaves,
-                        producto.PesoTotal,
-                        producto.StockMinimo,
-                        producto.StockMaximo,
-                        producto.indEsGarantizado);
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo Producto
+        ///// En la BASE de DATO la Tabla : [Almacen.Producto]
+        ///// <summary>
+        ///// <param name="producto"></param>
+        ///// <returns></returns>
+        //public bool Update(BEProducto producto, out string pMensaje)
+        //{
+        //    int codigoRetorno = -1;
+        //    pMensaje = string.Empty;
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //         var resulSet = SQLDC.omgc_U_Producto(
+        //                producto.codEmpresa,
+        //                producto.codProducto,
+        //                producto.CodigoProducto,
+        //                producto.CodigoProductoRefer,
+        //                producto.codGrupo,
+        //                producto.Descripcion,
+        //                producto.DescripcionComercial,
+        //                producto.DescripcionAbreviada,
+        //                producto.Observacion,
+        //                producto.DatoAdicional_01,
+        //                producto.DatoAdicional_02,
+        //                producto.codMarca,
+        //                producto.codModelo,
+        //                producto.CodigoArguTipoProducto,
+        //                producto.DestinadoACompra,
+        //                producto.DestinadoAVenta,
+        //                producto.CodigoArguSectorAlm,
+        //                producto.CodigoArguMetodoAlm,
+        //                producto.CodigoArguCentroProd,
+        //                producto.CodigoArguColor,
+        //                producto.CodigoArguCategoProd,
+        //                producto.CodigoArguUnidadMed,
+        //                producto.CodigoCuenta,
+        //                producto.EditaDescripcion,
+        //                producto.EditaValorVenta,
+        //                producto.EditaValorCosto,
+        //                producto.EsComboDeOferta,
+        //                producto.EsListaPrecio,
+        //                producto.EsPerecible,
+        //                producto.EsVerificacionStock,
+        //                producto.EsConNumeroSeriado,
+        //                producto.Estado,
+        //                producto.segUsuarioEdita,
+        //                producto.PalabrasClaves,
+        //                producto.PesoTotal,
+        //                producto.StockMinimo,
+        //                producto.StockMaximo,
+        //                producto.indEsGarantizado);
 
-                    foreach (var item in resulSet)
-                    {
-                        codigoRetorno = item.codError.Value;
-                        pMensaje = item.desMessage;
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return codigoRetorno > 0 ? true : false;
-        }
+        //            foreach (var item in resulSet)
+        //            {
+        //                codigoRetorno = item.codError.Value;
+        //                pMensaje = item.desMessage;
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return codigoRetorno > 0 ? true : false;
+        //}
 
         #endregion
 
         #region /* Proceso de DELETE BY ID CODE */
 
-        /// <summary>
-        /// ELIMINA un registro de la Entidad Almacen.Producto
-        /// En la BASE de DATO la Tabla : [Almacen.Producto]
-        /// <summary>
-        /// <param name="prm_codProducto"></param>
-        /// <returns></returns>
-        public ReturnValor Delete(BEProducto pProducto)
-        {
-            ReturnValor codigoRetorno = new ReturnValor();
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                    var resulSet = SQLDC.omgc_D_Producto(pProducto.codEmpresa, 
-                                                         pProducto.codProducto,
-                                                         pProducto.segUsuarioElimina,
-                                                         pProducto.segMaquinaElimina);
+        ///// <summary>
+        ///// ELIMINA un registro de la Entidad Almacen.Producto
+        ///// En la BASE de DATO la Tabla : [Almacen.Producto]
+        ///// <summary>
+        ///// <param name="prm_codProducto"></param>
+        ///// <returns></returns>
+        //public ReturnValor Delete(BEProducto pProducto)
+        //{
+        //    ReturnValor codigoRetorno = new ReturnValor();
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //            var resulSet = SQLDC.omgc_D_Producto(pProducto.codEmpresa, 
+        //                                                 pProducto.codProducto,
+        //                                                 pProducto.segUsuarioElimina,
+        //                                                 pProducto.segMaquinaElimina);
 
 
-                    foreach (var item in resulSet)
-                    {
-                        codigoRetorno.codRetorno = item.codError.Value;
-                        codigoRetorno.Message = item.desMessage;
-                    }
-                    codigoRetorno.Exitosa = codigoRetorno.codRetorno > 0 ? true:false ;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return codigoRetorno;
-        }
+        //            foreach (var item in resulSet)
+        //            {
+        //                codigoRetorno.codRetorno = item.codError.Value;
+        //                codigoRetorno.Message = item.desMessage;
+        //            }
+        //            codigoRetorno.Exitosa = codigoRetorno.codRetorno > 0 ? true:false ;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return codigoRetorno;
+        //}
 
         #endregion
 

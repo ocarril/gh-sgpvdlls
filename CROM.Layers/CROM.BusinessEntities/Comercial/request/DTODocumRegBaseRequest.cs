@@ -25,7 +25,8 @@ namespace CROM.BusinessEntities.Comercial.request
             desDomicilioUsuario = string.Empty;
             codUbigeoNombre = string.Empty;
 
-            lstDetalle = new List<DTODocumRegDetalleResponse>();
+            lstDetalle = new List<DTODocumRegDetalleRequest>();
+            lstImpuestos = new List<DTODocumRegImpuestoRequest>();
         }
 
         public int codDocumReg { get; set; }
@@ -98,7 +99,9 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public string codPersonaContacto { get; set; }
 
-        public int codCondicionVenta { get; set; }
+        public int? codCondicionVenta { get; set; }
+
+        public int? codCondicionCompra { get; set; }
 
         public decimal monTipoCambioVTA { get; set; }
 
@@ -115,8 +118,17 @@ namespace CROM.BusinessEntities.Comercial.request
         public string desNota02 { get; set; }
 
 
-        public List<DTODocumRegDetalleResponse> lstDetalle { get; set; }
+        public bool indDocExigeDocAnexo { get; set; }
 
+        public string codPuntoVentaSecun { get; set; }
+
+        public string codDocumentoSecun { get; set; }
+
+        public string numDocumentoSecun { get; set; }        
+
+        public List<DTODocumRegDetalleRequest> lstDetalle { get; set; }
+
+        public List<DTODocumRegImpuestoRequest> lstImpuestos { get; set; }
 
         //public string numOrdenDeCompra { get; set; }
         //public string numGuiaDeSalida { get; set; }
@@ -127,7 +139,7 @@ namespace CROM.BusinessEntities.Comercial.request
         //public string codLocalEmisor { get; set; }
         //public string tipDocUsuario { get; set; }
         //public string tipMoneda { get; set; }      
-        
+
         //public int numTotalItems { get; set; }
         //public int numTotalLetras { get; set; } 
         //public string codDocumentoNombre { get; set; }

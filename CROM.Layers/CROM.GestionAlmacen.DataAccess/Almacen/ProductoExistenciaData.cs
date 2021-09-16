@@ -24,34 +24,34 @@ namespace CROM.GestionAlmacen.DataAccess
 
         #region /* Proceso de INSERT RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo ProductoExistencias
-        /// En la BASE de DATO la Tabla : [Almacen.ProductoExistencias]
-        /// <summary>
-        /// <param name="productoExistencia"></param>
-        /// <returns></returns>
-        public int InsertUpdate(BEProductoExistencia productoExistencia)
-        {
-            int? codigoRetorno = -1;
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                    SQLDC.omgc_I_ProductoExistencia
-                      (ref codigoRetorno,
-                      productoExistencia.codProducto,
-                      productoExistencia.codDeposito,
-                      productoExistencia.Estado,
-                      productoExistencia.segUsuarioCrea,
-                      productoExistencia.segMaquinaEdita);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return codigoRetorno == null ? 0 : codigoRetorno.Value;
-        }
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo ProductoExistencias
+        ///// En la BASE de DATO la Tabla : [Almacen.ProductoExistencias]
+        ///// <summary>
+        ///// <param name="productoExistencia"></param>
+        ///// <returns></returns>
+        //public int InsertUpdate(BEProductoExistencia productoExistencia)
+        //{
+        //    int? codigoRetorno = -1;
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //            SQLDC.omgc_I_ProductoExistencia
+        //              (ref codigoRetorno,
+        //              productoExistencia.codProducto,
+        //              productoExistencia.codDeposito,
+        //              productoExistencia.Estado,
+        //              productoExistencia.segUsuarioCrea,
+        //              productoExistencia.segMaquinaEdita);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return codigoRetorno == null ? 0 : codigoRetorno.Value;
+        //}
 
         #endregion
 
@@ -97,7 +97,7 @@ namespace CROM.GestionAlmacen.DataAccess
             {
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
-                    var result = SQLDC.omgc_U_ProductoExistencia_StockInicial(pFiltro.codEmpresa, 
+                    var result = SQLDC.omgc_U_ProductoExistencia_StockInicial(pFiltro.codEmpresa,
                                                                               pFiltro.codProducto,
                                                                               pFiltro.codDeposito,
                                                                               pFiltro.cntStockInicial,
@@ -111,14 +111,14 @@ namespace CROM.GestionAlmacen.DataAccess
             }
             return codigoRetorno == 0 ? true : false;
         }
-      
+
         /// <summary>
         /// ACTUALIZA StockFisico el registro de una ENTIDAD de registro de Tipo ProductoExistencias
         /// En la BASE de DATO la Tabla : [Almacen.ProductoExistencias]
         /// <summary>
         /// <param name="pUpdate"></param>
         /// <param name="prm_SALDO_StockFisico"></param>
-        public bool UpdateStockFisico(BEProductoExistenciaStockUpdate pUpdate, ref decimal? prm_SALDO_StockFisico) 
+        public bool UpdateStockFisico(BEProductoExistenciaStockUpdate pUpdate, ref decimal? prm_SALDO_StockFisico)
         {
             int codRetorno = -1;
             try
@@ -146,7 +146,7 @@ namespace CROM.GestionAlmacen.DataAccess
             return codRetorno == 0 ? true : false;
         }
 
-        public bool UpdateStockFisicoConsig(BEProductoExistenciaStockUpdate pUpdate, ref decimal? prm_SALDO_StockFisico) 
+        public bool UpdateStockFisicoConsig(BEProductoExistenciaStockUpdate pUpdate, ref decimal? prm_SALDO_StockFisico)
         {
             int codRetorno = -1;
             try
@@ -277,7 +277,7 @@ namespace CROM.GestionAlmacen.DataAccess
         /// <summary>
         /// <param name="pFiltro"></param>
         /// <returns></returns>
-        public bool Delete(BEProductoExistenciaFind pFiltro) 
+        public bool Delete(BEProductoExistenciaFind pFiltro)
         {
             int codigoRetorno = -1;
             try

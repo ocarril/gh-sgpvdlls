@@ -202,6 +202,7 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.ValorTotalDescuento,
                         comprobanteEmision.ValorTotalVenta,
                         comprobanteEmision.ValorTotalImpuesto,
+
                         comprobanteEmision.ValorTotalPrecioVenta,
                         comprobanteEmision.ValorTotalPrecioExtran,
                         comprobanteEmision.CodigoArguMotivoGuia,
@@ -211,12 +212,10 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.TransportePlaca,
                         comprobanteEmision.TransporteConstancia,
                         comprobanteEmision.TransporteLicencia,
-
                         comprobanteEmision.CodigoComprobanteORIGEN,
                         comprobanteEmision.NumeroComprobanteORIGEN,
                         comprobanteEmision.FechaComprobanteORIGEN,
                         comprobanteEmision.ValorTipoCambioORIGEN,
-
                         comprobanteEmision.DocOrdenDeCompra,
                         comprobanteEmision.DocGuiaDeSalida,
                         comprobanteEmision.DocPedidoAdquisicion,
@@ -224,6 +223,7 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.EntidadRazonSocial,
                         comprobanteEmision.EntidadDireccion,
                         comprobanteEmision.EntidadNumeroRUC,
+
                         comprobanteEmision.CodigoArguTipoDomicil,
                         comprobanteEmision.Observaciones,
                         comprobanteEmision.codCondicionVenta,
@@ -244,6 +244,7 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.SegUsuarioEdita,
                         comprobanteEmision.Nota01,
                         comprobanteEmision.Nota02,
+
                         comprobanteEmision.Nota03,
                         comprobanteEmision.CodigoArguTipoDeOperacion,
                         comprobanteEmision.FechaDeEntrega,
@@ -264,6 +265,7 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.codMotivoNDB,
                         comprobanteEmision.gloMotivoSustento,
                         comprobanteEmision.sumOtrosCargos,
+
                         comprobanteEmision.sumTotalAnticipos,
                         comprobanteEmision.codRegTipoDocumentoEntidad,
                         comprobanteEmision.codPersonaDomicilio,
@@ -271,8 +273,7 @@ namespace CROM.GestionComercial.DataAccess
                         Convert.ToByte(comprobanteEmision.indOrigen),
                         comprobanteEmision.numDiasCredito,
                         comprobanteEmision.codDocumentoSerie,
-                       comprobanteEmision.codDocumentoSerieOrigen,
-
+                        comprobanteEmision.codDocumentoSerieOrigen,
                         comprobanteEmision.indAplicaDetraccion,
                         comprobanteEmision.codCuentaBancariaDetraccion,
                         comprobanteEmision.codBienDetraccion,
@@ -280,16 +281,15 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.prcDetraccion,
                         comprobanteEmision.mtoDetraccion,
                         comprobanteEmision.SegMaquina,
-
                         comprobanteEmision.codPersonaDomicilioTransportista,
                         comprobanteEmision.codPersonaDomicilioPartida,
                         comprobanteEmision.codModalidadTransporte,
                         comprobanteEmision.numContenedor,
                         comprobanteEmision.codPuerto,
+
                         comprobanteEmision.indTransbordoProgramado,
                         comprobanteEmision.codRegTipoDocumentoTransportista,
                         comprobanteEmision.fecInicioTraslado,
-
                         comprobanteEmision.codRegUnidadMedidaGlobal,
                         comprobanteEmision.desMotivoGuiaOtro
                     );

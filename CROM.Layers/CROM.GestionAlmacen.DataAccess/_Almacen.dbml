@@ -117,97 +117,6 @@
     <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Almacen.omgc_I_Producto" Method="omgc_I_Producto">
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoProducto" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(350)" />
-    <Parameter Name="prm_DescripcionAbreviada" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="prm_Observacion" Type="System.String" DbType="VarChar(400)" />
-    <Parameter Name="prm_DatoAdicional_01" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="prm_DatoAdicional_02" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguColor" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoCuenta" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_EditaDescripcion" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EditaValorVenta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EditaValorCosto" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsComboDeOferta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsListaPrecio" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsPerecible" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsVerificacionStock" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsConNumeroSeriado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="prm_PesoTotal" Type="System.Decimal" DbType="Decimal(18,4)" />
-    <Parameter Name="prm_StockMinimo" Type="System.Decimal" DbType="Decimal(15,3)" />
-    <Parameter Name="prm_StockMaximo" Type="System.Decimal" DbType="Decimal(15,3)" />
-    <Parameter Name="prm_indEsGarantizado" Type="System.Boolean" DbType="Bit" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Almacen.omgc_I_Producto_Output" Method="omgc_I_Producto_Output">
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="prm_CodigoProducto" Type="System.String" DbType="VarChar(20)" Direction="InOut" />
-    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(350)" />
-    <Parameter Name="prm_DescripcionAbreviada" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="prm_Observacion" Type="System.String" DbType="VarChar(400)" />
-    <Parameter Name="prm_DatoAdicional_01" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="prm_DatoAdicional_02" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguColor" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoCuenta" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_EditaDescripcion" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EditaValorVenta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EditaValorCosto" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsComboDeOferta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsListaPrecio" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsPerecible" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsVerificacionStock" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsConNumeroSeriado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="prm_PesoTotal" Type="System.Decimal" DbType="Decimal(18,4)" />
-    <Parameter Name="prm_StockMinimo" Type="System.Decimal" DbType="Decimal(15,3)" />
-    <Parameter Name="prm_StockMaximo" Type="System.Decimal" DbType="Decimal(15,3)" />
-    <Parameter Name="prm_indEsGarantizado" Type="System.Boolean" DbType="Bit" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Almacen.omgc_I_ProductoExistencia" Method="omgc_I_ProductoExistencia">
-    <Parameter Name="prm_codProductoExistencia" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codDeposito" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_SegUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_SegmaquinaIP" Type="System.String" DbType="VarChar(25)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="Almacen.omgc_I_ProductoExistencia_StockInicial" Method="omgc_I_ProductoExistencia_StockInicial">
     <Parameter Name="prm_codProductoExistencia" Type="System.Int32" DbType="Int" Direction="InOut" />
     <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
@@ -246,15 +155,6 @@
     <Parameter Name="prm_codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" />
     <Parameter Name="prm_perInventario" Type="System.String" DbType="VarChar(6)" />
     <Parameter Name="prm_indRegularizar" Type="System.Boolean" DbType="Bit" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Almacen.omgc_IU_ProductoProveedor" Method="omgc_IU_ProductoProveedor">
-    <Parameter Name="prm_codProductoProveedor" Type="System.Int32" DbType="Int" Direction="InOut" />
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codPerProveedor" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_indActivo" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_segUsuarioCrea" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_segMaquinaIP" Type="System.String" DbType="VarChar(25)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="Almacen.omgc_S_Deposito" Method="omgc_S_Deposito">
@@ -856,50 +756,6 @@
     <Parameter Name="prm_segMaquina" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Almacen.omgc_U_Producto" Method="omgc_U_Producto">
-    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoProducto" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="prm_CodigoProductoRefer" Type="System.String" DbType="VarChar(20)" />
-    <Parameter Name="prm_codGrupo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_Descripcion" Type="System.String" DbType="VarChar(100)" />
-    <Parameter Name="prm_DescripcionComercial" Type="System.String" DbType="VarChar(350)" />
-    <Parameter Name="prm_DescripcionAbreviada" Type="System.String" DbType="VarChar(5)" />
-    <Parameter Name="prm_Observacion" Type="System.String" DbType="VarChar(400)" />
-    <Parameter Name="prm_DatoAdicional_01" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="prm_DatoAdicional_02" Type="System.String" DbType="VarChar(200)" />
-    <Parameter Name="prm_codMarca" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codModelo" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_CodigoArguTipoProducto" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_DestinadoACompra" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_DestinadoAVenta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_CodigoArguSectorAlm" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguMetodoAlm" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguCentroProd" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguColor" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguCategoProd" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoArguUnidadMed" Type="System.String" DbType="VarChar(17)" />
-    <Parameter Name="prm_CodigoCuenta" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_EditaDescripcion" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EditaValorVenta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EditaValorCosto" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsComboDeOferta" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsListaPrecio" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsPerecible" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsVerificacionStock" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_EsConNumeroSeriado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_PalabrasClaves" Type="System.String" DbType="VarChar(250)" />
-    <Parameter Name="prm_PesoTotal" Type="System.Decimal" DbType="Decimal(18,4)" />
-    <Parameter Name="prm_StockMinimo" Type="System.Decimal" DbType="Decimal(10,3)" />
-    <Parameter Name="prm_StockMaximo" Type="System.Decimal" DbType="Decimal(10,3)" />
-    <Parameter Name="prm_indEsGarantizado" Type="System.Boolean" DbType="Bit" />
-    <ElementType Name="omgc_U_ProductoResult">
-      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="Almacen.omgc_U_ProductoExistencia_StockComprometido" Method="omgc_U_ProductoExistencia_StockComprometido">
     <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
     <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
@@ -994,49 +850,9 @@
     <Parameter Name="prm_codRegEstadoMercaderia" Type="System.String" DbType="VarChar(17)" />
     <Return Type="System.Int32" />
   </Function>
-  <Function Name="Almacen.omgc_D_Producto" Method="omgc_D_Producto">
-    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_SegMaquina" Type="System.String" DbType="VarChar(25)" />
-    <ElementType Name="omgc_D_ProductoResult">
-      <Column Name="codError" Type="System.Int32" DbType="Int" CanBeNull="true" />
-      <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
   <Function Name="Almacen.omgc_D_ProductoExistencia" Method="omgc_D_ProductoExistencia">
     <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
     <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
-  </Function>
-  <Function Name="Almacen.omgc_S_ProductoProveedor" Method="omgc_S_ProductoProveedor">
-    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codProductoProveedor" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codPerProveedor" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_Estado" Type="System.Boolean" DbType="Bit" />
-    <ElementType Name="omgc_S_ProductoProveedorResult">
-      <Column Name="codProductoProveedor" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="codProducto" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoPersona" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-      <Column Name="Estado" Type="System.Boolean" DbType="Bit NOT NULL" CanBeNull="false" />
-      <Column Name="SegUsuarioCrea" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
-      <Column Name="SegUsuarioEdita" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
-      <Column Name="SegFechaCrea" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
-      <Column Name="SegFechaEdita" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
-      <Column Name="SegMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
-      <Column Name="CodigoPersonaNombre" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
-      <Column Name="CodigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
-      <Column Name="codPersonaEmpre" Type="System.String" DbType="VarChar(15) NOT NULL" CanBeNull="false" />
-    </ElementType>
-  </Function>
-  <Function Name="Almacen.omgc_D_ProductoProveedor" Method="omgc_D_ProductoProveedor">
-    <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codProductoProveedor" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codPerProveedor" Type="System.String" DbType="VarChar(15)" />
-    <Parameter Name="prm_segUsuarioElimina" Type="System.String" DbType="VarChar(25)" />
-    <Parameter Name="prm_segMaquinaElimina" Type="System.String" DbType="VarChar(30)" />
     <Return Type="System.Int32" />
   </Function>
   <Function Name="Almacen.omgc_I_ProductoFoto" Method="omgc_I_ProductoFoto">
@@ -1066,11 +882,6 @@
       <Column Name="segMaquina" Type="System.String" DbType="VarChar(30) NOT NULL" CanBeNull="false" />
       <Column Name="codigoProducto" Type="System.String" DbType="VarChar(20) NOT NULL" CanBeNull="false" />
     </ElementType>
-  </Function>
-  <Function Name="Almacen.omgc_D_ProductoFoto" Method="omgc_D_ProductoFoto">
-    <Parameter Name="prm_codProductoFoto" Type="System.Int32" DbType="Int" />
-    <Parameter Name="prm_codProducto" Type="System.Int32" DbType="Int" />
-    <Return Type="System.Int32" />
   </Function>
   <Function Name="Almacen.usp_sgcfe_R_Marca" Method="usp_sgcfe_R_Marca">
     <Parameter Name="prm_codEmpresa" Type="System.Int32" DbType="Int" />

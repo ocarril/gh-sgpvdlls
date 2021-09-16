@@ -166,7 +166,21 @@
         public string desTransporteLicencia { get; set; }
 
         public string desTransportePlaca { get; set; }
-        
+
+        public int? codPersonaDomicilioPartida { get; set; }
+
+        public int? codModalidadTransporte { get; set; }
+
+        public string numContenedor { get; set; }
+
+        public string codPuerto { get; set; }
+
+        public string indTransbordoProgramado { get; set; }
+
+        public string codRegUnidadMedidaGlobal { get; set; }
+
+        public string desMotivoGuiaOtro { get; set; }
+
         //public Nullable<DateTime> fecVencimiento { get; set; }
         //public string codDocumentoOrigen { get; set; }
         //public string numDocumentoOrigen { get; set; }

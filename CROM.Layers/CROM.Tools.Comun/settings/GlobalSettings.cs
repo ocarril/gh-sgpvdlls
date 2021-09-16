@@ -271,12 +271,12 @@
 
 
 
-        public static bool GetDEFAULT_SAVE_DOCUM_MODE_NEW()
+        public static int GetDEFAULT_SAVE_DOCUM_MODE_NEW()
         {
 
             int valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_SAVE_DOCUM_MODE_NEW"]);
 
-            return valorConfig == 1 ? true : false;
+            return valorConfig;
         }
 
 

@@ -122,9 +122,9 @@ namespace CROM.GestionAlmacen.BusinessLogic
                     if (pFiltro.codProducto == null)
                         pFiltro.codProducto = producto.codProducto;
 
-                    producto.itemProductoFoto = oProductoFotosData.Find(pFiltro.codEmpresa,
-                                                                        pFiltro.codProducto.Value, 
-                                                                        pFiltro.codId);
+                    //producto.itemProductoFoto = oProductoFotosData.Find(pFiltro.codEmpresa,
+                    //                                                    pFiltro.codProducto.Value, 
+                    //                                                    pFiltro.codId);
 
                     producto.itemProductoExistencias = oProductoExistenciaData.Find(new BEProductoExistenciaFind
                     {
@@ -328,94 +328,94 @@ namespace CROM.GestionAlmacen.BusinessLogic
 
         #region /* Proceso de INSERT RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo Producto
-        /// En la BASE de DATO la Tabla : [Almacen.Producto]
-        /// <summary>
-        /// <param name="producto"></param>
-        /// <returns></returns>
-        public ReturnValor Insert(BEProducto producto)
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    AsignarValorPorDefecto(producto);
-                    producto.PalabrasClaves = IntegrarPalabrasClaves(producto);
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo Producto
+        ///// En la BASE de DATO la Tabla : [Almacen.Producto]
+        ///// <summary>
+        ///// <param name="producto"></param>
+        ///// <returns></returns>
+        //public ReturnValor Insert(BEProducto producto)
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            AsignarValorPorDefecto(producto);
+        //            producto.PalabrasClaves = IntegrarPalabrasClaves(producto);
 
-                    if (string.IsNullOrEmpty(producto.CodigoProducto))
-                    {
-                        producto.codProducto = oProductoData.InsertOutput(producto);
-                        if (!string.IsNullOrEmpty(producto.CodigoProducto))
-                        {
-                            oReturnValor.Exitosa = true;
-                            oReturnValor.CodigoRetorno = producto.CodigoProducto;
-                            oReturnValor.codRetorno = producto.codProducto;
-                        }
-                    }
-                    else
-                    {
-                        if (string.IsNullOrEmpty(producto.CodigoProductoRefer))
-                            producto.CodigoProductoRefer = producto.CodigoProducto;
-                        oReturnValor.codRetorno = oProductoData.Insert(producto);
-                        if (oReturnValor.codRetorno != 0)
-                        {
-                            oReturnValor.Exitosa = true;
-                            producto.codProducto = oReturnValor.codRetorno;
-                        }
-                    }
+        //            if (string.IsNullOrEmpty(producto.CodigoProducto))
+        //            {
+        //                producto.codProducto = oProductoData.InsertOutput(producto);
+        //                if (!string.IsNullOrEmpty(producto.CodigoProducto))
+        //                {
+        //                    oReturnValor.Exitosa = true;
+        //                    oReturnValor.CodigoRetorno = producto.CodigoProducto;
+        //                    oReturnValor.codRetorno = producto.codProducto;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                if (string.IsNullOrEmpty(producto.CodigoProductoRefer))
+        //                    producto.CodigoProductoRefer = producto.CodigoProducto;
+        //                oReturnValor.codRetorno = oProductoData.Insert(producto);
+        //                if (oReturnValor.codRetorno != 0)
+        //                {
+        //                    oReturnValor.Exitosa = true;
+        //                    producto.codProducto = oReturnValor.codRetorno;
+        //                }
+        //            }
 
-                    bool indDeleteProveedor = true;
-                    indDeleteProveedor = oProductoProveedoresData.Delete(new BEProductoProveedor
-                    {
-                        codEmpresa = producto.codEmpresa,
-                        codProducto = producto.codProducto,
-                        CodigoPersona = string.Empty,
-                        segUsuarioElimina = producto.segUsuarioElimina,
-                        segMaquinaElimina = producto.segMaquinaElimina
-                    });
-                    foreach (BEProductoProveedor productoProveedor in producto.listaProductoProveedores)
-                    {
-                        productoProveedor.codProducto = producto.codProducto;
-                        productoProveedor.segUsuarioCrea = producto.segUsuarioCrea;
-                        oProductoProveedoresData.Insert(productoProveedor);
-                    }
+        //            bool indDeleteProveedor = true;
+        //            indDeleteProveedor = oProductoProveedoresData.Delete(new BEProductoProveedor
+        //            {
+        //                codEmpresa = producto.codEmpresa,
+        //                codProducto = producto.codProducto,
+        //                CodigoPersona = string.Empty,
+        //                segUsuarioElimina = producto.segUsuarioElimina,
+        //                segMaquinaElimina = producto.segMaquinaElimina
+        //            });
+        //            foreach (BEProductoProveedor productoProveedor in producto.listaProductoProveedores)
+        //            {
+        //                productoProveedor.codProducto = producto.codProducto;
+        //                productoProveedor.segUsuarioCrea = producto.segUsuarioCrea;
+        //                oProductoProveedoresData.Insert(productoProveedor);
+        //            }
 
-                    if (producto.itemProductoFoto.FotografiaF != null)
-                    {
-                        producto.itemProductoFoto.codProducto = producto.codProducto;
-                        producto.itemProductoFoto.segUsuarioCrea = producto.segUsuarioCrea;
-                        oProductoFotosData.InsertUpdate(producto.itemProductoFoto);
-                    }
-                    //if (!producto.EsListaPrecio)
-                    //{
-                    //    List<BEPuntoDeVenta> lstPuntoDeVenta = new PuntoDeVentaLogic().List(new BaseFiltro
-                    //    {
-                    //        codPerEmpresa = producto.codPersonaEmpre,
-                    //        indEstado = true
-                    //    });
-                    //    foreach (BEPuntoDeVenta puntoDeVenta in lstPuntoDeVenta)
-                    //    {
-                    //        producto.itemProductoPrecio.CodigoPuntoVenta = puntoDeVenta.codPuntoDeVenta;
-                    //        producto.itemProductoPrecio.codProducto = producto.codProducto;
-                    //        oProductoPrecioData.Insert(producto.itemProductoPrecio);
-                    //    }
-                    //}
-                    if (oReturnValor.Exitosa)
-                    {
-                        oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.NEW);
-                        tx.Complete();
-                    }
-                    else
-                        oReturnValor.Message = HelpMessages.gc_PRODUNoRegistrado;
-                }
-            }
-            catch (Exception ex)
-            {
-                oReturnValor = HelpException.mTraerMensaje(ex);
-            }
-            return oReturnValor;
-        }
+        //            if (producto.itemProductoFoto.FotografiaF != null)
+        //            {
+        //                producto.itemProductoFoto.codProducto = producto.codProducto;
+        //                producto.itemProductoFoto.segUsuarioCrea = producto.segUsuarioCrea;
+        //                oProductoFotosData.InsertUpdate(producto.itemProductoFoto);
+        //            }
+        //            //if (!producto.EsListaPrecio)
+        //            //{
+        //            //    List<BEPuntoDeVenta> lstPuntoDeVenta = new PuntoDeVentaLogic().List(new BaseFiltro
+        //            //    {
+        //            //        codPerEmpresa = producto.codPersonaEmpre,
+        //            //        indEstado = true
+        //            //    });
+        //            //    foreach (BEPuntoDeVenta puntoDeVenta in lstPuntoDeVenta)
+        //            //    {
+        //            //        producto.itemProductoPrecio.CodigoPuntoVenta = puntoDeVenta.codPuntoDeVenta;
+        //            //        producto.itemProductoPrecio.codProducto = producto.codProducto;
+        //            //        oProductoPrecioData.Insert(producto.itemProductoPrecio);
+        //            //    }
+        //            //}
+        //            if (oReturnValor.Exitosa)
+        //            {
+        //                oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.NEW);
+        //                tx.Complete();
+        //            }
+        //            else
+        //                oReturnValor.Message = HelpMessages.gc_PRODUNoRegistrado;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oReturnValor = HelpException.mTraerMensaje(ex);
+        //    }
+        //    return oReturnValor;
+        //}
 
         private string IntegrarPalabrasClaves(BEProducto producto)
         {
@@ -460,124 +460,124 @@ namespace CROM.GestionAlmacen.BusinessLogic
 
         #region /* Proceso de UPDATE RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo Producto
-        /// En la BASE de DATO la Tabla : [Almacen.Producto]
-        /// <summary>
-        /// <param name="producto"></param>
-        /// <returns></returns>
-        public ReturnValor Update(BEProducto producto)
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    AsignarValorPorDefecto(producto);
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo Producto
+        ///// En la BASE de DATO la Tabla : [Almacen.Producto]
+        ///// <summary>
+        ///// <param name="producto"></param>
+        ///// <returns></returns>
+        //public ReturnValor Update(BEProducto producto)
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            AsignarValorPorDefecto(producto);
 
-                    //bool indEliminaProveedor;
-                    //indEliminaProveedor = oProductoProveedoresData.Delete(new BEProductoProveedor
-                    //{
-                    //    codEmpresa = producto.codEmpresa,
-                    //    codProducto = producto.codProducto,
-                    //    CodigoPersona = string.Empty,
-                    //    segUsuarioElimina = producto.segUsuarioElimina,
-                    //    segMaquinaElimina = producto.segMaquinaElimina
-                    //});
-                    //foreach (BEProductoProveedor productoProveedor in producto.listaProductoProveedores)
-                    //{
-                        
-                    //    productoProveedor.codProducto = producto.codProducto;
-                    //    productoProveedor.segUsuarioCrea = producto.segUsuarioCrea;
-                    //    productoProveedor.Estado = true;
-                    //    oProductoProveedoresData.Insert(productoProveedor);
-                    //}
-                    producto.PalabrasClaves = IntegrarPalabrasClaves(producto);
+        //            //bool indEliminaProveedor;
+        //            //indEliminaProveedor = oProductoProveedoresData.Delete(new BEProductoProveedor
+        //            //{
+        //            //    codEmpresa = producto.codEmpresa,
+        //            //    codProducto = producto.codProducto,
+        //            //    CodigoPersona = string.Empty,
+        //            //    segUsuarioElimina = producto.segUsuarioElimina,
+        //            //    segMaquinaElimina = producto.segMaquinaElimina
+        //            //});
+        //            //foreach (BEProductoProveedor productoProveedor in producto.listaProductoProveedores)
+        //            //{
 
-                    if (string.IsNullOrEmpty(producto.CodigoProductoRefer))
-                        producto.CodigoProductoRefer = producto.CodigoProducto;
+        //            //    productoProveedor.codProducto = producto.codProducto;
+        //            //    productoProveedor.segUsuarioCrea = producto.segUsuarioCrea;
+        //            //    productoProveedor.Estado = true;
+        //            //    oProductoProveedoresData.Insert(productoProveedor);
+        //            //}
+        //            producto.PalabrasClaves = IntegrarPalabrasClaves(producto);
 
-                    oReturnValor.Exitosa = oProductoData.Update(producto, out string omessage);
+        //            if (string.IsNullOrEmpty(producto.CodigoProductoRefer))
+        //                producto.CodigoProductoRefer = producto.CodigoProducto;
 
-                    //if (producto.itemProductoFoto.FotografiaF != null)
-                    //{
-                    //    producto.itemProductoFoto.codProducto = producto.codProducto;
-                    //    producto.itemProductoFoto.segUsuarioCrea = producto.segUsuarioEdita;
-                    //    oProductoFotosData.InsertUpdate(producto.itemProductoFoto);
-                    //}
-                    //if (!producto.EsListaPrecio)
-                    //{
-                    //    if (producto.indActualizaPrecioTodos)
-                    //    {
-                    //        List<BEPuntoDeVenta> lstPuntoDeVenta = new PuntoDeVentaLogic().List(new BaseFiltro
-                    //        {
-                    //            codPerEmpresa = producto.codPersonaEmpre,
-                    //            indEstado = true
-                    //        });
-                    //        foreach (BEPuntoDeVenta puntoDeVenta in lstPuntoDeVenta)
-                    //        {
-                    //            producto.itemProductoPrecio.CodigoPuntoVenta = puntoDeVenta.codPuntoDeVenta;
-                    //            producto.itemProductoPrecio.codProducto = producto.codProducto;
-                    //            oProductoPrecioData.Insert(producto.itemProductoPrecio);
-                    //        }
-                    //    }
-                    //}
-                    if (oReturnValor.Exitosa)
-                    {
-                        oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                oReturnValor = HelpException.mTraerMensaje(ex, false,
-                                string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
-                                producto.segUsuarioEdita, producto.codEmpresa.ToString());
-            }
-            return oReturnValor;
-        }
+        //            oReturnValor.Exitosa = oProductoData.Update(producto, out string omessage);
+
+        //            //if (producto.itemProductoFoto.FotografiaF != null)
+        //            //{
+        //            //    producto.itemProductoFoto.codProducto = producto.codProducto;
+        //            //    producto.itemProductoFoto.segUsuarioCrea = producto.segUsuarioEdita;
+        //            //    oProductoFotosData.InsertUpdate(producto.itemProductoFoto);
+        //            //}
+        //            //if (!producto.EsListaPrecio)
+        //            //{
+        //            //    if (producto.indActualizaPrecioTodos)
+        //            //    {
+        //            //        List<BEPuntoDeVenta> lstPuntoDeVenta = new PuntoDeVentaLogic().List(new BaseFiltro
+        //            //        {
+        //            //            codPerEmpresa = producto.codPersonaEmpre,
+        //            //            indEstado = true
+        //            //        });
+        //            //        foreach (BEPuntoDeVenta puntoDeVenta in lstPuntoDeVenta)
+        //            //        {
+        //            //            producto.itemProductoPrecio.CodigoPuntoVenta = puntoDeVenta.codPuntoDeVenta;
+        //            //            producto.itemProductoPrecio.codProducto = producto.codProducto;
+        //            //            oProductoPrecioData.Insert(producto.itemProductoPrecio);
+        //            //        }
+        //            //    }
+        //            //}
+        //            if (oReturnValor.Exitosa)
+        //            {
+        //                oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oReturnValor = HelpException.mTraerMensaje(ex, false,
+        //                        string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
+        //                        producto.segUsuarioEdita, producto.codEmpresa.ToString());
+        //    }
+        //    return oReturnValor;
+        //}
 
         #endregion
 
         #region /* Proceso de DELETE BY ID CODE */
 
-        /// <summary>
-        /// ELIMINA un registro de la Entidad Almacen.Producto
-        /// En la BASE de DATO la Tabla : [Almacen.Producto]
-        /// <summary>
-        /// <param name="filtro"></param>
-        /// <returns></returns>
-        public ReturnValor Delete(BEProducto pProducto)
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    oReturnValor.Exitosa = oProductoFotosData.Delete(0, pProducto.codEmpresa);
+        ///// <summary>
+        ///// ELIMINA un registro de la Entidad Almacen.Producto
+        ///// En la BASE de DATO la Tabla : [Almacen.Producto]
+        ///// <summary>
+        ///// <param name="filtro"></param>
+        ///// <returns></returns>
+        //public ReturnValor Delete(BEProducto pProducto)
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            //oReturnValor.Exitosa = oProductoFotosData.Delete(0, pProducto.codEmpresa);
 
-                    oReturnValor.Exitosa = oProductoExistenciaData.Delete(new BEProductoExistenciaFind
-                    {
-                        codEmpresa = pProducto.codEmpresa,
-                        codProducto = pProducto.codProducto
-                    });
+        //            oReturnValor.Exitosa = oProductoExistenciaData.Delete(new BEProductoExistenciaFind
+        //            {
+        //                codEmpresa = pProducto.codEmpresa,
+        //                codProducto = pProducto.codProducto
+        //            });
 
-                    var Proceso2 = oProductoData.Delete(pProducto);
+        //            var Proceso2 = oProductoData.Delete(pProducto);
 
-                    if (oReturnValor.Exitosa && Proceso2.Exitosa)
-                    {
-                        oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.DELETE);
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                oReturnValor = HelpException.mTraerMensaje(ex, false,
-                                string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
-                                pProducto.segUsuarioEdita, pProducto.codEmpresa.ToString());
-            }
-            return oReturnValor;
-        }
+        //            if (oReturnValor.Exitosa && Proceso2.Exitosa)
+        //            {
+        //                oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.DELETE);
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oReturnValor = HelpException.mTraerMensaje(ex, false,
+        //                        string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
+        //                        pProducto.segUsuarioEdita, pProducto.codEmpresa.ToString());
+        //    }
+        //    return oReturnValor;
+        //}
 
         #endregion
 
@@ -587,27 +587,27 @@ namespace CROM.GestionAlmacen.BusinessLogic
 
         #region /* Proceso de SELECT BY ID CODE */
 
-        /// <summary>
-        /// Retorna una ENTIDAD de registro de la Entidad Maestros.PersonasFotoLogo
-        /// En la BASE de DATO la Tabla : [Maestros.PersonasFotoLogo]
-        /// <summary>
-        /// <param name="prm_codProducto"></param>
-        /// <returns></returns>
-        public BEProductoFoto FindProductoFotoData(int pcodEmpresa, int prm_codProducto, int pcodProductoFoto, string pUser)
-        {
-            BEProductoFoto productoFotoLogo = null;
-            try
-            {
-                productoFotoLogo = oProductoFotosData.Find(pcodEmpresa, prm_codProducto, pcodProductoFoto);
-            }
-            catch (Exception ex)
-            {
-                var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                  pUser, pcodEmpresa.ToString());
-                throw new Exception(returnValor.Message);
-            }
-            return productoFotoLogo;
-        }
+        ///// <summary>
+        ///// Retorna una ENTIDAD de registro de la Entidad Maestros.PersonasFotoLogo
+        ///// En la BASE de DATO la Tabla : [Maestros.PersonasFotoLogo]
+        ///// <summary>
+        ///// <param name="prm_codProducto"></param>
+        ///// <returns></returns>
+        //public BEProductoFoto FindProductoFotoData(int pcodEmpresa, int prm_codProducto, int pcodProductoFoto, string pUser)
+        //{
+        //    BEProductoFoto productoFotoLogo = null;
+        //    try
+        //    {
+        //        productoFotoLogo = oProductoFotosData.Find(pcodEmpresa, prm_codProducto, pcodProductoFoto);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
+        //                          pUser, pcodEmpresa.ToString());
+        //        throw new Exception(returnValor.Message);
+        //    }
+        //    return productoFotoLogo;
+        //}
 
         public List<BEProductoFoto> ListProductoFotoData(int pcodEmpresa, int prm_codProducto, string pUser)
         {
@@ -667,35 +667,35 @@ namespace CROM.GestionAlmacen.BusinessLogic
 
         #region /* Proceso de DELETE BY ID CODE */
 
-        /// <summary>
-        /// ELIMINA un registro de la Entidad Almacen.ProductoFotoLogo
-        /// En la BASE de DATO la Tabla : [Almacen].[ProductoFoto]
-        /// <summary>
-        /// <param name="prm_CodigoPersona"></param>
-        /// <returns></returns>
-        public ReturnValor DeleteProductoFotoLogo(BaseFiltroAlmacen filtro)
-        {
-            string pMensaje = string.Empty;
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    oReturnValor.Exitosa = oProductoFotosData.Delete(filtro.codId.Value, filtro.codProducto.Value);
-                    if (oReturnValor.Exitosa)
-                    {
-                        oReturnValor.Message = HelpMessages.Evento_DELETE;
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                oReturnValor = HelpException.mTraerMensaje(ex, false,
-                                this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, filtro.segUsuarioEdita, 
-                                filtro.codEmpresa.ToString());
-            }
-            return oReturnValor;
-        }
+        ///// <summary>
+        ///// ELIMINA un registro de la Entidad Almacen.ProductoFotoLogo
+        ///// En la BASE de DATO la Tabla : [Almacen].[ProductoFoto]
+        ///// <summary>
+        ///// <param name="prm_CodigoPersona"></param>
+        ///// <returns></returns>
+        //public ReturnValor DeleteProductoFotoLogo(BaseFiltroAlmacen filtro)
+        //{
+        //    string pMensaje = string.Empty;
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            oReturnValor.Exitosa = oProductoFotosData.Delete(filtro.codId.Value, filtro.codProducto.Value);
+        //            if (oReturnValor.Exitosa)
+        //            {
+        //                oReturnValor.Message = HelpMessages.Evento_DELETE;
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oReturnValor = HelpException.mTraerMensaje(ex, false,
+        //                        this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, filtro.segUsuarioEdita, 
+        //                        filtro.codEmpresa.ToString());
+        //    }
+        //    return oReturnValor;
+        //}
 
         #endregion
 
@@ -759,7 +759,7 @@ namespace CROM.GestionAlmacen.BusinessLogic
         //        operationResult.data = JsonConvert.SerializeObject(jsonGrid);
         //        operationResult.isValid = true;
 
-               
+
         //    }
         //    catch (Exception ex)
         //    {
@@ -771,86 +771,86 @@ namespace CROM.GestionAlmacen.BusinessLogic
         //    return operationResult;
         //}
 
-        public BEProductoProveedor FindProductoProveedor(BaseFiltroProductoProveedor pFiltro)
-        {
-            BEProductoProveedor itemProductoProveedor = new BEProductoProveedor();
-            try
-            {
-                itemProductoProveedor = oProductoProveedoresData.Find(pFiltro);
-            }
-            catch (Exception ex)
-            {
-                var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                                              pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
-                throw new Exception(returnValor.Message);
-            }
-            return itemProductoProveedor;
-        }
+        //public BEProductoProveedor FindProductoProveedor(BaseFiltroProductoProveedor pFiltro)
+        //{
+        //    BEProductoProveedor itemProductoProveedor = new BEProductoProveedor();
+        //    try
+        //    {
+        //        itemProductoProveedor = oProductoProveedoresData.Find(pFiltro);
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
+        //                                                      pFiltro.segUsuarioActual, pFiltro.codEmpresa.ToString());
+        //        throw new Exception(returnValor.Message);
+        //    }
+        //    return itemProductoProveedor;
+        //}
 
         #endregion
 
         #region /* Proceso de INSERT RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo ProductoProveedores
-        /// En la BASE de DATO la Tabla : [Produccion.ProductoProveedores]
-        /// <summary>
-        /// <param name="itemProductoProveedores"></param>
-        /// <returns></returns>
-        public ReturnValor InsertUpdateProveedor(BEProductoProveedor productoProveedor)
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    oReturnValor.codRetorno = oProductoProveedoresData.Insert(productoProveedor);
-                    if (oReturnValor.codRetorno != 0)
-                    {
-                        oReturnValor.Exitosa = true;
-                        oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                oReturnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                                          productoProveedor.segUsuarioEdita, productoProveedor.codEmpresa.ToString());
-            }
-            return oReturnValor;
-        }
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo ProductoProveedores
+        ///// En la BASE de DATO la Tabla : [Produccion.ProductoProveedores]
+        ///// <summary>
+        ///// <param name="itemProductoProveedores"></param>
+        ///// <returns></returns>
+        //public ReturnValor InsertUpdateProveedor(BEProductoProveedor productoProveedor)
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            oReturnValor.codRetorno = oProductoProveedoresData.Insert(productoProveedor);
+        //            if (oReturnValor.codRetorno != 0)
+        //            {
+        //                oReturnValor.Exitosa = true;
+        //                oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oReturnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
+        //                                                  productoProveedor.segUsuarioEdita, productoProveedor.codEmpresa.ToString());
+        //    }
+        //    return oReturnValor;
+        //}
 
         #endregion
 
         #region /* Proceso de DELETE BY ID CODE */
 
-        /// <summary>
-        /// ELIMINA un registro de la Entidad Produccion.Proeedores
-        /// En la BASE de DATO la Tabla : [Produccion.Proeedores]
-        /// <summary>
-        /// <param name="pFiltro"></param>
-        /// <returns></returns>
-        public ReturnValor DeleteProveedor(BEProductoProveedor pFiltro) 
-        {
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    oReturnValor.Exitosa = oProductoProveedoresData.Delete(pFiltro);
-                    if (oReturnValor.Exitosa)
-                    {
-                        oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.DELETE);
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                oReturnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                                           pFiltro.segUsuarioEdita, pFiltro.codEmpresa.ToString());
-            }
-            return oReturnValor;
-        }
+        ///// <summary>
+        ///// ELIMINA un registro de la Entidad Produccion.Proeedores
+        ///// En la BASE de DATO la Tabla : [Produccion.Proeedores]
+        ///// <summary>
+        ///// <param name="pFiltro"></param>
+        ///// <returns></returns>
+        //public ReturnValor DeleteProveedor(BEProductoProveedor pFiltro) 
+        //{
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            oReturnValor.Exitosa = oProductoProveedoresData.Delete(pFiltro);
+        //            if (oReturnValor.Exitosa)
+        //            {
+        //                oReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.DELETE);
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oReturnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
+        //                                                   pFiltro.segUsuarioEdita, pFiltro.codEmpresa.ToString());
+        //    }
+        //    return oReturnValor;
+        //}
 
         #endregion
 
@@ -1219,34 +1219,34 @@ namespace CROM.GestionAlmacen.BusinessLogic
 
         #region /* Proceso de INSERT RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo ProductoKardexAux
-        /// En la BASE de DATO la Tabla : [Produccion.ProductoExistenciasKardex]
-        /// <summary>
-        /// <param name="productoExistencia"></param>
-        /// <returns></returns>
-        public ReturnValor InsertUpdateProductoExistencia(BEProductoExistencia productoExistencia)
-        {
-            ReturnValor objReturnValor = new ReturnValor();
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    objReturnValor.codRetorno = oProductoExistenciaData.InsertUpdate(productoExistencia);
-                    if (objReturnValor.codRetorno > 0)
-                    {
-                        objReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.NEW);
-                        objReturnValor.Exitosa = true;
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                objReturnValor = HelpException.mTraerMensaje(ex);
-            }
-            return objReturnValor;
-        }
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo ProductoKardexAux
+        ///// En la BASE de DATO la Tabla : [Produccion.ProductoExistenciasKardex]
+        ///// <summary>
+        ///// <param name="productoExistencia"></param>
+        ///// <returns></returns>
+        //public ReturnValor InsertUpdateProductoExistencia(BEProductoExistencia productoExistencia)
+        //{
+        //    ReturnValor objReturnValor = new ReturnValor();
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            objReturnValor.codRetorno = oProductoExistenciaData.InsertUpdate(productoExistencia);
+        //            if (objReturnValor.codRetorno > 0)
+        //            {
+        //                objReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.NEW);
+        //                objReturnValor.Exitosa = true;
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        objReturnValor = HelpException.mTraerMensaje(ex);
+        //    }
+        //    return objReturnValor;
+        //}
 
         #endregion
 
@@ -1381,73 +1381,73 @@ namespace CROM.GestionAlmacen.BusinessLogic
             return objReturnValor;
         }
 
-        /// <summary>
-        /// ACTUALIZA el registro de una ENTIDAD de registro de Tipo ProductoExistencias
-        /// En la BASE de DATO la Tabla : [Almacen.ProductoExistencias]
-        /// <summary>
-        /// <param name="filtro"></param>
-        /// <param name="prm_SALDO_StockFisico"></param>
-        /// <returns></returns>
-        public ReturnValor UpdateProductoExistenciaStockFisicoInventario(BEProductoExistenciaStockUpdate pUpdate,
-                                                                         ref decimal? pSALDO_StockMerma,
-                                                                         ref decimal? pSALDO_StockSobrante)
-        {
-            ReturnValor objReturnValor = new ReturnValor();
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    decimal? cantSALDO_StockMerma = 0;
-                    decimal? cantSALDO_StockSobrante = 0;
-                    objReturnValor.Exitosa = oProductoExistenciaData.UpdateStockFisicoInventario(pUpdate, 
-                                                                                                 ref cantSALDO_StockMerma,
-                                                                                                 ref cantSALDO_StockSobrante);
-                    if (objReturnValor.Exitosa)
-                    {
-                        objReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
-                        objReturnValor.Exitosa = true;
-                        tx.Complete();
-                    }
-                    pSALDO_StockMerma = cantSALDO_StockMerma;
-                    pSALDO_StockSobrante = cantSALDO_StockSobrante;
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return objReturnValor;
-        }
+        ///// <summary>
+        ///// ACTUALIZA el registro de una ENTIDAD de registro de Tipo ProductoExistencias
+        ///// En la BASE de DATO la Tabla : [Almacen.ProductoExistencias]
+        ///// <summary>
+        ///// <param name="filtro"></param>
+        ///// <param name="prm_SALDO_StockFisico"></param>
+        ///// <returns></returns>
+        //public ReturnValor UpdateProductoExistenciaStockFisicoInventario(BEProductoExistenciaStockUpdate pUpdate,
+        //                                                                 ref decimal? pSALDO_StockMerma,
+        //                                                                 ref decimal? pSALDO_StockSobrante)
+        //{
+        //    ReturnValor objReturnValor = new ReturnValor();
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            decimal? cantSALDO_StockMerma = 0;
+        //            decimal? cantSALDO_StockSobrante = 0;
+        //            objReturnValor.Exitosa = oProductoExistenciaData.UpdateStockFisicoInventario(pUpdate, 
+        //                                                                                         ref cantSALDO_StockMerma,
+        //                                                                                         ref cantSALDO_StockSobrante);
+        //            if (objReturnValor.Exitosa)
+        //            {
+        //                objReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
+        //                objReturnValor.Exitosa = true;
+        //                tx.Complete();
+        //            }
+        //            pSALDO_StockMerma = cantSALDO_StockMerma;
+        //            pSALDO_StockSobrante = cantSALDO_StockSobrante;
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return objReturnValor;
+        //}
 
-        /// <summary>
-        /// ACTUALIZA el registro de una ENTIDAD de registro de Tipo ProductoExistencias
-        /// En la BASE de DATO la Tabla : [Almacen.ProductoExistencias]
-        /// <summary>
-        /// <param name="filtro"></param>
-        /// <param name="prm_SALDO_StockFisico"></param>
-        /// <returns></returns>
-        public ReturnValor UpdateProductoExistenciaStockFisicoInventarioAnterior(BEProductoExistenciaStockUpdate pFiltro)
-        {
-            ReturnValor objReturnValor = new ReturnValor();
-            try
-            {
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    objReturnValor.Exitosa = oProductoExistenciaData.UpdateStockFisicoInventarioAnterior(pFiltro);
-                    if (objReturnValor.Exitosa)
-                    {
-                        objReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
-                        objReturnValor.Exitosa = true;
-                        tx.Complete();
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return objReturnValor;
-        }
+        ///// <summary>
+        ///// ACTUALIZA el registro de una ENTIDAD de registro de Tipo ProductoExistencias
+        ///// En la BASE de DATO la Tabla : [Almacen.ProductoExistencias]
+        ///// <summary>
+        ///// <param name="filtro"></param>
+        ///// <param name="prm_SALDO_StockFisico"></param>
+        ///// <returns></returns>
+        //public ReturnValor UpdateProductoExistenciaStockFisicoInventarioAnterior(BEProductoExistenciaStockUpdate pFiltro)
+        //{
+        //    ReturnValor objReturnValor = new ReturnValor();
+        //    try
+        //    {
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            objReturnValor.Exitosa = oProductoExistenciaData.UpdateStockFisicoInventarioAnterior(pFiltro);
+        //            if (objReturnValor.Exitosa)
+        //            {
+        //                objReturnValor.Message = HelpEventos.MessageEvento(HelpEventos.Process.EDIT);
+        //                objReturnValor.Exitosa = true;
+        //                tx.Complete();
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return objReturnValor;
+        //}
 
         /// <summary>
         /// ACTUALIZA el registro de una ENTIDAD de registro de Tipo ProductoExistencias

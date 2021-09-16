@@ -75,39 +75,39 @@
 
         #region /* Proceso de INSERT RECORD */
 
-        /// <summary>
-        /// Almacena el registro de una ENTIDAD de registro de Tipo ProductoPrecio
-        /// En la BASE de DATO la Tabla : [GestionComercial.ProductoPrecio]
-        /// <summary>
-        /// <param name="itemProductoPrecio"></param>
-        /// <returns></returns>
-        public ReturnValor InsertUpdate(BEProductoPrecio objProductoPrecio)
-        {
-            try
-            {
-                oReturnValor = validaDatos(objProductoPrecio, HelpEventos.Accion.Nuevo);
-                if (!oReturnValor.Exitosa)
-                    return oReturnValor;
+        ///// <summary>
+        ///// Almacena el registro de una ENTIDAD de registro de Tipo ProductoPrecio
+        ///// En la BASE de DATO la Tabla : [GestionComercial.ProductoPrecio]
+        ///// <summary>
+        ///// <param name="itemProductoPrecio"></param>
+        ///// <returns></returns>
+        //public ReturnValor InsertUpdate(BEProductoPrecio objProductoPrecio)
+        //{
+        //    try
+        //    {
+        //        oReturnValor = validaDatos(objProductoPrecio, HelpEventos.Accion.Nuevo);
+        //        if (!oReturnValor.Exitosa)
+        //            return oReturnValor;
 
-                using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
-                {
-                    var resultUpdate = productoPrecioData.InsertUpdate(objProductoPrecio);
+        //        using (TransactionScope tx = new TransactionScope(TransactionScopeOption.Required))
+        //        {
+        //            var resultUpdate = productoPrecioData.InsertUpdate(objProductoPrecio);
 
-                    oReturnValor.Exitosa = resultUpdate.ErrorCode > 0 ? true : false;
-                    oReturnValor.Message = oReturnValor.Exitosa ? HelpEventos.MessageEvento(HelpEventos.Process.NEW) :
-                                                  resultUpdate.ErrorMessage;
-                    if(oReturnValor.Exitosa)
-                        tx.Complete();
-                }
-            }
-            catch (Exception ex)
-            {
-                oReturnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
-                                                           objProductoPrecio.segUsuarioEdita,
-                                                           objProductoPrecio.codEmpresa.ToString());
-            }
-            return oReturnValor;
-        }
+        //            oReturnValor.Exitosa = resultUpdate.ErrorCode > 0 ? true : false;
+        //            oReturnValor.Message = oReturnValor.Exitosa ? HelpEventos.MessageEvento(HelpEventos.Process.NEW) :
+        //                                          resultUpdate.ErrorMessage;
+        //            if(oReturnValor.Exitosa)
+        //                tx.Complete();
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        oReturnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name,
+        //                                                   objProductoPrecio.segUsuarioEdita,
+        //                                                   objProductoPrecio.codEmpresa.ToString());
+        //    }
+        //    return oReturnValor;
+        //}
 
         #endregion
 

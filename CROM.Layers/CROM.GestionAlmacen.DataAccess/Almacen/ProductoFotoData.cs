@@ -63,73 +63,73 @@ namespace CROM.GestionAlmacen.DataAccess
 
         #region /* Proceso de DELETE BY ID CODE */
 
-        /// <summary>
-        /// ELIMINA un registro de la Entidad Almacen.ProductoFotos
-        /// En la BASE de DATO la Tabla : [Almacen.ProductoFotos]
-        /// <summary>
-        /// <param name="filtro"></param>
-        /// <returns></returns>
-        public bool Delete(int pcodId, int pcodProducto) 
-        {
-            int codigoRetorno = -1;
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                    codigoRetorno = SQLDC.omgc_D_ProductoFoto(pcodId, 
-                                                              pcodProducto);
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return codigoRetorno == 0 ? true : false;
-        }
+        ///// <summary>
+        ///// ELIMINA un registro de la Entidad Almacen.ProductoFotos
+        ///// En la BASE de DATO la Tabla : [Almacen.ProductoFotos]
+        ///// <summary>
+        ///// <param name="filtro"></param>
+        ///// <returns></returns>
+        //public bool Delete(int pcodId, int pcodProducto) 
+        //{
+        //    int codigoRetorno = -1;
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //            codigoRetorno = SQLDC.omgc_D_ProductoFoto(pcodId, 
+        //                                                      pcodProducto);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return codigoRetorno == 0 ? true : false;
+        //}
 
         #endregion
 
         #region /* Proceso de SELECT BY ID CODE */
 
-        /// <summary>
-        /// Retorna una ENTIDAD de registro de la Entidad Almacen.ProductoFotos
-        /// En la BASE de DATO la Tabla : [Almacen.ProductoFotos]
-        /// <summary>
-        /// <param name="filtro"></param>
-        /// <returns></returns>
-        public BEProductoFoto Find(int pcodEmpresa, int pcodProducto, int? pcodProductoFoto)
-        {
-            BEProductoFoto productoFoto = null;
-            try
-            {
-                using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
-                {
-                    var resul = SQLDC.omgc_S_ProductoFoto(pcodEmpresa,
-                                                          pcodProducto,
-                                                          pcodProductoFoto.HasValue ? pcodProductoFoto.Value : 0);
-                    foreach (var item in resul)
-                    {
-                        productoFoto = new BEProductoFoto()
-                        {
-                            codProductoFoto = item.codProductoFoto,
-                            codProducto = item.codProducto,
-                            CodigoProducto = item.codigoProducto,
-                            FotografiaF = convertirVarBinary(item.imgFotografia),
-                            Fotografia = item.desFotografia,
-                            Estado = item.indActivo,
-                            segUsuarioEdita = item.segUsuarioEdita,
-                            segFechaEdita = item.segFechaEdita,
-                            segMaquinaCrea = item.segMaquina,
-                        };
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return productoFoto;
-        }
+        ///// <summary>
+        ///// Retorna una ENTIDAD de registro de la Entidad Almacen.ProductoFotos
+        ///// En la BASE de DATO la Tabla : [Almacen.ProductoFotos]
+        ///// <summary>
+        ///// <param name="filtro"></param>
+        ///// <returns></returns>
+        //public BEProductoFoto Find(int pcodEmpresa, int pcodProducto, int? pcodProductoFoto)
+        //{
+        //    BEProductoFoto productoFoto = null;
+        //    try
+        //    {
+        //        using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
+        //        {
+        //            var resul = SQLDC.omgc_S_ProductoFoto(pcodEmpresa,
+        //                                                  pcodProducto,
+        //                                                  pcodProductoFoto.HasValue ? pcodProductoFoto.Value : 0);
+        //            foreach (var item in resul)
+        //            {
+        //                productoFoto = new BEProductoFoto()
+        //                {
+        //                    codProductoFoto = item.codProductoFoto,
+        //                    codProducto = item.codProducto,
+        //                    CodigoProducto = item.codigoProducto,
+        //                    FotografiaF = convertirVarBinary(item.imgFotografia),
+        //                    Fotografia = item.desFotografia,
+        //                    Estado = item.indActivo,
+        //                    segUsuarioEdita = item.segUsuarioEdita,
+        //                    segFechaEdita = item.segFechaEdita,
+        //                    segMaquinaCrea = item.segMaquina,
+        //                };
+        //            }
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return productoFoto;
+        //}
 
         public List<BEProductoFoto> List(int pcodEmpresa, int pcodProducto)
         {
