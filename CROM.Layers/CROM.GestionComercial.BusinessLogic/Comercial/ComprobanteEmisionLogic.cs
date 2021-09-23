@@ -1335,6 +1335,9 @@ namespace CROM.GestionComercial.BusinessLogic
 
                 comprobanteEmision.codEmpleadoVendedor = comprobanteEmision.listaComprobanteEmisionDetalle[0].codEmpleadoVendedor;
 
+                HelpLogging.Write(TraceLevel.Info, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, JsonConvert.SerializeObject(comprobanteEmision),
+                                  comprobanteEmision.SegUsuarioEdita, comprobanteEmision.codEmpresa.ToString());
+
                 if (comprobanteEmision.CodigoPersonaEntidadContacto != null)
                     if (comprobanteEmision.CodigoPersonaEntidadContacto.Trim() == string.Empty)
                         comprobanteEmision.CodigoPersonaEntidadContacto = null;
@@ -1346,7 +1349,10 @@ namespace CROM.GestionComercial.BusinessLogic
                 if (comprobanteEmision.CodigoArguEstadoDocu == comprobante.CodigoArguEstANUDefault)
                     returnValor.Message = HelpMessages.gc_DOCUM_YA_ANULADO;
                 else if (comprobanteEmision.CodigoComprobanteDESTINO != null)
-                    returnValor.Message = HelpMessages.gc_DOCUM_NO_ANULADO;
+                {
+                    returnValor.Message = string.Format( HelpMessages.gc_DOCUM_NO_ANULADO, string.Concat( comprobanteEmision.CodigoComprobanteDESTINO," - Update"));
+                }
+                   
                 else
                 {
                     BEComprobanteEmision comprobanteEmisionAnterior = new BEComprobanteEmision();
@@ -1424,7 +1430,7 @@ namespace CROM.GestionComercial.BusinessLogic
                 else if (comprobanteEmision.CodigoArguEstadoDocu == comprobante.CodigoArguEstANUDefault)
                     returnValor.Message = HelpMessages.gc_DOCUM_YA_ANULADO;
                 else if (comprobanteEmision.CodigoComprobanteDESTINO != null)
-                    returnValor.Message = HelpMessages.gc_DOCUM_NO_ANULADO;
+                    returnValor.Message = string.Format(HelpMessages.gc_DOCUM_NO_ANULADO, string.Concat(comprobanteEmision.CodigoComprobanteDESTINO, " - UpdateAnulacion"));
                 else
                 {
                     using (TransactionScope transactionScope = new TransactionScope(TransactionScopeOption.Required))
@@ -1469,7 +1475,7 @@ namespace CROM.GestionComercial.BusinessLogic
                 else if (comprobanteEmision.CodigoArguEstadoDocu == comprobante.CodigoArguEstANUDefault)
                     returnValor.Message = HelpMessages.gc_DOCUM_YA_ANULADO;
                 else if (comprobanteEmision.CodigoComprobanteDESTINO != null)
-                    returnValor.Message = HelpMessages.gc_DOCUM_NO_ANULADO;
+                    returnValor.Message = string.Format(HelpMessages.gc_DOCUM_NO_ANULADO, string.Concat(comprobanteEmision.CodigoComprobanteDESTINO, " - UpdateRevertir"));
                 else
                 {
                     CajaRegistroLogic oCajaRegistroLogic = new CajaRegistroLogic();
@@ -1695,7 +1701,7 @@ namespace CROM.GestionComercial.BusinessLogic
                 }
                 else if (comprobanteEmision.CodigoComprobanteDESTINO != null)
                 {
-                    returnValor.Message = HelpMessages.gc_DOCUM_NO_ANULADO;
+                    returnValor.Message = string.Format(HelpMessages.gc_DOCUM_NO_ANULADO, string.Concat(comprobanteEmision.CodigoComprobanteDESTINO, " - Delete"));
                     eliminaAnulado = false;
                 }
                 if (eliminaAnulado)
@@ -3233,7 +3239,7 @@ namespace CROM.GestionComercial.BusinessLogic
                 else if (comprobanteEmision.CodigoArguEstadoDocu == comprobante.CodigoArguEstANUDefault)
                     returnValor.Message = HelpMessages.gc_DOCUM_YA_ANULADO;
                 else if (comprobanteEmision.CodigoComprobanteDESTINO != null)
-                    returnValor.Message = HelpMessages.gc_DOCUM_NO_ANULADO;
+                    returnValor.Message = string.Format(HelpMessages.gc_DOCUM_NO_ANULADO, string.Concat(comprobanteEmision.CodigoComprobanteDESTINO, " - EsDocumentoValido"));
             }
         }
 
