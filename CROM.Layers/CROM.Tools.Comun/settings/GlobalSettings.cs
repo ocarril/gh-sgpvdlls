@@ -271,6 +271,14 @@
 
 
 
+        public static bool GetDEFAULT_MODO_ASYNC_WSA()
+        {
+
+            bool valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_MODO_ASYNC_WS"]) == 1 ? true : false;
+
+            return valorConfig;
+        }
+
         public static int GetDEFAULT_SAVE_DOCUM_MODE_NEW()
         {
 

@@ -128,7 +128,8 @@
                                 fecRegistroApp = DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()),
                                 nomMaquinaIP = numIP
                             };
-                            auditoria.desMensaje = WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == 2000).Value;
+                            auditoria.desMensaje = string.Format( WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == 2000).Value,
+                                                                  objUsuarioValidado.codEmpresaNombre);
                             int codigoRetorno = InsertAuditoria(auditoria);
 
                         }
@@ -686,6 +687,7 @@
                         {
                             blnEmpresaEsValido = true;
                             numCodigoError = 0;
+                            fecLicenciaVenc = HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[1].Trim());
                             objUsuarioValidado.codEmpresa = Extensors.CheckInt(arrDatoEmpresa[2]);
                             strEmpresa = arrDatoEmpresa[3].Trim();
                             strnumRUC = arrDatoEmpresa[4].Trim();
@@ -696,10 +698,12 @@
                             numCodigoError = 2011;
                             strEmpresa = arrDatoEmpresa[3].Trim();
                             fecLicenciaVenc = HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[1].Trim());
-                            HelpLogging.Write(TraceLevel.Warning, string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
-                                  string.Format("numCodigoError:[ {0} ] == DateTime.Now=[ {1} ]", numCodigoError, 
-                                  DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud())),
-                                  string.Format("Empresa:[{0}], Usuario:[{1}]", "00", objUsuarioValidado.desLogin));
+                            //HelpLogging.Write(TraceLevel.Warning, string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
+                            //      string.Format("numCodigoError:[ {0} ] == DateTime.Now=[ {1} ], Message={2}", numCodigoError, 
+                            //      DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()),
+                            //      string.Format(WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == numCodigoError).Value,
+                            //                             strEmpresa, fecLicenciaVenc.Value.ToShortDateString())),
+                            //string.Format("Empresa:[{0}], Usuario:[{1}]", "00", objUsuarioValidado.desLogin));
                             break;
                         }
 
@@ -707,10 +711,12 @@
                     else
                     {
                         numCodigoError = 2010;
-                        HelpLogging.Write(TraceLevel.Warning, string.Concat(GetType().Name, MethodBase.GetCurrentMethod().Name),
-                                  string.Format("numCodigoError:[ {0} ] == DateTime.Now=[ {1} ]", numCodigoError, 
-                                  DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud())),
-                                  string.Format("Empresa:[{0}], Usuario:[{1}]", "00", objUsuarioValidado.desLogin));
+                        //HelpLogging.Write(TraceLevel.Warning, string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
+                        //          string.Format("numCodigoError:[ {0} ] == DateTime.Now=[ {1} ], Message={2}", numCodigoError, 
+                        //          DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()),
+                        //          string.Format(WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == numCodigoError).Value,
+                        //                                 strEmpresa, fecLicenciaVenc.Value.ToShortDateString())),
+                        //          string.Format("Empresa:[{0}], Usuario:[{1}]", "00", objUsuarioValidado.desLogin));
 
                     }
                 }
@@ -721,8 +727,8 @@
                     {
                         operationResult.brokenRulesCollection.Add(new BrokenRule
                         {
-                            description = string.Format( WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == numCodigoError).Value,
-                                                         strEmpresa,fecLicenciaVenc.Value.ToShortDateString()),
+                            description = string.Format(WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == numCodigoError).Value,
+                                                         strEmpresa, fecLicenciaVenc.Value.ToShortDateString()),
                             severity = RuleSeverity.Warning
                         });
                     }
@@ -734,10 +740,19 @@
                             severity = RuleSeverity.Warning
                         });
                     }
+
+                    HelpLogging.Write(TraceLevel.Warning, string.Concat(GetType().Name, ".", MethodBase.GetCurrentMethod().Name),
+                                  string.Format("numCodigoError:[ {0} ] == DateTime.Now=[ {1} ], Message={2}", numCodigoError,
+                                  DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()),
+                                 operationResult.brokenRulesCollection[0].description),
+                                   string.Format("Empresa:[{0}], Usuario:[{1}]", "00", objUsuarioValidado.desLogin));
+
                     return operationResult;
                 }
-
-                objUsuarioValidado.codEmpresaNombre = strEmpresa;
+                if (DateTime.Now > fecLicenciaVenc.Value.AddDays(-30))
+                    objUsuarioValidado.codEmpresaNombre = string.Concat( strEmpresa, " - Vence: ", fecLicenciaVenc.Value.FormatDateToDDMMYYYY());
+                else
+                    objUsuarioValidado.codEmpresaNombre = strEmpresa;
                 objUsuarioValidado.numRUC = strnumRUC;
             }
 

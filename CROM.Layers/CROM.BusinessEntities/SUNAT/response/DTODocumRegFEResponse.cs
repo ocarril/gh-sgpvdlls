@@ -470,5 +470,8 @@
         public DateTime? RDD_FechaEnvioSunat { get; set; }
         public string imgEstado001Docum { get; set; }
         public string imgEstado002Docum { get; set; }
+
+        public string DDB_NombreArchivo { get; set; }
+        public string DDB_NombreArchivoTicket { get; set; }
     }
 }
