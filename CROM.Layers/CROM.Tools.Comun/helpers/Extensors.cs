@@ -381,6 +381,36 @@
                 return string.Empty;
             }
         }
+        
+        static public string StringCamell(this object Expression)
+        {
+
+            if (Expression != null)
+            {
+
+                string sExpression = Expression.ToString();
+                try
+                {
+                    string nuevoStringCamell = string.Empty;
+                    string[] arrayCadenaString = sExpression.Split(' ');
+                    foreach (string cadaPalabra in arrayCadenaString)
+                    {
+                        nuevoStringCamell = nuevoStringCamell + string.Concat(cadaPalabra.Substring(0, 1).ToUpper(),
+                                                                              cadaPalabra.Substring(1, cadaPalabra.Length - 1).ToLower(),
+                                                                              " ");
+                    }
+
+                    sExpression = nuevoStringCamell.TrimEnd();
+                }
+                catch { }
+                return sExpression;
+
+            }
+            else
+            {
+                return string.Empty;
+            }
+        }
 
         #endregion
 
