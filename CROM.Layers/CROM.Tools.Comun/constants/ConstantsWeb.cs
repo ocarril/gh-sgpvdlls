@@ -197,6 +197,7 @@
           { 1007,  "Error de Dato de autorización." },
           { 1008,  "Alerta. La sesión ya ha caducado." },
           { 1010,  "WS Sunat de consulta no respondio con éxito." },
+          { 1011,  "WS Sunat de GRE no respondio con éxito." },
 
         };
 
@@ -266,8 +267,8 @@
           { 3028,  "Archivos SFS OK N°: [{0}] - [{1}]" },
           { 3029,  "Documento [ {0} - {1} / .ZIP ] FUE creado con EXITO."},
           { 3030,  "No se ha creado Zip de Documento [ {0} - {1} ]."},
-          { 3031,  "Documento [ {2} ] CREADO, FIRMADO por Enviar a SUNAT N°: [ {0} ] - [ {1} ]"},
-          { 3032,  "Documento [ {2} ] CREADO, FIRMADO y ENVIADO a  SUNAT N°: [ {0} ] - [ {1} ]"},
+          { 3031,  "Documento [ {2} ] CREADO, FIRMADO. <BR> por Enviar a SUNAT N°: [ {0} ] - [ {1} ]"},
+          { 3032,  "Documento [ {2} ] CREADO, FIRMADO y ENVIADO a  SUNAT. <BR> N°: [ {0} ] - [ {1} ]"},
           { 3033,  "La generación de archivos DATA para el facturador SUNAT NO fue exitoso : [ {0} ] "},
           { 3034,  "Documento no tiene detalle de pagos/cuotas a CRÉDITO: [ {0} ] - [ {1} ]"},
           { 3035,  "Documento: [ {0} ], enviado por correo satisfactoriamente al cliente: [ {1} ]."},
@@ -303,6 +304,7 @@
           { 3065,  "Alerta : Documento [ {0} ] aún no tiene registrado N° de ticket." },
           { 3066,  "Pendiente de baja: [ {0} ], creado satisfactoriamente."},
           { 3067,  "Aun no esta habilitado para emitir Guías de Remisión Electrónica. A partir de: [ {0} ]"},
+          { 3068,  "Archivo generado y enviado a la SUNAT con exito. CDR: [ {0} ]"},
         };
 
 
