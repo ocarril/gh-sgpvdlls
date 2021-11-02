@@ -136,6 +136,7 @@
         public decimal? ACAporDetraccion { get; set; }
 
         public decimal? ACAmtoDetraccion { get; set; }
+        public decimal? ACAmtoDetraccionMndExt { get; set; }
 
         public string ACAcodMedioPago { get; set; }
 

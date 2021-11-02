@@ -295,6 +295,14 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public int? codMotivoNDB { get; set; }
 
+        public string codMotivoNCRKey { get; set; }
+
+        public string codMotivoNDBKey { get; set; }
+
+        public string codMotivoNCRNombre { get; set; }
+
+        public string codMotivoNDBNombre { get; set; }
+
         public string gloMotivoSustento { get; set; }
 
         public bool flagParaEnvioSUNAT { get; set; }

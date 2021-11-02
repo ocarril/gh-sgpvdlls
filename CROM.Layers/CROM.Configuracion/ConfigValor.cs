@@ -431,6 +431,7 @@ namespace CROM.Tools.Config
         , DEFAULT_SFS_NUM_DIA_PLAZO_RD
         , DEFAULT_SFS_NUM_DOCUMENTO_RD
         , DEFAULT_SFS_FECHA_ENVIA_GRE_WS
+        , DEFAULT_SFS_MONTO_MIN_DETRACC
 
 
         , DEFAULT_SitioWEBPersona

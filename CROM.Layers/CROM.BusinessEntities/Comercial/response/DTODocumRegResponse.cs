@@ -118,13 +118,6 @@
 
         public Nullable<decimal> monTipoCambioOrigen { get; set; }
 
-        public string codDocumentoNCR { get; set; }
-
-        public string numDocumentoNCR { get; set; }
-
-        public string codDocumentoNDB { get; set; }
-
-        public string numDocumentoNDB { get; set; }
 
         public string numOrdenDeCompra { get; set; }
 
@@ -176,9 +169,31 @@
 
         public string codPersonaContactoNombre { get; set; }
 
+        #region DATOS NOTA DE CREDITO / DEBITO
+
+
+        public string codDocumentoNCR { get; set; }
+
+        public string numDocumentoNCR { get; set; }
+
+        public string codDocumentoNDB { get; set; }
+
+        public string numDocumentoNDB { get; set; }
+
         public Nullable<int> codMotivoNCR { get; set; }
 
         public Nullable<int> codMotivoNDB { get; set; }
+
+        public string codMotivoNCRKey { get; set; }
+
+        public string codMotivoNDBKey { get; set; }
+
+        public string codMotivoNCRNombre { get; set; }
+
+        public string codMotivoNDBNombre { get; set; }
+
+        #endregion
+
 
         public string gloMotivoSustento { get; set; }
 
@@ -369,6 +384,8 @@
 
         public decimal mtoDetraccion { get; set; }
 
+        public decimal mtoDetraccionMndExt { get; set; }
+        
         public bool? indActivoDetraccion { get; set; }
 
         public string codBienDetraccionNombre { get; set; }
