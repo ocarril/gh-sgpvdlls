@@ -246,6 +246,7 @@
 
         #endregion
 
+        public DateTime? fecCancelacion { get; set; }
 
         public int indOrigen { get; set; }
 
