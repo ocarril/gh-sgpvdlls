@@ -18,8 +18,9 @@
 
         #region PROPIEDADES DATOS DE COTIZACIONES
 
-
         public Nullable<DateTime> fecVencimiento { get; set; }
+
+        public DateTime? fecCancelacion { get; set; }
 
         public int? codEmpleadoVendedor { get; set; }
 
@@ -43,7 +44,6 @@
 
         #region  PROPIEDADES DATOS DE FACTURA DE PROVEEDORES
 
-        public int? codCondicionCompra { get; set; }
 
         public bool indInternacional { get; set; }
 
@@ -53,26 +53,12 @@
 
         public string numDocumentoExt { get; set; }
 
-        public string desTotalCaja { get; set; }
-
-        public string desTotalPeso { get; set; }
-
-
         public string perTributario { get; set; }
 
 
 
-        public string desNota03 { get; set; }
-
         public bool indDocEsFacturable { get; set; }
 
-
-        //public string numLetrasCambio { get; set; }
-        //public int numDiasCredito { get; set; }
-        //public string numSerieDatoRefer { get; set; }
-        //public Nullable<DateTime> fecVencimiento { get; set; }
-        //public int? codEmpleadoVendedor { get; set; }
-        //public Nullable<DateTime> fecEntrega { get; set; }
 
 
         #endregion
@@ -92,6 +78,8 @@
         public Nullable<DateTime> fecEmisionOrigen { get; set; }
 
         public decimal monTipoCambioVTAOrigen { get; set; }
+
+
 
         public string numOrdenDeCompra { get; set; }
 
@@ -122,15 +110,6 @@
 
         #endregion
 
-
-        //public Nullable<DateTime> fecVencimiento { get; set; }
-        //public string numLetrasCambio { get; set; }
-        //public string numSerieDatoRefer { get; set; }
-        //public Nullable<DateTime> fecEntrega { get; set; }
-        //public string perTributario { get; set; }
-        //public int numDiasCredito { get; set; }
-        //public bool indDocEsFacturable { get; set; }
-        //public int? codEmpleadoVendedor { get; set; }
 
         #endregion
 
@@ -181,6 +160,54 @@
 
         public string desMotivoGuiaOtro { get; set; }
 
+        public string desTotalCaja { get; set; }
+
+        public string desTotalPeso { get; set; }
+
+        public string desNota03 { get; set; }
+
+        #endregion
+
+        #region PROPIEDADES DATOS DE NOTA DE CREDITO, NOTA DE DEBITO
+
+
+        public int? codMotivoNCR { get; set; }
+
+        public int? codMotivoNDB { get; set; }
+
+        public string gloMotivoSustento { get; set; }
+
+
+        #endregion
+
+        #region PROPIEDADES DATOS DE NOTA DE INGRESO - NOTA DE SALIDA
+
+        public string codDepositoDestino { get; set; }
+
+
+        #endregion
+
+        #region ATRIBUTOS DE OTROS Y VARIOS DOCUMENTOS
+
+        //public string codEmpresaRUC { get; set; }
+        //public Nullable<DateTime> fecVencimiento { get; set; }
+        //public string perTributario { get; set; }
+        //public string codDepositoOrigen { get; set; }
+        //public string numLetrasCambio { get; set; }
+        //public int numDiasCredito { get; set; }
+        //public string numSerieDatoRefer { get; set; }
+        //public Nullable<DateTime> fecVencimiento { get; set; }
+        //public int? codEmpleadoVendedor { get; set; }
+        //public Nullable<DateTime> fecEntrega { get; set; }
+        //public int? codCondicionCompra { get; set; }
+        //public Nullable<DateTime> fecVencimiento { get; set; }
+        //public string numLetrasCambio { get; set; }
+        //public string numSerieDatoRefer { get; set; }
+        //public Nullable<DateTime> fecEntrega { get; set; }
+        //public string perTributario { get; set; }
+        //public int numDiasCredito { get; set; }
+        //public bool indDocEsFacturable { get; set; }
+        //public int? codEmpleadoVendedor { get; set; }
         //public Nullable<DateTime> fecVencimiento { get; set; }
         //public string codDocumentoOrigen { get; set; }
         //public string numDocumentoOrigen { get; set; }
@@ -204,20 +231,6 @@
         //public string desTotalCaja { get; set; }
         //public string desTotalPeso { get; set; 
         //public string desNota02 { get; set; }
-
-        #endregion
-
-        #region PROPIEDADES DATOS DE NOTA DE CREDITO, NOTA DE DEBITO
-
-
-
-        public int? codMotivoNCR { get; set; }
-
-        public int? codMotivoNDB { get; set; }
-
-        public string gloMotivoSustento { get; set; }
-
-
         //public string codEmpresaRUC { get; set; }
         //public Nullable<DateTime> fecVencimiento { get; set; }
         //public string codDocumentoOrigen { get; set; }
@@ -234,21 +247,8 @@
 
         #endregion
 
-        #region PROPIEDADES DATOS DE NOTA DE INGRESO - NOTA DE SALIDA
-
-        public string codDepositoDestino { get; set; }
-
-        //public string codEmpresaRUC { get; set; }
-        //public Nullable<DateTime> fecVencimiento { get; set; }
-        //public string perTributario { get; set; }
-        //public string codDepositoOrigen { get; set; }
-
-
-        #endregion
-
-        public DateTime? fecCancelacion { get; set; }
-
         public int indOrigen { get; set; }
+
 
     }
 }

@@ -31,13 +31,28 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public int codDocumReg { get; set; }
 
+        public string numDocumento { get; set; }
+
         public string codTipoComprobante { get; set; }
+
+        public string codPuntoVenta { get; set; }
+
+        public int codDocumentoSerie { get; set; }
 
         public string codDocumento { get; set; }
 
         public string codRegTipoDeOperacion { get; set; }
 
         public DateTime fecEmision { get; set; }
+
+        public int codEmpleado { get; set; }
+
+
+        #region DATOS DEL CLIENTE-USUARIO
+
+        public string codPersonaEntidad { get; set; }
+
+        public string codPersonaContacto { get; set; }
 
         public string codRegTipoDocumentoEntidad { get; set; }
 
@@ -55,9 +70,18 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public string codRegTipoDomicilio { get; set; }
 
+        #endregion
+
+
+        public int? codCondicionVenta { get; set; }
+
+        public int? codCondicionCompra { get; set; }
+
         public string codRegMoneda { get; set; }
 
-        public int codEmpleado { get; set; }
+        public decimal monTipoCambioVTA { get; set; }
+
+        public decimal monTipoCambioCMP { get; set; }
 
         public decimal sumTotBruto { get; set; }
 
@@ -81,41 +105,20 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public decimal sumTotValVentaGravada { get; set; }
 
-        public string codEmpleadoPlanilla { get; set; }
 
         /**
          * ATRIBUTOS ADICIONALES
-         */
+         **/
+
+        public string codEmpleadoPlanilla { get; set; }
 
         public string codRegDestinoDocum { get; set; }
+
 
         public string codRegEstado { get; set; }
 
         public int? codDocumentoEstado { get; set; }
 
-        public string numDocumento { get; set; }
-
-        public string codPersonaEntidad { get; set; }
-
-        public string codPersonaContacto { get; set; }
-
-        public int? codCondicionVenta { get; set; }
-
-        public int? codCondicionCompra { get; set; }
-
-        public decimal monTipoCambioVTA { get; set; }
-
-        public decimal monTipoCambioCMP { get; set; }
-
-        public string codPuntoVenta { get; set; }
-
-        public int codDocumentoSerie { get; set; }
-
-        public string gloObservaciones { get; set; }
-
-        public string desNota01 { get; set; }
-
-        public string desNota02 { get; set; }
 
 
         public bool indDocExigeDocAnexo { get; set; }
@@ -124,34 +127,20 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public string codDocumentoSecun { get; set; }
 
-        public string numDocumentoSecun { get; set; }        
+        public string numDocumentoSecun { get; set; }       
+        
+
+
+        public string gloObservaciones { get; set; }
+
+        public string desNota01 { get; set; }
+
+        public string desNota02 { get; set; }
+
 
         public List<DTODocumRegDetalleRequest> lstDetalle { get; set; }
 
         public List<DTODocumRegImpuestoRequest> lstImpuestos { get; set; }
-
-        //public string numOrdenDeCompra { get; set; }
-        //public string numGuiaDeSalida { get; set; }
-        //public string numPedidoAdquisicion { get; set; }
-        //public Nullable<DateTime> fecDeDeclaracion { get; set; }
-        //public bool flagEnviadoSUNAT { get; set; }
-        //public Nullable<DateTime> fecEnviadoSUNAT { get; set; }
-        //public string codLocalEmisor { get; set; }
-        //public string tipDocUsuario { get; set; }
-        //public string tipMoneda { get; set; }      
-
-        //public int numTotalItems { get; set; }
-        //public int numTotalLetras { get; set; } 
-        //public string codDocumentoNombre { get; set; }
-        //public string codRegTipoDomicilNombre { get; set; }
-        //public string codRegEstadoNombre { get; set; }
-        //public string codCondicionVentaNombre { get; set; }
-        //public string codPuntoVentaNombre { get; set; }
-        //public string codRegMonedaNombre { get; set; }
-        //public string codEmpleadoNombre { get; set; }
-        //public string codRegTipoDeOperacionNombre { get; set; }
-        //public string codRegDestinoDocumNombre { get; set; }
-        //public string numDocumentoDESTINO { get; set; }
 
     }
 
