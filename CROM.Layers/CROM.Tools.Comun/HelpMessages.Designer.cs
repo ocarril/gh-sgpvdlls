@@ -1645,6 +1645,15 @@ namespace CROM.Tools.Comun {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ¡ N° de documento externo ya existe, {0} - {1}. !.
+        /// </summary>
+        public static string VALIDACIONExisteDocumExterno {
+            get {
+                return ResourceManager.GetString("VALIDACIONExisteDocumExterno", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ¡ Completar los datos principales requeridos para el registro. !.
         /// </summary>
         public static string VALIDACIONGeneral {

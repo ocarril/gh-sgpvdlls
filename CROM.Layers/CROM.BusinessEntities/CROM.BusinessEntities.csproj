@@ -157,6 +157,7 @@
     <Compile Include="Comercial\request\DTOParteDiarioRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegPagoCreditoRequest.cs" />
     <Compile Include="Comercial\request\DTOParteDiarioTurnoRequest.cs" />
+    <Compile Include="Comercial\request\DTOTipoDeCambioRequest.cs" />
     <Compile Include="Comercial\response\BECondicionResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegDetallePrintResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegPagoCreditoResponse.cs" />

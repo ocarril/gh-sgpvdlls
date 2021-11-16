@@ -672,4 +672,7 @@
   <data name="VALIDACIONCajaAutomatica" xml:space="preserve">
     <value>No tiene configurado la apertura de caja de forma automática.</value>
   </data>
+  <data name="VALIDACIONExisteDocumExterno" xml:space="preserve">
+    <value>¡ N° de documento externo ya existe, {0} - {1}. !</value>
+  </data>
 </root>

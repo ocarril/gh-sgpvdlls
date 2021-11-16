@@ -330,7 +330,30 @@ namespace CROM.BusinessEntities.Comercial
                
     }
 
-    
+
+    public class FiltroDocumRegForNumDocumentoExterno : BEBuscadorBaseRequest
+    {
+        public FiltroDocumRegForNumDocumentoExterno()
+        {
+            jqCurrentPage = 1;
+            jqPageSize = 100;
+            jqSortColumn = "fecEmision";
+            jqSortOrder = "DESC";
+            codDocumentoSerie = 0;
+            numDocumentoExterno = string.Empty;
+            codEmpresaRUC = string.Empty;
+        }
+
+        public string codDocumento { get; set; }
+
+        public int codDocumentoSerie { get; set; }
+
+        public string numDocumentoExterno { get; set; }
+
+        public string codEntidad { get; set; }
+
+    }
+
 
     public class BaseFiltroDocumentSerieEmployee : BEBuscadorBaseRequest
     {

@@ -327,15 +327,74 @@ namespace CROM.Tools.Comun
             string strSoloDecima = string.Empty;
             decimal decEnteroD = 0;
             Int64 intEntero = 0;
-            string strDatoNumero1 = pMontoValor.ToString("N2");
+            string strDatoNumero1 = pMontoValor.ToString("0.00");
+
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("documRegPrint.strDatoNumero1: ", strDatoNumero1), "segUsuarioActual", "0");
+
+
             strSoloEntero = strDatoNumero1.Substring(0, strDatoNumero1.IndexOf('.'));
+
+
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("documRegPrint.strSoloEntero: ", strSoloEntero), "segUsuarioActual", "0");
+
+
             strSoloDecima = strDatoNumero1.Substring(strDatoNumero1.IndexOf('.') + 1, 2);
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("documRegPrint.strSoloDecima: ", strSoloDecima), "segUsuarioActual", "0");
+
             decEnteroD = Convert.ToDecimal(strSoloEntero);
             intEntero = Convert.ToInt64(decEnteroD);
 
             string strValorTotalPrecioVentaLetras = Helper.Numero_A_Texto(intEntero) + " CON " +
                                                     strSoloDecima + "/100 " + (string.IsNullOrEmpty(pcodRegMonedaNombre) ?
                                                     string.Empty : pcodRegMonedaNombre.Trim().ToUpper());
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("strValorTotalPrecioVentaLetras: ", strValorTotalPrecioVentaLetras), "segUsuarioActual", "0");
+
+            return strValorTotalPrecioVentaLetras;
+        }
+
+        public static String Numero_A_Texto(string pMontoValor, string pcodRegMonedaNombre)
+        {
+            string strSoloEntero = string.Empty;
+            string strSoloDecima = string.Empty;
+            decimal decEnteroD = 0;
+            Int64 intEntero = 0;
+            string strDatoNumero1 = pMontoValor; //.ToString("0.00");
+
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("documRegPrint.strDatoNumero1: ", strDatoNumero1), "segUsuarioActual", "0");
+
+
+            strSoloEntero = strDatoNumero1.Substring(0, strDatoNumero1.IndexOf('.'));
+
+
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("documRegPrint.strSoloEntero: ", strSoloEntero), "segUsuarioActual", "0");
+
+
+            strSoloDecima = strDatoNumero1.Substring(strDatoNumero1.IndexOf('.') + 1, 2);
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("documRegPrint.strSoloDecima: ", strSoloDecima), "segUsuarioActual", "0");
+
+            decEnteroD = Convert.ToDecimal(strSoloEntero);
+            intEntero = Convert.ToInt64(decEnteroD);
+
+            string strValorTotalPrecioVentaLetras = Helper.Numero_A_Texto(intEntero) + " CON " +
+                                                    strSoloDecima + "/100 " + (string.IsNullOrEmpty(pcodRegMonedaNombre) ?
+                                                    string.Empty : pcodRegMonedaNombre.Trim().ToUpper());
+
+            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
+                string.Concat("strValorTotalPrecioVentaLetras: ", strValorTotalPrecioVentaLetras), "segUsuarioActual", "0");
 
             return strValorTotalPrecioVentaLetras;
         }

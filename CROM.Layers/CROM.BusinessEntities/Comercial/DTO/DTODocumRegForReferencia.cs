@@ -32,4 +32,37 @@ namespace CROM.BusinessEntities.Comercial
         public decimal monPrecioTotal { get; set; }
     }
 
+    public class DTODocumRegForNumDocumentoExterno: BEBasePagedResponse
+    {
+
+        public DTODocumRegForNumDocumentoExterno()
+        {
+            numDocumento = string.Empty;
+            numDocumentoExterno = string.Empty;
+            desMoneda = string.Empty;
+            monPrecioTotal = 0;
+        }
+
+
+        public int codDocumReg { get; set; }
+
+        public string numDocumento { get; set; }
+
+        public string numDocumentoExterno { get; set; }
+
+        public DateTime fecEmision { get; set; }
+
+        public string desMoneda { get; set; }
+
+        public decimal monPrecioTotal { get; set; }
+
+        public string codRegEstado { get; set; }
+
+        public string codRegEstadoNombre { get; set; }
+
+        public string codPersonaEntidad { get; set; }
+        public string nomRazonSocialEntidad { get; set; }
+        public string codDocumentoSerie { get; set; }
+    }
+
 } 
