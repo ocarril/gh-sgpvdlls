@@ -254,8 +254,9 @@
             }
             catch (Exception ex)
             {
+                int indExiste = ex.Message.ToLower().IndexOf("ip address");
                 var returnValor = HelpException.mTraerMensaje(ex, false, this.GetType().Name + '.' + MethodBase.GetCurrentMethod().Name, pLoginUsuario);
-                throw new Exception(returnValor.Message);
+                throw new Exception(string.Concat(returnValor.Message, ". ", indExiste > 0 ? ex.Message : string.Empty));
             }
             return DetectadoEsValido;
 

@@ -157,7 +157,7 @@
     <Compile Include="Comercial\request\DTOParteDiarioRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegPagoCreditoRequest.cs" />
     <Compile Include="Comercial\request\DTOParteDiarioTurnoRequest.cs" />
-    <Compile Include="Comercial\request\DTOTipoDeCambioRequest.cs" />
+    <Compile Include="Comercial\request\DTOTipoCambioRequest.cs" />
     <Compile Include="Comercial\response\BECondicionResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegDetallePrintResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegPagoCreditoResponse.cs" />
@@ -166,6 +166,7 @@
     <Compile Include="Comercial\response\DTOParteDiarioResponse.cs" />
     <Compile Include="Comercial\response\DTOParteDiarioTurnoResponse.cs" />
     <Compile Include="Comercial\response\BEProductoPrecioResponse.cs" />
+    <Compile Include="Comercial\response\DTOTipoCambioResponse.cs" />
     <Compile Include="Maestros\DTO\DTOPersonaPagedResponse.cs" />
     <Compile Include="SUNAT\BESendBillDocumentRequest.cs" />
     <Compile Include="SUNAT\FirmadoResponse.cs" />
