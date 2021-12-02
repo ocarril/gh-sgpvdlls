@@ -675,4 +675,7 @@
   <data name="VALIDACIONExisteDocumExterno" xml:space="preserve">
     <value>¡ N° de documento externo ya existe, {0} - {1}. !</value>
   </data>
+  <data name="VALIDACIONExisteRegistro" xml:space="preserve">
+    <value>¡ Registro seleccionado ya existe. {0}!</value>
+  </data>
 </root>

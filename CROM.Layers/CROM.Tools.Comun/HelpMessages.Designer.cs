@@ -1654,6 +1654,15 @@ namespace CROM.Tools.Comun {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ¡ Registro seleccionado ya existe. {0}!.
+        /// </summary>
+        public static string VALIDACIONExisteRegistro {
+            get {
+                return ResourceManager.GetString("VALIDACIONExisteRegistro", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ¡ Completar los datos principales requeridos para el registro. !.
         /// </summary>
         public static string VALIDACIONGeneral {

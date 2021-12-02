@@ -2,9 +2,9 @@
 
 namespace CROM.BusinessEntities.Temporales.request
 {
-    public class BEBuscaDetalleRequest : BEBuscadorBaseRequest
+    public class BEDocumRegTMPDetalleBuscaRequest : BEBuscadorBaseRequest
     {
-        public BEBuscaDetalleRequest()
+        public BEDocumRegTMPDetalleBuscaRequest()
         {
             keyTokenUser = string.Empty;
             LstcodDocumReg = new List<EntidadId>();

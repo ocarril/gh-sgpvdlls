@@ -375,11 +375,16 @@
     <Compile Include="SUNAT\ubl21\aggregate\SunatRoadTransport.cs" />
     <Compile Include="SUNAT\ubl21\extension\UblExtension.cs" />
     <Compile Include="SUNAT\ubl21\extension\UblExtensions.cs" />
-    <Compile Include="Temporales\BEDocumRegDetalleTMP.cs" />
-    <Compile Include="Temporales\request\BEUpdateDetallecodRegMonedaRequest.cs" />
-    <Compile Include="Temporales\request\BEInsertDetalleRequest.cs" />
-    <Compile Include="Temporales\request\BEBuscaDetalleRequest.cs" />
-    <Compile Include="Temporales\response\BEDocumRegDetalleTMPResponse.cs" />
+    <Compile Include="Temporales\request\BEDocumRegTMPCargoDescuento.cs" />
+    <Compile Include="Temporales\request\BEDocumRegTMPDetalle.cs" />
+    <Compile Include="Temporales\request\BEDocumRegTMPCargoDescuentoBuscaRequest.cs" />
+    <Compile Include="Temporales\request\BEDocumRegTMPDetalleUpdateMonedaRequest.cs" />
+    <Compile Include="Temporales\request\BEDocumRegTMPDetalleInsertRequest.cs" />
+    <Compile Include="Temporales\request\BEDocumRegTMPDetalleBuscaRequest.cs" />
+    <Compile Include="Temporales\request\BEDocumRegTMPPagoCreditoRequest.cs" />
+    <Compile Include="Temporales\response\BEDocumRegTMPCargoDescuentoResponse.cs" />
+    <Compile Include="Temporales\response\BEDocumRegTMPDetalleResponse.cs" />
+    <Compile Include="Temporales\response\BEDocumRegTMPPagoCreditoResponse.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="CROM.BusinessEntities.snk" />

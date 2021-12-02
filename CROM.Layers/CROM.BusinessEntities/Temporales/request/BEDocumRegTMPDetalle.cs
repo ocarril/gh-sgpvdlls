@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Temporales
+namespace CROM.BusinessEntities.Temporales.request
 {
     using Newtonsoft.Json;
     using System;
@@ -11,9 +11,9 @@ namespace CROM.BusinessEntities.Temporales
     /// Descripcion : Capa de Entidades 
     /// Archivo     : [Temporales.DocumRegDetalle.cs]
     /// </summary>
-    public class BEDocumRegDetalleTMP : BEBasePagedResponse
+    public class BEDocumRegTMPDetalle : BEBasePagedResponse
     {
-        public BEDocumRegDetalleTMP()
+        public BEDocumRegTMPDetalle()
         {
 
         }

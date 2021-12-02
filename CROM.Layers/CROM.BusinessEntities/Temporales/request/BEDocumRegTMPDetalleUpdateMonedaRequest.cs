@@ -3,9 +3,9 @@
     using System;
 
 
-    public class BEUpdateDetallecodRegMonedaRequest : BEBaseEntidadItem
+    public class BEDocumRegTMPDetalleUpdateMonedaRequest : BEBaseEntidadItem
     {
-        public BEUpdateDetallecodRegMonedaRequest()
+        public BEDocumRegTMPDetalleUpdateMonedaRequest()
         {
             keyTokenUser = string.Empty;
             codRegMoneda = string.Empty;

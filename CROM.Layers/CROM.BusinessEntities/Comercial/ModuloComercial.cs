@@ -934,6 +934,28 @@ namespace CROM.BusinessEntities.Comercial
     }
 
 
+    public class BaseFiltroDocumRegTMPPagoCreditoPage : BEBuscadorBaseRequest
+    {
+        public BaseFiltroDocumRegTMPPagoCreditoPage()
+        {
+               nomEmpresaRUC = string.Empty;
+        }
+
+        public int codDocumReg { get; set; }
+
+        public string codPersonaEntidad { get; set; }
+
+        public string keyTokenUser { get; set; }
+
+        public int codDocumRegRef { get; set; }
+
+
+
+        [JsonIgnore]
+        public Guid? keyDocumRegPagoCredito { get; set; }
+    }
+
+
     public class FiltroDocumRegSummaryDailyPage : BEBuscadorBaseRequest
     {
         public FiltroDocumRegSummaryDailyPage()

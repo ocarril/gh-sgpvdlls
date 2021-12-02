@@ -11,9 +11,9 @@ namespace CROM.BusinessEntities.Temporales.response
     /// Descripcion : Capa de Entidades 
     /// Archivo     : [Temporales.DocumRegDetalle.cs]
     /// </summary>
-    public class BEDocumRegDetalleTMP : BEBasePagedResponse
+    public class BEDocumRegTMPDetalleResponse : BEBasePagedResponse
     {
-        public BEDocumRegDetalleTMP()
+        public BEDocumRegTMPDetalleResponse()
         {
 
         }

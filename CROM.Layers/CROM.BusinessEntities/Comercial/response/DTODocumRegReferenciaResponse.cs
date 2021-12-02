@@ -56,5 +56,26 @@
         public string refDireccioDePartida { get; set; }
         public string refdesTotalCaja { get; set; }
         public string refdesTotalPeso { get; set; }
+
+        /* DATOS PARA NOTA DE CREDITO */
+        public string refcodRegMonedaNombre { get; set; }
+        public string refcodRegMonedaSimbolo { get; set; }
+        public string refcodDocumentoAbreviatura { get; set; }
+        public string refcodDocumentoNombre { get; set; }
+        public bool refindAplicaDetraccion { get; set; }
+        public decimal refprcDetraccion { get; set; }
+        public decimal refmtoDetraccion { get; set; }
+        public int? refodCondicionVenta { get; set; }
+        public string refodCondicionVentaNombre { get; set; }
+        public DateTime reffecDeVencimiento { get; set; }
+
+        public int refnumCuotas { get; set; }
+        public int refnumDiasGracia             { get; set; }
+        public string refcodRegTipoPlazo           { get; set; }
+        public string refcodRegTipoPlazoNombre      { get; set; }
+        public string refcodPersonaBanco           { get; set; }
+        public string refcodPersonaBancoNombre      { get; set; }
+        public string refcodPersonaAval            { get; set; }
+        public string refcodPersonaAvalNombre      { get; set; }
     }
 }

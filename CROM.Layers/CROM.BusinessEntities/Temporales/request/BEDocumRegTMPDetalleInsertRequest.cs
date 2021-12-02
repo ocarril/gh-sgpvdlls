@@ -1,8 +1,8 @@
 ﻿namespace CROM.BusinessEntities.Temporales.request
 {
-    public class BEInsertDetalleRequest : BEBaseMaestro
+    public class BEDocumRegTMPDetalleInsertRequest : BEBaseMaestro
     {
-        public BEInsertDetalleRequest()
+        public BEDocumRegTMPDetalleInsertRequest()
         {
             keyTokenUser = string.Empty;
         }
