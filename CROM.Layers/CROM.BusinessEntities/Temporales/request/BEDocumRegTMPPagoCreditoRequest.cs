@@ -35,6 +35,12 @@
 		public List<BEDocumRegTMPPagoCreditoRequest> LstDocumRegPagoCredito { get; set; }
 
 		public int numCuotas { get; set; }
+
+        public DateTime fecVencimiento { get; set; }
+
+		public string codRegMoneda { get; set; }
+		public bool indFromEmisionNCR { get; set; }
+
 	}
 
 	public class BEDocumRegTMPPagoCreditoRequest : BEBaseEntidadRequest

@@ -102,21 +102,132 @@
 
         public decimal SUMTotalPagadoCajaMI { get; set; }
 
-        public string codDocumentoDestino { get; set; }
-
-        public string codDocumentoDestinoNombre { get; set; }
-
-        public string numDocumentoDestino { get; set; }
+        public decimal mtoNetoPendientePago { get; set; }
+        
+        #region DATOS DEL DOCUMENTO DE REFERENCIA - ORIGEN
 
         public string codDocumentoOrigen { get; set; }
 
         public string codDocumentoOrigenNombre { get; set; }
-
-        public string numDocumentoOrigen { get; set; }
+        public string desAbreviaturaOrigen { get; set; }
+        public string codTipoDocumentOrigen { get; set; }
+        public string numDocumentoOrigOrigen { get; set; }
 
         public Nullable<DateTime> fecDocumentoOrigen { get; set; }
 
-        public Nullable<decimal> monTipoCambioOrigen { get; set; }
+        public decimal? monTipoCambioOrigen { get; set; }
+
+        public int? codDocumentoSerieOrigen { get; set; }
+
+        public string numDocumentoOrig { get; set; }
+
+        public int? codDocumRegOrigen { get; set; }
+
+
+        public string codRegMonedaSimboloOrigen { get; set; }
+
+        public string codRegMonedaNombreOrigen { get; set; }
+
+        public decimal? monTotalPrecioVTAMNOrigen { get; set; }
+
+        public decimal? monTotalPrecioVTAMEOrigen { get; set; }
+
+        public decimal? mtoNetoPendientePagoOrigen { get; set; }
+
+        public bool indAplicaDetraccionOrigen { get; set; }
+
+        public string numSerieOrigen { get; set; }
+
+        public string numDocumentoOrigen { get; set; }
+
+        public decimal prcDetraccionOrigen { get; set; }
+
+        public decimal mtoDetraccionOrigen { get; set; }
+
+        public int numCuotasOrigen { get; set; }
+
+        public int numDiasGraciaOrigen { get; set; }
+
+        public int? codCondicionVentaOrigen { get; set; }
+
+
+        //public Nullable<DateTime> Ref { get; set; }
+
+        //public string numDocumentoOrig { get; set; }
+
+        //public int? RefcodDocumReg { get; set; }
+
+        //public string RefcodDocumento { get; set; }
+
+        //public string RefnumDocumentoOrig { get; set; }
+
+        //public decimal? RefmonTipoCambioVTA { get; set; }
+
+        //public string ReftipoDocumento { get; set; }
+
+        //public string ReftipoDocumentoNombre { get; set; }
+
+        //public string RefnumSerie { get; set; }
+
+        //public string RefnumDocumento { get; set; }
+
+        //public Nullable<DateTime> ReffecEmision { get; set; }
+
+
+
+        #endregion
+
+        #region DATOS DEL DOCUMENTO DE REFERENCIA - DESTINO
+
+
+        public string codDocumentoDestino { get; set; }
+
+        public string codDocumentoDestinoNombre { get; set; }
+        public string desAbreviaturaDestino { get; set; }
+        public string codTipoDocumentoDestino { get; set; }
+
+        public string numDocumentoOrigDestino { get; set; }
+
+        public string codRegMonedaSimboloDestino { get; set; }
+
+        public string codRegMonedaNombreDestino { get; set; }
+
+        public decimal? monTotalPrecioVTAMNDestino { get; set; }
+
+        public decimal? monTotalPrecioVTAMEDestino { get; set; }
+
+        public decimal? mtoNetoPendientePagoDestino { get; set; }
+
+        public bool indAplicaDetraccionDestino { get; set; }
+
+        public string numSerieDestino { get; set; }
+
+        public string numDocumentoDestino { get; set; }
+
+        public decimal prcDetraccionDestino { get; set; }
+
+        public decimal mtoDetraccionDestino { get; set; }
+
+        public int numCuotasDestino { get; set; }
+
+        public int numDiasGraciaDestino { get; set; }
+
+        public int? codCondicionVentaDestino { get; set; }
+
+        #endregion
+
+
+
+        //public string codDocumentoDestino { get; set; }
+        //public string codDocumentoDestinoNombre { get; set; }
+        //public string numDocumentoDestino { get; set; }
+        //public string codDocumentoOrigen { get; set; }
+        //public string codDocumentoOrigenNombre { get; set; }
+        //public string numDocumentoOrigen { get; set; }
+        //public Nullable<DateTime> fecDocumentoOrigen { get; set; }
+        //public Nullable<decimal> monTipoCambioOrigen { get; set; }
+
+
 
 
         public string numOrdenDeCompra { get; set; }
@@ -326,10 +437,6 @@
         public int codDocumentoEstado { get; set; }
 
         public string codRegDocumento { get; set; }
-
-        public int? codDocumentoSerieOrigen { get; set; }
-
-        public int? codDocumRegOrigen { get; set; }
 
         public decimal sumTotValorIGV { get; set; }
 

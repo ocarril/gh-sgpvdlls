@@ -18,6 +18,8 @@
 
         public int refcodDocumReg { get; set; }
 
+        public string refcodPersonaEntidad { get; set; }
+
         public DateTime reffecEmision { get; set; }
 
         public string refcodDocumento { get; set; }

@@ -1,5 +1,6 @@
 ﻿namespace CROM.BusinessEntities.Comercial.request
 {
+    using Newtonsoft.Json;
     using System;
     using System.Collections.Generic;
 
@@ -116,4 +117,40 @@
 
 	}
 
+	public class DTODocumRegCreditoNCR_13Request : BEBaseEntidadRequest
+	{
+		public DTODocumRegCreditoNCR_13Request()
+		{
+			
+
+		}
+
+		[JsonIgnore]
+        public string keyTokenUser { get; set; }
+        
+		public int codDocumRegRef { get; set; }
+        
+		public string codPersonaEntidad { get; set; }
+
+
+
+        public int codDocumReg { get; set; }
+
+		public decimal mtoNetoPendientePago { get; set; }
+
+		public int codCondicionFormaPago { get; set; }
+
+		public int numDiasGracia { get; set; }
+
+		public string codRegTipoPlazo { get; set; }
+
+		public string codPersonaBanco { get; set; }
+
+		public string codPersonaAval { get; set; }
+
+		public int numCuotas { get; set; }
+
+        public DateTime fecVencimiento { get; set; }
+
+    }
 }

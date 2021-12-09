@@ -22,6 +22,8 @@ namespace CROM.BusinessEntities.Comercial.DTO
         public string CodigoArguComprobante { get; set; }
         public string Descripcion { get; set; }
         public string Abreviatura { get; set; }
+        public string codRegDocumentoSunat { get; set; }
+
         public string CodigoArguCentroCosto { get; set; }
         public string CodigoComprobanteAsos { get; set; }
         public string CodigoArguDestinoComp { get; set; }

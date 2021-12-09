@@ -34,5 +34,7 @@ namespace CROM.BusinessEntities.Comercial.DTO
 
         public string CodigoPuntoVentaNombre { get; set; }
 
+        public string Abreviatura { get; set; }
+        public string codRegDocumentoSunat { get; set; }
     }
 }

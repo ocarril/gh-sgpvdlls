@@ -27,9 +27,9 @@
             DRC_customizationId = string.Empty;
             DRC_Firma = string.Empty;
             codMotivoNCRNombre = string.Empty;
-            RefnumDocumento = string.Empty;
-            RefnumSerie = string.Empty;
-            RefnumDocumentoOrig = string.Empty;
+            //RefnumDocumento = string.Empty;
+            //RefnumSerie = string.Empty;
+            //RefnumDocumentoOrig = string.Empty;
             DRC_rznSocialUsuario = string.Empty;
             DRC_tipDocUsuario = string.Empty;
             DRC_tipMoneda = string.Empty;
@@ -172,25 +172,121 @@
 
         public List<DTODocumRegPagoCreditoResponse> LstDocumRegPagoCredito { get; set; }
 
-        #region DATOS DEL DOCUMENTO DE REFERENCIA
+        #region DATOS DEL DOCUMENTO DE REFERENCIA - ORIGEN
 
-        public int? RefcodDocumReg { get; set; }
+        public string codDocumentoOrigen { get; set; }
 
-        public string RefcodDocumento { get; set; }
+        public string codDocumentoOrigenNombre { get; set; }
+        public string desAbreviaturaOrigen { get; set; }
+        public string codTipoDocumentOrigen { get; set; }
+        public string codTipoDocumentoNombreOrigen { get; set; }
+        public string numDocumentoOrigOrigen { get; set; }
 
-        public string RefnumDocumentoOrig { get; set; }
+        public Nullable<DateTime> fecDocumentoOrigen { get; set; }
 
-        public decimal? RefmonTipoCambioVTA { get; set; }
+        public decimal? monTipoCambioOrigen { get; set; }
 
-        public string ReftipoDocumento { get; set; }
+        public int? codDocumentoSerieOrigen { get; set; }
 
-        public string ReftipoDocumentoNombre { get; set; }
+        public string numDocumentoOrig { get; set; }
 
-        public string RefnumSerie { get; set; }
+        public int? codDocumRegOrigen { get; set; }
 
-        public string RefnumDocumento { get; set; }
 
-        public Nullable<DateTime> ReffecEmision { get; set; }
+        public string codRegMonedaSimboloOrigen { get; set; }
+
+        public string codRegMonedaNombreOrigen { get; set; }
+
+        public decimal? monTotalPrecioVTAMNOrigen { get; set; }
+
+        public decimal? monTotalPrecioVTAMEOrigen { get; set; }
+
+        public decimal? mtoNetoPendientePagoOrigen { get; set; }
+
+        public bool indAplicaDetraccionOrigen { get; set; }
+
+        public string numSerieOrigen { get; set; }
+
+        public string numDocumentoOrigen { get; set; }
+
+        public decimal prcDetraccionOrigen { get; set; }
+
+        public decimal mtoDetraccionOrigen { get; set; }
+
+        public int numCuotasOrigen { get; set; }
+
+        public int numDiasGraciaOrigen { get; set; }
+
+        public int? codCondicionVentaOrigen { get; set; }
+       
+
+        //public Nullable<DateTime> Ref { get; set; }
+
+        //public string numDocumentoOrig { get; set; }
+
+        //public int? RefcodDocumReg { get; set; }
+
+        //public string RefcodDocumento { get; set; }
+
+        //public string RefnumDocumentoOrig { get; set; }
+
+        //public decimal? RefmonTipoCambioVTA { get; set; }
+
+        //public string ReftipoDocumento { get; set; }
+
+        //public string ReftipoDocumentoNombre { get; set; }
+
+        //public string RefnumSerie { get; set; }
+
+        //public string RefnumDocumento { get; set; }
+
+        //public Nullable<DateTime> ReffecEmision { get; set; }
+
+
+
+        #endregion
+
+        #region DATOS DEL DOCUMENTO DE REFERENCIA - DESTINO
+
+
+        public string codDocumentoDestino { get; set; }
+
+        public string codDocumentoDestinoNombre { get; set; }
+        public string desAbreviaturaDestino { get; set; }
+        public string codTipoDocumentoDestino { get; set; }
+
+        public string numDocumentoOrigDestino { get; set; }
+
+        public string codRegMonedaSimboloDestino { get; set; }
+
+        public string codRegMonedaNombreDestino { get; set; }
+
+        public decimal? monTotalPrecioVTAMNDestino { get; set; }
+
+        public decimal? monTotalPrecioVTAMEDestino { get; set; }
+
+        public decimal? mtoNetoPendientePagoDestino { get; set; }
+
+        public bool indAplicaDetraccionDestino { get; set; }
+
+        public string numSerieDestino { get; set; }
+
+        public string numDocumentoDestino { get; set; }
+
+        public decimal prcDetraccionDestino { get; set; }
+
+        public decimal mtoDetraccionDestino { get; set; }
+
+        public int numCuotasDestino { get; set; }
+
+        public int numDiasGraciaDestino { get; set; }
+
+        public int? codCondicionVentaDestino { get; set; }
+
+        #endregion
+
+        #region DATOS DE NOTA DE CREDITO - DEBITO
+
 
         public int? codMotivoNCR { get; set; }
 
@@ -205,14 +301,6 @@
         public string codMotivoNCRNombre { get; set; }
 
         public string codMotivoNDBNombre { get; set; }
-
-        public string numDocumentoOrig { get; set; }
-
-        public string codDocumentoDestino { get; set; }
-
-        public string codDocumentoDestinoNombre { get; set; }
-
-        public string numDocumentoDestino { get; set; }
 
         #endregion
 
@@ -234,15 +322,6 @@
 
         public string codCondicionVentaNombre { get; set; }
 
-        public string codDocumentoOrigen { get; set; }
-
-        public string codDocumentoOrigenNombre { get; set; }
-
-        public string numDocumentoOrigen { get; set; }
-
-        public Nullable<DateTime> fecDocumentoOrigen { get; set; }
-
-        public decimal? monTipoCambioOrigen { get; set; }
 
         public string numGuiaDeSalida { get; set; }
 
@@ -473,5 +552,7 @@
 
         public string DDB_NombreArchivo { get; set; }
         public string DDB_NombreArchivoTicket { get; set; }
+
+        public int numTotalCuotas { get; set; }
     }
 }
