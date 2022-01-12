@@ -91,5 +91,8 @@ namespace CROM.BusinessEntities.Temporales.request
         public string gloObs { get; set; }
 
 
+        public bool indOperacionGratuita { get; set; }
+
+        public int codTipoAfectacionIGV { get; set; }
     }
 } 

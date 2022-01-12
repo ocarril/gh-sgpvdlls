@@ -126,6 +126,11 @@
         public string segMaquinaEdita { get; set; }
 
 
+
+        public bool indOperacionGratuita { get; set; }
+        public int codTipoAfectacionIGV { get; set; }
+        public string codTipoAfectacionIGVNombre { get; set; }
+
         #region ATRIBUTOS ADICIONALES
 
 

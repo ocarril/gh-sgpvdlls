@@ -82,6 +82,13 @@
         public decimal mtoValorBrutoItem { get; set; }
         public decimal mtoValorDsctoItem { get; set; }
 
+
+        /// <summary>
+        /// Total item por operaciones GRATUITAS
+        /// </summary>
+        public decimal mtoValorReferenciaItem { get; set; }
+
+
         #endregion
     }
 }

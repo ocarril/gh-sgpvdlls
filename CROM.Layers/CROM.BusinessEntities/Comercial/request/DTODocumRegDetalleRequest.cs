@@ -101,6 +101,12 @@
         public decimal mtoValorVentaItem { get; set; }
 
 
+        /// <summary>
+        /// Total item por operaciones GRATUITAS
+        /// </summary>
+        public decimal mtoValorReferenciaItem { get; set; }
+
+
         public string codTriIGV { get; set; }
         public string nomTributoIgvItem { get; set; }
         public string codTipTributoIgvItem { get; set; }
@@ -178,6 +184,9 @@
 
         public bool indGravadoIGV { get; set; }
 
+
+        public bool indOperacionGratuita { get; set; }
+        public int codTipoAfectacionIGV { get; set; }
 
     }
 }

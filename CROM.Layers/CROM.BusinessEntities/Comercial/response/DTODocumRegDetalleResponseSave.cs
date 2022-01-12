@@ -91,6 +91,12 @@
 
         public decimal mtoValorVentaItem { get; set; }
 
+        /// <summary>
+        /// Total item por operaciones GRATUITAS
+        /// </summary>
+        public decimal mtoValorReferenciaItem { get; set; }
+
+
         public decimal porIgvItem { get; set; }
 
         public int? codTipoTributoISC { get; set; }
@@ -138,6 +144,9 @@
 
         public bool indEsGravado { get; set; }
 
+        public bool indOperacionGratuita { get; set; }
+
+        public int codTipoAfectacionIGV { get; set; }
 
         //public string codRegUnidadMedNombre { get; set; }
         //public string codRegDestinoDocum { get; set; }

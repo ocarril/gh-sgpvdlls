@@ -158,6 +158,7 @@
         public decimal? monTipoCambioCMP { get; set; }
 
 
+        public decimal DRC_sumTotValorReferencia { get; set; }
 
 
         #endregion
