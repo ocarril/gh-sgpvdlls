@@ -117,6 +117,16 @@ namespace CROM.BusinessEntities.Almacen.response
         public decimal PorcenComisionMax { get; set; }
 
         public int codProductoPrecio { get; set; }
+
+
+
+        public byte indTipoCalculoAfectacion { get; set; }
+
+        public bool indIncluyeIGV { get; set; }
+
+        public bool indICBPER { get; set; }
+
+
     }
 
 }

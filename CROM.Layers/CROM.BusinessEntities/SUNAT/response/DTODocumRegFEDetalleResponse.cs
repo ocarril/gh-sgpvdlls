@@ -99,6 +99,12 @@
         /// </summary>
         public decimal mtoValorReferenciaItem { get; set; }
         #endregion
+
+        public bool indOperacionGratuita { get; set; }
+        /// <summary>
+        /// Id de tipo de Afectacon al IGV, relacionado a la tabla [Sunat].[TS07TipoAfectacionIGV]
+        /// </summary>
+        public int? codTipoAfectacionIGV { get; set; }
     }
 
 }

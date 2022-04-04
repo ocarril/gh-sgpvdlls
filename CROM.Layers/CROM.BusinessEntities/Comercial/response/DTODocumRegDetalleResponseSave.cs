@@ -145,8 +145,10 @@
         public bool indEsGravado { get; set; }
 
         public bool indOperacionGratuita { get; set; }
-
-        public int codTipoAfectacionIGV { get; set; }
+        /// <summary>
+        /// Id de tipo de Afectacon al IGV, relacionado a la tabla [Sunat].[TS07TipoAfectacionIGV]
+        /// </summary>
+        public int? codTipoAfectacionIGV { get; set; }
 
         //public string codRegUnidadMedNombre { get; set; }
         //public string codRegDestinoDocum { get; set; }
