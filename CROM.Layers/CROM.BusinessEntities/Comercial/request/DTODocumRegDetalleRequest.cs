@@ -192,5 +192,32 @@
         /// </summary>
         public int? codTipoAfectacionIGV { get; set; }
 
+
+
+
+        /// <summary>
+        /// FLAG TRUE/FALSE si tiene Impuesto a las bolsas plasticas
+        /// </summary>
+        public bool indImpuestoICBPER { get; set; }
+        /// <summary>
+        /// codImpuestoICBPER desde la tabla [Sunat].[TS05TipoTributoICBPER]
+        /// </summary>
+        public int? codImpuestoICBPER { get; set; }
+        /// <summary>
+        /// Impuesto o monto por cada bolsa ICBPER
+        /// </summary>
+        public decimal? prcImpuestoICBPER { get; set; }
+        /// <summary>
+        /// Monto calculado por la Cantidad de bolsas ICBPER
+        /// </summary>
+        public decimal? mtoImpuestoICBPER { get; set; }
+
+
+
+        /// <summary>
+        /// 1= GRAVADO, 2=EXONERADO, 3=INAFECTO
+        /// </summary>
+        public Int16 indTipoCalculoIGV { get; set; }
+
     }
 }

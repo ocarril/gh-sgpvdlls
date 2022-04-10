@@ -211,6 +211,11 @@
         /// </summary>
         public bool indImpuestoICBPER { get; set; }
         /// <summary>
+        /// FLAG TRUE/FALSE si tiene Impuesto a las bolsas plasticas
+        /// </summary>
+        public bool indImpuestoICBPEROrig { get; set; }
+
+        /// <summary>
         /// codImpuestoICBPER desde la tabla [Sunat].[TS05TipoTributoICBPER]
         /// </summary>
         public int? codImpuestoICBPER { get; set; }

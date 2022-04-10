@@ -259,6 +259,8 @@ namespace CROM.BusinessEntities.Comercial
 
         public string codPersonaEntidad { get; set; }
 
+        public string codRegMoneda { get; set; }
+
         [JsonIgnore]
         public string fecInicio { get; set; }
 

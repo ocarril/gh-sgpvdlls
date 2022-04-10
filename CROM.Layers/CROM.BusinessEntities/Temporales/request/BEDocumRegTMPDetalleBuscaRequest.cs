@@ -20,5 +20,7 @@ namespace CROM.BusinessEntities.Temporales.request
         public List<EntidadId> LstcodDocumReg { get; set; }
 
         public string keyDocumRegDetalle { get; set; }
+
+        public string codRegMoneda { get; set; }
     }
 }

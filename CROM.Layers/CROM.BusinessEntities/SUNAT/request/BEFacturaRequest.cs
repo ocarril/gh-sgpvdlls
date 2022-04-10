@@ -106,6 +106,7 @@
 
         public string codRegMonedaNombre { get; set; }
 
+        public decimal sumTotImpuestoICBPER { get; set; }
 
         #region DATOS DEL DOCUMENTO DE REFERENCIA
 

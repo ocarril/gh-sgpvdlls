@@ -71,6 +71,12 @@
 
         #region NUEVOS ATRIBUTOS DE TRIBUTOS POR SFS 1.3.3
 
+        /// <summary>
+        /// FLAG TRUE/FALSE si tiene Impuesto a las bolsas plasticas
+        /// </summary>
+        public bool indImpuestoICBPER { get; set; }
+
+
         public string codTriIcbper { get; set; }
 
         public decimal mtoTriIcbperItem { get; set; }
@@ -106,6 +112,13 @@
         public decimal mtoValorDsctoItem { get; set; }
 
         public Int16 cntDecimales { get; set; }
+
+
+
+        public bool indOperacionGratuita { get; set; }
+
+        public bool indGravadoIGV { get; set; }
+
 
     }
 }

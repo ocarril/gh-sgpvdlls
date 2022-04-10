@@ -84,7 +84,6 @@ namespace CROM.BusinessEntities.Temporales.request
 
         public string codRegDestinoDocum { get; set; }
 
-        public bool indEsGravado { get; set; }
 
         public decimal prcImpuestoIGV { get; set; }
 

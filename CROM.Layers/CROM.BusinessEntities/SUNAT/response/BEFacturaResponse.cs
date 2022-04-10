@@ -272,6 +272,9 @@
         public string nomDocumento { get; set; }
 
 
+        public decimal sumTotImpuestoICBPER { get; set; }
+
+
         #region PROPIEDADES POR DETRACCIONES
 
         public bool indAplicaDetraccion { get; set; }
