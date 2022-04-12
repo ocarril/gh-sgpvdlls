@@ -161,6 +161,8 @@
         public decimal DRC_sumTotValorReferencia { get; set; }
 
 
+        public decimal sumTotImpuestoICBPER { get; set; }
+
         #endregion
 
         public string gloObservaciones { get; set; }
