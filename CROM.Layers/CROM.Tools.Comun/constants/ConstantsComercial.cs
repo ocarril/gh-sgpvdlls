@@ -76,6 +76,52 @@ namespace CROM.Tools.Comun.constants
         public const string COMERCIAL_Path_Internas = "Internas";
 
 
+        public const string DOCUMENTO_ESTADO_EMITIDA = "ESTLC001";
+        public const string DOCUMENTO_ESTADO_SUNAT_ANULADA = "ESTLC002";
+        public const string DOCUMENTO_ESTADO_PROTESTADA = "ESTLC003";
+        public const string DOCUMENTO_ESTADO_CANCELADA = "ESTLC004";
+        public const string DOCUMENTO_ESTADO_PENDIENTE = "ESTLC005";
+        public const string DOCUMENTO_ESTADO_CERRADO = "ESTLC006";
+        public const string DOCUMENTO_ESTADO_NACIONALIZADO = "ESTLC007";
+        public const string DOCUMENTO_ESTADO_APROBADO = "ESTLC008";
+        public const string DOCUMENTO_ESTADO_POR_PAGAR = "ESTLC009";
+        public const string DOCUMENTO_ESTADO_ARCHIVADO = "ESTLC010";
+        public const string DOCUMENTO_ESTADO_REFERENCIADO = "ESTLC011";
+        public const string DOCUMENTO_ESTADO_PROCESADO = "ESTLC012";
+        public const string DOCUMENTO_ESTADO_EN_PROCESO_SUNAT = "ESTLC013";
+        public const string DOCUMENTO_ESTADO_SUNAT_ACEPTADA = "ESTLC014";
+        public const string DOCUMENTO_ESTADO_RECEPCIONADO = "ESTLC015";
+        public const string DOCUMENTO_ESTADO_SUNAT_SOLIC_BAJA = "ESTLC016";
+        public const string DOCUMENTO_ESTADO_SUNAT_RECHAZADO_ANL = "ESTLC017";
+        public const string DOCUMENTO_ESTADO_SUNAT_ACEPT_OBSERVADA = "ESTLC018";
+        public const string DOCUMENTO_ESTADO_ANULADO = "ESTLC019";
+        public const string DOCUMENTO_ESTADO_PAGADA_CANCELADA = "ESTLC020";
+
+
+        public static Dictionary<string, string> dctEstadosDocumentos = new Dictionary<string, string>()
+        {
+            {"ESTLC001","EMITIDA"},
+            {"ESTLC002","SUNAT-ANULADA"},
+            {"ESTLC003","PROTESTADA"},
+            {"ESTLC004","CANCELADA"},
+            {"ESTLC005","PENDIENTE"},
+            {"ESTLC006","CERRADO"},
+            {"ESTLC007","NACIONALIZADO"},
+            {"ESTLC008","APROBADO"},
+            {"ESTLC009","POR PAGAR"},
+            {"ESTLC010","ARCHIVADO"},
+            {"ESTLC011","REFERENCIADO"},
+            {"ESTLC012","PROCESADO"},
+            {"ESTLC013","EN-PROCESO SUNAT"},
+            {"ESTLC014","SUNAT-ACEPTADA"},
+            {"ESTLC015","RECEPCIONADO"},
+            {"ESTLC016","SUNAT-SOLIC-BAJA"},
+            {"ESTLC017","SUNAT-RECHAZADO-ANL"},
+            {"ESTLC018","SUNAT-ACEPT-OBSERVADA"},
+            {"ESTLC019","ANULADO"},
+            {"ESTLC020","PAGADA-CANCELADA" }
+        };
+
         public static Dictionary<string, string> ConsultaWS_estadoCp = new Dictionary<string, string>()
         {
           { "0",  "NO EXISTE. (COMPROBANTE NO INFORMADO)" },
@@ -105,7 +151,6 @@ namespace CROM.Tools.Comun.constants
           { "20",  "NO HALLADO" }
         };
 
-
         public static Dictionary<string, string> EstadoDelItemResumenDiario = new Dictionary<string, string>()
         {
           { "1",  "ADICIONAR" },
@@ -113,8 +158,6 @@ namespace CROM.Tools.Comun.constants
           { "3",  "ANULADO" },
           { "4",  "ANULADO EN EL DÍA (anulado antes de informar comprobante)" }
         };
- 
- 
- 
+
     }
 }

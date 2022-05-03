@@ -149,6 +149,7 @@
     <Compile Include="Asistencia\BESysReporte.cs" />
     <Compile Include="Asistencia\BETimeEmpleado.cs" />
     <Compile Include="Asistencia\BETimeMarcacion.cs" />
+    <Compile Include="Comercial\request\BEDocumentoRequest.cs" />
     <Compile Include="Comercial\request\BEProductoPrecioRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegEstadoRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegImpuestoRequest.cs" />
