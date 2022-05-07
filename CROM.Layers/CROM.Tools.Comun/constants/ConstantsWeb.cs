@@ -305,6 +305,7 @@
           { 3066,  "Pendiente de baja: [ {0} ], creado satisfactoriamente."},
           { 3067,  "Aun no esta habilitado para emitir Guías de Remisión Electrónica. A partir de: [ {0} ]"},
           { 3068,  "Archivo generado y enviado a la SUNAT con exito. CDR: [ {0} ]"},
+          { 3069,  "Se archiva documento, sin uso de referencia: [ {0} ]"},
         };
 
 
