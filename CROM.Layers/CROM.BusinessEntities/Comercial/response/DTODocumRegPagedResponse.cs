@@ -272,6 +272,10 @@ namespace CROM.BusinessEntities.Comercial.response
         public string fecPagadoCancelado { get; set; }
 
         public decimal sumTotImpuestoICBPER { get; set; }
+
+        public int? codCondicionCompra { get; set; }
+
+        public int? codCondicionVenta { get; set; }
     }
 
 }
