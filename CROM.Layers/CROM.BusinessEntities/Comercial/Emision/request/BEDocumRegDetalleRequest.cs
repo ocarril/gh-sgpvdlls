@@ -1,12 +1,12 @@
-﻿namespace CROM.BusinessEntities.Comercial.request
+﻿namespace CROM.BusinessEntities.Comercial.emision.request
 {
     using System;
 
 
-    public class DTODocumRegDetalleRequest: BEBaseEntidadRequest
+    public class BEDocumRegDetalleRequest: BEBaseEntidadRequest
     {
 
-        public DTODocumRegDetalleRequest()
+        public BEDocumRegDetalleRequest()
         {
             codUnidadMedida = string.Empty;
             codProductoSUNAT = string.Empty;

@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
     using System;
     using System.Collections.Generic;
@@ -11,10 +11,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Descripcion : Capa de Entidades 
     /// Archivo     : [GestionComercial.DTODocumReg.cs]
     /// </summary>
-    public class DTODocumRegBaseRequest : BEBaseEntidadItem
+    public class BEDocumRegBaseRequest : BEBaseEntidadItem
     {
 
-        public DTODocumRegBaseRequest()
+        public BEDocumRegBaseRequest()
         {
             numDocUsuario = string.Empty;
             numDocumento = string.Empty;
@@ -25,8 +25,9 @@ namespace CROM.BusinessEntities.Comercial.request
             desDomicilioUsuario = string.Empty;
             codUbigeoNombre = string.Empty;
 
-            lstDetalle = new List<DTODocumRegDetalleRequest>();
-            lstImpuestos = new List<DTODocumRegImpuestoRequest>();
+            lstDetalle = new List<BEDocumRegDetalleRequest>();
+            lstImpuestos = new List<BEDocumRegImpuestoRequest>();
+            lstCargoDescuentos = new List<BEDocumRegCargoDescuentoRequest>();
         }
 
         public int codDocumReg { get; set; }
@@ -138,9 +139,11 @@ namespace CROM.BusinessEntities.Comercial.request
         public string desNota02 { get; set; }
 
 
-        public List<DTODocumRegDetalleRequest> lstDetalle { get; set; }
+        public List<BEDocumRegDetalleRequest> lstDetalle { get; set; }
 
-        public List<DTODocumRegImpuestoRequest> lstImpuestos { get; set; }
+        public List<BEDocumRegImpuestoRequest> lstImpuestos { get; set; }
+
+        public List<BEDocumRegCargoDescuentoRequest> lstCargoDescuentos { get; set; }
 
     }
 

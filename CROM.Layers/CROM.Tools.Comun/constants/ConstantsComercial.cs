@@ -53,6 +53,9 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_NIVEL_GLOBAL = "Global";
         public const string SUNAT_NIVEL_ITEM = "Item";
 
+        public const string SUNAT_TIPO_VARIABLE_CARGO = "CARGO";
+        public const string SUNAT_TIPO_VARIABLE_DSCTO = "DESCUEN";
+
         public const int COMERCIAL_VENTA_CONTADO = 1;
         public const int COMERCIAL_VENTA_CREDITO = 2;
         public const int COMERCIAL_COMPRA_CONTADO = 3;

@@ -1,5 +1,6 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
+
     using System;
     using System.Collections.Generic;
 
@@ -11,10 +12,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Archivo     : [GestionComercial.DTODocumRegNCRRequest.cs]
     /// Documento   : GUIA DE REMISION
     /// </summary>
-    public class DTODocumRegGUIAREMRequest : DTODocumRegBaseRequest
+    public class BEDocumRegGUIAREMRequest : BEDocumRegBaseRequest
     {
 
-        public DTODocumRegGUIAREMRequest()
+        public BEDocumRegGUIAREMRequest()
         {
 
             numDocumentoOrigen = string.Empty;

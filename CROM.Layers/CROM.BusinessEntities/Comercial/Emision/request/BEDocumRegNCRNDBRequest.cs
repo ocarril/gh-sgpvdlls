@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
     using System;
     using System.Collections.Generic;
@@ -11,10 +11,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Archivo     : [GestionComercial.DTODocumRegNCRRequest.cs]
     /// Documento   : NOTA DE CRÉDITO
     /// </summary>
-    public class DTODocumRegNCRNDBRequest : DTODocumRegBaseRequest
+    public class BEDocumRegNCRNDBRequest : BEDocumRegBaseRequest
     {
 
-        public DTODocumRegNCRNDBRequest()
+        public BEDocumRegNCRNDBRequest()
         {
 
             numDocumentoOrigen = string.Empty;
