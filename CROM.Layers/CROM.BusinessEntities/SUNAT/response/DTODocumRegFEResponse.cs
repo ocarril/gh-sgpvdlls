@@ -27,9 +27,7 @@
             DRC_customizationId = string.Empty;
             DRC_Firma = string.Empty;
             codMotivoNCRNombre = string.Empty;
-            //RefnumDocumento = string.Empty;
-            //RefnumSerie = string.Empty;
-            //RefnumDocumentoOrig = string.Empty;
+
             DRC_rznSocialUsuario = string.Empty;
             DRC_tipDocUsuario = string.Empty;
             DRC_tipMoneda = string.Empty;
@@ -56,9 +54,26 @@
             pLogoEmpresa = string.Empty;
             codRegUnidadMedidaGlobal = string.Empty;
             desMotivoGuiaOtro = string.Empty;
+
+            sumOperacionGratuita =0u;
+            prcDescuentoGlobal = 0u;
+            sumTotalDescuentoGlobal = 0u;
+            sumTotalFISE = 0u;
+            sumTotalRC_Propinas = 0u;
+            sumTotalCargosGlobales = 0u;
+            sumTotalPercepcion = 0u;
+
             LstDocumRegDetalle = new List<DTODocumRegFEDetalleResponse>();
             LstDocumRegPagoCredito = new List<DTODocumRegPagoCreditoResponse>();
+            LstDocumRegCargoDescuento = new List<DTODocumRegCargoDescuentoResponse>();
+
         }
+
+        public List<DTODocumRegFEDetalleResponse> LstDocumRegDetalle { get; set; }
+
+        public List<DTODocumRegPagoCreditoResponse> LstDocumRegPagoCredito { get; set; }
+
+        public List<DTODocumRegCargoDescuentoResponse> LstDocumRegCargoDescuento { get; set; }
 
         public int codDocumRegSunat { get; set; }
 
@@ -132,7 +147,6 @@
 
         #endregion
 
-
         #region DATOS DE VALORES MONETARIOS/IMPUESTOS DEL DOCUMENTO
 
         public decimal DRC_sumTotBruto { get; set; }
@@ -158,10 +172,26 @@
         public decimal? monTipoCambioCMP { get; set; }
 
 
-        public decimal DRC_sumTotValorReferencia { get; set; }
-
-
         public decimal sumTotImpuestoICBPER { get; set; }
+
+
+        #region CARGOS-DESXUENTOS GLOBALES - VALORES CALCULADOS
+
+        public decimal sumOperacionGratuita { get; set; }  // es igual DRC_sumTotValorReferencia
+
+        public decimal prcDescuentoGlobal { get; set; }
+
+        public decimal sumTotalDescuentoGlobal { get; set; }
+
+        public decimal sumTotalFISE { get; set; }
+
+        public decimal sumTotalRC_Propinas { get; set; }
+
+        public decimal sumTotalCargosGlobales { get; set; }
+
+        public decimal sumTotalPercepcion { get; set; }
+
+        #endregion
 
         #endregion
 
@@ -171,9 +201,6 @@
 
         public int codCondicionVenta { get; set; }
 
-        public List<DTODocumRegFEDetalleResponse> LstDocumRegDetalle { get; set; }
-
-        public List<DTODocumRegPagoCreditoResponse> LstDocumRegPagoCredito { get; set; }
 
         #region DATOS DEL DOCUMENTO DE REFERENCIA - ORIGEN
 

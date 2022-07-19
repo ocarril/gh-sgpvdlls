@@ -179,12 +179,12 @@
         /// 1= GRAVADO, 2=EXONERADO, 3=INAFECTO
         /// </summary>
         public Int16 indTipoCalculoIGV { get; set; }
+        public string codRegDestinoDocum { get; set; }
+        public string codDocumento { get; set; }
 
         //public string codRegUnidadMedNombre { get; set; }
-        //public string codRegDestinoDocum { get; set; }
         //public decimal ctdUnidadItemPend { get; set; }
         //public string codPuntoVenta { get; set; }
-        //public string codDocumento { get; set; }
         //public string numDocumento { get; set; }
         //public bool indVerificarStock { get; set; }
         //public bool indEsPerecible { get; set; }

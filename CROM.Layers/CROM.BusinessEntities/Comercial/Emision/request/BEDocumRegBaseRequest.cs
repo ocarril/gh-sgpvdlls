@@ -30,6 +30,9 @@ namespace CROM.BusinessEntities.Comercial.emision.request
             lstCargoDescuentos = new List<BEDocumRegCargoDescuentoRequest>();
         }
 
+        #region DATOS DEL DOCUMENTO
+
+
         public int codDocumReg { get; set; }
 
         public string numDocumento { get; set; }
@@ -48,6 +51,13 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public int codEmpleado { get; set; }
 
+        public int? codCondicionVenta { get; set; }
+
+        public int? codCondicionCompra { get; set; }
+
+        public string codRegMoneda { get; set; }
+
+        #endregion
 
         #region DATOS DEL CLIENTE-USUARIO
 
@@ -73,12 +83,7 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         #endregion
 
-
-        public int? codCondicionVenta { get; set; }
-
-        public int? codCondicionCompra { get; set; }
-
-        public string codRegMoneda { get; set; }
+        #region DATOS DE MONTOS DEL DOCUMENTO
 
         public decimal monTipoCambioVTA { get; set; }
 
@@ -106,10 +111,19 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public decimal sumTotValVentaGravada { get; set; }
 
+        public decimal prcDescuentoGlobal { get; set; }
 
-        /**
-         * ATRIBUTOS ADICIONALES
-         **/
+        public decimal sumDescuentoGlobal { get; set; }
+
+        public decimal sumTotImpuestoICBPER { get; set; }
+
+        public decimal sumOperacionGratuita { get; set; }   // es igual DRC_sumTotValorReferencia
+
+        public decimal mtoNetoPendientePago { get; set; }
+
+        #endregion
+
+        #region DATOS ATRIBUTOS ADICIONALES (OTRA TABLA)
 
         public string codEmpleadoPlanilla { get; set; }
 
@@ -138,6 +152,7 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public string desNota02 { get; set; }
 
+        #endregion
 
         public List<BEDocumRegDetalleRequest> lstDetalle { get; set; }
 

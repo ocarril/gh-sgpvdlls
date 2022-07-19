@@ -162,6 +162,7 @@
     <Compile Include="Comercial\response\BECondicionResponse.cs" />
     <Compile Include="Comercial\Emision\request\BEDocumRegCargoDescuentoRequest.cs" />
     <Compile Include="Comercial\response\BEDocumRegCargoDescuentoResponse.cs" />
+    <Compile Include="Comercial\response\DTODocumRegCargoDescuentoResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegDetallePrintResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegPagoCreditoResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegPrintBase.cs" />
@@ -187,6 +188,7 @@
     <Compile Include="SUNAT\request\BEGenerarApiConsultaTokenRequest.cs" />
     <Compile Include="SUNAT\request\BEGenerarApiConsultaValidDocumentRequest.cs" />
     <Compile Include="SUNAT\request\BESettingsSendSUNATRequest.cs" />
+    <Compile Include="SUNAT\response\BEDocumentoSUNATCargoDescuentoResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATPagoCreditoResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioDetalleResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioPageResponse.cs" />

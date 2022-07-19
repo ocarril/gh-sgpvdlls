@@ -25,11 +25,32 @@ namespace CROM.BusinessEntities.Comercial.response
             desEntidadDireccion = string.Empty;
             numEntidadRUC = string.Empty;
 
+            prcDescuentoGlobal = 0u;
+            sumOperacionGratuita = 0u;
+            sumTotalDescuentoGlobal = 0u;
+            sumTotalFISE = 0u;
+            sumTotalRC_Propinas = 0u;
+            sumTotalCargosGlobales = 0u;
+            sumTotalPercepcion = 0u;
+
+
             listaComprobanteEmisionDetalle = new List<DTODocumRegDetallePrintResponse>();
             listaComprobanteEmisionImpuestos = new List<BEComprobanteEmisionImpuesto>();
             listaComprobanteEmisionDetalleNrosDeSerie = new List<BEComprobanteEmisionDetalleNrosDeSerie>();
             listaDocumentoPagoCredito = new List<BEDocumentoSUNATPagoCreditoResponse>();
+            listaDocumRegCargoDescuento = new List<DTODocumRegCargoDescuentoResponse>();
         }
+
+        public List<DTODocumRegDetallePrintResponse> listaComprobanteEmisionDetalle { get; set; }
+
+        public List<BEComprobanteEmisionImpuesto> listaComprobanteEmisionImpuestos { get; set; }
+
+        public List<BEComprobanteEmisionDetalleNrosDeSerie> listaComprobanteEmisionDetalleNrosDeSerie { get; set; }
+
+        public List<BEDocumentoSUNATPagoCreditoResponse> listaDocumentoPagoCredito { get; set; }
+
+        public List<DTODocumRegCargoDescuentoResponse> listaDocumRegCargoDescuento { get; set; }
+
 
         public int codEmpresa { get; set; }
         public string codEmpresaRUC { get; set; }
@@ -76,9 +97,29 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public decimal? sumOtrosCargos { get; set; }
         public decimal? sumTotalAnticipos { get; set; }
+        public decimal sumTotImpuestoICBPER { get; set; }
         public decimal? sumImpVenta { get; set; }
         public decimal mtoTipoCambioVTA { get; set; }
         public decimal mtoTipoCambioCMP { get; set; }
+
+
+        #region CARGOS-DESXUENTOS GLOBALES - VALORES CALCULADOS
+
+        public decimal sumOperacionGratuita { get; set; }
+
+        public decimal prcDescuentoGlobal { get; set; }
+
+        public decimal sumTotalDescuentoGlobal { get; set; }
+
+        public decimal sumTotalFISE { get; set; }
+
+        public decimal sumTotalRC_Propinas { get; set; }
+
+        public decimal sumTotalCargosGlobales { get; set; }
+
+        public decimal sumTotalPercepcion { get; set; }
+
+        #endregion
 
         #endregion
 
@@ -164,13 +205,6 @@ namespace CROM.BusinessEntities.Comercial.response
         public string codRegTipoDeOperacionNombre { get; set; }
 
 
-        public List<DTODocumRegDetallePrintResponse> listaComprobanteEmisionDetalle { get; set; }
-
-        public List<BEComprobanteEmisionImpuesto> listaComprobanteEmisionImpuestos { get; set; }
-
-        public List<BEComprobanteEmisionDetalleNrosDeSerie> listaComprobanteEmisionDetalleNrosDeSerie { get; set; }
-
-        public List<BEDocumentoSUNATPagoCreditoResponse> listaDocumentoPagoCredito { get; set; }
 
         public string codEmpleadoVendedorTelefono { get; set; }
         public string codEmpleadoVendedorEmail { get; set; }

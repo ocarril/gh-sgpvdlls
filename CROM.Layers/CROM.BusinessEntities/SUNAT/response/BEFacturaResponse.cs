@@ -68,6 +68,12 @@
 
         public decimal sumDescTotal { get; set; }
 
+        public decimal prcDescuentoGlobal { get; set; }
+
+        public decimal sumDescuentoGlobal { get; set; }
+
+        public decimal sumOperacionGratuita { get; set; }
+
         public decimal sumOtrosCargos { get; set; }
 
         public decimal sumTotalAnticipos { get; set; }
@@ -75,6 +81,8 @@
         public decimal sumImpVenta { get; set; }
 
         public decimal sumPrecioVentaExtran { get; set; }
+
+        public decimal sumTotImpuestoICBPER { get; set; }
 
         #endregion
 
@@ -272,7 +280,6 @@
         public string nomDocumento { get; set; }
 
 
-        public decimal sumTotImpuestoICBPER { get; set; }
 
 
         #region PROPIEDADES POR DETRACCIONES

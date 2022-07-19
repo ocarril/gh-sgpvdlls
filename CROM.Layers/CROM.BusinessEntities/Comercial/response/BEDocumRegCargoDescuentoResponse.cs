@@ -39,7 +39,6 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public bool indTipoVariable { get; set; }
 
-        //public string codItemDetalleCargoDescuento { get; set; }
 
         public int codCargoDescuento { get; set; }
 

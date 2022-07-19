@@ -240,5 +240,9 @@
         public Int16 indTipoCalculoIGV { get; set; }
 
         public string indTipoCalculoIGVNombre { get; set; }
+
+
+        public int codDocumentoSerie { get; set; }
+
     }
 }   

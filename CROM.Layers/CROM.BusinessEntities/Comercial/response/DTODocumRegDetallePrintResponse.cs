@@ -31,33 +31,53 @@
             codProductoSUNAT = string.Empty;
             codigoProducto = string.Empty;
             codItemDetalle = string.Empty;
+            mtoIscItem = 0;
+            mtoBaseTriOtroItem = 0;
+            porIscItem = 0;
+            porTriOtroItem = 0;
         }
 
         public int codDocumRegDetalle { get; set; }
 
         public int codDocumReg { get; set; }
+
         public int codEmpresa { get; set; }
+
         public string codRegDestinoDocumento { get; set; }
+
         public string codPuntoDeVenta { get; set; }
+
         public string codDocumento { get; set; }
+
         public string numDocumento { get; set; }
+
         public Nullable<DateTime> fecDeEmision { get; set; }
 
         public string codItemDetalle { get; set; }
+
         public string codDeposito { get; set; }
+
         public int codProducto { get; set; }
+
         public string codigoProducto { get; set; }
+
         public string codProductoSUNAT { get; set; }
+
         public string codRegTipoProducto { get; set; }
+
         public string codRegGarantiaProd { get; set; }
 
 
         public string codRegUnidadMed { get; set; }
+
         public Int16 cntDecimales { get; set; }
+
         public bool indIncluyeIGV { get; set; }
 
         public decimal cntStockPendiente { get; set; }
+
         public decimal cntCantidadItem { get; set; }
+
 
         public decimal mtoUnitDescuento { get; set; }
         public decimal mtoUnitValorCosto { get; set; }
@@ -66,9 +86,15 @@
         public decimal mtoUnitValorDscto { get; set; }
         public decimal mtoUnitValorVenta { get; set; }
         public decimal mtoUnitValorIGV { get; set; }
+        public decimal mtoPrecioVentaUnitario { get; set; }
+
+
         public decimal mtoTotItemValorBruto { get; set; }
         public decimal mtoTotItemValorDscto { get; set; }
         public decimal mtoTotItemValorVenta { get; set; }
+
+        public decimal mtoBaseIgvItem { get; set; }
+        public decimal mtoIgvItem { get; set; }
         public decimal mtoTotItemValorIGV { get; set; }
 
 
@@ -83,6 +109,16 @@
         public decimal? porTriOtroItem { get; set; }
         public decimal? mtoValorReferencialUnitario { get; set; }
         public int? codCargoDescuento { get; set; }
+
+
+
+        public decimal mtoTriIcbperUnidad { get; set; }
+        public decimal mtoTriIcbperItem { get; set; }
+
+        public decimal sumTotTributosItem { get; set; }
+
+        public decimal mtoValorReferenciaItem { get; set; }
+
 
 
         public decimal cntPesoUnitario { get; set; }

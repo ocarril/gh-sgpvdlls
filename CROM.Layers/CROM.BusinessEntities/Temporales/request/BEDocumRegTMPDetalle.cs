@@ -82,7 +82,6 @@ namespace CROM.BusinessEntities.Temporales.request
 
         public string codRegMonedaSelect { get; set; }
 
-        public string codRegDestinoDocum { get; set; }
 
 
         public decimal prcImpuestoIGV { get; set; }
@@ -121,5 +120,9 @@ namespace CROM.BusinessEntities.Temporales.request
         /// 1= GRAVADO, 2=EXONERADO, 3=INAFECTO
         /// </summary>
         public Int16 indTipoCalculoIGV { get; set; }
+
+
+        public int codDocumentoSerie { get; set; }
+        public string codRegDestinoDocum { get; set; }
     }
 } 

@@ -1,10 +1,6 @@
 ﻿namespace CROM.BusinessEntities.SUNAT.request
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
 
     public class BEFacturaDetalleRequest : BEBaseEntidad
@@ -26,7 +22,6 @@
             nomTributoIscItem = string.Empty;
             tipAfeIGV = string.Empty;
             tipSisISC = string.Empty;
-
             codTriIcbper = string.Empty;
             nomTributoIcbperItem = string.Empty;
             codTipTributoIcbperItem = string.Empty;
@@ -93,8 +88,11 @@
 
         public decimal mtoPrecioVentaUnitario { get; set; }
         public decimal mtoValorVentaItem { get; set; }
+
         public decimal mtoValorReferencialUnitario { get; set; }
 
+        public decimal mtoValorReferenciaItem { get; set; }
+        
         public bool deBaja { get; set; }
 
         public bool activada { get; set; }
@@ -119,6 +117,15 @@
 
         public bool indGravadoIGV { get; set; }
 
+
+        /// <summary>
+        /// 1= GRAVADO, 2=EXONERADO, 3=INAFECTO
+        /// </summary>
+        public Int16 indTipoCalculoIGV { get; set; }
+
+        public string indTipoCalculoIGVNombre { get; set; }
+
+        public Decimal cntPesoUnitario { get; set; }
 
     }
 }

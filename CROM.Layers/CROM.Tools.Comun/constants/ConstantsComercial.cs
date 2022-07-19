@@ -70,6 +70,8 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_FILE_PAGO = ".PAG";
         public const string SUNAT_FILE_PAGDETA = ".DPA";
         public const string SUNAT_FILE_BAJA_CBA = ".CBA";
+        public const string SUNAT_FILE_ADIC_CABECERA_VARIABLE = ".ACV";
+
         public const string SUNAT_FILE_RESUMEN_BAJA_XML = "-RA-";
         public const string SUNAT_FILE_RESUMEN_BVTA_XML = "-RC-";
         public const string SUNAT_FILE_RESUMEN_REVER_XML = "-RR-";

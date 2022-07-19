@@ -16,5 +16,6 @@
 
         public List<BEDocumRegCargoDescuentoRequest> ListChargeDiscount { get; set; }
 
+        public string codRegDestinoDocum { get; set; }
     }
 }

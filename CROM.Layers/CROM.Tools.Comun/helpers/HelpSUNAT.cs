@@ -50,23 +50,23 @@
                 writer.Options = options;
 
                 if (String.IsNullOrWhiteSpace(pEmisorRUC) || String.IsNullOrEmpty(Tipocomprobante) || String.IsNullOrEmpty(Numeracion) ||
-                     String.IsNullOrWhiteSpace(SumatoriaIGV) || String.IsNullOrEmpty(ImporteTotalVenta) || String.IsNullOrEmpty(FechaEmision) ||
-                     String.IsNullOrWhiteSpace(ImporteTotalVenta) || String.IsNullOrWhiteSpace(FechaEmision) || String.IsNullOrWhiteSpace(TipoDocumentoAdquirente) ||
-                      String.IsNullOrWhiteSpace(NumeroDocumentoAdquirente) || String.IsNullOrWhiteSpace(CodigoHash))
+                    String.IsNullOrWhiteSpace(SumatoriaIGV) || String.IsNullOrEmpty(ImporteTotalVenta) || String.IsNullOrEmpty(FechaEmision) ||
+                    String.IsNullOrWhiteSpace(ImporteTotalVenta) || String.IsNullOrWhiteSpace(FechaEmision) || String.IsNullOrWhiteSpace(TipoDocumentoAdquirente) ||
+                    String.IsNullOrWhiteSpace(NumeroDocumentoAdquirente) || String.IsNullOrWhiteSpace(CodigoHash))
                 {
                     pMessajeError = "Debe proporcionar todos los parametros para la generación del QR.";
                 }
                 else
                 {
                     string codigo = string.Concat(pEmisorRUC, "|",
-                                                   Tipocomprobante, "|",
-                                                   Numeracion, "|",
-                                                   SumatoriaIGV, "|",
-                                                   ImporteTotalVenta, "|",
-                                                   FechaEmision, "|",
-                                                   TipoDocumentoAdquirente, "|",
-                                                   NumeroDocumentoAdquirente, "|",
-                                                   CodigoHash);
+                                                  Tipocomprobante, "|",
+                                                  Numeracion, "|",
+                                                  SumatoriaIGV, "|",
+                                                  ImporteTotalVenta, "|",
+                                                  FechaEmision, "|",
+                                                  TipoDocumentoAdquirente, "|",
+                                                  NumeroDocumentoAdquirente, "|",
+                                                  CodigoHash);
 
 
                     var qr = new ZXing.BarcodeWriter();

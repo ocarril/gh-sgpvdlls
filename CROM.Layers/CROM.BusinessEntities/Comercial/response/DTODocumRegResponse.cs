@@ -10,6 +10,10 @@
 
         }
 
+        #region DATOS PRINCIPALES DEL DOCUMENTO
+
+        public string codRegistroUnico { get; set; }
+
         public int codDocumReg { get; set; }
 
         public string codPuntoDeVenta { get; set; }
@@ -74,15 +78,66 @@
 
         public string codRegMonedaSimbolo { get; set; }
 
+        #endregion
+
+        #region DATOS COMPLEMENTARIOS
+
+        public string numOrdenDeCompra { get; set; }
+
+        public string numGuiaDeSalida { get; set; }
+
+        public string numPedidoAdquisicion { get; set; }
+
+        public string numLetrasCambio { get; set; }
+
+        public string numDocumentoExterno { get; set; }
+
+        public string numSerie { get; set; }
+
+        public string numMinuta { get; set; }
+
+        public string codDocumentoSecun { get; set; }
+
+        public string numDocumentoSecun { get; set; }
+
+        public string codPuntoVentaSecun { get; set; }
+
+        public bool indDocEsGravado { get; set; }
+
+        public bool indDocExigeDocAnexo { get; set; }
+
+        public bool indDocEsFacturable { get; set; }
+
+        public Nullable<bool> indImprimeFirma { get; set; }
+
+        public Nullable<bool> indImprimeSinIGV { get; set; }
+
+        public bool indInternacional { get; set; }
+
+        public string perTributario { get; set; }
+
+        public bool flagParaEnvioSUNAT { get; set; }
+
+        #endregion
+
+        #region DATOS DE MONTOS DEL DOCUMENTO
+
         public decimal prcIGV { get; set; }
 
         public decimal monTipoCambioVTA { get; set; }
 
         public decimal monTipoCambioCMP { get; set; }
 
+
         public decimal sumTotBruto { get; set; }
 
         public decimal sumDescTotal { get; set; }
+
+        public decimal prcDescuentoGlobal { get; set; }
+
+        public decimal sumDescuentoGlobal { get; set; }
+
+        public decimal sumOperacionGratuita { get; set; }
 
         public Nullable<decimal> sumOtrosCargos { get; set; }
 
@@ -98,12 +153,19 @@
 
         public decimal sumPrecioVentaExtran { get; set; }
 
+        public decimal sumTotImpuestoICBPER { get; set; }
+
+
+
         public decimal SUMTotalPagadoCajaMN { get; set; }
 
         public decimal SUMTotalPagadoCajaMI { get; set; }
 
         public decimal mtoNetoPendientePago { get; set; }
-        
+
+
+        #endregion
+                
         #region DATOS DEL DOCUMENTO DE REFERENCIA - ORIGEN
 
         public string codDocumentoOrigen { get; set; }
@@ -151,30 +213,6 @@
         public int? codCondicionVentaOrigen { get; set; }
 
 
-        //public Nullable<DateTime> Ref { get; set; }
-
-        //public string numDocumentoOrig { get; set; }
-
-        //public int? RefcodDocumReg { get; set; }
-
-        //public string RefcodDocumento { get; set; }
-
-        //public string RefnumDocumentoOrig { get; set; }
-
-        //public decimal? RefmonTipoCambioVTA { get; set; }
-
-        //public string ReftipoDocumento { get; set; }
-
-        //public string ReftipoDocumentoNombre { get; set; }
-
-        //public string RefnumSerie { get; set; }
-
-        //public string RefnumDocumento { get; set; }
-
-        //public Nullable<DateTime> ReffecEmision { get; set; }
-
-
-
         #endregion
 
         #region DATOS DEL DOCUMENTO DE REFERENCIA - DESTINO
@@ -216,39 +254,7 @@
 
         #endregion
 
-
-
-        //public string codDocumentoDestino { get; set; }
-        //public string codDocumentoDestinoNombre { get; set; }
-        //public string numDocumentoDestino { get; set; }
-        //public string codDocumentoOrigen { get; set; }
-        //public string codDocumentoOrigenNombre { get; set; }
-        //public string numDocumentoOrigen { get; set; }
-        //public Nullable<DateTime> fecDocumentoOrigen { get; set; }
-        //public Nullable<decimal> monTipoCambioOrigen { get; set; }
-
-
-
-
-        public string numOrdenDeCompra { get; set; }
-
-        public string numGuiaDeSalida { get; set; }
-
-        public string numPedidoAdquisicion { get; set; }
-
-        public string numLetrasCambio { get; set; }
-
-        public string numDocumentoExterno { get; set; }
-
-        public string numSerie { get; set; }
-
-        public string numMinuta { get; set; }
-
-        public string codDocumentoSecun { get; set; }
-
-        public string numDocumentoSecun { get; set; }
-
-        public string codPuntoVentaSecun { get; set; }
+        #region DATOS DEL CLIENTE-USUARIO A EMITIR DOCUMENTO
 
         public string codPersonaEntidad { get; set; }
 
@@ -280,8 +286,9 @@
 
         public string codPersonaContactoNombre { get; set; }
 
-        #region DATOS NOTA DE CREDITO / DEBITO
+        #endregion
 
+        #region DATOS NOTA DE CREDITO / DEBITO
 
         public string codDocumentoNCR { get; set; }
 
@@ -303,10 +310,10 @@
 
         public string codMotivoNDBNombre { get; set; }
 
+        public string gloMotivoSustento { get; set; }
+
         #endregion
 
-
-        public string gloMotivoSustento { get; set; }
 
         public string codDepositoOrigen { get; set; }
 
@@ -316,21 +323,6 @@
 
         public string codDepositoDestinoNombre { get; set; }
 
-        public bool indDocEsGravado { get; set; }
-
-        public bool indDocExigeDocAnexo { get; set; }
-
-        public bool indDocEsFacturable { get; set; }
-
-        public Nullable<bool> indImprimeFirma { get; set; }
-
-        public Nullable<bool> indImprimeSinIGV { get; set; }
-
-        public bool indInternacional { get; set; }
-
-        public string perTributario { get; set; }
-
-        public bool flagParaEnvioSUNAT { get; set; }
 
         #region DATOS DE GUIA DE REMISIÓN
 
@@ -385,19 +377,25 @@
 
         public string codRegTipoDocumentoTransportista { get; set; }
 
+        public string codRegUnidadMedidaGlobal { get; set; }
+
+        public string desMotivoGuiaOtro { get; set; }
+
         #endregion
 
-        public Nullable<DateTime> fecCancelacion { get; set; }
 
-        public Nullable<DateTime> fecAnulacion { get; set; }
 
         public Nullable<int> codGastoDeAduana { get; set; }
 
         public bool indLogicoFiltro { get; set; }
 
+
+        public Nullable<DateTime> fecAnulacion { get; set; }
+
         public string codRegAnulacion { get; set; }
 
         public string codRegAnulacionNombre { get; set; }
+
 
         public Nullable<DateTime> fecDeEntrega { get; set; }
 
@@ -411,23 +409,8 @@
 
         public Nullable<DateTime> fecParaEnvioSUNAT { get; set; }
 
-        public string segUsuarioParaEnvioSUNAT { get; set; }
 
-        public string segUsuarioEnviadoSUNAT { get; set; }
 
-        public string codRegistroUnico { get; set; }
-
-        public short segAnio { get; set; }
-
-        public byte segMes { get; set; }
-
-        public byte segDia { get; set; }
-
-        public string segUsuarioCrea { get; set; }
-
-        public DateTime segFechaCrea { get; set; }
-
-        public int numTotalCuotas { get; set; }
 
         #region ATRIBUTOS AGREGADOS PARA OBTENER-EDITAR
 
@@ -438,34 +421,52 @@
 
         public string codRegDocumento { get; set; }
 
+
+
         public decimal sumTotValorIGV { get; set; }
 
         public decimal sumTotValorISC { get; set; }
 
         public decimal sumTotValorTribOtros { get; set; }
 
+
+
         public int numDiasCredito { get; set; }
 
         public bool flagPermiteEditar { get; set; }
 
         public bool SUNATindDeBaja { get; set; }
+
         public bool SUNATindAnulado { get; set; }
+
         public string SUNATdesNomArchivo { get; set; }
+
         public DateTime? SUNATfecCreateArchivo { get; set; }
+
         public string SUNATdesFirmaDigestValue { get; set; }
+
         public DateTime? SUNATfecRptaSunatFS { get; set; }
+
         public string SUNATdesEmailEnviar { get; set; }
+
         public DateTime? SUNATfecEmailEnviado { get; set; }
+
         public DateTime? SUNATindEmailEnvioExito { get; set; }
+
         public string SUNATdesFirmaSignatureValue { get; set; }
+
         public string SUNATdesCodBarras { get; set; }
+
         public string SUNATdesRptaNomArchivo { get; set; }
+
         public string SUNATdesRptaSunatFS { get; set; }
 
 
         #endregion
 
-        public int? codCargoDescuento { get; set; }
+        #region DATOS POR CRÉDITO - [GestionComercial].[DocumRegCredito]
+
+        public Nullable<DateTime> fecCancelacion { get; set; }
 
         public string codRegTipoPlazo { get; set; }
 
@@ -473,11 +474,9 @@
 
         public string codPersonaAval { get; set; }
 
-        public string codRegUnidadMedidaGlobal { get; set; }
+        #endregion
 
-        public string desMotivoGuiaOtro { get; set; }
-
-        #region PROPIEDADES POR DETRACCION
+        #region DATOS DE PROPIEDADES POR DETRACCION
 
         public bool indAplicaDetraccion { get; set; }
 
@@ -487,11 +486,15 @@
 
         public int? codFormaDePagoDetraccion { get; set; }
 
+
+
         public decimal prcDetraccion { get; set; }
 
         public decimal mtoDetraccion { get; set; }
 
         public decimal mtoDetraccionMndExt { get; set; }
+
+
         
         public bool? indActivoDetraccion { get; set; }
 
@@ -501,7 +504,55 @@
 
 
         public string imgEstado001Docum { get; set; }
+
         public string imgEstado002Docum { get; set; }
+
+        #region DATOS DE AUDITORIA
+
+        public short segAnio { get; set; }
+
+        public byte segMes { get; set; }
+
+        public byte segDia { get; set; }
+
+        public string segUsuarioCrea { get; set; }
+
+        public DateTime segFechaCrea { get; set; }
+        
+        public string segUsuarioParaEnvioSUNAT { get; set; }
+
+        public string segUsuarioEnviadoSUNAT { get; set; }
+        
+        #endregion
+
+        #region ATRIBUTOS NO USADOS
+
+        public int numTotalCuotas { get; set; }
+
+        //public Nullable<DateTime> Ref { get; set; }
+
+        //public string numDocumentoOrig { get; set; }
+
+        //public int? RefcodDocumReg { get; set; }
+
+        //public string RefcodDocumento { get; set; }
+
+        //public string RefnumDocumentoOrig { get; set; }
+
+        //public decimal? RefmonTipoCambioVTA { get; set; }
+
+        //public string ReftipoDocumento { get; set; }
+
+        //public string ReftipoDocumentoNombre { get; set; }
+
+        //public string RefnumSerie { get; set; }
+
+        //public string RefnumDocumento { get; set; }
+
+        //public Nullable<DateTime> ReffecEmision { get; set; }
+
+
+        #endregion
 
     }
 }
