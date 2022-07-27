@@ -28,6 +28,9 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public Nullable<DateTime> fecVencimiento { get; set; }
 
+
+        #region DATOS DE DOCUMENTO ORIGEN-REFERENCIA
+
         public string codDocumentoOrigen { get; set; }        
 
         public string numDocumentoOrigen { get; set; }
@@ -39,6 +42,11 @@ namespace CROM.BusinessEntities.Comercial.emision.request
         public DateTime fecEmisionOrigen { get; set; }
 
         public decimal monTipoCambioVTAOrigen { get; set; }
+
+        public int numCuotasOrigen { get; set; }
+
+        #endregion
+
 
         public int? codMotivoNCR { get; set; }
 

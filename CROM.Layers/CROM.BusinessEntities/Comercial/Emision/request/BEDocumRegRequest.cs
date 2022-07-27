@@ -80,6 +80,8 @@
 
         public decimal monTipoCambioVTAOrigen { get; set; }
 
+        public int numCuotasOrigen { get; set; }
+
 
 
         public string numOrdenDeCompra { get; set; }
