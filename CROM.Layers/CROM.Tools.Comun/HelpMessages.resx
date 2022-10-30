@@ -678,4 +678,7 @@
   <data name="VALIDACIONExisteRegistro" xml:space="preserve">
     <value>¡ Registro seleccionado ya existe. {0}!</value>
   </data>
+  <data name="VALIDACIONMail" xml:space="preserve">
+    <value>¡ Empresa no tiene registrado Correo electrónico.!</value>
+  </data>
 </root>

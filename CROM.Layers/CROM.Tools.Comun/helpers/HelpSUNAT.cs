@@ -120,13 +120,13 @@
             return valor;
         }
         
-        public static string[] ObtenerRespuestaZIPSunat(string pRutaEnvioSUNAT, string pNumRUC, int pLecturaFileZip)
+        public static string[] ObtenerRespuestaZIPSunat(string pRutaEnvioSUNAT, string pNumRUC, string nombreFileDOC)
         {
             System.IO.FileInfo arch = new System.IO.FileInfo(pRutaEnvioSUNAT);
 
             if (arch.Extension == ".zip")
             {
-                return LeerRepuestaCDR(pRutaEnvioSUNAT, System.IO.Path.GetFileName(pRutaEnvioSUNAT), pNumRUC, pLecturaFileZip);
+                return LeerRepuestaCDR(pRutaEnvioSUNAT, System.IO.Path.GetFileName(pRutaEnvioSUNAT), pNumRUC, nombreFileDOC);
             }
             else
             {
@@ -134,7 +134,7 @@
             }
         }
 
-        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, int pLecturaFileZip)
+        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, string nombreFileDOC)
         {
             string mensajeRpta = "";
             string mensajeRptaNota = "";
@@ -145,12 +145,22 @@
 
             try
             {
-                int PosicionFile = pLecturaFileZip; // pLecturaFileZip ? 0 : 1;
+                //int PosicionFile = pLecturaFileZip; // pLecturaFileZip ? 0 : 1;
+
                 using (ZipArchive zip = ZipFile.Open(pRutaEnvioSUNAT, ZipArchiveMode.Read))
                 {
+                    for (int PosicionFile = 0; PosicionFile < zip.Entries.Count; PosicionFile++)
+                    {
+                        if (zip.Entries[PosicionFile].ToString().Contains(nombreFileDOC))
+                        {
+
+                            fileZiped = zip.Entries[PosicionFile].ToString();
+                            break;
+
+                        }
+                    }
 
                     ZipArchiveEntry zentry = null;
-                    fileZiped = zip.Entries[PosicionFile].ToString();
                     zentry = zip.GetEntry(fileZiped);
                     XmlDocument xd = new XmlDocument();
                     xd.Load(zentry.Open());

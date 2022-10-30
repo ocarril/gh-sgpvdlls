@@ -164,5 +164,28 @@ namespace CROM.Tools.Comun.constants
           { "4",  "ANULADO EN EL DÍA (anulado antes de informar comprobante)" }
         };
 
+
+        public enum CodigoNotaCREDITO
+        {
+            NC_01_ANULA_OPERACION = 1,
+            NC_02_ANULA_OPERACION_RUC = 2,
+            NC_03_CORRECCION_DESCRIPCION = 3,
+            NC_04_DESCUENTO_GLOBAL = 4,
+            NC_05_DESCUENTO_POR_ITEM = 5,
+            NC_06_DEVOLUCION_TOTAL = 6,
+            NC_07_DEVOLUCION_POR_ITEM = 7,
+            NC_08_BONIFICACION = 8,
+            NC_09_DISMINUCION_VALOR = 9,
+            NC_13_AJUSTES_MONT_FEC_PAGO = 13
+        };
+
+        public enum CodigoNotaDEBITO
+        {
+            ND_01_INTERESES_X_MORA = 1,
+            ND_02_AUMENTO_EN_EL_VALOR = 2,
+            ND_03_PENALIDAD_OTR_CONCEPTOS = 3
+        };
+
+
     }
 }

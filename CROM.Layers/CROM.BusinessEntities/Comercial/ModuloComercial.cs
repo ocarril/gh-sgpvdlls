@@ -324,16 +324,21 @@ namespace CROM.BusinessEntities.Comercial
             jqSortColumn = "fecEmision";
             jqSortOrder = "DESC";
             codDocumentoSerie = 0;
+            codDocumentoSerieOrigen = 0;
             numDocumento = string.Empty;
             codEmpresaRUC = string.Empty;
         }
 
         public int codDocumentoSerie { get; set; }
 
+        public int codDocumentoSerieOrigen { get; set; }
+
         public string numDocumento { get; set; }
 
         public string codEntidad { get; set; }
-               
+
+        public int codNota { get; set; }
+
     }
 
 
