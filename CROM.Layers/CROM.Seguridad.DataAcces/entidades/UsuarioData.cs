@@ -5,7 +5,7 @@
     using CROM.Seguridad.BussinesEntities.entidades.request;
     using CROM.Seguridad.BussinesEntities.entidades.response;
     using CROM.Tools.Comun.settings;
-
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Collections.Generic;
 
@@ -129,7 +129,7 @@
                         );
                     foreach (var item in resulSet)
                     {
-                        blnResult = item.desMessage == "OK" ? true : false;
+                        blnResult = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }
@@ -176,7 +176,7 @@
         //                );
         //            foreach (var item in resulSet)
         //            {
-        //                blnResult = item.desMessage == "OK" ? true : false;
+        //                blnResult = item.desMessage == WebConstants.DEFAULT_OK? true : false;
         //            }
         //        }
         //    }

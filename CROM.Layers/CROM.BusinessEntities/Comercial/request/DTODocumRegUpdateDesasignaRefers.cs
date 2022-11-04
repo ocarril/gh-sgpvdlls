@@ -16,6 +16,10 @@
 
         public int codDocumReg { get; set; }
 
+
+        public string codDocumRegOrigen { get; set; }
+
+
         [JsonIgnore]
         public string codDocumentoRefer { get; set; }
 
