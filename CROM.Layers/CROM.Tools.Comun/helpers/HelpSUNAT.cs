@@ -134,7 +134,7 @@
             }
         }
 
-        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, string nombreFileDOC)
+        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, string nombreFileDOC, bool indNumero = false)
         {
             string mensajeRpta = "";
             string mensajeRptaNota = "";
@@ -149,31 +149,53 @@
 
                 using (ZipArchive zip = ZipFile.Open(pRutaEnvioSUNAT, ZipArchiveMode.Read))
                 {
-                    for (int PosicionFile = 0; PosicionFile < zip.Entries.Count; PosicionFile++)
+
+                    if (indNumero)
                     {
-                        if (zip.Entries[PosicionFile].ToString().Contains(nombreFileDOC))
+                        for (int PosicionFile = 0; PosicionFile < zip.Entries.Count; PosicionFile++)
                         {
+                            if (zip.Entries[PosicionFile].ToString().Contains("R-"))
+                            {
 
-                            fileZiped = zip.Entries[PosicionFile].ToString();
-                            break;
+                                fileZiped = zip.Entries[PosicionFile].ToString();
+                                break;
 
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int PosicionFile = 0; PosicionFile < zip.Entries.Count; PosicionFile++)
+                        {
+                            if (zip.Entries[PosicionFile].ToString().Contains(nombreFileDOC))
+                            {
+
+                                fileZiped = zip.Entries[PosicionFile].ToString();
+                                break;
+
+                            }
                         }
                     }
 
-                    ZipArchiveEntry zentry = null;
-                    zentry = zip.GetEntry(fileZiped);
-                    XmlDocument xd = new XmlDocument();
-                    xd.Load(zentry.Open());
-                    XmlNodeList xnl = xd.GetElementsByTagName("cbc:Description");
-                    foreach (XmlElement item in xnl)
+                    if (!string.IsNullOrWhiteSpace(fileZiped))
                     {
-                        mensajeRpta = item.InnerText;
-                    }
 
-                    XmlNodeList xnlNota = xd.GetElementsByTagName("cbc:Note");
-                    foreach (XmlElement item in xnlNota)
-                    {
-                        mensajeRptaNota = item.InnerText;
+                        ZipArchiveEntry zentry = null;
+                        zentry = zip.GetEntry(fileZiped);
+                        XmlDocument xd = new XmlDocument();
+                        xd.Load(zentry.Open());
+                        XmlNodeList xnl = xd.GetElementsByTagName("cbc:Description");
+                        foreach (XmlElement item in xnl)
+                        {
+                            mensajeRpta = item.InnerText;
+                        }
+
+                        XmlNodeList xnlNota = xd.GetElementsByTagName("cbc:Note");
+                        foreach (XmlElement item in xnlNota)
+                        {
+                            mensajeRptaNota = item.InnerText;
+                        }
+
                     }
                 }
                 fechaCreateFile = File.GetCreationTime(pRutaEnvioSUNAT);

@@ -201,6 +201,9 @@ namespace CROM.Tools.Comun
 
         public static String Numero_A_Texto(Int64 value)
         {
+            if(value < 0)
+                value = value * (-1);
+
             string num2Text = "";
             Int64 ValueNum = value;
             switch (value)

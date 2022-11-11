@@ -23,5 +23,10 @@ namespace CROM.BusinessEntities.Temporales.request
         public string keyDocumRegCargoDescuento { get; set; }
 
         public string keyDocumRegDetalle { get; set; }
+
+        /// <summary>
+        /// 0=NUEVO; 1=REFER; 2=SAVED; 3=SAVED y REFER
+        /// </summary>
+        public int indOrigen { get; set; }
     }
 }

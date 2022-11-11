@@ -681,4 +681,10 @@
   <data name="VALIDACIONMail" xml:space="preserve">
     <value>¡ Empresa no tiene registrado Correo electrónico.!</value>
   </data>
+  <data name="gc_DOCUM_CAMBIO_MONEDA" xml:space="preserve">
+    <value>¡ Cambio de moneda actualizado satisfactoriamente.. !</value>
+  </data>
+  <data name="VALIDACIONDescuentoMaximo" xml:space="preserve">
+    <value>El % de descuento es mayor a lo permitido. Maximo es: [ {0} ]</value>
+  </data>
 </root>

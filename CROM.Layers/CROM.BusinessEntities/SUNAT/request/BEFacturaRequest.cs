@@ -96,12 +96,13 @@
 
         public decimal sumTotalAnticipos { get; set; }
 
-        public decimal sumTotImpuestoICBPER { get; set; }
 
         public decimal sumTotTributos { get; set; }
 
         public decimal sumPrecioVenta { get; set; }
 
+        public decimal sumTotImpuestoIGV { get; set; }
+        public decimal sumTotImpuestoICBPER { get; set; }
 
 
         public string ublVersionId { get; set; }

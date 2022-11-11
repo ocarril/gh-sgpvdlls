@@ -172,6 +172,7 @@
         public decimal? monTipoCambioCMP { get; set; }
 
 
+        public decimal sumTotImpuestoIGV { get; set; }
         public decimal sumTotImpuestoICBPER { get; set; }
 
 

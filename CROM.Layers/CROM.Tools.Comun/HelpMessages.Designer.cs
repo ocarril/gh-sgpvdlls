@@ -340,6 +340,15 @@ namespace CROM.Tools.Comun {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a ¡ Cambio de moneda actualizado satisfactoriamente.. !.
+        /// </summary>
+        public static string gc_DOCUM_CAMBIO_MONEDA {
+            get {
+                return ResourceManager.GetString("gc_DOCUM_CAMBIO_MONEDA", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a ¡ Definir datos del documento para poder guardar.!.
         /// </summary>
         public static string gc_DOCUM_DefinirDatos {
@@ -1596,6 +1605,15 @@ namespace CROM.Tools.Comun {
         public static string VALIDACIONCajaAutomatica {
             get {
                 return ResourceManager.GetString("VALIDACIONCajaAutomatica", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El % de descuento es mayor a lo permitido. Maximo es: [ {0} ].
+        /// </summary>
+        public static string VALIDACIONDescuentoMaximo {
+            get {
+                return ResourceManager.GetString("VALIDACIONDescuentoMaximo", resourceCulture);
             }
         }
         
