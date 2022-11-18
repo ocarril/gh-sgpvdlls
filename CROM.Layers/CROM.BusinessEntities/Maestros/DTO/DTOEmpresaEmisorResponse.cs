@@ -17,6 +17,8 @@
             desWebSite = string.Empty;
             desCorreoElectronico = string.Empty;
             desNumeroCuentaDetrac = string.Empty;
+            codPuntoVenta = string.Empty;
+            codPuntoVentaNombre = string.Empty;
         }
 
         public string codPersona { get; set; }
@@ -69,5 +71,14 @@
         public int numDocumentoPendSUNAT  { get; set; }
         public int numDiasPendMinimoSUNAT { get; set; }
         public int numDiasPendMaximoSUNAT { get; set; }
+
+
+        public string codPuntoVenta { get; set; }
+        public string codPuntoVentaNombre { get; set; }
+
+
+        public string codPlanilla { get; set; }
+        public string codPlanillaNombre { get; set; }
+
     }
 }

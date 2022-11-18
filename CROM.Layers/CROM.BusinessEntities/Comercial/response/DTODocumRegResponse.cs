@@ -28,7 +28,7 @@
 
         public string numDocumento { get; set; }
 
-        public string codRegEstado { get; set; }
+        public string codRegEstadoDocumento { get; set; }
 
         public string codRegEstadoNombre { get; set; }
 

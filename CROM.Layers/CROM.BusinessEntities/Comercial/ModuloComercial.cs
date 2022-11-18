@@ -919,6 +919,7 @@ namespace CROM.BusinessEntities.Comercial
         {
             nomRazonSocial = string.Empty;
             nomEmpresaRUC = string.Empty;
+            codEmpleadoSIS = string.Empty;
         }
 
         public int codDocumReg { get; set; }
@@ -942,6 +943,11 @@ namespace CROM.BusinessEntities.Comercial
 
         [JsonIgnore]
         public int codDocumRegPagoCredito { get; set; }
+
+
+        [JsonIgnore]
+        public string codEmpleadoSIS { get; set; }
+
     }
 
 

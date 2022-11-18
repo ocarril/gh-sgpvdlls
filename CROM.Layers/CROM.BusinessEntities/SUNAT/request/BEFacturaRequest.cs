@@ -138,7 +138,7 @@
         public Nullable<DateTime> ReffecEmision { get; set; }
         public int? codMotivoNCR { get; set; }
         public int? codMotivoNDB { get; set; }
-        public string RefMotivo { get; set; }
+        public string desMotivoEmisionNotaCRDB { get; set; }
 
         #endregion
 

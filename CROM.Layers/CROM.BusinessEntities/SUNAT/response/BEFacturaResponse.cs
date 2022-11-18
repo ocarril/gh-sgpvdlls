@@ -29,6 +29,8 @@
             gloObservaciones = string.Empty;
             gloMotivoSustento = string.Empty;
 
+            desMotivoEmisionNotaCRDB = string.Empty;
+
             LstFacturaDetalleSunat = new List<BEFacturaDetalleResponse>();
         }
 
@@ -127,7 +129,7 @@
 
         public string codRegEstadoNombre { get; set; }
 
-        public string codRegEstado { get; set; }
+        public string codRegEstadoDocumento { get; set; }
 
         public string codRegEstadoColor { get; set; }
 
@@ -208,7 +210,8 @@
         public Nullable<DateTime> ReffecEmision { get; set; }
         public int? codMotivoNCR { get; set; }
         public int? codMotivoNDB { get; set; }
-        public string RefMotivo { get; set; }
+
+        public string desMotivoEmisionNotaCRDB { get; set; }
 
         public string keyMotivoNCR { get; set; }
         public string keyMotivoNDB { get; set; }

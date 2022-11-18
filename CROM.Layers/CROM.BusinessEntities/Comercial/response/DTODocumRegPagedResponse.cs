@@ -228,7 +228,7 @@ namespace CROM.BusinessEntities.Comercial.response
         public Nullable<DateTime> ReffecEmision { get; set; }
         public int? codMotivoNCR { get; set; }
         public int? codMotivoNDB { get; set; }
-        public string RefMotivo { get; set; }
+        public string desMotivoEmisionNotaCRDB { get; set; }
 
         public string keyMotivoNCR { get; set; }
         public string keyMotivoNDB { get; set; }
