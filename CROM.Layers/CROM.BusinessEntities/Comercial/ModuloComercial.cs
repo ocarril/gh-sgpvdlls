@@ -686,6 +686,26 @@ namespace CROM.BusinessEntities.Comercial
 
     }
 
+
+    public class BaseFiltroDocumentoAsociadoPage : BEBuscadorBaseRequest
+    {
+        public BaseFiltroDocumentoAsociadoPage()
+        {
+            desNombre = string.Empty;
+            codDocumentoOrigen = string.Empty;
+            indEstado = false;
+        }
+
+        public string codDocumento { get; set; }
+
+        public string codDocumentoOrigen { get; set; }
+
+        public string desNombre { get; set; }
+
+        public bool? indEstado { get; set; }
+
+    }
+
     public class BaseFiltroDocumentoSerie : BEBuscadorBase
     {
         public BaseFiltroDocumentoSerie()

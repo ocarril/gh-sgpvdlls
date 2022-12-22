@@ -637,15 +637,6 @@ namespace CROM.Tools.Comun {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¡ Seleccionar el tipo de moneda para el documento. !.
-        /// </summary>
-        public static string gc_DOCUM_SeleccionaMoneda {
-            get {
-                return ResourceManager.GetString("gc_DOCUM_SeleccionaMoneda", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Busca una cadena traducida similar a ¡ Documento a emitir no tiene valor el tipo de cambio, ubicarse en la fecha de emisión.!.
         /// </summary>
         public static string gc_DOCUM_TipoDeCambio {
@@ -1609,11 +1600,56 @@ namespace CROM.Tools.Comun {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Seleccionar cargo/descuento para el documento..
+        /// </summary>
+        public static string VALIDACIONCargoDescuentocodCargo {
+            get {
+                return ResourceManager.GetString("VALIDACIONCargoDescuentocodCargo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Monto base debe ser mayor que cero.
+        /// </summary>
+        public static string VALIDACIONCargoDescuentomtoBase {
+            get {
+                return ResourceManager.GetString("VALIDACIONCargoDescuentomtoBase", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Monto total del ITEM debe ser mayor que cero.
+        /// </summary>
+        public static string VALIDACIONCargoDescuentomtoItem {
+            get {
+                return ResourceManager.GetString("VALIDACIONCargoDescuentomtoItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ingresar % de cargo/descuento mayor a cero..
+        /// </summary>
+        public static string VALIDACIONCargoDescuentoprcItem {
+            get {
+                return ResourceManager.GetString("VALIDACIONCargoDescuentoprcItem", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a El % de descuento es mayor a lo permitido. Maximo es: [ {0} ].
         /// </summary>
         public static string VALIDACIONDescuentoMaximo {
             get {
                 return ResourceManager.GetString("VALIDACIONDescuentoMaximo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡ Seleccionar documento para el registro.!.
+        /// </summary>
+        public static string VALIDACIONDocumentoAsignado {
+            get {
+                return ResourceManager.GetString("VALIDACIONDocumentoAsignado", resourceCulture);
             }
         }
         
@@ -1740,6 +1776,15 @@ namespace CROM.Tools.Comun {
         public static string VALIDACIONPuntoDeVenta {
             get {
                 return ResourceManager.GetString("VALIDACIONPuntoDeVenta", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a ¡ Seleccionar el tipo de moneda para el registro. !.
+        /// </summary>
+        public static string VALIDACIONSeleccionaMoneda {
+            get {
+                return ResourceManager.GetString("VALIDACIONSeleccionaMoneda", resourceCulture);
             }
         }
         

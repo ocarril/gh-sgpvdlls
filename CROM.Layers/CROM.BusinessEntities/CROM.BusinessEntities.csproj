@@ -149,6 +149,7 @@
     <Compile Include="Asistencia\BESysReporte.cs" />
     <Compile Include="Asistencia\BETimeEmpleado.cs" />
     <Compile Include="Asistencia\BETimeMarcacion.cs" />
+    <Compile Include="Comercial\request\BEDocumentoAsociadoRequest.cs" />
     <Compile Include="Comercial\request\BEDocumentoRequest.cs" />
     <Compile Include="Comercial\request\BEProductoPrecioRequest.cs" />
     <Compile Include="Comercial\request\DTODocumRegEstadoRequest.cs" />
@@ -161,6 +162,7 @@
     <Compile Include="Comercial\request\DTOTipoCambioRequest.cs" />
     <Compile Include="Comercial\response\BECondicionResponse.cs" />
     <Compile Include="Comercial\Emision\request\BEDocumRegCargoDescuentoRequest.cs" />
+    <Compile Include="Comercial\response\DTODocumentoAsociadoResponse.cs" />
     <Compile Include="Comercial\response\BEDocumRegCargoDescuentoResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegCargoDescuentoResponse.cs" />
     <Compile Include="Comercial\response\DTODocumRegDetallePrintResponse.cs" />

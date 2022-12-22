@@ -456,8 +456,8 @@
   <data name="gc_DOCUM_NotaCreditoMayor" xml:space="preserve">
     <value>¡ El monto total de la nota de crédito no puede ser mayor a su documento de referencia. !</value>
   </data>
-  <data name="gc_DOCUM_SeleccionaMoneda" xml:space="preserve">
-    <value>¡ Seleccionar el tipo de moneda para el documento. !</value>
+  <data name="VALIDACIONSeleccionaMoneda" xml:space="preserve">
+    <value>¡ Seleccionar el tipo de moneda para el registro. !</value>
   </data>
   <data name="VALIDACIONEmpleado" xml:space="preserve">
     <value>¡ Empleado asignado no existe.  Usuario [ {0} ] no pertenece a la empresa!</value>
@@ -686,5 +686,20 @@
   </data>
   <data name="VALIDACIONDescuentoMaximo" xml:space="preserve">
     <value>El % de descuento es mayor a lo permitido. Maximo es: [ {0} ]</value>
+  </data>
+  <data name="VALIDACIONCargoDescuentocodCargo" xml:space="preserve">
+    <value>Seleccionar cargo/descuento para el documento.</value>
+  </data>
+  <data name="VALIDACIONCargoDescuentomtoBase" xml:space="preserve">
+    <value>Monto base debe ser mayor que cero</value>
+  </data>
+  <data name="VALIDACIONCargoDescuentomtoItem" xml:space="preserve">
+    <value>Monto total del ITEM debe ser mayor que cero</value>
+  </data>
+  <data name="VALIDACIONCargoDescuentoprcItem" xml:space="preserve">
+    <value>Ingresar % de cargo/descuento mayor a cero.</value>
+  </data>
+  <data name="VALIDACIONDocumentoAsignado" xml:space="preserve">
+    <value>¡ Seleccionar documento para el registro.!</value>
   </data>
 </root>
