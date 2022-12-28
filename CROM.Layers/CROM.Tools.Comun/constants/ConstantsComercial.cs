@@ -31,6 +31,7 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_TipoDocumento_SOLICITUD_BAJA = "99";
         public const string SUNAT_TipoDocumento_RESUMEN_DIARIO = "RD";
 
+
         public const string SUNAT_TipoDocumento_IDENTIDAD_SIN_RUC = "0";
         public const string SUNAT_TipoDocumento_IDENTIDAD_DNI = "1";
         public const string SUNAT_TipoDocumento_IDENTIDAD_CE = "4";
@@ -38,8 +39,30 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_TipoDocumento_IDENTIDAD_PASAPORTE = "7";
         public const string SUNAT_TipoDocumento_IDENTIDAD_CDI = "A";
 
+
         public const string SUNAT_ModalidadTransporte_PUBLICO = "01";
         public const string SUNAT_ModalidadTransporte_PRIVADO = "02";
+
+
+
+        public const string SUNAT_GUIA_MotivoTraslado_Venta = "01";
+        public const string SUNAT_GUIA_MotivoTraslado_Compra = "02";
+        public const string SUNAT_GUIA_MotivoTraslado_VentaConEntrTerceros = "03";
+        public const string SUNAT_GUIA_MotivoTraslado_TrasladoEEstMEmpresa = "04";
+        public const string SUNAT_GUIA_MotivoTraslado_Consignacion = "05";
+        public const string SUNAT_GUIA_MotivoTraslado_Devolucion = "06";
+        public const string SUNAT_GUIA_MotivoTraslado_RecojoBienesTransfor = "07";
+        public const string SUNAT_GUIA_MotivoTraslado_Importación = "08";
+        public const string SUNAT_GUIA_MotivoTraslado_Exportación = "09";
+        public const string SUNAT_GUIA_MotivoTraslado_Otros = "13";
+        public const string SUNAT_GUIA_MotivoTraslado_VentaSujAConfDelComprador = "14";
+        public const string SUNAT_GUIA_MotivoTraslado_TrasladoBienesParaTransform = "17";
+        public const string SUNAT_GUIA_MotivoTraslado_TrasladoEmisorItinerante_CP = "18";
+        public const string SUNAT_GUIA_MotivoTraslado_Traslado_a_zona_primaria = "19";
+
+
+
+
 
         public const string SUNAT_FOLDER_BARRAS = "BARRAS";
         public const string SUNAT_FOLDER_DATA = "DATA";
@@ -184,6 +207,14 @@ namespace CROM.Tools.Comun.constants
             ND_01_INTERESES_X_MORA = 1,
             ND_02_AUMENTO_EN_EL_VALOR = 2,
             ND_03_PENALIDAD_OTR_CONCEPTOS = 3
+        };
+
+        public static Dictionary<string, string> EstadoTicketGuiaRemision = new Dictionary<string, string>()
+        {
+          { "0",   "N° GUIA:{0}:  ENVIO OK" },
+          { "98",  "N° GUIA:{0}:  ENVÍO DE DOCUMENTO EN PROCESO" },
+          { "991", "N° GUIA:{0}:  ENVÍO CON ERROR, CON GENERACIÓN DE CDR" },
+          { "990", "N° GUIA:{0}:  Envío CON ERROR, NO GENERA CDR" }
         };
 
 

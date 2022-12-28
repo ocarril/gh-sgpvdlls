@@ -323,6 +323,12 @@
 
         public bool indValidWSoapSunat { get; set; }
 
+
+        public string  numTicket { get; set; }
+        
+
+        public DateTime? fecRecepcion { get; set; }
+
         #endregion
 
     }

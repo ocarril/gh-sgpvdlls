@@ -128,5 +128,40 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public string codRegUnidadMedidaGlobal { get; set; }
         public string desMotivoGuiaOtro { get; set; }
+
+
+
+
+
+
+        #region DATOS DEL PROVEEDOR
+
+
+        public string codPersonaProveedor { get; set; }
+
+
+        public string codTipoDocumentoProveedor { get; set; }
+
+        public string numDocumentoProveedor { get; set; }
+
+        public string nomRazonSocialProveedor { get; set; }
+
+        #endregion
+
+
+        #region DATOS DEL COMPRADOR
+
+
+        public string codPersonaComprador { get; set; }
+
+
+        public string codTipoDocumentoComprador { get; set; }
+
+        public string numDocumentoComprador { get; set; }
+
+        public string nomRazonSocialComprador { get; set; }
+
+        #endregion
+
     }
 }

@@ -300,6 +300,16 @@
         #endregion
 
 
+        public static bool GetDEFAULT_ENVIA_GRE_SFS_SUNAT()
+        {
+
+            bool valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_ENVIA_GRE_SFS_SUNAT"]) == 1 ? true : false;
+
+            return valorConfig;
+        }
+
+
+
         #region VALORES PARA WEB JOB
 
         public static string GetDEFAULT_WebJobUserLogin()

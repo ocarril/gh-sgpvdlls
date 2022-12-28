@@ -166,6 +166,8 @@
 
         public string ACAcodUbigeoEntrega { get; set; }
 
+        public string ACAdesUbigeoEntregaNombre { get; set; }
+
         public string ACAdesDireccionEntrega { get; set; }
 
         #endregion
