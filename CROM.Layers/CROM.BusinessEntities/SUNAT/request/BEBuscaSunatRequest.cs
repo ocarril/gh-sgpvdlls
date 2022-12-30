@@ -89,6 +89,9 @@
         [JsonIgnore]
         public string codEmpleadoSIS { get; set; }
 
+
+        [JsonIgnore]
+        public string nomArchivo { get; set; }
     }
 
 

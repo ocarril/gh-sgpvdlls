@@ -184,6 +184,7 @@
                         zentry = zip.GetEntry(fileZiped);
                         XmlDocument xd = new XmlDocument();
                         xd.Load(zentry.Open());
+
                         XmlNodeList xnl = xd.GetElementsByTagName("cbc:Description");
                         foreach (XmlElement item in xnl)
                         {
@@ -196,6 +197,12 @@
                             mensajeRptaNota = item.InnerText;
                         }
 
+                        XmlNodeList xnlCode = xd.GetElementsByTagName("cbc:ResponseCode");
+                        foreach (XmlElement item in xnlCode)
+                        {
+                            if (item.InnerText != "0")
+                                mensajeRpta = String.Format("{0} - {1}", item.InnerText, mensajeRpta);
+                        }
                     }
                 }
                 fechaCreateFile = File.GetCreationTime(pRutaEnvioSUNAT);
