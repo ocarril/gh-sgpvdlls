@@ -166,6 +166,16 @@
             BAND_DOCUMENTO_EMIS = 5
         };
 
+        public enum TipoENCODING
+        {
+            UTF8 = 1,
+            ISO_8859_1 = 2,
+            UTF32 = 3,
+            UTF7= 4,
+            Unicode = 5,
+        };
+
+
         public static Dictionary<int, string> MensajesServicios = new Dictionary<int, string>()
         {
           { 100,  "Registrado satisfactoriamente." },

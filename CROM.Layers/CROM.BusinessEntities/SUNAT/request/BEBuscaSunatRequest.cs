@@ -124,7 +124,6 @@
 
         public string numTicket { get; set; }
 
-
     }
 
 

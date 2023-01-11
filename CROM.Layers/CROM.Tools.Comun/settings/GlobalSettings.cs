@@ -324,5 +324,27 @@
 
         #endregion
 
+        #region VALORES PARA GENERAR ARCHIVO XML
+
+        public static int GetDEFAULT_XML_TIPO_GEOCODING()
+        {
+
+            int valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_XML_TIPO_GEOCODING"]);
+
+            return valorConfig;
+        }
+
+
+        public static bool GetDEFAULT_XML_STANDALONE()
+        {
+
+            bool valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_XML_STANDALONE"]) == 1 ? true : false;
+
+            return valorConfig;
+        }
+
+
+
+        #endregion
     }
 }
