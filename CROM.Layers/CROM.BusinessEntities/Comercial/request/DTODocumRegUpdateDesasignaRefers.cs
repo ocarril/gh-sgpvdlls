@@ -12,10 +12,13 @@
             codDocumentoRefer = string.Empty;
             numDocumentoRefer = string.Empty;
             numDocumentoRefersXML = string.Empty;
-            codRegEstadoDocuRefer = string.Empty;
         }
 
         public int codDocumReg { get; set; }
+
+
+        public string codDocumRegOrigen { get; set; }
+
 
         [JsonIgnore]
         public string codDocumentoRefer { get; set; }
@@ -27,7 +30,7 @@
         public string numDocumentoRefer { get; set; }
 
         [JsonIgnore]
-        public string codRegEstadoDocuRefer { get; set; }
+        public int? codDocumentoEstadoRefer { get; set; }
 
         [JsonIgnore]
         public string tokenUser { get; set; }

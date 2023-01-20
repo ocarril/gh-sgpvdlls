@@ -112,7 +112,7 @@
             return operationResult;
         }
 
-        protected OperationResult OK(object data, string pMensaje = "OK")
+        protected OperationResult OK(object data, string pMensaje = WebConstants.DEFAULT_OK)
         {
             var operationResult = new OperationResult();
             operationResult.isValid = true;

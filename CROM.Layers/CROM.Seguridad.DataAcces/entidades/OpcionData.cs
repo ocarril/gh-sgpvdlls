@@ -3,7 +3,7 @@
     using CROM.Seguridad.BussinesEntities;
     using CROM.Seguridad.BussinesEntities.entidades.dto;
     using CROM.Tools.Comun.settings;
-
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Collections.Generic;
 
@@ -103,7 +103,7 @@
                          );
                     foreach (var item in resulSet)
                     {
-                        blnResult = item.desMessage == "OK" ? true : false;
+                        blnResult = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }

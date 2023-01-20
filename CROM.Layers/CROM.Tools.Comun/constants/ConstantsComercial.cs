@@ -31,6 +31,7 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_TipoDocumento_SOLICITUD_BAJA = "99";
         public const string SUNAT_TipoDocumento_RESUMEN_DIARIO = "RD";
 
+
         public const string SUNAT_TipoDocumento_IDENTIDAD_SIN_RUC = "0";
         public const string SUNAT_TipoDocumento_IDENTIDAD_DNI = "1";
         public const string SUNAT_TipoDocumento_IDENTIDAD_CE = "4";
@@ -38,8 +39,30 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_TipoDocumento_IDENTIDAD_PASAPORTE = "7";
         public const string SUNAT_TipoDocumento_IDENTIDAD_CDI = "A";
 
+
         public const string SUNAT_ModalidadTransporte_PUBLICO = "01";
         public const string SUNAT_ModalidadTransporte_PRIVADO = "02";
+
+
+
+        public const string SUNAT_GUIA_MotivoTraslado_Venta = "01";
+        public const string SUNAT_GUIA_MotivoTraslado_Compra = "02";
+        public const string SUNAT_GUIA_MotivoTraslado_VentaConEntrTerceros = "03";
+        public const string SUNAT_GUIA_MotivoTraslado_TrasladoEEstMEmpresa = "04";
+        public const string SUNAT_GUIA_MotivoTraslado_Consignacion = "05";
+        public const string SUNAT_GUIA_MotivoTraslado_Devolucion = "06";
+        public const string SUNAT_GUIA_MotivoTraslado_RecojoBienesTransfor = "07";
+        public const string SUNAT_GUIA_MotivoTraslado_Importación = "08";
+        public const string SUNAT_GUIA_MotivoTraslado_Exportación = "09";
+        public const string SUNAT_GUIA_MotivoTraslado_Otros = "13";
+        public const string SUNAT_GUIA_MotivoTraslado_VentaSujAConfDelComprador = "14";
+        public const string SUNAT_GUIA_MotivoTraslado_TrasladoBienesParaTransform = "17";
+        public const string SUNAT_GUIA_MotivoTraslado_TrasladoEmisorItinerante_CP = "18";
+        public const string SUNAT_GUIA_MotivoTraslado_Traslado_a_zona_primaria = "19";
+
+
+
+
 
         public const string SUNAT_FOLDER_BARRAS = "BARRAS";
         public const string SUNAT_FOLDER_DATA = "DATA";
@@ -52,6 +75,9 @@ namespace CROM.Tools.Comun.constants
 
         public const string SUNAT_NIVEL_GLOBAL = "Global";
         public const string SUNAT_NIVEL_ITEM = "Item";
+
+        public const string SUNAT_TIPO_VARIABLE_CARGO = "CARGO";
+        public const string SUNAT_TIPO_VARIABLE_DSCTO = "DESCUEN";
 
         public const int COMERCIAL_VENTA_CONTADO = 1;
         public const int COMERCIAL_VENTA_CREDITO = 2;
@@ -67,6 +93,8 @@ namespace CROM.Tools.Comun.constants
         public const string SUNAT_FILE_PAGO = ".PAG";
         public const string SUNAT_FILE_PAGDETA = ".DPA";
         public const string SUNAT_FILE_BAJA_CBA = ".CBA";
+        public const string SUNAT_FILE_ADIC_CABECERA_VARIABLE = ".ACV";
+
         public const string SUNAT_FILE_RESUMEN_BAJA_XML = "-RA-";
         public const string SUNAT_FILE_RESUMEN_BVTA_XML = "-RC-";
         public const string SUNAT_FILE_RESUMEN_REVER_XML = "-RR-";
@@ -75,6 +103,52 @@ namespace CROM.Tools.Comun.constants
         public const string COMERCIAL_Path_Venta = "Ventas";
         public const string COMERCIAL_Path_Internas = "Internas";
 
+
+        public const string DOCUMENTO_ESTADO_EMITIDA = "ESTLC001";
+        public const string DOCUMENTO_ESTADO_SUNAT_ANULADA = "ESTLC002";
+        public const string DOCUMENTO_ESTADO_PROTESTADA = "ESTLC003";
+        public const string DOCUMENTO_ESTADO_CANCELADA = "ESTLC004";
+        public const string DOCUMENTO_ESTADO_PENDIENTE = "ESTLC005";
+        public const string DOCUMENTO_ESTADO_CERRADO = "ESTLC006";
+        public const string DOCUMENTO_ESTADO_NACIONALIZADO = "ESTLC007";
+        public const string DOCUMENTO_ESTADO_APROBADO = "ESTLC008";
+        public const string DOCUMENTO_ESTADO_POR_PAGAR = "ESTLC009";
+        public const string DOCUMENTO_ESTADO_ARCHIVADO = "ESTLC010";
+        public const string DOCUMENTO_ESTADO_REFERENCIADO = "ESTLC011";
+        public const string DOCUMENTO_ESTADO_PROCESADO = "ESTLC012";
+        public const string DOCUMENTO_ESTADO_EN_PROCESO_SUNAT = "ESTLC013";
+        public const string DOCUMENTO_ESTADO_SUNAT_ACEPTADA = "ESTLC014";
+        public const string DOCUMENTO_ESTADO_RECEPCIONADO = "ESTLC015";
+        public const string DOCUMENTO_ESTADO_SUNAT_SOLIC_BAJA = "ESTLC016";
+        public const string DOCUMENTO_ESTADO_SUNAT_RECHAZADO_ANL = "ESTLC017";
+        public const string DOCUMENTO_ESTADO_SUNAT_ACEPT_OBSERVADA = "ESTLC018";
+        public const string DOCUMENTO_ESTADO_ANULADO = "ESTLC019";
+        public const string DOCUMENTO_ESTADO_PAGADA_CANCELADA = "ESTLC020";
+
+
+        public static Dictionary<string, string> dctEstadosDocumentos = new Dictionary<string, string>()
+        {
+            {"ESTLC001","EMITIDA"},
+            {"ESTLC002","SUNAT-ANULADA"},
+            {"ESTLC003","PROTESTADA"},
+            {"ESTLC004","CANCELADA"},
+            {"ESTLC005","PENDIENTE"},
+            {"ESTLC006","CERRADO"},
+            {"ESTLC007","NACIONALIZADO"},
+            {"ESTLC008","APROBADO"},
+            {"ESTLC009","POR PAGAR"},
+            {"ESTLC010","ARCHIVADO"},
+            {"ESTLC011","REFERENCIADO"},
+            {"ESTLC012","PROCESADO"},
+            {"ESTLC013","EN-PROCESO SUNAT"},
+            {"ESTLC014","SUNAT-ACEPTADA"},
+            {"ESTLC015","RECEPCIONADO"},
+            {"ESTLC016","SUNAT-SOLIC-BAJA"},
+            {"ESTLC017","SUNAT-RECHAZADO-ANL"},
+            {"ESTLC018","SUNAT-ACEPT-OBSERVADA"},
+            {"ESTLC019","ANULADO"},
+            {"ESTLC020","PAGADA-CANCELADA" }
+        };
 
         public static Dictionary<string, string> ConsultaWS_estadoCp = new Dictionary<string, string>()
         {
@@ -105,7 +179,6 @@ namespace CROM.Tools.Comun.constants
           { "20",  "NO HALLADO" }
         };
 
-
         public static Dictionary<string, string> EstadoDelItemResumenDiario = new Dictionary<string, string>()
         {
           { "1",  "ADICIONAR" },
@@ -113,8 +186,37 @@ namespace CROM.Tools.Comun.constants
           { "3",  "ANULADO" },
           { "4",  "ANULADO EN EL DÍA (anulado antes de informar comprobante)" }
         };
- 
- 
- 
+
+
+        public enum CodigoNotaCREDITO
+        {
+            NC_01_ANULA_OPERACION = 1,
+            NC_02_ANULA_OPERACION_RUC = 2,
+            NC_03_CORRECCION_DESCRIPCION = 3,
+            NC_04_DESCUENTO_GLOBAL = 4,
+            NC_05_DESCUENTO_POR_ITEM = 5,
+            NC_06_DEVOLUCION_TOTAL = 6,
+            NC_07_DEVOLUCION_POR_ITEM = 7,
+            NC_08_BONIFICACION = 8,
+            NC_09_DISMINUCION_VALOR = 9,
+            NC_13_AJUSTES_MONT_FEC_PAGO = 13
+        };
+
+        public enum CodigoNotaDEBITO
+        {
+            ND_01_INTERESES_X_MORA = 1,
+            ND_02_AUMENTO_EN_EL_VALOR = 2,
+            ND_03_PENALIDAD_OTR_CONCEPTOS = 3
+        };
+
+        public static Dictionary<string, string> EstadoTicketGuiaRemision = new Dictionary<string, string>()
+        {
+          { "0",   "N° GUIA:{0}:  ENVIO OK" },
+          { "98",  "N° GUIA:{0}:  ENVÍO DE DOCUMENTO EN PROCESO" },
+          { "991", "N° GUIA:{0}:  ENVÍO CON ERROR, CON GENERACIÓN DE CDR" },
+          { "990", "N° GUIA:{0}:  Envío CON ERROR, NO GENERA CDR" }
+        };
+
+
     }
 }

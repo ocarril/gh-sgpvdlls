@@ -259,6 +259,12 @@ namespace CROM.BusinessEntities.Comercial
 
         public string codPersonaEntidad { get; set; }
 
+        public string codRegMoneda { get; set; }
+
+        public int? codDocumentoEstado { get; set; }
+
+        public int? indEnviadoSUNAT { get; set; }
+
         [JsonIgnore]
         public string fecInicio { get; set; }
 
@@ -318,16 +324,21 @@ namespace CROM.BusinessEntities.Comercial
             jqSortColumn = "fecEmision";
             jqSortOrder = "DESC";
             codDocumentoSerie = 0;
+            codDocumentoSerieOrigen = 0;
             numDocumento = string.Empty;
             codEmpresaRUC = string.Empty;
         }
 
         public int codDocumentoSerie { get; set; }
 
+        public int codDocumentoSerieOrigen { get; set; }
+
         public string numDocumento { get; set; }
 
         public string codEntidad { get; set; }
-               
+
+        public int codNota { get; set; }
+
     }
 
 
@@ -675,6 +686,26 @@ namespace CROM.BusinessEntities.Comercial
 
     }
 
+
+    public class BaseFiltroDocumentoAsociadoPage : BEBuscadorBaseRequest
+    {
+        public BaseFiltroDocumentoAsociadoPage()
+        {
+            desNombre = string.Empty;
+            codDocumentoOrigen = string.Empty;
+            indEstado = false;
+        }
+
+        public string codDocumento { get; set; }
+
+        public string codDocumentoOrigen { get; set; }
+
+        public string desNombre { get; set; }
+
+        public bool? indEstado { get; set; }
+
+    }
+
     public class BaseFiltroDocumentoSerie : BEBuscadorBase
     {
         public BaseFiltroDocumentoSerie()
@@ -908,6 +939,7 @@ namespace CROM.BusinessEntities.Comercial
         {
             nomRazonSocial = string.Empty;
             nomEmpresaRUC = string.Empty;
+            codEmpleadoSIS = string.Empty;
         }
 
         public int codDocumReg { get; set; }
@@ -931,6 +963,11 @@ namespace CROM.BusinessEntities.Comercial
 
         [JsonIgnore]
         public int codDocumRegPagoCredito { get; set; }
+
+
+        [JsonIgnore]
+        public string codEmpleadoSIS { get; set; }
+
     }
 
 

@@ -267,5 +267,39 @@
             return DateTimeCurrent.Value;
         }
 
+        public static DateTime AddTimeCurrentForDateConcat(Nullable<DateTime> ValorFecha, string ValorHora)
+        {
+            DateTime? DateTimeCurrent = null;
+            try
+            {
+
+                if (ValorFecha == null && string.IsNullOrWhiteSpace(ValorHora))
+                {
+                    DateTimeCurrent = DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud());
+                }
+                else if (ValorFecha == null && !string.IsNullOrWhiteSpace(ValorHora))
+                {
+                    DateTimeCurrent = Extensors.ToDateTime(string.Concat(DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()).ToString("dd-MM-yyyy "), 
+                                                                         " ",
+                                                                         ValorHora));
+                }
+                else
+                {
+                    //ToString("dd-MM-yyyy HH:mm:ss")
+                    DateTimeCurrent = Extensors.ToDateTime(string.Concat(ValorFecha.Value.ToString("dd-MM-yyyy "), 
+                                                                         " ",
+                                                                         ValorHora));
+
+                }
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            return DateTimeCurrent.Value;
+        }
+
     }
 }

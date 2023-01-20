@@ -1,10 +1,6 @@
 ﻿namespace CROM.BusinessEntities.SUNAT.request
 {
     using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
 
 
     public class BEFacturaDetalleRequest : BEBaseEntidad
@@ -26,7 +22,6 @@
             nomTributoIscItem = string.Empty;
             tipAfeIGV = string.Empty;
             tipSisISC = string.Empty;
-
             codTriIcbper = string.Empty;
             nomTributoIcbperItem = string.Empty;
             codTipTributoIcbperItem = string.Empty;
@@ -71,6 +66,12 @@
 
         #region NUEVOS ATRIBUTOS DE TRIBUTOS POR SFS 1.3.3
 
+        /// <summary>
+        /// FLAG TRUE/FALSE si tiene Impuesto a las bolsas plasticas
+        /// </summary>
+        public bool indImpuestoICBPER { get; set; }
+
+
         public string codTriIcbper { get; set; }
 
         public decimal mtoTriIcbperItem { get; set; }
@@ -87,8 +88,11 @@
 
         public decimal mtoPrecioVentaUnitario { get; set; }
         public decimal mtoValorVentaItem { get; set; }
+
         public decimal mtoValorReferencialUnitario { get; set; }
 
+        public decimal mtoValorReferenciaItem { get; set; }
+        
         public bool deBaja { get; set; }
 
         public bool activada { get; set; }
@@ -106,6 +110,22 @@
         public decimal mtoValorDsctoItem { get; set; }
 
         public Int16 cntDecimales { get; set; }
+
+
+
+        public bool indOperacionGratuita { get; set; }
+
+        public bool indGravadoIGV { get; set; }
+
+
+        /// <summary>
+        /// 1= GRAVADO, 2=EXONERADO, 3=INAFECTO
+        /// </summary>
+        public Int16 indTipoCalculoIGV { get; set; }
+
+        public string indTipoCalculoIGVNombre { get; set; }
+
+        public Decimal cntPesoUnitario { get; set; }
 
     }
 }

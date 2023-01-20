@@ -15,9 +15,9 @@
     {
         public DTODocumRegFEResponse()
         {
-            DRC_Doc_TipoDocumento = string.Empty;
+            codTipoDocumentoNombre = string.Empty;
             DRC_Doc_Serie = string.Empty;
-            DRC_numDocUsuario = string.Empty;
+            numEntidadRUC = string.Empty;
             DRC_Doc_Numero = string.Empty;
             DRC_tipOperacion = string.Empty;
             DRC_fecEmision = string.Empty;
@@ -27,16 +27,14 @@
             DRC_customizationId = string.Empty;
             DRC_Firma = string.Empty;
             codMotivoNCRNombre = string.Empty;
-            //RefnumDocumento = string.Empty;
-            //RefnumSerie = string.Empty;
-            //RefnumDocumentoOrig = string.Empty;
-            DRC_rznSocialUsuario = string.Empty;
+
+            nomRazonSocialEntidad = string.Empty;
             DRC_tipDocUsuario = string.Empty;
             DRC_tipMoneda = string.Empty;
             DRC_tipOperacion = string.Empty;
             DRC_ublVersionId = string.Empty;
 
-            NombreReporte = string.Empty;
+            nomReporteDocumSerie = string.Empty;
             pathLogoEmpresa = string.Empty;
             codEmpleadoNombre = string.Empty;
 
@@ -56,15 +54,44 @@
             pLogoEmpresa = string.Empty;
             codRegUnidadMedidaGlobal = string.Empty;
             desMotivoGuiaOtro = string.Empty;
+
+            desNota01 = string.Empty;
+            desNota02 = string.Empty;
+            desNota03 = string.Empty;
+            desTotalCaja= string.Empty;
+            codDocumento = string.Empty;
+            codAbreviatura=string.Empty;
+            nomDocumento=string.Empty;
+            fecPagadoCancelado=string.Empty;
+
+            mtoValorTotalOperacionGratuita = 0u;
+            prcDescuentoGlobal = 0u;
+            mtoValorTotalDescuentoGlobal = 0u;
+            mtoValorTotalFISE = 0u;
+            mtoValorTotalRC_Propinas = 0u;
+            mtoValorTotalCargosGlobales = 0u;
+            mtoValorTotalPercepcion = 0u;
+
             LstDocumRegDetalle = new List<DTODocumRegFEDetalleResponse>();
             LstDocumRegPagoCredito = new List<DTODocumRegPagoCreditoResponse>();
+            LstDocumRegCargoDescuento = new List<DTODocumRegCargoDescuentoResponse>();
+
         }
+
+        public List<DTODocumRegFEDetalleResponse> LstDocumRegDetalle { get; set; }
+
+        public List<DTODocumRegPagoCreditoResponse> LstDocumRegPagoCredito { get; set; }
+
+        public List<DTODocumRegCargoDescuentoResponse> LstDocumRegCargoDescuento { get; set; }
 
         public int codDocumRegSunat { get; set; }
 
         public int codDocumReg { get; set; }
 
-        public string DRC_Doc_TipoDocumento { get; set; }
+        /// <summary>
+        /// DRC_Doc_TipoDocumento 
+        /// </summary>
+        public string codTipoDocumentoNombre{ get; set; }
 
         public string numDocumento { get; set; }
 
@@ -78,17 +105,31 @@
 
         public string DRC_horEmision { get; set; }
 
-        public DateTime DRC_fecVencimiento { get; set; }
+        /// <summary>
+        /// DRC_fecVencimiento
+        /// </summary>
+        public DateTime fecDeVencimiento { get; set; }
 
         public string DRC_codLocalEmisor { get; set; }
 
         public string DRC_tipDocUsuario { get; set; }
 
-        public string DRC_numDocUsuario { get; set; }
+        /// <summary>
+        /// DRC_numDocUsuario
+        /// </summary>
+        public string numEntidadRUC { get; set; }
 
-        public string DRC_rznSocialUsuario { get; set; }
+        /// <summary>
+        /// DRC_rznSocialUsuario
+        /// </summary>
+        public string nomRazonSocialEntidad { get; set; }
 
-        public string cliEntidadcodUbigeo { get; set; }
+        /// <summary>
+        /// cliEntidadcodUbigeo
+        /// </summary>
+        public string codUbigeoEntidad { get; set; }
+
+        public string codPersonaEntidad { get; set; }
 
         #region DATOS RELACIONADO A SUNAT - ENVIO
 
@@ -112,11 +153,16 @@
 
         public bool flagEnviadoSUNAT { get; set; }
 
-        public Nullable<DateTime> fecEnviadoSUNAT { get; set; }
+        public DateTime? fecEnviadoSUNAT { get; set; }
 
         public string segUsuarioEnviadoSUNAT { get; set; }
 
         public bool flagParaEnvioSUNAT { get; set; }
+
+
+        public string RPS_numTicket { get; set; }
+
+        public DateTime? RPS_fecRecepcion { get; set; }
 
         #endregion
 
@@ -132,55 +178,135 @@
 
         #endregion
 
-
         #region DATOS DE VALORES MONETARIOS/IMPUESTOS DEL DOCUMENTO
 
-        public decimal DRC_sumTotBruto { get; set; }
+        /// <summary>
+        /// DRC_sumTotBruto
+        /// </summary>
+        public decimal mtoValorTotalBruto { get; set; }
 
-        public decimal DRC_sumTotTributos { get; set; }
+        /// <summary>
+        /// DRC_sumTotTributos
+        /// </summary>
+        public decimal mtoValorTotalImpuesto { get; set; }
 
-        public decimal DRC_sumTotValVenta { get; set; }
+        /// <summary>
+        /// DRC_sumTotValVenta
+        /// </summary>
+        public decimal mtoValorTotalVenta { get; set; }
 
-        public decimal DRC_sumPrecioVenta { get; set; }
+        /// <summary>
+        /// DRC_sumPrecioVenta
+        /// </summary>
+        public decimal mtoValorTotalPrecioVenta { get; set; }
 
-        public decimal DRC_sumDescTotal { get; set; }
+        /// <summary>
+        /// DRC_sumDescTotal
+        /// </summary>
+        public decimal mtoValorTotalDescuento { get; set; }
 
-        public decimal DRC_sumOtrosCargos { get; set; }
+        /// <summary>
+        /// DRC_sumOtrosCargos 
+        /// </summary>
+        public decimal mtoValorTotalOtrosCargos{ get; set; }
 
-        public decimal DRC_sumTotalAnticipos { get; set; }
+        /// <summary>
+        /// DRC_sumTotalAnticipos
+        /// </summary>
+        public decimal mtoValorTotalAnticipos { get; set; }
 
-        public decimal DRC_sumImpVenta { get; set; }
+        /// <summary>
+        /// DRC_sumImpVenta
+        /// </summary>
+        public decimal mtoValorTotalImpVenta { get; set; }
 
-        public decimal prcImpuestoGV { get; set; }
+        /// <summary>
+        /// prcImpuestoGV
+        /// </summary>
+        public decimal prcValorIGV { get; set; }
 
-        public decimal? monTipoCambioVTA { get; set; }
+        /// <summary>
+        /// monTipoCambioVTA
+        /// </summary>
+        public decimal? mtoTipoCambioCMP { get; set; }
 
-        public decimal? monTipoCambioCMP { get; set; }
+        /// <summary>
+        /// monTipoCambioCMP
+        /// </summary>
+        public decimal? mtoTipoCambioVTA { get; set; }
+
+        /// <summary>
+        /// sumTotImpuestoIGV
+        /// </summary>
+        public decimal mtoValorTotalImpuestoIGV { get; set; }
+
+        /// <summary>
+        /// sumTotImpuestoICBPER
+        /// </summary>
+        public decimal mtoValorTotalImpuestoICBPER { get; set; }
 
 
-        public decimal DRC_sumTotValorReferencia { get; set; }
+        #region CARGOS-DESXUENTOS GLOBALES - VALORES CALCULADOS
 
+        /// <summary>
+        /// sumOperacionGratuita
+        /// </summary>
+        public decimal mtoValorTotalOperacionGratuita { get; set; }  // es igual DRC_sumTotValorReferencia
+
+
+        public decimal prcDescuentoGlobal { get; set; }
+
+        /// <summary>
+        /// sumTotalDescuentoGlobal
+        /// </summary>
+        public decimal mtoValorTotalDescuentoGlobal { get; set; }
+
+        /// <summary>
+        /// sumTotalFISE
+        /// </summary>
+        public decimal mtoValorTotalFISE { get; set; }
+
+        /// <summary>
+        /// sumTotalRC_Propinas
+        /// </summary>
+        public decimal mtoValorTotalRC_Propinas { get; set; }
+
+        /// <summary>
+        /// sumTotalCargosGlobales
+        /// </summary>
+        public decimal mtoValorTotalCargosGlobales { get; set; }
+
+        /// <summary>
+        /// sumTotalPercepcion
+        /// </summary>
+        public decimal mtoValorTotalPercepcion { get; set; }
+
+        #endregion
 
         #endregion
 
         public string gloObservaciones { get; set; }
 
-        public DateTime DRC_fecEmisionDT { get; set; }
+        /// <summary>
+        /// DRC_fecEmisionDT
+        /// </summary>
+        public DateTime fecDeEmision { get; set; }
 
         public int codCondicionVenta { get; set; }
 
-        public List<DTODocumRegFEDetalleResponse> LstDocumRegDetalle { get; set; }
-
-        public List<DTODocumRegPagoCreditoResponse> LstDocumRegPagoCredito { get; set; }
 
         #region DATOS DEL DOCUMENTO DE REFERENCIA - ORIGEN
 
         public string codDocumentoOrigen { get; set; }
 
         public string codDocumentoOrigenNombre { get; set; }
+
         public string desAbreviaturaOrigen { get; set; }
+
         public string codTipoDocumentOrigen { get; set; }
+
         public string codTipoDocumentoNombreOrigen { get; set; }
+
         public string numDocumentoOrigOrigen { get; set; }
 
         public Nullable<DateTime> fecDocumentoOrigen { get; set; }
@@ -221,30 +347,6 @@
         public int? codCondicionVentaOrigen { get; set; }
        
 
-        //public Nullable<DateTime> Ref { get; set; }
-
-        //public string numDocumentoOrig { get; set; }
-
-        //public int? RefcodDocumReg { get; set; }
-
-        //public string RefcodDocumento { get; set; }
-
-        //public string RefnumDocumentoOrig { get; set; }
-
-        //public decimal? RefmonTipoCambioVTA { get; set; }
-
-        //public string ReftipoDocumento { get; set; }
-
-        //public string ReftipoDocumentoNombre { get; set; }
-
-        //public string RefnumSerie { get; set; }
-
-        //public string RefnumDocumento { get; set; }
-
-        //public Nullable<DateTime> ReffecEmision { get; set; }
-
-
-
         #endregion
 
         #region DATOS DEL DOCUMENTO DE REFERENCIA - DESTINO
@@ -253,7 +355,9 @@
         public string codDocumentoDestino { get; set; }
 
         public string codDocumentoDestinoNombre { get; set; }
+
         public string desAbreviaturaDestino { get; set; }
+
         public string codTipoDocumentoDestino { get; set; }
 
         public string numDocumentoOrigDestino { get; set; }
@@ -293,7 +397,10 @@
 
         public int? codMotivoNDB { get; set; }
 
-        public string RefMotivo { get; set; }
+        /// <summary>
+        /// gloMotivoSustento
+        /// </summary>
+        public string desMotivoEmisionNotaCRDB { get; set; }
 
         public string keyMotivoNCR { get; set; }
 
@@ -306,14 +413,25 @@
         #endregion
 
         #region DATOS ADICIONALES DE LA CABECERA DEL DOCUMENTO
+        /// <summary>
+        /// codTipoDocumentoNombre
+        /// </summary>
+        public string codDocumentoNombre { get; set; }
 
-        public string codTipoDocumentoNombre { get; set; }
+        /// <summary>
+        /// NombreReporte
+        /// </summary>
+        public string nomReporteDocumSerie { get; set; }
 
-        public string NombreReporte { get; set; }
+        /// <summary>
+        /// cliEntidadDireccion
+        /// </summary>
+        public string desEntidadDireccion { get; set; }
 
-        public string cliEntidadDireccion { get; set; }
-
-        public string cliEntidadDireccionUbigeo { get; set; }
+        /// <summary>
+        /// cliEntidadDireccionUbigeo
+        /// </summary>
+        public string desDireccionUbigeoEntidad{ get; set; }
 
         public string codRegMoneda { get; set; }
 
@@ -323,12 +441,20 @@
 
         public string codCondicionVentaNombre { get; set; }
 
+        /// <summary>
+        /// numGuiaDeSalida
+        /// </summary>
+        public string numDocGuiaDeSalida { get; set; }
 
-        public string numGuiaDeSalida { get; set; }
+        /// <summary>
+        /// numOrdenCompra
+        /// </summary>
+        public string numDocOrdenDeCompra { get; set; }
 
-        public string numOrdenCompra { get; set; }
-
-        public string numPedidoAdquisicion { get; set; }
+        /// <summary>
+        /// numPedidoAdquisicion
+        /// </summary>
+        public string numDocPedidoAdquisicion { get; set; }
 
         public int codEmpleado { get; set; }
 
@@ -416,23 +542,50 @@
 
         public string codRegUnidadMedidaGlobal { get; set; }
 
-        public string numTotalBultos { get; set; }
+        /// <summary>
+        /// numTotalBultos
+        /// </summary>
+        public string desTotalCaja { get; set; }
 
-        public string cntPesoTotalBrutoBienes { get; set; }
+        /// <summary>
+        /// cntPesoTotalBrutoBienes
+        /// </summary>
+        public string desTotalPeso { get; set; }
 
         public DateTime? fecInicioTraslado { get; set; }
 
-        public string gloNota { get; set; }
+        /// <summary>
+        /// gloNota
+        /// </summary>
+        public string desNota01 { get; set; }
+
+        /// <summary>
+        /// gloNota02
+        /// </summary>
+        public string desNota02 { get; set; }
+
+        /// <summary>
+        /// gloNota03
+        /// </summary>
+        public string desNota03 { get; set; }
+
 
         public string numOrderReferenceGuiaBaja { get; set; }
 
+        //public string codRegMotivoGuia { get; set; }
+        /// <summary>
+        /// codMotivoTraslado
+        /// </summary>
         public string codRegMotivoGuia { get; set; }
+        /// <summary>
+        /// codMotivoTrasladoNombre
+        /// </summary>
+        public string codRegMotivoGuiaNombre { get; set; }
 
-        public string codMotivoTraslado { get; set; }
-
-        public string codMotivoTrasladoNombre { get; set; }
-
-        public string numMinuta { get; set; }
+        /// <summary>
+        /// numMinuta
+        /// </summary>
+        public string numDocumentoMinuta { get; set; }
 
         public int? codModalidadTransporte { get; set; }
 
@@ -449,8 +602,10 @@
         public string codDomicilioPartidaUbigeo { get; set; }
 
         public string codDomicilioPartidaUbigeoNombre { get; set; }
-
-        public string desDomicilioPartidaRegistrado { get; set; }
+        /// <summary>
+        /// desDomicilioPartidaRegistrado
+        /// </summary>
+        public string gloDireccioDePartida { get; set; }
 
         public string codPersonaDomicilioPartidaNombre { get; set; }
 
@@ -462,17 +617,27 @@
         public string codPersonaTransporte { get; set; }
 
         public string codPersonaTransporteNombre { get; set; }
+        /// <summary>
+        /// codPersonaTransporteTipoDocumento
+        /// </summary>
+        public string codRegTipoDocumentoTransportista { get; set; }
+        /// <summary>
+        /// codPersonaTransporteTipoDocumentoNombre 
+        /// </summary>
+        public string codRegTipoDocumentoTransportistaNombre{ get; set; }
+        /// <summary>
+        /// codPersonaTransporteNumDocumento
+        /// </summary>
+        public string codPersonaTransporteRUC { get; set; }
 
-        public string codPersonaTransporteTipoDocumento { get; set; }
-
-        public string codPersonaTransporteTipoDocumentoNombre { get; set; }
-
-        public string codPersonaTransporteNumDocumento { get; set; }
-
-
-        public string numPlacaVehiculo { get; set; }
-
-        public string numLicenciaConducir { get; set; }
+        /// <summary>
+        /// numPlacaVehiculo
+        /// </summary>
+        public string desTransportePlaca { get; set; }
+        /// <summary>
+        /// numLicenciaConducir
+        /// </summary>
+        public string desTransporteLicencia { get; set; }
 
         public string desTransporteConstancia { get; set; }
 
@@ -482,9 +647,14 @@
         public int? codPersonaDomicilioTransportista { get; set; }
 
         public string codPersonaDomicilioTransportistaNombre { get; set; }
-
+        /// <summary>
+        /// codRegUbigeoTransporte; codUbigeoTransporte
+        /// </summary>
         public string codUbigeoTransporte { get; set; }
 
+        /// <summary>
+        /// codRegUbigeoTransporteNombre; codUbigeoTransporteNombre
+        /// </summary>
         public string codUbigeoTransporteNombre { get; set; }
 
         public string codRegTipoDomicilioTransporte { get; set; }
@@ -544,7 +714,10 @@
 
         public int codDocumentoEstado { get; set; }
 
-        public string codRegEstado { get; set; }
+        /// <summary>
+        /// codRegEstado
+        /// </summary>
+        public string codRegEstadoDocumento { get; set; }
 
         public int? RDD_EstadoDelItem { get; set; }
         public DateTime? RDD_FechaEnvioSunat { get; set; }
@@ -555,5 +728,32 @@
         public string DDB_NombreArchivoTicket { get; set; }
 
         public int numTotalCuotas { get; set; }
+
+
+
+
+
+
+
+        public int? codEmpleadoVendedor { get; set; }
+
+        public string codEmpleadoVendedorNombre { get; set; }
+
+        public string codEmpleadoVendedorEmail { get; set; }
+
+        public string codParteDiario { get; set; }
+        public string codPuntoDeVenta { get; set; }
+        public string codPuntoDeVentaNombre { get; set; }
+        public string codRegEstadoDocumentoNombre { get; set; }
+        public string codRegistroUnicoGUID { get; set; }
+        public string codRegTipoDeOperacion { get; set; }
+        public string codRegTipoDeOperacionNombre { get; set; }
+
+        public DateTime? fecDeCancelacion { get; set; }
+        public DateTime? fecDeEntrega { get; set; }
+        public DateTime fecDeProceso { get; set; }
+        public decimal mtoValorTotalPrecioExtran { get; set; }
+        public string perTributario { get; set; }
+
     }
 }

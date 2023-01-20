@@ -239,7 +239,7 @@
                     pMessage = WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == 2026).Value;
                     return DetectadoEsValido;
                 }
-                if (DetectResult.desMessage.ToUpper() == "OK")
+                if (DetectResult.desMessage.ToUpper() == WebConstants.DEFAULT_OK)
                 {
                     DetectadoEsValido = HelpCrypto.SISValidarTextoEncriptado(pPasswordExterno, DetectResult.clvPasswordEncripted);
                     if (!DetectadoEsValido)

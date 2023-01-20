@@ -1,5 +1,6 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
+
     using System;
     using System.Collections.Generic;
 
@@ -11,10 +12,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Archivo     : [GestionComercial.DTODocumRegFCTBVTProvRequest.cs]
     /// Documento   : FACTURA - BOLETA DE VENTA
     /// </summary>
-    public class DTODocumRegFCTBVTProvRequest : DTODocumRegBaseRequest
+    public class BEDocumRegFCTBVTProvRequest : BEDocumRegBaseRequest
     {
 
-        public DTODocumRegFCTBVTProvRequest()
+        public BEDocumRegFCTBVTProvRequest()
         {
 
             numDocumento = string.Empty;

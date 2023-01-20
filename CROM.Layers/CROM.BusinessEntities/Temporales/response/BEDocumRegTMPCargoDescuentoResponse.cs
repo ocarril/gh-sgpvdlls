@@ -18,7 +18,6 @@ namespace CROM.BusinessEntities.Temporales.response
 
         }
 
-        [JsonIgnore]
         public int codEmpresa { get; set; }
 
         public Guid? keyDocumRegCargoDescuento { get; set; }
@@ -38,6 +37,10 @@ namespace CROM.BusinessEntities.Temporales.response
         public string gloDocumRegDetalleItem { get; set; }
 
 
+
+        public bool indNivelOrigen { get; set; }
+
+        public bool indTipoVariable { get; set; }
 
         public string indNivelOrigenNombre { get; set; }
 
@@ -81,5 +84,10 @@ namespace CROM.BusinessEntities.Temporales.response
 
         public bool indEstado { get; set; }
 
+        public decimal monTipoCambioVTA { get; set; }
+
+        public decimal monTipoCambioCMP { get; set; }
+
+        public short cntDecimales { get; set; }
     }
 } 

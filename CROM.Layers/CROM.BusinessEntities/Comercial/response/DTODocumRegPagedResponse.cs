@@ -74,11 +74,24 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string codRegDestinoDocumNombre { get; set; }
 
+
+
+        public decimal monTipoCambioVTA { get; set; }
+
+        public decimal monTipoCambioCMP { get; set; }
+
+
         public decimal sumTotBruto { get; set; }
 
         public decimal prcIGV { get; set; }
 
         public decimal sumDescTotal { get; set; }
+
+        public decimal prcDescuentoGlobal { get; set; }
+
+        public decimal sumDescuentoGlobal { get; set; }
+
+        public decimal sumOperacionGratuita { get; set; }
 
         public decimal sumTotValVenta { get; set; }
 
@@ -88,16 +101,22 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public decimal sumPrecioVentaExtran { get; set; }
 
-        public string numDocumentoDESTINO { get; set; }
-
-        public string numDocumentoORIGEN { get; set; }
-
         public decimal sumOtrosCargos { get; set; }
 
         public decimal sumTotalAnticipos { get; set; }
 
         public decimal sumImpVenta { get; set; }
 
+        public decimal sumTotImpuestoICBPER { get; set; }
+
+
+
+        public decimal mtoNetoPendientePago { get; set; }
+
+
+        public string numDocumentoDESTINO { get; set; }
+
+        public string numDocumentoORIGEN { get; set; }
 
         /**
          * ATRIBUTOS ADICIONALES
@@ -123,9 +142,6 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string codCondicionVentaNombre { get; set; }
 
-        public decimal monTipoCambioVTA { get; set; }
-
-        public decimal monTipoCambioCMP { get; set; }
 
         public string codPuntoVentaNombre { get; set; }
 
@@ -212,7 +228,7 @@ namespace CROM.BusinessEntities.Comercial.response
         public Nullable<DateTime> ReffecEmision { get; set; }
         public int? codMotivoNCR { get; set; }
         public int? codMotivoNDB { get; set; }
-        public string RefMotivo { get; set; }
+        public string desMotivoEmisionNotaCRDB { get; set; }
 
         public string keyMotivoNCR { get; set; }
         public string keyMotivoNDB { get; set; }
@@ -271,6 +287,9 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string fecPagadoCancelado { get; set; }
 
+        public int? codCondicionCompra { get; set; }
+
+        public int? codCondicionVenta { get; set; }
     }
 
 }

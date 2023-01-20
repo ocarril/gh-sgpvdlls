@@ -1,4 +1,4 @@
-﻿namespace CROM.BusinessEntities.SUNAT.response
+﻿namespace CROM.BusinessEntities.SUNAT.WSConsulta
 {
     using Newtonsoft.Json;
 
@@ -11,7 +11,7 @@
             TokenType = string.Empty;
         }
 
-        [JsonProperty ("access_token")]
+        [JsonProperty("access_token")]
         public string AccessToken { get; set; }
 
 

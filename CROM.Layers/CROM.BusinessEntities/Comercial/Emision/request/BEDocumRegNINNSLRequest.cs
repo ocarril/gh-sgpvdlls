@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
     using System;
     using System.Collections.Generic;
@@ -11,10 +11,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Archivo     : [GestionComercial.DTODocumRegNCRRequest.cs]
     /// Documento   : NOTA DE INGRESO
     /// </summary>
-    public class DTODocumRegNINNSLRequest : DTODocumRegBaseRequest
+    public class BEDocumRegNINNSLRequest : BEDocumRegBaseRequest
     {
 
-        public DTODocumRegNINNSLRequest()
+        public BEDocumRegNINNSLRequest()
         {
 
             perTributario = string.Empty;

@@ -2,6 +2,7 @@
 {
     using CROM.BusinessEntities.RecursosHumanos;
     using CROM.BusinessEntities.RecursosHumanos.DTO;
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Collections.Generic;
 
@@ -61,7 +62,7 @@
                     foreach (var item in resulSet)
                     {
                         pEmpleado.codEmpleado = item.codError.HasValue ? item.codError.Value : 0;
-                        blnResult = item.desMessage == "OK" ? true : false;
+                        blnResult = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
 
                 }
@@ -114,7 +115,7 @@
                     );
                     foreach (var item in resulSet)
                     {
-                        blnResult = item.desMessage == "OK" ? true : false;
+                        blnResult = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }
@@ -148,7 +149,7 @@
                                                                  pMaquinaDelete );
                     foreach (var item in resulSet)
                     {
-                        blnResult = item.desMessage == "OK" ? true : false;
+                        blnResult = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }

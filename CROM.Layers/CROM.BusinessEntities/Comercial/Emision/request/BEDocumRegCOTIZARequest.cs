@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
     using System;
     using System.Collections.Generic;
@@ -11,10 +11,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Archivo     : [GestionComercial.DTODocumRegCOTIZARequest.cs]
     /// Documento   : COTIZACIONES
     /// </summary>
-    public class DTODocumRegCOTIZARequest : DTODocumRegBaseRequest
+    public class BEDocumRegCOTIZARequest : BEDocumRegBaseRequest
     {
 
-        public DTODocumRegCOTIZARequest()
+        public BEDocumRegCOTIZARequest()
         {
 
             numDocumento = string.Empty;

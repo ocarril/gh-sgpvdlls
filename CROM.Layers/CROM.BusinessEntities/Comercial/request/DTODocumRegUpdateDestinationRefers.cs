@@ -9,7 +9,6 @@
 
             codDocumentoOrigen = string.Empty;
             numDocumentoOrigenFull = string.Empty;
-            codRegEstadoDocuOrigen = string.Empty;
         }
 
         public int codDocumReg { get; set; }
@@ -21,7 +20,7 @@
         public string numDocumentoOrigenFull { get; set; }
 
         [JsonIgnore]
-        public string codRegEstadoDocuOrigen { get; set; }
+        public int? codDocumentoEstadoOrigen { get; set; }
 
         [JsonIgnore]
         public int? codMotivoNCR { get; set; }

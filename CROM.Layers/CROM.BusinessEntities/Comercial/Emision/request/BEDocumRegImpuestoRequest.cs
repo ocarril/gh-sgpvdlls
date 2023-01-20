@@ -1,8 +1,8 @@
-﻿namespace CROM.BusinessEntities.Comercial.request
+﻿namespace CROM.BusinessEntities.Comercial.emision.request
 {
-    public class DTODocumRegImpuestoRequest: BEBaseEntidadRequest
+    public class BEDocumRegImpuestoRequest: BEBaseEntidadRequest
     {
-        public DTODocumRegImpuestoRequest()
+        public BEDocumRegImpuestoRequest()
         {
 
         }

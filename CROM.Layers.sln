@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29905.134
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CROM.Asistencia.DataAcces", "CROM.Layers\CROM.Asistencia.DataAcces\CROM.Asistencia.DataAcces.csproj", "{7ADA5572-66CD-4EB4-9B3E-B9601242C5F1}"
 EndProject
@@ -80,6 +80,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CROM.ComercialAlmacen.Interfaces", "CROM.Layers\CROM.ComercialAlmacen.Interfaces\CROM.ComercialAlmacen.Interfaces.csproj", "{7C33BBE6-279D-4881-B394-B1AEBD70B57A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CROM.GC.Services.Interfaces", "CROM.Layers\CROM.GC.Services.Interfaces\CROM.GC.Services.Interfaces.csproj", "{697778A6-4B83-43D6-B937-412F696519BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CROM.Data", "CROM.Layers\CROM.Data\CROM.Data.csproj", "{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "11CROM.Data", "11CROM.Data", "{9724064B-6109-481D-8419-5237C81264AC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -513,6 +517,22 @@ Global
 		{697778A6-4B83-43D6-B937-412F696519BF}.Release|x64.Build.0 = Release|Any CPU
 		{697778A6-4B83-43D6-B937-412F696519BF}.Release|x86.ActiveCfg = Release|Any CPU
 		{697778A6-4B83-43D6-B937-412F696519BF}.Release|x86.Build.0 = Release|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|net.ActiveCfg = Debug|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|net.Build.0 = Debug|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|x64.ActiveCfg = Debug|x64
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|x64.Build.0 = Debug|x64
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Debug|x86.Build.0 = Debug|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|net.ActiveCfg = Release|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|net.Build.0 = Release|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|x64.ActiveCfg = Release|x64
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|x64.Build.0 = Release|x64
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|x86.ActiveCfg = Release|Any CPU
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -546,6 +566,7 @@ Global
 		{048BB71D-D4EC-4D2D-8761-D27D2C597BB6} = {3B562B78-EF2A-46AE-820D-1AD865BB7E47}
 		{7C33BBE6-279D-4881-B394-B1AEBD70B57A} = {6CEE51AC-A3D6-4AEA-935A-28B48F3C41D0}
 		{697778A6-4B83-43D6-B937-412F696519BF} = {3B562B78-EF2A-46AE-820D-1AD865BB7E47}
+		{75CE3754-F6A4-4035-B60F-1CC27B7B0FA9} = {9724064B-6109-481D-8419-5237C81264AC}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E5701B27-D2B6-43B4-8737-4906F31C17C7}

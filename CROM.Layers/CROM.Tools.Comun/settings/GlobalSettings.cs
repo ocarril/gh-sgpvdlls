@@ -300,6 +300,16 @@
         #endregion
 
 
+        public static bool GetDEFAULT_ENVIA_GRE_SFS_SUNAT()
+        {
+
+            bool valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_ENVIA_GRE_SFS_SUNAT"]) == 1 ? true : false;
+
+            return valorConfig;
+        }
+
+
+
         #region VALORES PARA WEB JOB
 
         public static string GetDEFAULT_WebJobUserLogin()
@@ -314,5 +324,27 @@
 
         #endregion
 
+        #region VALORES PARA GENERAR ARCHIVO XML
+
+        public static int GetDEFAULT_XML_TIPO_GEOCODING()
+        {
+
+            int valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_XML_TIPO_GEOCODING"]);
+
+            return valorConfig;
+        }
+
+
+        public static bool GetDEFAULT_XML_STANDALONE()
+        {
+
+            bool valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_XML_STANDALONE"]) == 1 ? true : false;
+
+            return valorConfig;
+        }
+
+
+
+        #endregion
     }
 }

@@ -77,10 +77,14 @@ namespace CROM.BusinessEntities.Comercial.DTO
         public bool PidePedidoDeAdquis { get; set; }
         public bool ExigeDocumentoAnexo { get; set; }
         public bool Estado { get; set; }
-        
-        public string CodigoArguEstEMIDefault { get; set; }
-        public string CodigoArguEstANUDefault { get; set; }
-        public string CodigoArguEstPRODefault { get; set; }
+
+        public int? codDocumentoEstadoEMITDefault { get; set; }
+
+        public int? codDocumentoEstadoANULDefault { get; set; }
+
+        public int? codDocumentoEstadoPROCDefault { get; set; }
+
+
         public bool EsGravado { get; set; }
         public string CodigoArguTipoDeOperacionDefault { get; set; }
         public bool PideContactoEntidad { get; set; }
@@ -101,8 +105,20 @@ namespace CROM.BusinessEntities.Comercial.DTO
         public string CodigoArguDestinoCompNombre { get; set; }
         //////[NotMapped]
         public string CodigoPersonaEmpreNombre { get; set; }
+        
+
+
         //////[NotMapped]
-        public string CodigoArguTipoDeOperacionDefaultNombre { get; set; }
+        public string codRegTipoDeOperacionDefaultNombre { get; set; }
+
+
+        public string codRegEstadoEMIT { get; set; }
+
+        public string codRegEstadoANUL { get; set; }
+
+        public string codRegEstadoPROC { get; set; }
+
+
 
     }
 } 

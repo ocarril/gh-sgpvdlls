@@ -1,7 +1,7 @@
-﻿namespace CROM.BusinessEntities.SUNAT.request
+﻿
+namespace CROM.BusinessEntities.SUNAT.WSConsulta
 {
     using Newtonsoft.Json;
-
 
     public class BEGenerarApiConsultaValidDocumentRequest
     {

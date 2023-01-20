@@ -97,6 +97,14 @@ namespace CROM.BusinessEntities.Almacen.request
 
         public bool indEsGarantizado { get; set; }
 
+
+        public byte indTipoCalculoAfectacion { get; set; }
+
+        public bool indIncluyeIGV { get; set; }
+
+        public bool indICBPER { get; set; }
+
+
         public List<BEProductoClaveRequest> listaProductoClave { get; set; }
 
         public List<BEProductoProveedorRequest> listaProductoProveedores { get; set; }

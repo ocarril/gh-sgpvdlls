@@ -9,6 +9,7 @@ namespace CROM.TablasMaestras.DataAcces
     using CROM.BusinessEntities.Comercial.DTO;
     using CROM.BusinessEntities.Comercial;
     using CROM.BusinessEntities.Maestros.DTO;
+    using CROM.Tools.Comun.Web;
 
 
     /// <summary>
@@ -406,7 +407,7 @@ namespace CROM.TablasMaestras.DataAcces
                     foreach (var item in resulSet)
                     {
                         pPersona.TOTAL_AFECT = item.codError.Value;
-                        result = item.desMessage == "OK" ? true : false;
+                        result = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }

@@ -5,7 +5,7 @@
     using CROM.Seguridad.DataAcces.acceso;
     using CROM.Tools.Comun.security;
     using CROM.Tools.Comun.settings;
-
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Collections.Generic;
 
@@ -173,7 +173,7 @@
 
                     foreach (var item in resulSet)
                     {
-                        if (item.codError == 1 && item.desMessage == "OK")
+                        if (item.codError == 1 && item.desMessage == WebConstants.DEFAULT_OK)
                             blnResult = true;
                         else
                             pMessage = item.desMessage;
@@ -204,7 +204,7 @@
 
                     foreach (var item in resulSet)
                     {
-                        if (item.codError == 1 && item.desMessage == "OK")
+                        if (item.codError == 1 && item.desMessage == WebConstants.DEFAULT_OK)
                             blnResult = true;
                         else
                             pMessage = item.desMessage;
@@ -235,7 +235,7 @@
                     foreach (var item in resulSet)
                     {
                         blnResult = item.codError == 1 ? true : false;
-                        pMessage = item.desMessage == "OK" ? string.Empty : item.desMessage;
+                        pMessage = item.desMessage == WebConstants.DEFAULT_OK ? string.Empty : item.desMessage;
                     }
                 }
             }

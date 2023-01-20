@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace CROM.Tools.Comun
 {
@@ -12,23 +9,74 @@ namespace CROM.Tools.Comun
         /// </summary>
         public enum Tipos
         {
-            BVT, /// BOLETA DE VENTA
-            COT, /// COTIZACIONES
+            /// <summary>
+            /// BOLETA DE VENTA
+            /// </summary>
+            BVT,
+            /// <summary>
+            /// COTIZACIONES
+            /// </summary>
+            COT,
+            /// <summary>
+            /// FACTURAS
+            /// </summary>
             FCT,
-            GRE,
-            INV,
+            /// <summary>
+            /// GUIAS DE FREMISIONES
+            /// </summary>
+            GRE,   
+            /// <summary>
+            /// INVENTARIOS
+            /// </summary>
+            INV,   
+            /// <summary>
+            /// NOTA DE COBRANZA
+            /// </summary>
             NCB,
+            /// <summary>
+            /// NOTA DE CRÉDITO
+            /// </summary>
             NCR,
+            /// <summary>
+            /// NOTA DE DÉBITO
+            /// </summary>
             NDB,
+            /// <summary>
+            /// NOTA DE INGRESO
+            /// </summary>
             NIN,
+            /// <summary>
+            /// NOTA DE PEDIDO
+            /// </summary>
             NPD,
+            /// <summary>
+            /// NOTA DE SALIDA
+            /// </summary>
             NSL,
+            /// <summary>
+            /// NOTA DE VENTA
+            /// </summary>
             NVT,
-            OCM,
+            /// <summary>
+            /// ORDEN DE COMPRA
+            /// </summary>
+            ORC,
+            /// <summary>
+            /// ORDEN DE PAGO
+            /// </summary>
             OPG,
+            /// <summary>
+            /// OTROS
+            /// </summary>
             OTR,
             RPG,
+            /// <summary>
+            /// TICKECT
+            /// </summary>
             TCK,
+            /// <summary>
+            /// RECIBO POR HONORARIOS
+            /// </summary>
             RPH
         }
 

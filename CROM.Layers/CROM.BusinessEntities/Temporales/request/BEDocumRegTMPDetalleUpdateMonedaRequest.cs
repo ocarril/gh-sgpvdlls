@@ -23,5 +23,7 @@
         public decimal monTipoCambioCMP { get; set; }
 
         public bool indGravadoIGV { get; set; }
+
+        public Int16 indTipoCalculoIGV { get; set; }
     }
 }

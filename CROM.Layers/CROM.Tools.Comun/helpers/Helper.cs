@@ -201,6 +201,9 @@ namespace CROM.Tools.Comun
 
         public static String Numero_A_Texto(Int64 value)
         {
+            if(value < 0)
+                value = value * (-1);
+
             string num2Text = "";
             Int64 ValueNum = value;
             switch (value)
@@ -366,26 +369,10 @@ namespace CROM.Tools.Comun
             string strSoloDecima = string.Empty;
             decimal decEnteroD = 0;
             Int64 intEntero = 0;
-            string strDatoNumero1 = pMontoValor; //.ToString("0.00");
-
-
-            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
-                string.Concat("documRegPrint.strDatoNumero1: ", strDatoNumero1), "segUsuarioActual", "0");
-
+            string strDatoNumero1 = pMontoValor;
 
             strSoloEntero = strDatoNumero1.Substring(0, strDatoNumero1.IndexOf('.'));
-
-
-
-            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
-                string.Concat("documRegPrint.strSoloEntero: ", strSoloEntero), "segUsuarioActual", "0");
-
-
             strSoloDecima = strDatoNumero1.Substring(strDatoNumero1.IndexOf('.') + 1, 2);
-
-            HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
-                string.Concat("documRegPrint.strSoloDecima: ", strSoloDecima), "segUsuarioActual", "0");
-
             decEnteroD = Convert.ToDecimal(strSoloEntero);
             intEntero = Convert.ToInt64(decEnteroD);
 
@@ -394,7 +381,9 @@ namespace CROM.Tools.Comun
                                                     string.Empty : pcodRegMonedaNombre.Trim().ToUpper());
 
             HelpLogging.Write(TraceLevel.Info, string.Concat("Helper", ".", MethodBase.GetCurrentMethod().Name),
-                string.Concat("strValorTotalPrecioVentaLetras: ", strValorTotalPrecioVentaLetras), "segUsuarioActual", "0");
+                              string.Format("DatoNumero: {0} - SoloEntero: {1} - SoloDecimal: {2} = {3}", 
+                                             strDatoNumero1, strSoloEntero, strSoloDecima, strValorTotalPrecioVentaLetras), 
+                              "segUsuarioActual", "0");
 
             return strValorTotalPrecioVentaLetras;
         }

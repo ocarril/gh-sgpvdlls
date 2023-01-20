@@ -142,17 +142,49 @@
         public string gloObs { get; set; }
 
 
-        public bool indEsGravado { get; set; }
+        public bool indGravadoIGV { get; set; }
 
         public bool indOperacionGratuita { get; set; }
+        /// <summary>
+        /// Id de tipo de Afectacon al IGV, relacionado a la tabla [Sunat].[TS07TipoAfectacionIGV]
+        /// </summary>
+        public int? codTipoAfectacionIGV { get; set; }
 
-        public int codTipoAfectacionIGV { get; set; }
+
+
+        /// <summary>
+        /// FLAG TRUE/FALSE si tiene Impuesto a las bolsas plasticas
+        /// </summary>
+        public bool indImpuestoICBPER { get; set; }
+        /// <summary>
+        /// codImpuestoICBPER desde la tabla [Sunat].[TS05TipoTributoICBPER]
+        /// </summary>
+        public int? codImpuestoICBPER { get; set; }
+        /// <summary>
+        /// Impuesto o monto por cada bolsa ICBPER
+        /// </summary>
+        public decimal? prcImpuestoICBPER { get; set; }
+        /// <summary>
+        /// Monto calculado por la Cantidad de bolsas ICBPER
+        /// </summary>
+        public decimal? mtoImpuestoICBPER { get; set; }
+
+        public int numAnioImpuestoICBPER { get; set; }
+
+        public string codAbrImpuestoICBPER { get; set; }
+
+        public string codKeyImpuestoICBPER { get; set; }
+
+        /// <summary>
+        /// 1= GRAVADO, 2=EXONERADO, 3=INAFECTO
+        /// </summary>
+        public Int16 indTipoCalculoIGV { get; set; }
+        public string codRegDestinoDocum { get; set; }
+        public string codDocumento { get; set; }
 
         //public string codRegUnidadMedNombre { get; set; }
-        //public string codRegDestinoDocum { get; set; }
         //public decimal ctdUnidadItemPend { get; set; }
         //public string codPuntoVenta { get; set; }
-        //public string codDocumento { get; set; }
         //public string numDocumento { get; set; }
         //public bool indVerificarStock { get; set; }
         //public bool indEsPerecible { get; set; }
