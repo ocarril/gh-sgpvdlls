@@ -38,6 +38,11 @@ namespace CROM.BusinessEntities.SUNAT.request
 
         public string PathRutaSendWSCDRZIPFile { get; set; }
 
+        public bool indMoverFileRptaByValid { get; set; }
+
+        public string UrlDocumentReference { get; set; }
+
+
         [JsonIgnore]
         public int codEmpresa { get; set; }
 

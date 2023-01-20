@@ -20,6 +20,14 @@
 
         public string codRegMotivoAnulacion { get; set; }
 
+        public int indOrigenPeticion { get; set; }
+
+
+
+        public string horEnvioBaja { get; set; }
+
+
+
 
         [JsonIgnore]
         public string NomArchivo { get; set; }

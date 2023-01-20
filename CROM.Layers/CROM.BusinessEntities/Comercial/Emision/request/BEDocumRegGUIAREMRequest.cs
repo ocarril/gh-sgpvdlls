@@ -118,15 +118,11 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public int? codModalidadTransporte { get; set; }
 
-        public string numContenedor { get; set; }
-
-        public string codPuerto { get; set; }
-
-        public string indTransbordoProgramado { get; set; }
 
         public string codRegTipoDocumentoTransportista { get; set; }
 
         public string codRegUnidadMedidaGlobal { get; set; }
+
         public string desMotivoGuiaOtro { get; set; }
 
 
@@ -160,6 +156,27 @@ namespace CROM.BusinessEntities.Comercial.emision.request
         public string numDocumentoComprador { get; set; }
 
         public string nomRazonSocialComprador { get; set; }
+
+        #endregion
+
+        #region DATOS DE IMPORTACION - EXPORTACION
+
+
+        public string numContenedor { get; set; }
+
+        public string numPrecinto { get; set; }
+
+        public string numContenedor02 { get; set; }
+
+        public string numPrecinto02 { get; set; }
+
+
+        public string codPuerto { get; set; }
+
+        public string codAeroPuerto { get; set; }
+
+        public string indTransbordoProgramado { get; set; }
+
 
         #endregion
 

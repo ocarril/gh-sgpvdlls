@@ -8,7 +8,7 @@
         {
 
             numTicket = string.Empty;
-
+            UrlDocumentReference = string.Empty;
         }
 
         public int codDocumReg { get; set; }
@@ -27,6 +27,6 @@
         
         public string indCdrGenerado { get; set; }
 
-
+        public string UrlDocumentReference { get; set; }
     }
 }

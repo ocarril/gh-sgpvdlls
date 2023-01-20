@@ -153,11 +153,16 @@
 
         public bool flagEnviadoSUNAT { get; set; }
 
-        public Nullable<DateTime> fecEnviadoSUNAT { get; set; }
+        public DateTime? fecEnviadoSUNAT { get; set; }
 
         public string segUsuarioEnviadoSUNAT { get; set; }
 
         public bool flagParaEnvioSUNAT { get; set; }
+
+
+        public string RPS_numTicket { get; set; }
+
+        public DateTime? RPS_fecRecepcion { get; set; }
 
         #endregion
 

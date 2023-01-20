@@ -102,6 +102,72 @@
             return result;
         }
 
+        public static Bitmap GenerarCodigoQRGuiaRemision(string pEmisorRUC,    
+                                                         string pDocumentReference,
+                                                         bool pSaveImgQR,
+                                                         string pPathFileName,
+                                                         string pUserLogin,
+                                                         out string pMessajeError)
+        {
+            pMessajeError = string.Empty;
+            Bitmap result = null;
+            try
+            {
+
+                QrCodeEncodingOptions options = new QrCodeEncodingOptions();
+                options = new QrCodeEncodingOptions
+                {
+                    DisableECI = true,
+                    CharacterSet = "UTF-8",
+                    Width = 250,
+                    Height = 250,
+                };
+                var writer = new BarcodeWriter();
+                writer.Format = BarcodeFormat.QR_CODE;
+                writer.Options = options;
+
+                if (String.IsNullOrWhiteSpace(pDocumentReference))
+                {
+                    pMessajeError = "Debe proporcionar el parametro de referencia URL para la generación del QR.";
+                }
+                else
+                {
+                    string codigo = string.Concat(pDocumentReference);
+
+
+                    var qr = new ZXing.BarcodeWriter();
+                    qr.Options = options;
+                    qr.Format = ZXing.BarcodeFormat.QR_CODE;
+                    result = new Bitmap(qr.Write(codigo.Trim())); //Generar QR
+
+                    /*
+                     * GRABAR LA IMAGEN QR
+                     */
+                    if (pSaveImgQR)
+                    {
+                        try
+                        {
+                            result.Save(pPathFileName, ImageFormat.Png);
+                        }
+                        catch (Exception ex)
+                        {
+
+                            HelpLogging.Write(TraceLevel.Error, string.Concat(pEmisorRUC + "." + MethodBase.GetCurrentMethod().Name), ex,
+                                              pEmisorRUC);
+                            pMessajeError = "Error interno.";
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                HelpException.mTraerMensaje(ex, false, string.Concat("HelpSUNAT.", MethodBase.GetCurrentMethod().Name), pUserLogin, pEmisorRUC);
+            }
+            return result;
+        }
+
         public static string ObtenerDigestValueSunat(XmlDocument oXmlSunat)
         {
             XmlNamespaceManager manager = new XmlNamespaceManager(oXmlSunat.NameTable);
@@ -119,7 +185,7 @@
             string valor = oXmlSunat.SelectSingleNode("//ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/ds:Signature/ds:SignatureValue", manager).InnerText;
             return valor;
         }
-        
+
         public static string[] ObtenerRespuestaZIPSunat(string pRutaEnvioSUNAT, string pNumRUC, string nombreFileDOC)
         {
             System.IO.FileInfo arch = new System.IO.FileInfo(pRutaEnvioSUNAT);
@@ -136,10 +202,11 @@
 
         public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, string nombreFileDOC, bool indNumero = false)
         {
-            string mensajeRpta = "";
-            string mensajeRptaNota = "";
+            string mensajeRpta = String.Empty;
+            string mensajeRptaNota = String.Empty;
+            string mensajeDocumentReference = String.Empty;
             string fileZiped = "";
-            string[] datos = new string[6];
+            string[] datos = new string[7];
             Nullable<DateTime> fechaCreateFile = null;
             Nullable<DateTime> fechaModifiedFile = null;
 
@@ -203,6 +270,14 @@
                             if (item.InnerText != "0")
                                 mensajeRpta = String.Format("{0} - {1}", item.InnerText, mensajeRpta);
                         }
+
+                        XmlNodeList xnlDocumentReference = xd.GetElementsByTagName("cbc:DocumentDescription");
+                        if (xnlDocumentReference != null)
+                            foreach (XmlElement item in xnlDocumentReference)
+                            {
+                                mensajeDocumentReference = item.InnerText;
+                            }
+
                     }
                 }
                 fechaCreateFile = File.GetCreationTime(pRutaEnvioSUNAT);
@@ -221,6 +296,7 @@
             datos[4] = fechaModifiedFile.HasValue ? fechaModifiedFile.Value.ToString("dd/MM/yyyy HH:mm:ss",
                   CultureInfo.CreateSpecificCulture("es-PE")) : string.Empty;
             datos[5] = string.IsNullOrEmpty(mensajeRptaNota) ? "-" : mensajeRptaNota;
+            datos[6] = string.IsNullOrEmpty(mensajeDocumentReference) ? "" : mensajeDocumentReference;
             return datos;
         }
 

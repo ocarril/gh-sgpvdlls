@@ -379,12 +379,6 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public int? codModalidadTransporte { get; set; }
 
-        public string numContenedor { get; set; }
-
-        public string codPuerto { get; set; }
-
-        public string indTransbordoProgramado { get; set; }
-
         public string codRegTipoDocumentoTransportista { get; set; }
 
 
@@ -404,6 +398,64 @@ namespace CROM.BusinessEntities.Comercial.response
         public string codRegMotivoGuiaNombre { get; set; }
         public string codPersonaTransporteNombre { get; set; }
         public string codPersonaTransporteRUC { get; set; }
+
+
+
+
+
+
+        #region DATOS DEL PROVEEDOR
+
+
+        public string codPersonaProveedor { get; set; }
+
+
+        public string codTipoDocumentoProveedor { get; set; }
+
+        public string numDocumentoProveedor { get; set; }
+
+        public string nomRazonSocialProveedor { get; set; }
+
+        #endregion
+
+
+        #region DATOS DEL COMPRADOR
+
+
+        public string codPersonaComprador { get; set; }
+
+
+        public string codTipoDocumentoComprador { get; set; }
+
+        public string numDocumentoComprador { get; set; }
+
+        public string nomRazonSocialComprador { get; set; }
+
+        #endregion
+
+        #region DATOS DE IMPORTACION - EXPORTACION
+
+
+        public string numContenedor { get; set; }
+
+        public string numPrecinto { get; set; }
+
+        public string numContenedor02 { get; set; }
+
+        public string numPrecinto02 { get; set; }
+
+
+        public string codPuerto { get; set; }
+
+        public string codAeroPuerto { get; set; }
+
+        public string nomPuertoAeroPuerto { get; set; }
+
+        public string indTransbordoProgramado { get; set; }
+
+
+        #endregion
+
 
         #endregion
 

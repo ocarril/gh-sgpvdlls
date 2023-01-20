@@ -316,6 +316,9 @@
           { 3067,  "Aun no esta habilitado para emitir Guías de Remisión Electrónica. A partir de: [ {0} ]"},
           { 3068,  "Archivo generado y enviado a la SUNAT con exito. CDR: [ {0} ]"},
           { 3069,  "Se archiva documento, sin uso de referencia: [ {0} ]"},
+          { 3070,  "Archivo ZIP enviado a la SUNAT con exito. N° Ticket: [ {0} ]"},
+          { 3071,  "NO existen documentos pendientes de respuestas de la SUNAT."},
+          
         };
 
 
