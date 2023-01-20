@@ -50,7 +50,16 @@ namespace CROM.BusinessEntities.Temporales.request
 
         public decimal mtoBaseImponibleCargoDescuento { get; set; }
 
-      
+
+
+
+        public string codRegMonedaSelect { get; set; }
+
+        public decimal monTipoCambioVTA { get; set; }
+
+        public decimal monTipoCambioCMP { get; set; }
+
+        public string codRegDestinoDocum { get; set; }
 
     }
 } 

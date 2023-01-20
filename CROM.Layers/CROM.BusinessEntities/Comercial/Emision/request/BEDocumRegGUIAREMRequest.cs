@@ -1,5 +1,6 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
+
     using System;
     using System.Collections.Generic;
 
@@ -11,10 +12,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Archivo     : [GestionComercial.DTODocumRegNCRRequest.cs]
     /// Documento   : GUIA DE REMISION
     /// </summary>
-    public class DTODocumRegGUIAREMRequest : DTODocumRegBaseRequest
+    public class BEDocumRegGUIAREMRequest : BEDocumRegBaseRequest
     {
 
-        public DTODocumRegGUIAREMRequest()
+        public BEDocumRegGUIAREMRequest()
         {
 
             numDocumentoOrigen = string.Empty;
@@ -117,15 +118,67 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public int? codModalidadTransporte { get; set; }
 
-        public string numContenedor { get; set; }
-
-        public string codPuerto { get; set; }
-
-        public string indTransbordoProgramado { get; set; }
 
         public string codRegTipoDocumentoTransportista { get; set; }
 
         public string codRegUnidadMedidaGlobal { get; set; }
+
         public string desMotivoGuiaOtro { get; set; }
+
+
+
+
+
+
+        #region DATOS DEL PROVEEDOR
+
+
+        public string codPersonaProveedor { get; set; }
+
+
+        public string codTipoDocumentoProveedor { get; set; }
+
+        public string numDocumentoProveedor { get; set; }
+
+        public string nomRazonSocialProveedor { get; set; }
+
+        #endregion
+
+
+        #region DATOS DEL COMPRADOR
+
+
+        public string codPersonaComprador { get; set; }
+
+
+        public string codTipoDocumentoComprador { get; set; }
+
+        public string numDocumentoComprador { get; set; }
+
+        public string nomRazonSocialComprador { get; set; }
+
+        #endregion
+
+        #region DATOS DE IMPORTACION - EXPORTACION
+
+
+        public string numContenedor { get; set; }
+
+        public string numPrecinto { get; set; }
+
+        public string numContenedor02 { get; set; }
+
+        public string numPrecinto02 { get; set; }
+
+
+        public string codPuerto { get; set; }
+
+        public string codAeroPuerto { get; set; }
+
+        public string indTransbordoProgramado { get; set; }
+
+
+        #endregion
+
     }
 }

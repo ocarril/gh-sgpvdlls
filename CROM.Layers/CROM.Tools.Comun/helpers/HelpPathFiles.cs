@@ -3,7 +3,7 @@ namespace CROM.Tools.Comun.helpers
 {
     using CROM.Tools.Comun.entities;
     using CROM.Tools.Comun.Extensions;
-
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Diagnostics;
     using System.Drawing;
@@ -136,7 +136,7 @@ namespace CROM.Tools.Comun.helpers
                         }
 
                         returnZip.Exitosa = true;
-                        returnZip.CodigoRetorno = "OK";
+                        returnZip.CodigoRetorno = WebConstants.DEFAULT_OK;
                         returnZip.Message = FileZipName;
 
                         if (FlagConvertToBase64String)

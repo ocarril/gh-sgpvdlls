@@ -3,7 +3,7 @@ namespace CROM.Seguridad.DataAcces
     using CROM.Seguridad.BussinesEntities;
     using CROM.Seguridad.BussinesEntities.entidades.dto;
     using CROM.Tools.Comun.settings;
-
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Collections.Generic;
 
@@ -190,7 +190,7 @@ namespace CROM.Seguridad.DataAcces
                     foreach (var item in resulSet)
                     {
                         pEmpresaSistema.codEmpresaSistema = item.codError.HasValue ? item.codError.Value : 0;
-                        blnResult = item.desMessage == "OK" ? true : false;
+                        blnResult = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }
@@ -230,7 +230,7 @@ namespace CROM.Seguridad.DataAcces
                     foreach (var item in resulSet)
                     {
                         codigoRetorno = item.codError.HasValue ? item.codError.Value : 0;
-                        message = item.desMessage == "OK" ? true : false;
+                        message = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }
@@ -262,7 +262,7 @@ namespace CROM.Seguridad.DataAcces
                                                                          pEmpresaSistema.segMaquinaEdita);
                     foreach (var item in resulSet)
                     {
-                        blnResult = item.desMessage == "OK" ? true : false;
+                        blnResult = item.desMessage == WebConstants.DEFAULT_OK ? true : false;
                     }
                 }
             }

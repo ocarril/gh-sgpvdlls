@@ -11,6 +11,6 @@
 
         public int? codDocumReg { get; set; }
 
-        public bool indGravadoIGV { get; set; }
+        //public bool indGravadoIGV { get; set; }
     }
 }

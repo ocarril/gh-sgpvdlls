@@ -36,6 +36,18 @@ namespace CROM.BusinessEntities.SUNAT.request
 
         public string indDocumentoRelacionado { get; set; }
 
+        public string DescripcionBaja { get; set; }
+
+        public string NumeroCorrelative { get; set; }
+
+        public string PathRutaFiles { get; set; }
+
+        public string ExtensionFile { get; set; }
+
+        public string segUsuarioActual { get; set; }
+
+
+
         public string NombreArchivoREL { get; set; }
 
         public string NombreArchivoCAB { get; set; }
@@ -52,15 +64,6 @@ namespace CROM.BusinessEntities.SUNAT.request
 
         public string NombreArchivoADE { get; set; }
 
-        public string DescripcionBaja { get; set; }
-
-        public string NumeroCorrelative { get; set; }
-
-        public string PathRutaFiles { get; set; }
-
-        public string ExtensionFile { get; set; }
-
-        public string segUsuarioActual { get; set; }
 
         /// <summary>
         /// Archivo: Datos de la forma de pago (RRRRRRRRRRR-CC-XXXX-999999999.PAG)
@@ -71,6 +74,11 @@ namespace CROM.BusinessEntities.SUNAT.request
         /// Archivo: Detalles de la forma de pago al crédito (RRRRRRRRRRR-CC-XXXX-999999999.DPA)
         /// </summary>
         public string NombreArchivoDPA { get; set; }
+
+        /// <summary>
+        /// Archivo: Adicionales de Cabecera Variable (RRRRRRRRRRR-CC-XXXX-999999999.ACV)
+        /// </summary>
+        public string NombreArchivoACV { get; set; }
 
     }
 }

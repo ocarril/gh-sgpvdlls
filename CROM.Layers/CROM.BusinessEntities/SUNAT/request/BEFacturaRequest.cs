@@ -14,10 +14,11 @@
             numDocumento = string.Empty;
             codLocalEmisor = string.Empty;
 
-            LstFacturaDetalleSunat = new List<BEFacturaDetalleRequest>();
             LstDatosLeyendas = new List<BEDocumentoSUNATLeyendaResponse>();
-            LstDocumentosRelacionados = new List<BEDocumentoSUNATRelacionadoResponse>();
+            LstFacturaDetalleSunat = new List<BEFacturaDetalleRequest>();
             LstDocumentoPagoCredito = new List<BEDocumentoSUNATPagoCreditoResponse>();
+            LstDocumentosRelacionados = new List<BEDocumentoSUNATRelacionadoResponse>();
+            LstDocumentoCargoDescuento = new List<BEDocumentoSUNATCargoDescuentoResponse>();
 
             ACActaBancoNacionDetraccion = string.Empty;
             ACAcodPaisCliente = string.Empty;
@@ -41,6 +42,8 @@
         public List<BEDocumentoSUNATRelacionadoResponse> LstDocumentosRelacionados { get; set; }
 
         public List<BEDocumentoSUNATPagoCreditoResponse> LstDocumentoPagoCredito { get; set; }
+
+        public List<BEDocumentoSUNATCargoDescuentoResponse> LstDocumentoCargoDescuento { get; set; }
 
         public long codDocumRegSunat { get; set; }
 
@@ -73,9 +76,17 @@
 
         public string tipMoneda { get; set; }
 
+
+
         public decimal sumTotBruto { get; set; }
 
         public decimal sumDescTotal { get; set; }
+
+        public decimal prcDescuentoGlobal { get; set; }
+
+        public decimal sumDescuentoGlobal { get; set; }
+
+        public decimal sumOperacionGratuita { get; set; }
 
         public decimal sumTotValVenta { get; set; }
 
@@ -85,9 +96,14 @@
 
         public decimal sumTotalAnticipos { get; set; }
 
+
         public decimal sumTotTributos { get; set; }
 
         public decimal sumPrecioVenta { get; set; }
+
+        public decimal sumTotImpuestoIGV { get; set; }
+        public decimal sumTotImpuestoICBPER { get; set; }
+
 
         public string ublVersionId { get; set; }
 
@@ -122,7 +138,7 @@
         public Nullable<DateTime> ReffecEmision { get; set; }
         public int? codMotivoNCR { get; set; }
         public int? codMotivoNDB { get; set; }
-        public string RefMotivo { get; set; }
+        public string desMotivoEmisionNotaCRDB { get; set; }
 
         #endregion
 
@@ -150,6 +166,8 @@
 
         public string ACAcodUbigeoEntrega { get; set; }
 
+        public string ACAdesUbigeoEntregaNombre { get; set; }
+
         public string ACAdesDireccionEntrega { get; set; }
 
         #endregion
@@ -173,7 +191,6 @@
 
         [JsonIgnore]
         public string nomEmpresaRUC { get; set; }
-
 
         public string numDocumentoOrig { get; set; }
 

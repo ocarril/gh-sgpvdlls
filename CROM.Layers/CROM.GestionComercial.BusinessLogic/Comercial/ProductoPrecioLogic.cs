@@ -149,7 +149,7 @@
             ReturnValor returnValor = new ReturnValor();
             if (string.IsNullOrEmpty(objProductoPrecio.CodigoArguMoneda))
             {
-                returnValor.Message = HelpMessages.gc_DOCUM_SeleccionaMoneda;
+                returnValor.Message = HelpMessages.VALIDACIONSeleccionaMoneda;
                 return returnValor;
             }
             if (string.IsNullOrEmpty(objProductoPrecio.CodigoPuntoVenta)) {

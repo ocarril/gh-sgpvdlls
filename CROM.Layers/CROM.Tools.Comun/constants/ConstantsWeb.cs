@@ -166,6 +166,16 @@
             BAND_DOCUMENTO_EMIS = 5
         };
 
+        public enum TipoENCODING
+        {
+            UTF8 = 1,
+            ISO_8859_1 = 2,
+            UTF32 = 3,
+            UTF7= 4,
+            Unicode = 5,
+        };
+
+
         public static Dictionary<int, string> MensajesServicios = new Dictionary<int, string>()
         {
           { 100,  "Registrado satisfactoriamente." },
@@ -267,14 +277,14 @@
           { 3028,  "Archivos SFS OK N°: [{0}] - [{1}]" },
           { 3029,  "Documento [ {0} - {1} / .ZIP ] FUE creado con EXITO."},
           { 3030,  "No se ha creado Zip de Documento [ {0} - {1} ]."},
-          { 3031,  "Documento [ {2} ] CREADO, FIRMADO. <BR> por Enviar a SUNAT N°: [ {0} ] - [ {1} ]"},
+          { 3031,  "Documento [ {2} ] CREADO, FIRMADO. <BR> Documento: [ {0} ] - [ {1} ] por Enviar a SUNAT"},
           { 3032,  "Documento [ {2} ] CREADO, FIRMADO y ENVIADO a  SUNAT. <BR> N°: [ {0} ] - [ {1} ]"},
           { 3033,  "La generación de archivos DATA para el facturador SUNAT NO fue exitoso : [ {0} ] "},
           { 3034,  "Documento no tiene detalle de pagos/cuotas a CRÉDITO: [ {0} ] - [ {1} ]"},
           { 3035,  "Documento: [ {0} ], enviado por correo satisfactoriamente al cliente: [ {1} ]."},
           { 3036,  "Documento: [ {0} ], NO se envió por correo satisfactoriamente."},
           { 3037,  "Documento: [ {0} ], ya fue enviado. Tiene archivo de RPTA: [ {1} ]"},
-          { 3038,  "Documento: [ {0} ] XML Validado en SFS: [ {1} ]"},
+          { 3038,  "Documento: [ {0} ] - [ {1} ] XML Validado SFS/WS"},
           { 3039,  "La actualización por validación XML de SFS NO FUE EXITOSO : [ {0} ] "},
           { 3040,  "Error al momento de leer el archivo : [ {0} ] - Documento: [ {1} ]"},
           { 3041,  "Archivo de BAJA XML VALIDADO en SFS N°: [ {0} ] : [ {1} ]"},
@@ -305,6 +315,10 @@
           { 3066,  "Pendiente de baja: [ {0} ], creado satisfactoriamente."},
           { 3067,  "Aun no esta habilitado para emitir Guías de Remisión Electrónica. A partir de: [ {0} ]"},
           { 3068,  "Archivo generado y enviado a la SUNAT con exito. CDR: [ {0} ]"},
+          { 3069,  "Se archiva documento, sin uso de referencia: [ {0} ]"},
+          { 3070,  "Archivo ZIP enviado a la SUNAT con exito. N° Ticket: [ {0} ]"},
+          { 3071,  "NO existen documentos pendientes de respuestas de la SUNAT."},
+          
         };
 
 

@@ -50,23 +50,89 @@
                 writer.Options = options;
 
                 if (String.IsNullOrWhiteSpace(pEmisorRUC) || String.IsNullOrEmpty(Tipocomprobante) || String.IsNullOrEmpty(Numeracion) ||
-                     String.IsNullOrWhiteSpace(SumatoriaIGV) || String.IsNullOrEmpty(ImporteTotalVenta) || String.IsNullOrEmpty(FechaEmision) ||
-                     String.IsNullOrWhiteSpace(ImporteTotalVenta) || String.IsNullOrWhiteSpace(FechaEmision) || String.IsNullOrWhiteSpace(TipoDocumentoAdquirente) ||
-                      String.IsNullOrWhiteSpace(NumeroDocumentoAdquirente) || String.IsNullOrWhiteSpace(CodigoHash))
+                    String.IsNullOrWhiteSpace(SumatoriaIGV) || String.IsNullOrEmpty(ImporteTotalVenta) || String.IsNullOrEmpty(FechaEmision) ||
+                    String.IsNullOrWhiteSpace(ImporteTotalVenta) || String.IsNullOrWhiteSpace(FechaEmision) || String.IsNullOrWhiteSpace(TipoDocumentoAdquirente) ||
+                    String.IsNullOrWhiteSpace(NumeroDocumentoAdquirente) || String.IsNullOrWhiteSpace(CodigoHash))
                 {
                     pMessajeError = "Debe proporcionar todos los parametros para la generación del QR.";
                 }
                 else
                 {
                     string codigo = string.Concat(pEmisorRUC, "|",
-                                                   Tipocomprobante, "|",
-                                                   Numeracion, "|",
-                                                   SumatoriaIGV, "|",
-                                                   ImporteTotalVenta, "|",
-                                                   FechaEmision, "|",
-                                                   TipoDocumentoAdquirente, "|",
-                                                   NumeroDocumentoAdquirente, "|",
-                                                   CodigoHash);
+                                                  Tipocomprobante, "|",
+                                                  Numeracion, "|",
+                                                  SumatoriaIGV, "|",
+                                                  ImporteTotalVenta, "|",
+                                                  FechaEmision, "|",
+                                                  TipoDocumentoAdquirente, "|",
+                                                  NumeroDocumentoAdquirente, "|",
+                                                  CodigoHash);
+
+
+                    var qr = new ZXing.BarcodeWriter();
+                    qr.Options = options;
+                    qr.Format = ZXing.BarcodeFormat.QR_CODE;
+                    result = new Bitmap(qr.Write(codigo.Trim())); //Generar QR
+
+                    /*
+                     * GRABAR LA IMAGEN QR
+                     */
+                    if (pSaveImgQR)
+                    {
+                        try
+                        {
+                            result.Save(pPathFileName, ImageFormat.Png);
+                        }
+                        catch (Exception ex)
+                        {
+
+                            HelpLogging.Write(TraceLevel.Error, string.Concat(pEmisorRUC + "." + MethodBase.GetCurrentMethod().Name), ex,
+                                              pEmisorRUC);
+                            pMessajeError = "Error interno.";
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                HelpException.mTraerMensaje(ex, false, string.Concat("HelpSUNAT.", MethodBase.GetCurrentMethod().Name), pUserLogin, pEmisorRUC);
+            }
+            return result;
+        }
+
+        public static Bitmap GenerarCodigoQRGuiaRemision(string pEmisorRUC,    
+                                                         string pDocumentReference,
+                                                         bool pSaveImgQR,
+                                                         string pPathFileName,
+                                                         string pUserLogin,
+                                                         out string pMessajeError)
+        {
+            pMessajeError = string.Empty;
+            Bitmap result = null;
+            try
+            {
+
+                QrCodeEncodingOptions options = new QrCodeEncodingOptions();
+                options = new QrCodeEncodingOptions
+                {
+                    DisableECI = true,
+                    CharacterSet = "UTF-8",
+                    Width = 250,
+                    Height = 250,
+                };
+                var writer = new BarcodeWriter();
+                writer.Format = BarcodeFormat.QR_CODE;
+                writer.Options = options;
+
+                if (String.IsNullOrWhiteSpace(pDocumentReference))
+                {
+                    pMessajeError = "Debe proporcionar el parametro de referencia URL para la generación del QR.";
+                }
+                else
+                {
+                    string codigo = string.Concat(pDocumentReference);
 
 
                     var qr = new ZXing.BarcodeWriter();
@@ -119,14 +185,14 @@
             string valor = oXmlSunat.SelectSingleNode("//ext:UBLExtensions/ext:UBLExtension/ext:ExtensionContent/ds:Signature/ds:SignatureValue", manager).InnerText;
             return valor;
         }
-        
-        public static string[] ObtenerRespuestaZIPSunat(string pRutaEnvioSUNAT, string pNumRUC, int pLecturaFileZip)
+
+        public static string[] ObtenerRespuestaZIPSunat(string pRutaEnvioSUNAT, string pNumRUC, string nombreFileDOC)
         {
             System.IO.FileInfo arch = new System.IO.FileInfo(pRutaEnvioSUNAT);
 
             if (arch.Extension == ".zip")
             {
-                return LeerRepuestaCDR(pRutaEnvioSUNAT, System.IO.Path.GetFileName(pRutaEnvioSUNAT), pNumRUC, pLecturaFileZip);
+                return LeerRepuestaCDR(pRutaEnvioSUNAT, System.IO.Path.GetFileName(pRutaEnvioSUNAT), pNumRUC, nombreFileDOC);
             }
             else
             {
@@ -134,36 +200,84 @@
             }
         }
 
-        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, int pLecturaFileZip)
+        public static string[] LeerRepuestaCDR(string pRutaEnvioSUNAT, string pNomFileSUNAT, string pNumRUC, string nombreFileDOC, bool indNumero = false)
         {
-            string mensajeRpta = "";
-            string mensajeRptaNota = "";
+            string mensajeRpta = String.Empty;
+            string mensajeRptaNota = String.Empty;
+            string mensajeDocumentReference = String.Empty;
             string fileZiped = "";
-            string[] datos = new string[6];
+            string[] datos = new string[7];
             Nullable<DateTime> fechaCreateFile = null;
             Nullable<DateTime> fechaModifiedFile = null;
 
             try
             {
-                int PosicionFile = pLecturaFileZip; // pLecturaFileZip ? 0 : 1;
+                //int PosicionFile = pLecturaFileZip; // pLecturaFileZip ? 0 : 1;
+
                 using (ZipArchive zip = ZipFile.Open(pRutaEnvioSUNAT, ZipArchiveMode.Read))
                 {
 
-                    ZipArchiveEntry zentry = null;
-                    fileZiped = zip.Entries[PosicionFile].ToString();
-                    zentry = zip.GetEntry(fileZiped);
-                    XmlDocument xd = new XmlDocument();
-                    xd.Load(zentry.Open());
-                    XmlNodeList xnl = xd.GetElementsByTagName("cbc:Description");
-                    foreach (XmlElement item in xnl)
+                    if (indNumero)
                     {
-                        mensajeRpta = item.InnerText;
+                        for (int PosicionFile = 0; PosicionFile < zip.Entries.Count; PosicionFile++)
+                        {
+                            if (zip.Entries[PosicionFile].ToString().Contains("R-"))
+                            {
+
+                                fileZiped = zip.Entries[PosicionFile].ToString();
+                                break;
+
+                            }
+                        }
+                    }
+                    else
+                    {
+                        for (int PosicionFile = 0; PosicionFile < zip.Entries.Count; PosicionFile++)
+                        {
+                            if (zip.Entries[PosicionFile].ToString().Contains(nombreFileDOC))
+                            {
+
+                                fileZiped = zip.Entries[PosicionFile].ToString();
+                                break;
+
+                            }
+                        }
                     }
 
-                    XmlNodeList xnlNota = xd.GetElementsByTagName("cbc:Note");
-                    foreach (XmlElement item in xnlNota)
+                    if (!string.IsNullOrWhiteSpace(fileZiped))
                     {
-                        mensajeRptaNota = item.InnerText;
+
+                        ZipArchiveEntry zentry = null;
+                        zentry = zip.GetEntry(fileZiped);
+                        XmlDocument xd = new XmlDocument();
+                        xd.Load(zentry.Open());
+
+                        XmlNodeList xnl = xd.GetElementsByTagName("cbc:Description");
+                        foreach (XmlElement item in xnl)
+                        {
+                            mensajeRpta = item.InnerText;
+                        }
+
+                        XmlNodeList xnlNota = xd.GetElementsByTagName("cbc:Note");
+                        foreach (XmlElement item in xnlNota)
+                        {
+                            mensajeRptaNota = item.InnerText;
+                        }
+
+                        XmlNodeList xnlCode = xd.GetElementsByTagName("cbc:ResponseCode");
+                        foreach (XmlElement item in xnlCode)
+                        {
+                            if (item.InnerText != "0")
+                                mensajeRpta = String.Format("{0} - {1}", item.InnerText, mensajeRpta);
+                        }
+
+                        XmlNodeList xnlDocumentReference = xd.GetElementsByTagName("cbc:DocumentDescription");
+                        if (xnlDocumentReference != null)
+                            foreach (XmlElement item in xnlDocumentReference)
+                            {
+                                mensajeDocumentReference = item.InnerText;
+                            }
+
                     }
                 }
                 fechaCreateFile = File.GetCreationTime(pRutaEnvioSUNAT);
@@ -182,6 +296,7 @@
             datos[4] = fechaModifiedFile.HasValue ? fechaModifiedFile.Value.ToString("dd/MM/yyyy HH:mm:ss",
                   CultureInfo.CreateSpecificCulture("es-PE")) : string.Empty;
             datos[5] = string.IsNullOrEmpty(mensajeRptaNota) ? "-" : mensajeRptaNota;
+            datos[6] = string.IsNullOrEmpty(mensajeDocumentReference) ? "" : mensajeDocumentReference;
             return datos;
         }
 

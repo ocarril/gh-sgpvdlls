@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
     using System;
     using System.Collections.Generic;
@@ -11,10 +11,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Descripcion : Capa de Entidades 
     /// Archivo     : [GestionComercial.DTODocumReg.cs]
     /// </summary>
-    public class DTODocumRegBaseRequest : BEBaseEntidadItem
+    public class BEDocumRegBaseRequest : BEBaseEntidadItem
     {
 
-        public DTODocumRegBaseRequest()
+        public BEDocumRegBaseRequest()
         {
             numDocUsuario = string.Empty;
             numDocumento = string.Empty;
@@ -25,9 +25,13 @@ namespace CROM.BusinessEntities.Comercial.request
             desDomicilioUsuario = string.Empty;
             codUbigeoNombre = string.Empty;
 
-            lstDetalle = new List<DTODocumRegDetalleRequest>();
-            lstImpuestos = new List<DTODocumRegImpuestoRequest>();
+            lstDetalle = new List<BEDocumRegDetalleRequest>();
+            lstImpuestos = new List<BEDocumRegImpuestoRequest>();
+            lstCargoDescuentos = new List<BEDocumRegCargoDescuentoRequest>();
         }
+
+        #region DATOS DEL DOCUMENTO
+
 
         public int codDocumReg { get; set; }
 
@@ -47,6 +51,13 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public int codEmpleado { get; set; }
 
+        public int? codCondicionVenta { get; set; }
+
+        public int? codCondicionCompra { get; set; }
+
+        public string codRegMoneda { get; set; }
+
+        #endregion
 
         #region DATOS DEL CLIENTE-USUARIO
 
@@ -72,12 +83,7 @@ namespace CROM.BusinessEntities.Comercial.request
 
         #endregion
 
-
-        public int? codCondicionVenta { get; set; }
-
-        public int? codCondicionCompra { get; set; }
-
-        public string codRegMoneda { get; set; }
+        #region DATOS DE MONTOS DEL DOCUMENTO
 
         public decimal monTipoCambioVTA { get; set; }
 
@@ -105,10 +111,19 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public decimal sumTotValVentaGravada { get; set; }
 
+        public decimal prcDescuentoGlobal { get; set; }
 
-        /**
-         * ATRIBUTOS ADICIONALES
-         **/
+        public decimal sumDescuentoGlobal { get; set; }
+
+        public decimal sumTotImpuestoICBPER { get; set; }
+
+        public decimal sumOperacionGratuita { get; set; }   // es igual DRC_sumTotValorReferencia
+
+        public decimal mtoNetoPendientePago { get; set; }
+
+        #endregion
+
+        #region DATOS ATRIBUTOS ADICIONALES (OTRA TABLA)
 
         public string codEmpleadoPlanilla { get; set; }
 
@@ -137,10 +152,13 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public string desNota02 { get; set; }
 
+        #endregion
 
-        public List<DTODocumRegDetalleRequest> lstDetalle { get; set; }
+        public List<BEDocumRegDetalleRequest> lstDetalle { get; set; }
 
-        public List<DTODocumRegImpuestoRequest> lstImpuestos { get; set; }
+        public List<BEDocumRegImpuestoRequest> lstImpuestos { get; set; }
+
+        public List<BEDocumRegCargoDescuentoRequest> lstCargoDescuentos { get; set; }
 
     }
 

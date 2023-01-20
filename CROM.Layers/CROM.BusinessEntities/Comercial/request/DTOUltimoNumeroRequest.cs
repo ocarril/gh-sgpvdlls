@@ -8,5 +8,8 @@
         }
 
         public int codDocumentoSerie { get; set; }
+
+        public string codEmpleadoPlanilla { get; set; }
+
     }
 }

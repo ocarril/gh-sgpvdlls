@@ -1,11 +1,12 @@
 ﻿namespace CROM.BusinessEntities.Comercial.request
 {
+    using CROM.BusinessEntities.Comercial.emision.request;
     using System;
 
 
-    public class DTODocumRegRequest : DTODocumRegBaseRequest
+    public class BEDocumRegRequest : BEDocumRegBaseRequest
     {
-        public DTODocumRegRequest()
+        public BEDocumRegRequest()
         {
             numDocumento = string.Empty;
             numDocUsuario = string.Empty;
@@ -78,6 +79,8 @@
         public Nullable<DateTime> fecEmisionOrigen { get; set; }
 
         public decimal monTipoCambioVTAOrigen { get; set; }
+
+        public int numCuotasOrigen { get; set; }
 
 
 

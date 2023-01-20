@@ -99,6 +99,38 @@
         /// </summary>
         public decimal mtoValorReferenciaItem { get; set; }
         #endregion
+
+        public bool indOperacionGratuita { get; set; }
+        /// <summary>
+        /// Id de tipo de Afectacon al IGV, relacionado a la tabla [Sunat].[TS07TipoAfectacionIGV]
+        /// </summary>
+        public int? codTipoAfectacionIGV { get; set; }
+
+        public bool indGravadoIGV { get; set; }
+
+
+        #region NUEVOS ATRIBUTOS DE TRIBUTOS POR SFS 1.3.3
+
+        /// <summary>
+        /// FLAG TRUE/FALSE si tiene Impuesto a las bolsas plasticas
+        /// </summary>
+        public bool indImpuestoICBPER { get; set; }
+
+
+        public string codTriIcbper { get; set; }
+
+        public decimal mtoTriIcbperItem { get; set; }
+
+        public decimal ctdBolsasTriIcbperItem { get; set; }
+
+        public string nomTributoIcbperItem { get; set; }
+
+        public string codTipTributoIcbperItem { get; set; }
+
+        public decimal mtoTriIcbperUnidad { get; set; }
+
+        #endregion
+
     }
 
 }

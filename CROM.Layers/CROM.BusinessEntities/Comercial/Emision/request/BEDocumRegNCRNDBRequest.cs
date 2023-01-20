@@ -1,4 +1,4 @@
-namespace CROM.BusinessEntities.Comercial.request
+namespace CROM.BusinessEntities.Comercial.emision.request
 {
     using System;
     using System.Collections.Generic;
@@ -11,10 +11,10 @@ namespace CROM.BusinessEntities.Comercial.request
     /// Archivo     : [GestionComercial.DTODocumRegNCRRequest.cs]
     /// Documento   : NOTA DE CRÉDITO
     /// </summary>
-    public class DTODocumRegNCRNDBRequest : DTODocumRegBaseRequest
+    public class BEDocumRegNCRNDBRequest : BEDocumRegBaseRequest
     {
 
-        public DTODocumRegNCRNDBRequest()
+        public BEDocumRegNCRNDBRequest()
         {
 
             numDocumentoOrigen = string.Empty;
@@ -28,6 +28,9 @@ namespace CROM.BusinessEntities.Comercial.request
 
         public Nullable<DateTime> fecVencimiento { get; set; }
 
+
+        #region DATOS DE DOCUMENTO ORIGEN-REFERENCIA
+
         public string codDocumentoOrigen { get; set; }        
 
         public string numDocumentoOrigen { get; set; }
@@ -39,6 +42,11 @@ namespace CROM.BusinessEntities.Comercial.request
         public DateTime fecEmisionOrigen { get; set; }
 
         public decimal monTipoCambioVTAOrigen { get; set; }
+
+        public int numCuotasOrigen { get; set; }
+
+        #endregion
+
 
         public int? codMotivoNCR { get; set; }
 

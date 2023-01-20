@@ -29,6 +29,8 @@
             gloObservaciones = string.Empty;
             gloMotivoSustento = string.Empty;
 
+            desMotivoEmisionNotaCRDB = string.Empty;
+
             LstFacturaDetalleSunat = new List<BEFacturaDetalleResponse>();
         }
 
@@ -68,6 +70,12 @@
 
         public decimal sumDescTotal { get; set; }
 
+        public decimal prcDescuentoGlobal { get; set; }
+
+        public decimal sumDescuentoGlobal { get; set; }
+
+        public decimal sumOperacionGratuita { get; set; }
+
         public decimal sumOtrosCargos { get; set; }
 
         public decimal sumTotalAnticipos { get; set; }
@@ -75,6 +83,8 @@
         public decimal sumImpVenta { get; set; }
 
         public decimal sumPrecioVentaExtran { get; set; }
+
+        public decimal sumTotImpuestoICBPER { get; set; }
 
         #endregion
 
@@ -119,7 +129,7 @@
 
         public string codRegEstadoNombre { get; set; }
 
-        public string codRegEstado { get; set; }
+        public string codRegEstadoDocumento { get; set; }
 
         public string codRegEstadoColor { get; set; }
 
@@ -200,7 +210,8 @@
         public Nullable<DateTime> ReffecEmision { get; set; }
         public int? codMotivoNCR { get; set; }
         public int? codMotivoNDB { get; set; }
-        public string RefMotivo { get; set; }
+
+        public string desMotivoEmisionNotaCRDB { get; set; }
 
         public string keyMotivoNCR { get; set; }
         public string keyMotivoNDB { get; set; }
@@ -272,6 +283,8 @@
         public string nomDocumento { get; set; }
 
 
+
+
         #region PROPIEDADES POR DETRACCIONES
 
         public bool indAplicaDetraccion { get; set; }
@@ -309,6 +322,12 @@
         public DateTime? fecValidWSoapSunat { get; set; }
 
         public bool indValidWSoapSunat { get; set; }
+
+
+        public string  numTicket { get; set; }
+        
+
+        public DateTime? fecRecepcion { get; set; }
 
         #endregion
 

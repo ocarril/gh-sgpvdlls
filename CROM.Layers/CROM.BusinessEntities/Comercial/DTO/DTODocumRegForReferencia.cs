@@ -62,6 +62,7 @@ namespace CROM.BusinessEntities.Comercial
 
         public string codPersonaEntidad { get; set; }
         public string nomRazonSocialEntidad { get; set; }
+
         public string codDocumentoSerie { get; set; }
     }
 

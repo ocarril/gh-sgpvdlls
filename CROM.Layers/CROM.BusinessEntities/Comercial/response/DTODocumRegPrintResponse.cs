@@ -24,38 +24,104 @@ namespace CROM.BusinessEntities.Comercial.response
             codRegTipoDomicilio = string.Empty;
             desEntidadDireccion = string.Empty;
             numEntidadRUC = string.Empty;
+            codEmpresaRUC = string.Empty;
+            codRegAnulacion = string.Empty;
+            codRegAnulacionNombre=string.Empty;
+            codRegDestinoDocumento=string.Empty;
+            codRegDestinoDocumentoNombre = string.Empty;
+            codRegEstadoDocumento = string.Empty;
+            codRegEstadoDocumentoNombre = string.Empty;
+            codRegistroUnicoGUID = string.Empty;
+            codRegMoneda=string.Empty;
+            codRegMonedaNombre=string.Empty;
+            codRegMonedaSimbolo = string.Empty;
+            codRegMotivoGuia = string.Empty;
+            codRegMotivoGuiaNombre= string.Empty;
+            codRegTipoDeOperacion = string.Empty;
+            codRegTipoDeOperacionNombre = string.Empty;
+            codRegTipoDocumentoEntidad = string.Empty;
+            codRegTipoDocumentoTransportista = string.Empty;
+            codRegTipoDocumentoTransportistaNombre = string.Empty;
+            codRegTipoDomicilio = string.Empty;
+            codRegTipoDomicilioNombre = string.Empty;
+            codRegTipoDomicilioTransporte = string.Empty;
+            codRegTipoDomicilioTransporteNombre = string.Empty;
+            codRegTipoEntidad = string.Empty;
+            codRegTipoEntidadNombre = string.Empty;
+            codRegUbigeoTransporte = string.Empty;
+            codRegUbigeoTransporteNombre = string.Empty;
+            codTipoDocumentoSUNAT = string.Empty;
+            codUbigeoEntidad = string.Empty;
+            CodigoPersonaEmpre = string.Empty;
+
+            prcDescuentoGlobal = 0u;
+            mtoValorTotalOperacionGratuita = 0u;
+            mtoValorTotalDescuentoGlobal = 0u;
+            mtoValorTotalFISE = 0u;
+            mtoValorTotalRC_Propinas = 0u;
+            mtoValorTotalCargosGlobales = 0u;
+            mtoValorTotalPercepcion = 0u;
+
 
             listaComprobanteEmisionDetalle = new List<DTODocumRegDetallePrintResponse>();
             listaComprobanteEmisionImpuestos = new List<BEComprobanteEmisionImpuesto>();
             listaComprobanteEmisionDetalleNrosDeSerie = new List<BEComprobanteEmisionDetalleNrosDeSerie>();
             listaDocumentoPagoCredito = new List<BEDocumentoSUNATPagoCreditoResponse>();
+            listaDocumRegCargoDescuento = new List<DTODocumRegCargoDescuentoResponse>();
         }
 
+        public List<DTODocumRegDetallePrintResponse> listaComprobanteEmisionDetalle { get; set; }
+
+        public List<BEComprobanteEmisionImpuesto> listaComprobanteEmisionImpuestos { get; set; }
+
+        public List<BEComprobanteEmisionDetalleNrosDeSerie> listaComprobanteEmisionDetalleNrosDeSerie { get; set; }
+
+        public List<BEDocumentoSUNATPagoCreditoResponse> listaDocumentoPagoCredito { get; set; }
+
+        public List<DTODocumRegCargoDescuentoResponse> listaDocumRegCargoDescuento { get; set; }
+
+
         public int codEmpresa { get; set; }
+
         public string codEmpresaRUC { get; set; }
+
         public int codDocumReg { get; set; }
 
         public string codRegDestinoDocumento { get; set; }
+
         public string CodigoPersonaEmpre { get; set; }
+
         public string codPuntoDeVenta { get; set; }
+
         public string codDocumento { get; set; }
+
         public string numDocumento { get; set; }
+
         public string codRegEstadoDocumento { get; set; }
+
         public int codDocumentoSerie { get; set; }
+
         public string codRegMoneda { get; set; }
+
         public string codRegMonedaNombre { get; set; }
+
         public string codRegMonedaSimbolo { get; set; }
 
 
         public int? codEmpleado { get; set; }
 
+
         #region ATRIBUTOS DE TIPOS FECHA
 
         public DateTime fecDeEmision { get; set; }
-        public Nullable<System.DateTime> fecDeVencimiento { get; set; }
-        public Nullable<System.DateTime> fecDeCancelacion { get; set; }
-        public Nullable<System.DateTime> fecDeAnulacion { get; set; }
-        public Nullable<System.DateTime> fecDeDeclaracion { get; set; }
+
+        public DateTime? fecDeVencimiento { get; set; }
+
+        public DateTime? fecDeCancelacion { get; set; }
+
+        public DateTime? fecDeAnulacion { get; set; }
+
+        public DateTime? fecDeDeclaracion { get; set; }
 
         #endregion
 
@@ -74,23 +140,86 @@ namespace CROM.BusinessEntities.Comercial.response
         public decimal mtoValorTotalImpuestoGravada { get; set; }
         public decimal mtoValorTotalHistorico { get; set; }
 
-        public decimal? sumOtrosCargos { get; set; }
-        public decimal? sumTotalAnticipos { get; set; }
-        public decimal? sumImpVenta { get; set; }
+        /// <summary>
+        /// sumOtrosCargos
+        /// </summary>
+        public decimal mtoValorTotalOtrosCargos { get; set; }
+
+        /// <summary>
+        /// sumTotalAnticipos
+        /// </summary>
+        public decimal mtoValorTotalAnticipos { get; set; }
+
+        /// <summary>
+        /// sumTotImpuestoICBPER
+        /// </summary>
+        public decimal mtoValorTotalImpuestoICBPER { get; set; }
+
+        /// <summary>
+        /// sumImpVenta 
+        /// </summary>
+        public decimal mtoValorTotalImpVenta { get; set; }
+
         public decimal mtoTipoCambioVTA { get; set; }
+
         public decimal mtoTipoCambioCMP { get; set; }
+
+
+        #region CARGOS-DESCUENTOS GLOBALES - VALORES CALCULADOS
+
+        /// <summary>
+        /// sumOperacionGratuita
+        /// </summary>
+        public decimal mtoValorTotalOperacionGratuita { get; set; }
+
+        public decimal prcDescuentoGlobal { get; set; }
+
+        /// <summary>
+        /// sumTotalDescuentoGlobal
+        /// </summary>
+        public decimal mtoValorTotalDescuentoGlobal { get; set; }
+
+        /// <summary>
+        /// sumTotalFISE
+        /// </summary>
+        public decimal mtoValorTotalFISE { get; set; }
+
+        /// <summary>
+        /// sumTotalRC_Propinas
+        /// </summary>
+        public decimal mtoValorTotalRC_Propinas { get; set; }
+
+        /// <summary>
+        /// sumTotalCargosGlobales
+        /// </summary>
+        public decimal mtoValorTotalCargosGlobales { get; set; }
+
+        /// <summary>
+        /// sumTotalPercepcion
+        /// </summary>
+        public decimal mtoValorTotalPercepcion { get; set; }
+
+        #endregion
 
         #endregion
 
         public string codnumDocumentoNCR { get; set; }
+
         public string numDocumentoNCR { get; set; }
+
         public string codnumDocumentoNDB { get; set; }
+
         public string numDocumentoNDB { get; set; }
 
+
         public string numDocOrdenDeCompra { get; set; }
+
         public string numDocGuiaDeSalida { get; set; }
+
         public string numDocPedidoAdquisicion { get; set; }
+
         public string numDocLetrasCambio { get; set; }
+
 
         public string gloObservaciones { get; set; }
 
@@ -164,13 +293,6 @@ namespace CROM.BusinessEntities.Comercial.response
         public string codRegTipoDeOperacionNombre { get; set; }
 
 
-        public List<DTODocumRegDetallePrintResponse> listaComprobanteEmisionDetalle { get; set; }
-
-        public List<BEComprobanteEmisionImpuesto> listaComprobanteEmisionImpuestos { get; set; }
-
-        public List<BEComprobanteEmisionDetalleNrosDeSerie> listaComprobanteEmisionDetalleNrosDeSerie { get; set; }
-
-        public List<BEDocumentoSUNATPagoCreditoResponse> listaDocumentoPagoCredito { get; set; }
 
         public string codEmpleadoVendedorTelefono { get; set; }
         public string codEmpleadoVendedorEmail { get; set; }
@@ -234,6 +356,8 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string codRegUbigeoTransporte { get; set; }
 
+        public string codRegUbigeoTransporteNombre { get; set; }
+
         public DateTime? fecInicioTraslado { get; set; }
 
         public string desTransporteConstancia { get; set; }
@@ -255,15 +379,8 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public int? codModalidadTransporte { get; set; }
 
-        public string numContenedor { get; set; }
-
-        public string codPuerto { get; set; }
-
-        public string indTransbordoProgramado { get; set; }
-
         public string codRegTipoDocumentoTransportista { get; set; }
 
-        public string codUbigeoTransporteNombre { get; set; }
 
         public string codPersonaDomicilioTransportistaNombre { get; set; }
 
@@ -280,7 +397,65 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public string codRegMotivoGuiaNombre { get; set; }
         public string codPersonaTransporteNombre { get; set; }
-        public string codoPersonaTransporteRUC { get; set; }
+        public string codPersonaTransporteRUC { get; set; }
+
+
+
+
+
+
+        #region DATOS DEL PROVEEDOR
+
+
+        public string codPersonaProveedor { get; set; }
+
+
+        public string codTipoDocumentoProveedor { get; set; }
+
+        public string numDocumentoProveedor { get; set; }
+
+        public string nomRazonSocialProveedor { get; set; }
+
+        #endregion
+
+
+        #region DATOS DEL COMPRADOR
+
+
+        public string codPersonaComprador { get; set; }
+
+
+        public string codTipoDocumentoComprador { get; set; }
+
+        public string numDocumentoComprador { get; set; }
+
+        public string nomRazonSocialComprador { get; set; }
+
+        #endregion
+
+        #region DATOS DE IMPORTACION - EXPORTACION
+
+
+        public string numContenedor { get; set; }
+
+        public string numPrecinto { get; set; }
+
+        public string numContenedor02 { get; set; }
+
+        public string numPrecinto02 { get; set; }
+
+
+        public string codPuerto { get; set; }
+
+        public string codAeroPuerto { get; set; }
+
+        public string nomPuertoAeroPuerto { get; set; }
+
+        public string indTransbordoProgramado { get; set; }
+
+
+        #endregion
+
 
         #endregion
 

@@ -48,4 +48,23 @@
         public string Name { get; set; }
     }
 
+    public class BodyListItem
+    {
+        public BodyListItem()
+        {
+            key = string.Empty;
+            value = string.Empty;
+            type = string.Empty; 
+        }
+
+        [JsonProperty("key")]
+        public string key { get; set; }
+
+        [JsonProperty("value")]
+        public string value { get; set; }
+
+        [JsonProperty("type")]
+        public string type { get; set; }
+    }
+
 }

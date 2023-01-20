@@ -9,6 +9,7 @@
             DelUser = string.Empty;
             IdRecordStr = string.Empty;
             segIPMaquinaPC = string.Empty;
+            TokenSesion= string.Empty;
         }
 
         [JsonIgnore]
@@ -28,5 +29,8 @@
 
         [JsonIgnore]
         public string segIPMaquinaPC { get; set; }
+
+        [JsonIgnore]
+        public string TokenSesion { get; set; }
     }
 }

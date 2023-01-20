@@ -16,6 +16,7 @@
             desNombreEntidad = string.Empty;
             perTributario = string.Empty;
             codRegDestinoDocum = string.Empty;
+            codEmpleadoSIS = string.Empty;
         }
 
         public Nullable<DateTime> fecInicioDate { get; set; }
@@ -51,6 +52,11 @@
         public string fecFinal { get; set; }
 
         public bool flagUpdateFileXML { get; set; }
+
+
+        [JsonIgnore]
+        public string codEmpleadoSIS { get; set; }
+
     }
 
 
@@ -58,7 +64,7 @@
     {
         public BEBuscaDocumento()
         {
-            codPlanilla = string.Empty;
+            codEmpleadoSIS = string.Empty;
             segIPMaquinaPC = string.Empty;
             codEmpresaRUC = string.Empty;
             segUsuarioActual = string.Empty;
@@ -67,8 +73,7 @@
 
         public int codDocumReg { get; set; }
         
-        public string codPlanilla { get; set; }
-
+       
         public string codTipoDocumento { get; set; }
 
         [JsonIgnore]
@@ -80,6 +85,46 @@
         [JsonIgnore]
         public bool flagEnvioMailOk { get; set; }
 
+
+        [JsonIgnore]
+        public string codEmpleadoSIS { get; set; }
+
+
+        [JsonIgnore]
+        public string nomArchivo { get; set; }
     }
+
+
+    public class BEBuscaDocumentoPendienteTicket : BEBuscadorBase
+    {
+        public BEBuscaDocumentoPendienteTicket()
+        {
+            segIPMaquinaPC = string.Empty;
+            codEmpresaRUC = string.Empty;
+            segUsuarioActual = string.Empty;
+        }
+
+
+        public string codTipoDocumento { get; set; }
+
+        public string numDocumento { get; set; }
+
+    }
+
+
+    public class BEBuscaDocumentoPendienteTicketRequest : BEBuscaDocumentoPendienteTicket
+    {
+        public BEBuscaDocumentoPendienteTicketRequest()
+        {
+            segIPMaquinaPC = string.Empty;
+            codEmpresaRUC = string.Empty;
+            segUsuarioActual = string.Empty;
+        }
+
+
+        public string numTicket { get; set; }
+
+    }
+
 
 }

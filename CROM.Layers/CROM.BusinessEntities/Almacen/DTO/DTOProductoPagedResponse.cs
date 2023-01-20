@@ -41,6 +41,8 @@ namespace CROM.BusinessEntities.Almacen
 
         public string codRegUnidadMedNombre { get; set; }
 
+        public bool indIncluyeIGV { get; set; }
+
         public bool indEditaDescripcion { get; set; }
 
         public bool indDestinadoACompra { get; set; }

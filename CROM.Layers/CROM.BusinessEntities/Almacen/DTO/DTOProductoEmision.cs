@@ -55,6 +55,14 @@ namespace CROM.BusinessEntities.Almacen
 
         public decimal? prcImpuestoIGV { get; set; }
         public bool indIncluyeIGV { get; set; }
+        public byte indTipoCalculoAfectacion { get; set; }
+        public bool indGravadoIGV { get; set; }
+        public bool indICBPER { get; set; }
+
+        public int codTipoTributoICBPER { get; set; }
+        public decimal prcICBPER { get; set; }
+        public int codTipoTributoICBPERPadre { get; set; }
+        public int numAnioICBPER { get; set; }
 
 
         public string codGrupoNombre { get; set; }
