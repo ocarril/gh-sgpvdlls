@@ -2,6 +2,7 @@
 {
     using Newtonsoft.Json;
     using System;
+    using System.Collections.Generic;
 
     public class BEBuscaSunatRequest : BEBuscadorBaseRequest
     {
@@ -95,21 +96,7 @@
     }
 
 
-    public class BEBuscaDocumentoPendienteTicket : BEBuscadorBase
-    {
-        public BEBuscaDocumentoPendienteTicket()
-        {
-            segIPMaquinaPC = string.Empty;
-            codEmpresaRUC = string.Empty;
-            segUsuarioActual = string.Empty;
-        }
-
-
-        public string codTipoDocumento { get; set; }
-
-        public string numDocumento { get; set; }
-
-    }
+    
 
 
     public class BEBuscaDocumentoPendienteTicketRequest : BEBuscaDocumentoPendienteTicket

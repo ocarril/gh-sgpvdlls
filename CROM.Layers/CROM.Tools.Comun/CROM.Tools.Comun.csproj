@@ -134,6 +134,7 @@
     <Compile Include="constants\ConstantsComercial.cs" />
     <Compile Include="entities\DTODeleteRequest.cs" />
     <Compile Include="entities\DTOResponseProcedure.cs" />
+    <Compile Include="helpers\HelpDataValidation.cs" />
     <Compile Include="helpers\HelpPathFiles.cs" />
     <Compile Include="helpers\HelpSUNAT.cs" />
     <Compile Include="security\BEUsuarioPermisoResponse.cs" />
