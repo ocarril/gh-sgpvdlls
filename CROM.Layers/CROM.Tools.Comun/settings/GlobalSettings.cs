@@ -344,6 +344,13 @@
         }
 
 
+        public static int GetDEFAULT_NumDiasAlertaCertDigital()
+        {
+
+            int valorConfig = Extensors.CheckInt(ConfigurationManager.AppSettings["DEFAULT_NumDiasAlertaCertDigital"]);
+
+            return valorConfig;
+        }
 
         #endregion
     }

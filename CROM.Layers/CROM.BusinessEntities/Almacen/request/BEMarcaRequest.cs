@@ -28,7 +28,7 @@ namespace CROM.BusinessEntities.Almacen.request
 
         public string desNombre { get; set; }
 
-        public int codPais { get; set; }
+        public int? codPais { get; set; }
 
         public string nomContacto { get; set; }
 

@@ -1,4 +1,8 @@
 ﻿using System.Collections.Generic;
+using static CROM.Tools.Comun.HelpDocumentos;
+using System.Security.Cryptography;
+using System.Web.UI.WebControls;
+using DocumentFormat.OpenXml.Bibliography;
 
 namespace CROM.Tools.Comun.constants
 {
@@ -214,8 +218,22 @@ namespace CROM.Tools.Comun.constants
           { "0",   "N° GUIA:{0}:  ENVIO OK" },
           { "98",  "N° GUIA:{0}:  ENVÍO DE DOCUMENTO EN PROCESO" },
           { "991", "N° GUIA:{0}:  ENVÍO CON ERROR, CON GENERACIÓN DE CDR" },
-          { "990", "N° GUIA:{0}:  Envío CON ERROR, NO GENERA CDR" }
+          { "990", "N° GUIA:{0}:  ENVÍO CON ERROR, NO GENERA CDR" }
         };
+
+        public static Dictionary<string, string> SUNATValidacionesGRE = new Dictionary<string, string>()
+        {
+          { "2532",   "Validación GRE:{0}:  No existe información de modalidad de transporte." },
+          { "2773",   "Validación GRE:{0}:  El valor ingresado como modalidad de transporte no es correcto."},
+          { "2561",   "Validación GRE:{0}:  El documento/XML no contiene el tag o no existe informacion del tipo de documento identidad del transportista."},
+          { "2570",   "Validación GRE:{0}:  El documento/XML no contiene el tag o no existe informacion del tipo de documento identidad del conductor."},
+          { "2566",   "Validación GRE:{0}:  El documento/XML no contiene el tag o no existe informacion del Número de placa del vehículo."},
+          { "2567",   "Validación GRE:{0}:  Número de placa del vehículo - El dato ingresado no cumple con el formato establecido."},
+          { "3354",   "Validación GRE:{0}:  No debe ingresar informacion de vehiculo principal."},
+
+
+        };
+
 
 
     }

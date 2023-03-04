@@ -42,6 +42,9 @@ namespace CROM.BusinessEntities.SUNAT.request
 
         public string UrlDocumentReference { get; set; }
 
+        public string numTicket { get; set; }
+
+        public bool indUpdateStatusDocument { get; set; }
 
         [JsonIgnore]
         public int codEmpresa { get; set; }
