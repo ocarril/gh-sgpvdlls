@@ -397,4 +397,16 @@
 
         };
     }
+
+    public static class ValidExpresionRegularesConstants
+    {
+        public const string ExpRegValidateNumber = "^\\d+$";
+        public const string ExpRegValidateLetters = "^[a-zA-ZáÁéÉíÍóÓúÚñÑüÜ]+$";
+        public const string ExpRegValidateEmail = "\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*";
+        public const string ExpRegValidateAlfaNumeric = "^\\w+$";
+        public const string ExpRegValidateAlfaNumericSpace = "^[A-Za-z0-9áÁéÉíÍóÓúÚñÑüÜ ]+$";
+        public const string ExpRegValidatePhone = "^[A-Za-z0-9-]+$";
+        public const string ExpRegValidateTextoUnderline = "^[A-Za-z_]+$";
+    }
+
 }
