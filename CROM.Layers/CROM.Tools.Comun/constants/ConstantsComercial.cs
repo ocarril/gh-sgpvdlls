@@ -218,7 +218,7 @@ namespace CROM.Tools.Comun.constants
           { "0",   "N° GUIA:{0}:  ENVIO OK" },
           { "98",  "N° GUIA:{0}:  ENVÍO DE DOCUMENTO EN PROCESO" },
           { "991", "N° GUIA:{0}:  ENVÍO CON ERROR, CON GENERACIÓN DE CDR" },
-          { "990", "N° GUIA:{0}:  Envío CON ERROR, NO GENERA CDR" }
+          { "990", "N° GUIA:{0}:  ENVÍO CON ERROR, NO GENERA CDR" }
         };
 
         public static Dictionary<string, string> SUNATValidacionesGRE = new Dictionary<string, string>()

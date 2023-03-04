@@ -1,5 +1,6 @@
 ﻿namespace CROM.BusinessEntities.SUNAT.response
 {
+    using Newtonsoft.Json;
     using System;
 
     public class BEDocumentoSUNATPendienteTicketResponse
@@ -44,5 +45,11 @@
         public DateTime? fecRecepcion        { get; set; }
         public string TCK_codRespuesta    { get; set; }
         public string TCK_indCdrGenerado { get; set; }
+
+        [JsonIgnore]
+        public bool EnvioExitosa { get; set; }
+
+        [JsonIgnore]
+        public string EnvioMessage { get; set; }
     }
 }

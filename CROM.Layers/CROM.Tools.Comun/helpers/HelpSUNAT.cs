@@ -253,10 +253,11 @@
                         xd.Load(zentry.Open());
 
                         XmlNodeList xnl = xd.GetElementsByTagName("cbc:Description");
-                        foreach (XmlElement item in xnl)
-                        {
-                            mensajeRpta = item.InnerText;
-                        }
+                        if (xnl != null)
+                            foreach (XmlElement item in xnl)
+                            {
+                                mensajeRpta = item.InnerText;
+                            }
 
                         XmlNodeList xnlNota = xd.GetElementsByTagName("cbc:Note");
                         foreach (XmlElement item in xnlNota)
@@ -265,11 +266,12 @@
                         }
 
                         XmlNodeList xnlCode = xd.GetElementsByTagName("cbc:ResponseCode");
-                        foreach (XmlElement item in xnlCode)
-                        {
-                            if (item.InnerText != "0")
+                        if (xnlCode != null)
+                            foreach (XmlElement item in xnlCode)
+                            {
+                                //if (item.InnerText != "0")
                                 mensajeRpta = String.Format("{0} - {1}", item.InnerText, mensajeRpta);
-                        }
+                            }
 
                         XmlNodeList xnlDocumentReference = xd.GetElementsByTagName("cbc:DocumentDescription");
                         if (xnlDocumentReference != null)
@@ -282,6 +284,7 @@
                 }
                 fechaCreateFile = File.GetCreationTime(pRutaEnvioSUNAT);
                 fechaModifiedFile = File.GetLastWriteTime(pRutaEnvioSUNAT);
+
             }
             catch (Exception ex)
             {
