@@ -167,6 +167,14 @@
             return valorConfig;
         }
 
+        public static string GetDEFAULT_URL_WEBAPI_WSAlmacen()
+        {
+
+            string valorConfig = Extensors.CheckStr(ConfigurationManager.AppSettings["DEFAULT_URL_WEBAPI_WSAlmacen"]);
+
+            return valorConfig;
+        }
+
         public static string GetDEFAULT_URL_WEBAPP_Encuesta()
         {
 
