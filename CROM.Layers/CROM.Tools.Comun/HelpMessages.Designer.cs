@@ -1789,7 +1789,7 @@ namespace CROM.Tools.Comun {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a ¡ Tipo de cambio no existe para la fecha : [{0}].!.
+        ///   Busca una cadena traducida similar a ¡ Tipo de cambio no existe para la fecha : [ {0} ].!.
         /// </summary>
         public static string VALIDACIONTipoDeCambio {
             get {
