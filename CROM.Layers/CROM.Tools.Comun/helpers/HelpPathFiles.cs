@@ -9,6 +9,7 @@ namespace CROM.Tools.Comun.helpers
     using System.Drawing;
     using System.IO;
     using System.IO.Compression;
+    using System.Reflection;
 
     public static class HelpPathFiles
     {
@@ -150,6 +151,45 @@ namespace CROM.Tools.Comun.helpers
                 returnZip.Message = "Error [Zip] " + zp.Message;
             }
             return returnZip;
+        }
+
+
+        /// <summary>
+        /// This method erase the file if an exceptions ocurred
+        /// and change the state of the process
+        /// </summary>
+        /// <param name="idProcessUpload"></param>
+        public static void EraseFileAntiguos(string pPathFiles, string pComodin, double pnumDiasAnterioridad)
+        {
+            try
+            {
+
+                pPathFiles = !pPathFiles.EndsWith(@"\") ? string.Concat(pPathFiles, @"\\") : pPathFiles;
+                double numDiasAnterioridad = pnumDiasAnterioridad * -1;
+                DateTime fechaEliminaFilesHasta = DateTime.Now.AddDays(numDiasAnterioridad);
+
+                string[] lstArchivos = Directory.GetFiles(pPathFiles, pComodin, SearchOption.AllDirectories);
+                // Delete source files that were copied.
+                foreach (string fileErase in lstArchivos)
+                {
+                    if (File.Exists(fileErase))
+                    {
+                        DateTime fechaDeCreacion = File.GetLastWriteTime(fileErase);
+                        if (fechaDeCreacion < fechaEliminaFilesHasta)
+                        {
+                            File.Delete(fileErase);
+                            HelpLogging.Write(TraceLevel.Info, "EraseFileAntiguos." + MethodBase.GetCurrentMethod().Name,
+                                              "[" + fechaDeCreacion.ToString() + "] - Archivo de carga eliminado :[ " + fileErase + " ]");
+                        }
+                    }
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }
