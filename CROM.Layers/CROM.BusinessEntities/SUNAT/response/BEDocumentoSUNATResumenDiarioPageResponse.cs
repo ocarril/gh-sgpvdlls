@@ -13,6 +13,7 @@ namespace CROM.BusinessEntities.SUNAT.response
             verUBLId = string.Empty;
             verCustomizationID = string.Empty;
             desNomArchivoTicket = string.Empty;
+            rptaSunatFSNote = string.Empty;
         }
 
         public long codDocumRegResumenDiario { get; set; }
@@ -42,6 +43,8 @@ namespace CROM.BusinessEntities.SUNAT.response
         public string verCustomizationID { get; set; }
 
         public int cntDocuments { get; set; }
+
+        public string rptaSunatFSNote { get; set; }
 
     }
 }

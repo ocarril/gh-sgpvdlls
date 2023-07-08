@@ -194,6 +194,7 @@
     <Compile Include="SUNAT\response\BEDocumentoSUNATCargoDescuentoResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATPagoCreditoResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioDetalleResponse.cs" />
+    <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioReportResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioPageResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATResumenDiarioResponse.cs" />
     <Compile Include="SUNAT\response\BEDocumentoSUNATPendienteTicketResponse.cs" />
