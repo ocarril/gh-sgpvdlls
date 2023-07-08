@@ -1,40 +1,59 @@
-﻿namespace CROM.BusinessEntities.SUNAT.response
+﻿
+namespace CROM.BusinessEntities.SUNAT.response
 {
     using System;
 
-
-    public class BEDocumentoSUNATResumenDiarioDetalleResponse : BEBasePagedResponse
+    public class BEDocumentoSUNATResumenDiarioReportResponse : BEBasePagedResponse
     {
-        public BEDocumentoSUNATResumenDiarioDetalleResponse()
+        public BEDocumentoSUNATResumenDiarioReportResponse()
         {
-            codDocumento = string.Empty;
-            indAbreviatura = string.Empty;
-            numDocumento = string.Empty;
-            RD_codRegimenPercepcion = string.Empty;
-            RD_codTipDocUsuario = string.Empty;
-            RD_codTipoDocumento = string.Empty;
-            RD_codTipoDocumentoModifica = string.Empty;
-            RD_codTipoMoneda = string.Empty;
-            RD_codTributoIGV = string.Empty;
-            RD_codTributoIGVInter = string.Empty;
-            RD_codTributoISC = string.Empty;
-            RD_codTributoISCInter = string.Empty;
-            RD_codTributoOTRO = string.Empty;
-            RD_codTributoOTROInter = string.Empty;
-            RD_EstadoDelItem = string.Empty;
-            RD_nomTributoIGV = string.Empty;
-            RD_nomTributoISC = string.Empty;
-            RD_nomTributoOTRO = string.Empty;
-            RD_numDocumento = string.Empty;
-            RD_numDocumentoModifica = string.Empty;
-            RD_numDocUsuario = string.Empty;
-            RD_numSerie = string.Empty;
-            RD_numSerieModifica = string.Empty;
-
-            codRegMoneda = string.Empty;
+            desFirmaDigestValue = string.Empty;
+            desFirmaSignatureValue = string.Empty;
+            verCustomizationID = string.Empty;
+            verUBLId = string.Empty;
+            verCustomizationID = string.Empty;
+            desNomArchivoTicket = string.Empty;
+            rptaSunatFSNote = string.Empty;
         }
 
+        public long codDocumRegResumenDiario { get; set; }
+
         public int codEmpresa { get; set; }
+
+        public DateTime fecGenera { get; set; }
+
+        public DateTime fecVenta { get; set; }
+
+        public string desNomArchivo { get; set; }
+
+        public string desRptaSunatFS { get; set; }
+
+        public DateTime? fecRptaSunatFS { get; set; }
+
+        public bool desNomArchivoValidado { get; set; }
+
+        public string desFirmaDigestValue { get; set; }
+
+        public string desFirmaSignatureValue { get; set; }
+
+        public string desNomArchivoTicket { get; set; }
+
+        public string verUBLId { get; set; }
+
+        public string verCustomizationID { get; set; }
+
+        public int cntDocuments { get; set; }
+
+        public string rptaSunatFSNote { get; set; }
+
+
+
+
+
+
+
+
+        //public int codEmpresa { get; set; }
         public string codDocumento { get; set; }
         public string indAbreviatura { get; set; }
         public int codDocumReg { get; set; }
@@ -77,7 +96,7 @@
         public decimal RD_sumTributoIGV { get; set; }
 
         public decimal RD_sumTributoIVAP { get; set; }
-        
+
 
         public decimal RD_sumOtrosCargos { get; set; }
         public decimal RD_sumTributoOTRO { get; set; }
@@ -173,7 +192,7 @@
 
         public string nomRazonSocial { get; set; }
 
-        public string desFirmaDigestValue { get; set; }
+        //public string desFirmaDigestValue { get; set; }
         public string desRptaNomArchivoXml { get; set; }
         public DateTime? fecRptaSunatFSFecha { get; set; }
 
@@ -206,8 +225,10 @@
         public bool FlagAnulado { get; set; }
         public bool FlagDeBaja { get; set; }
 
-        public long? codDocumRegResumenDiario { get; set; }
+        //public long? codDocumRegResumenDiario { get; set; }
 
         public string codRegMoneda { get; set; }
+
+
     }
-}              
+}
