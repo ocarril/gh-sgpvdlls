@@ -445,6 +445,7 @@ namespace CROM.Tools.Config
         , DEFAULT_SFS_API_GUIAREM_PASSWD
         , DEFAULT_SFS_API_GUIAREM_WSTCKT
         , DEFAULT_Doc_GuiaTRANSPPRIV
+        , DEFAULT_REFER_ResumenDIARIO
 
 
 
