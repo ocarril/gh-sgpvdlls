@@ -27,8 +27,8 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public string perTributario { get; set; }
 
-        public string codDepositoOrigen { get; set; }
+        public int? codDepositoOrigen { get; set; }
 
-        public string codDepositoDestino { get; set; }
+        public int? codDepositoDestino { get; set; }
     }
 }

@@ -112,8 +112,8 @@ namespace CROM.BusinessEntities.Comercial
         public string CodigoComprobanteFact { get; set; }
         public string NumeroSerie { get; set; }
         public string NumeroMinuta { get; set; }
-        public string CodigoArguDepositoDesti { get; set; }//
-        public string CodigoArguDepositoOrigen { get; set; }//
+        public int? codDepositoDestino { get; set; }//
+        public int? codDepositoOrigen { get; set; }//
         public string NumeroComprobanteExt { get; set; }//
 
         public bool DocEsGravado { get; set; }//MEMORIA
@@ -191,8 +191,8 @@ namespace CROM.BusinessEntities.Comercial
 
         public string CodigoComprobanteDESTINONombre { get; set; }
         public string CodigoComprobanteORIGENNombre { get; set; }
-        public string CodigoArguDepositoDestiNombre { get; set; }
-        public string CodigoArguDepositoOrigenNombre { get; set; }
+        public string codDepositoDestiNombre { get; set; }
+        public string codDepositoOrigenNombre { get; set; }
 
         public int REF_TotalItems { get; set; }
         public int REF_TotalLetras { get; set; }

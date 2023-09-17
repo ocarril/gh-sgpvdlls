@@ -1,7 +1,7 @@
 namespace CROM.GestionAlmacen.DataAccess
 {
     using CROM.BusinessEntities.Almacen;
-
+    using CROM.Tools.Comun;
     using System;
     using System.Collections.Generic;
 
@@ -52,7 +52,7 @@ namespace CROM.GestionAlmacen.DataAccess
                        productoKardex.monCostoUnitDevoluc,
                        productoKardex.monCostoUnitSaldo,
                        productoKardex.perKardexAnio,
-                       productoKardex.codDeposito,
+                       Extensors.CheckStr(productoKardex.codDeposito),
                        productoKardex.codRegistroTipoMotivo,
                        productoKardex.indActivo,
                        productoKardex.segUsuarioCrea);
@@ -84,7 +84,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     codigoRetorno = SQLDC.omgc_U_ProductoKardex_Cierre(filtro.codEmpresa,
                                                                       filtro.codPuntoVenta,
-                                                                      filtro.codDeposito,
+                                                                      Extensors.CheckStr(filtro.codDeposito),
                                                                       filtro.codProducto,
                                                                       filtro.segUsuarioEdita,
                                                                       filtro.perPeriodo,
@@ -107,7 +107,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     codigoRetorno = SQLDC.omgc_U_ProductoKardex_DeshacerCierre(filtro.codEmpresa,
                                                                               filtro.codPuntoVenta,
-                                                                              filtro.codDeposito,
+                                                                              Extensors.CheckStr(filtro.codDeposito),
                                                                               filtro.codProducto,
                                                                               filtro.segUsuarioEdita,
                                                                               filtro.perPeriodo);
@@ -138,8 +138,8 @@ namespace CROM.GestionAlmacen.DataAccess
                 using (_ProduccionDataContext SQLDC = new _ProduccionDataContext(conexion))
                 {
                     codigoRetorno = SQLDC.omgc_D_ProductoKardex(filtro.codEmpresa, 
-                                                                filtro.codDocumReg, 
-                                                                filtro.codDeposito);
+                                                                filtro.codDocumReg,
+                                                                Extensors.CheckStr(filtro.codDeposito));
                 }
             }
             catch (Exception ex)
@@ -168,8 +168,8 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var resul = SQLDC.omgc_S_ProductoKardex(filtro.codEmpresa, 
                                                             filtro.fecInicio, 
-                                                            filtro.fecFinal, 
-                                                            filtro.codDeposito,
+                                                            filtro.fecFinal,
+                                                            Extensors.CheckStr(filtro.codDeposito),
                                                             filtro.codPuntoVenta, 
                                                             filtro.codPerEntidad,
                                                             filtro.codProducto, 
@@ -215,7 +215,7 @@ namespace CROM.GestionAlmacen.DataAccess
 
                             desRazonSocial = item.desRazonSocial,
                             perKardexAnio = item.perKardexAnio,
-                            codDeposito = item.codRegistroDeposito,
+                            codDeposito = Extensors.CheckInt(item.codRegistroDeposito),
                             indActivo = item.indActivo,
                             segUsuarioCrea = item.segUsuarioCrea,
                             segUsuarioEdita = item.segUsuarioEdita,
@@ -301,7 +301,7 @@ namespace CROM.GestionAlmacen.DataAccess
 
                             desRazonSocial = item.desRazonSocial,
                             perKardexAnio = item.perKardexAnio,
-                            codDeposito = item.codRegistroDeposito,
+                            codDeposito = Extensors.CheckInt(item.codRegistroDeposito),
                             indActivo = item.indActivo,
                             segUsuarioCrea = item.segUsuarioCrea,
                             segUsuarioEdita = item.segUsuarioEdita,
@@ -344,8 +344,8 @@ namespace CROM.GestionAlmacen.DataAccess
                 using (_ProduccionDataContext SQLDC = new _ProduccionDataContext(conexion))
                 {
                     var resul = SQLDC.omgc_S_ProductoKardex_Inventario(filtro.codEmpresa, 
-                                                                       filtro.codPuntoVenta, 
-                                                                       filtro.codDeposito, 
+                                                                       filtro.codPuntoVenta,
+                                                                       Extensors.CheckStr(filtro.codDeposito), 
                                                                        filtro.codDocumento, 
                                                                        filtro.codRegTipoMovimiUno);
                     foreach (var item in resul)
@@ -383,7 +383,7 @@ namespace CROM.GestionAlmacen.DataAccess
 
                             desRazonSocial = item.desRazonSocial,
                             perKardexAnio = item.perKardexAnio,
-                            codDeposito = item.codRegistroDeposito,
+                            codDeposito = Extensors.CheckInt(item.codRegistroDeposito),
                             indActivo = item.indActivo,
                             segUsuarioCrea = item.segUsuarioCrea,
                             segUsuarioEdita = item.segUsuarioEdita,

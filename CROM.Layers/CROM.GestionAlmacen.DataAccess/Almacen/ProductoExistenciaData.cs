@@ -5,6 +5,7 @@ namespace CROM.GestionAlmacen.DataAccess
     using System.Configuration;
 
     using CROM.BusinessEntities.Almacen;
+    using CROM.Tools.Comun;
 
     /// <summary>
     /// Proyecto    :  Modulo de Mantenimiento de : 
@@ -76,7 +77,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         ref codigoRetorno,
                         pUpdate.codEmpresa,
                         pUpdate.codProducto,
-                        pUpdate.codDeposito,
+                        Extensors.CheckStr(pUpdate.codDeposito),
                         pUpdate.cntStockInicial,
                         pUpdate.segUsuarioEdita,
                         pUpdate.segMaquinaEdita,
@@ -99,7 +100,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var result = SQLDC.omgc_U_ProductoExistencia_StockInicial(pFiltro.codEmpresa,
                                                                               pFiltro.codProducto,
-                                                                              pFiltro.codDeposito,
+                                                                              Extensors.CheckStr(pFiltro.codDeposito),
                                                                               pFiltro.cntStockInicial,
                                                                               pFiltro.segUsuarioEdita,
                                                                               pFiltro.segMaquinaEdita);
@@ -129,7 +130,7 @@ namespace CROM.GestionAlmacen.DataAccess
                     codRetorno = SQLDC.omgc_U_ProductoExistencia_StockFisico(
                         pUpdate.codEmpresa,
                         pUpdate.codProducto,
-                        pUpdate.codDeposito,
+                        Extensors.CheckStr(pUpdate.codDeposito),
                         pUpdate.cntStockFisico,
                         pUpdate.indOperador,
                         pUpdate.segUsuarioEdita,
@@ -155,7 +156,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
                     codRetorno = SQLDC.omgc_U_ProductoExistencia_StockFisicoConsig(pUpdate.codEmpresa, pUpdate.codProducto,
-                                                                                    pUpdate.codDeposito,
+                                                                                    Extensors.CheckStr(pUpdate.codDeposito),
                                                                                     pUpdate.cntStockFisico,
                                                                                     pUpdate.indOperador,
                                                                                     pUpdate.segUsuarioEdita,
@@ -192,7 +193,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var result = SQLDC.omgc_U_ProductoExistenciaStockFisicoInventario(pUpdate.codEmpresa, 
                                                                                       pUpdate.codProducto,
-                                                                                      pUpdate.codDeposito,
+                                                                                      Extensors.CheckStr(pUpdate.codDeposito),
                                                                                       pUpdate.cntStockFisico,
                                                                                       pUpdate.segUsuarioEdita,
                                                                                       pUpdate.segMaquinaEdita,
@@ -217,7 +218,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var result = SQLDC.omgc_U_ProductoExistencia_StockFisicoINVAnterior(pUpdate.codEmpresa, 
                                                                                         pUpdate.codProducto,
-                                                                                        pUpdate.codDeposito,
+                                                                                        Extensors.CheckStr(pUpdate.codDeposito),
                                                                                         pUpdate.cntStockFisico,
                                                                                         pUpdate.cntStockMerma,
                                                                                         pUpdate.cntStockSobrante,
@@ -251,7 +252,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var result = SQLDC.omgc_U_ProductoExistencia_StockComprometido(pUpdate.codEmpresa, 
                                                                                    pUpdate.codProducto,
-                                                                                   pUpdate.codDeposito,
+                                                                                   Extensors.CheckStr(pUpdate.codDeposito),
                                                                                    pUpdate.cntStockComprometido,
                                                                                    pUpdate.indOperador,
                                                                                    pUpdate.segUsuarioEdita,
@@ -313,8 +314,8 @@ namespace CROM.GestionAlmacen.DataAccess
                 using (_AlmacenDataContext SQLDC = new _AlmacenDataContext(conexion))
                 {
                     var resul = SQLDC.usp_sgcfe_R_ProductoExistencia(pFiltro.codEmpresa,
-                                                                pFiltro.codProducto, 
-                                                                pFiltro.codDeposito);
+                                                                     pFiltro.codProducto,
+                                                                     Extensors.CheckStr(pFiltro.codDeposito));
                     foreach (var item in resul)
                     {
                         lstProductoExistencia.Add(new BEProductoExistencia()

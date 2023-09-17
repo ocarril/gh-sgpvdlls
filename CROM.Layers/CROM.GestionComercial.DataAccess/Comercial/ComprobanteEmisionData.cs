@@ -93,7 +93,7 @@ namespace CROM.GestionComercial.DataAccess
                        comprobanteEmision.CodigoComprobanteFact,
                        comprobanteEmision.NumeroSerie,
                        comprobanteEmision.NumeroMinuta,
-                       comprobanteEmision.CodigoArguDepositoDesti,
+                       Extensors.CheckStr(comprobanteEmision.codDepositoDestino),
                        comprobanteEmision.NumeroComprobanteExt,
                        comprobanteEmision.DocEsGravado,
                        comprobanteEmision.DocExigeDocAnexo,
@@ -108,7 +108,7 @@ namespace CROM.GestionComercial.DataAccess
                        comprobanteEmision.CodigoArguUbigeo,
                        comprobanteEmision.EntidadDireccionUbigeo,
                        comprobanteEmision.CodigoPersonaEntidadContacto,
-                       comprobanteEmision.CodigoArguDepositoOrigen,
+                        Extensors.CheckStr(comprobanteEmision.codDepositoOrigen),
                        comprobanteEmision.indInternacional,
                        comprobanteEmision.perTributario,
                        comprobanteEmision.codRegTipoDomicilioTransporte,
@@ -235,7 +235,7 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.CodigoComprobanteFact,
                         comprobanteEmision.NumeroSerie,
                         comprobanteEmision.NumeroMinuta,
-                        comprobanteEmision.CodigoArguDepositoDesti,
+                        Extensors.CheckStr(comprobanteEmision.codDepositoDestino),
                         comprobanteEmision.NumeroComprobanteExt,
                         comprobanteEmision.DocEsGravado,
                         comprobanteEmision.DocExigeDocAnexo,
@@ -251,7 +251,7 @@ namespace CROM.GestionComercial.DataAccess
                         comprobanteEmision.CodigoArguUbigeo,
                         comprobanteEmision.EntidadDireccionUbigeo,
                         comprobanteEmision.CodigoPersonaEntidadContacto,
-                        comprobanteEmision.CodigoArguDepositoOrigen,
+                       Extensors.CheckStr(comprobanteEmision.codDepositoOrigen),
                         comprobanteEmision.indInternacional,
                         comprobanteEmision.perTributario,
                         comprobanteEmision.codRegTipoDomicilioTransporte,
@@ -676,7 +676,7 @@ namespace CROM.GestionComercial.DataAccess
                             NumeroSerie = item.NumeroSerie,
                             NumeroMinuta = item.NumeroMinuta,
                             CodigoRegistroUnico = item.CodigoRegistroUnico,
-                            CodigoArguDepositoDesti = item.CodigoArguDepositoDesti,
+                            codDepositoDestino = Extensors.CheckInt(item.CodigoArguDepositoDesti),
                             NumeroComprobanteExt = item.NumeroComprobanteExt,
                             DocEsGravado = item.DocEsGravado,
                             DocExigeDocAnexo = item.DocExigeDocAnexo,
@@ -707,8 +707,8 @@ namespace CROM.GestionComercial.DataAccess
                             CondicionCompraNombre = item.CondicionCompraNombre,
                             CondicionVentaNombre = item.CondicionVentaNombre,
                             FechaDeDeclaracion = item.FechaDeDeclaracion,
-                            CodigoArguDepositoOrigen = item.CodigoArguDepositoOrigen,
-                            CodigoArguDepositoOrigenNombre = item.CodigoArguDepositoOrigenNombre,
+                            codDepositoOrigen = Extensors.CheckInt( item.CodigoArguDepositoOrigen),
+                            codDepositoOrigenNombre = item.CodigoArguDepositoOrigenNombre,
                             indInternacional = item.indInternacional,
                             perTributario = item.perTributario,
                             codGastoDeAduana = item.codGastoDeAduana,
@@ -1049,7 +1049,7 @@ namespace CROM.GestionComercial.DataAccess
                             NumeroSerie = item.numSerie,
                             NumeroMinuta = item.numMinuta,
                             CodigoRegistroUnico = item.codRegistroUnico,
-                            CodigoArguDepositoDesti = item.codDepositoDestino,
+                            codDepositoDestino = Extensors.CheckInt(item.codDepositoDestino),
                             NumeroComprobanteExt = item.numDocumentoExterno,
                             DocEsGravado = item.indDocEsGravado,
                             DocExigeDocAnexo = item.indDocExigeDocAnexo,
@@ -1083,9 +1083,9 @@ namespace CROM.GestionComercial.DataAccess
                             FechaDeDeclaracion = item.fecDeDeclaracion,
                             indInternacional = item.indInternacional,
                             perTributario = item.perTributario,
-                            CodigoArguDepositoOrigen = item.codDepositoOrigen,
-                            CodigoArguDepositoOrigenNombre = item.codDepositoOrigenNombre,
-                            CodigoArguDepositoDestiNombre = item.codDepositoDestinoNombre,
+                            codDepositoOrigen = Extensors.CheckInt(item.codDepositoOrigen),
+                            codDepositoOrigenNombre = item.codDepositoOrigenNombre,
+                            codDepositoDestiNombre = item.codDepositoDestinoNombre,
                             codGastoDeAduana = item.codGastoDeAduana,
                             codRegTipoDomicilioTransporte = item.codRegTipoDomicilioTransporte,
                             codRegUbigeoTransporte = item.codRegUbigeoTransporte,
@@ -1209,7 +1209,7 @@ namespace CROM.GestionComercial.DataAccess
                             NumeroSerie = item.NumeroSerie,
                             NumeroMinuta = item.NumeroMinuta,
                             CodigoRegistroUnico = item.CodigoRegistroUnico,
-                            CodigoArguDepositoDesti = item.CodigoArguDepositoDesti,
+                            codDepositoDestino = Extensors.CheckInt(item.CodigoArguDepositoDesti),
                             NumeroComprobanteExt = item.NumeroComprobanteExt,
                             DocEsGravado = item.DocEsGravado,
                             DocExigeDocAnexo = item.DocExigeDocAnexo,
@@ -1243,9 +1243,9 @@ namespace CROM.GestionComercial.DataAccess
                             FechaDeDeclaracion = item.FechaDeDeclaracion,
                             indInternacional = item.indInternacional,
                             perTributario = item.perTributario,
-                            CodigoArguDepositoOrigen = item.CodigoArguDepositoOrigen,
-                            CodigoArguDepositoOrigenNombre = item.CodigoArguDepositoOrigenNombre,
-                            CodigoArguDepositoDestiNombre = item.CodigoArguDepositoDestiNombre,
+                            codDepositoOrigen = Extensors.CheckInt(item.CodigoArguDepositoOrigen),
+                            codDepositoOrigenNombre = item.CodigoArguDepositoOrigenNombre,
+                            codDepositoDestiNombre = item.CodigoArguDepositoDestiNombre,
                             codGastoDeAduana = item.codGastoDeAduana,
                             codRegTipoDomicilioTransporte = item.codRegTipoDomicilioTransporte,
                             codRegUbigeoTransporte = item.codRegUbigeoTransporte,
@@ -1271,7 +1271,7 @@ namespace CROM.GestionComercial.DataAccess
         }
 
         public BEComprobanteEmision FindUnique(FiltroDocumReg pFiltro)
-            
+
         {
             BEComprobanteEmision comprobanteEmision = new BEComprobanteEmision();
             try
@@ -1362,7 +1362,7 @@ namespace CROM.GestionComercial.DataAccess
                             NumeroSerie = item.NumeroSerie,
                             NumeroMinuta = item.NumeroMinuta,
                             CodigoRegistroUnico = item.CodigoRegistroUnico,
-                            CodigoArguDepositoDesti = item.CodigoArguDepositoDesti,
+                            codDepositoDestino = Extensors.CheckInt(item.CodigoArguDepositoDesti),
                             NumeroComprobanteExt = item.NumeroComprobanteExt,
                             DocEsGravado = item.DocEsGravado,
                             DocExigeDocAnexo = item.DocExigeDocAnexo,
@@ -1396,9 +1396,9 @@ namespace CROM.GestionComercial.DataAccess
                             FechaDeDeclaracion = item.FechaDeDeclaracion,
                             indInternacional = item.indInternacional,
                             perTributario = item.perTributario,
-                            CodigoArguDepositoOrigen = item.CodigoArguDepositoOrigen,
-                            CodigoArguDepositoOrigenNombre = item.CodigoArguDepositoOrigenNombre,
-                            CodigoArguDepositoDestiNombre = item.CodigoArguDepositoDestiNombre,
+                            codDepositoOrigen = Extensors.CheckInt(item.CodigoArguDepositoOrigen),
+                            codDepositoOrigenNombre = item.CodigoArguDepositoOrigenNombre,
+                            codDepositoDestiNombre = item.CodigoArguDepositoDestiNombre,
                             codGastoDeAduana = item.codGastoDeAduana,
                             codRegTipoDomicilioTransporte = item.codRegTipoDomicilioTransporte,
                             codRegUbigeoTransporte = item.codRegUbigeoTransporte,
@@ -1412,7 +1412,7 @@ namespace CROM.GestionComercial.DataAccess
                             indImprimeFirma = item.indImprimeFirma.HasValue ? item.indImprimeFirma.Value : false,
                             indImprimeSinIGV = item.indImprimeSinIGV.HasValue ? item.indImprimeSinIGV.Value : false,
 
-                              
+
                         };
                     }
                 }
@@ -1423,6 +1423,7 @@ namespace CROM.GestionComercial.DataAccess
             }
             return comprobanteEmision;
         }
+
         //public List<BEComprobanteEmision> ListDocumentosParaPDT(BaseFiltro pBaseFiltro)
         //{
         //    List<BEComprobanteEmision> listaComprobanteEmision = new List<BEComprobanteEmision>();

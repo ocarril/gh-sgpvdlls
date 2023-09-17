@@ -75,27 +75,27 @@ namespace CROM.GestionAlmacen.BusinessLogic
             return lstProducto;
         }
         
-        public List<DTOProductoResponse> List(BaseFiltroProducto filtro, Helper.ComboBoxText pTexto)
-        {
-            List<DTOProductoResponse> lstProducto = new List<DTOProductoResponse>();
-            try
-            {
-                if (string.IsNullOrEmpty(filtro.numSerieProducto))
-                    lstProducto = oProductoData.List(filtro);
-                else
-                    lstProducto = oProductoData.ListNumSerie(filtro);
+        //public List<DTOProductoResponse> List(BaseFiltroProducto filtro, Helper.ComboBoxText pTexto)
+        //{
+        //    List<DTOProductoResponse> lstProducto = new List<DTOProductoResponse>();
+        //    try
+        //    {
+        //        if (string.IsNullOrEmpty(filtro.numSerieProducto))
+        //            lstProducto = oProductoData.List(filtro);
+        //        else
+        //            lstProducto = oProductoData.ListNumSerie(filtro);
 
-                if (lstProducto.Count > 0)
-                    lstProducto.Insert(0, new DTOProductoResponse { codProducto = 0, Descripcion = Helper.ObtenerTexto(pTexto) });
-                else
-                    lstProducto.Add(new DTOProductoResponse { codProducto = 0, Descripcion = Helper.ObtenerTexto(pTexto) });
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return lstProducto;
-        }
+        //        if (lstProducto.Count > 0)
+        //            lstProducto.Insert(0, new DTOProductoResponse { codProducto = 0, Descripcion = Helper.ObtenerTexto(pTexto) });
+        //        else
+        //            lstProducto.Add(new DTOProductoResponse { codProducto = 0, Descripcion = Helper.ObtenerTexto(pTexto) });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        throw ex;
+        //    }
+        //    return lstProducto;
+        //}
 
         #endregion
 
