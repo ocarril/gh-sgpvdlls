@@ -46,5 +46,15 @@ namespace CROM.BusinessEntities.SUNAT.response
 
         public string rptaSunatFSNote { get; set; }
 
+
+        public decimal sumPrecioVentaADIC { get; set; }
+
+        public decimal sumPrecioVentaMODI { get; set; }
+
+        public decimal sumPrecioVentaANUL { get; set; }
+
+        public decimal sumPrecioVentaTOTA { get; set; }
+
+
     }
 }

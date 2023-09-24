@@ -43,7 +43,7 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public int? codDocumRegOrigen { get; set; }
 
-        public string codDepositoOrigen { get; set; }
+        public int? codDepositoOrigen { get; set; }
 
         public Nullable<DateTime> fecEmisionOrigen { get; set; }
 

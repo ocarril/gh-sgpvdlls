@@ -23,6 +23,7 @@
         private EmpresaData oEmpresaData = null;
         private EmpresaSistemaData oEmpresaSistemaData = null;
         private EmpresaUsuarioData oEmpresaUsuarioData = null;
+        private EmpresaSistemaLicenciaData oEmpresaSistemaLicenciaData = null;
         private ReturnValor oReturnValor = null;
 
         public EmpresaLogic()
@@ -30,6 +31,7 @@
             oEmpresaData = new EmpresaData();
             oEmpresaSistemaData = new EmpresaSistemaData();
             oEmpresaUsuarioData = new EmpresaUsuarioData();
+            oEmpresaSistemaLicenciaData = new EmpresaSistemaLicenciaData();
             oReturnValor = new ReturnValor();
         }
 
@@ -584,6 +586,60 @@
                                                            pEmpresaUsuario.segUsuarioEdita, pEmpresaUsuario.codEmpresa.ToString());
             }
             return oReturnValor;
+        }
+
+        #endregion
+
+
+        #region /* EMPRESA-SISTEMA-LICENCIA  Proceso de SELECT ALL PAGED*/ 
+
+        /// <summary>
+        /// Retorna un LISTA de registros de la Entidad Seguridad.EmpresaLicencia
+        /// En la BASE de DATO la Tabla : [Seguridad.ESLicencia]
+        /// <summary>
+        /// <returns>List</returns>
+        public OperationResult ListEmpresaSistemaLicenciaPaged(BEBuscaEmpresaSistemaLicenciaRequest pFiltro)
+        {
+            try
+            {
+                var lstEmpresa = oEmpresaSistemaLicenciaData.ListPaged(pFiltro);
+                int totalRecords = lstEmpresa.Select(x => x.TOTALROWS).FirstOrDefault();
+                int totalPages = (int)Math.Ceiling((float)totalRecords / (float)pFiltro.jqPageSize);
+                var jsonGrid = new
+                {
+                    PageCount = totalPages,
+                    CurrentPage = pFiltro.jqCurrentPage,
+                    RecordCount = totalRecords,
+                    Items = (
+                        from item in lstEmpresa
+                        select new
+                        {
+                            ID = item.codEmpresaSistema,
+                            Row = new string[] {string.Empty
+                                              , string.Empty
+                                              , item.fecInicio.ToShortDateString()
+                                              , item.fecFinal.ToShortDateString()
+                                              , item.numTiempoToken.ToString()
+                                              , item.indActivo.ToString()
+                                              , item.segUsuarioEdita
+                                              , item.segFechaEdita.ToString()
+                            }
+                        }).ToArray()
+                };
+                return OK(jsonGrid);
+            }
+            catch (Exception ex)
+            {
+                return Error(GetType().Name, MethodBase.GetCurrentMethod().Name, ex, pFiltro.userActual, pFiltro.codEmpresa);
+            }
+            finally
+            {
+                if (oEmpresaData != null)
+                {
+                    oEmpresaData.Dispose();
+                    oEmpresaData = null;
+                }
+            }
         }
 
         #endregion

@@ -24,6 +24,7 @@ namespace CROM.BusinessEntities.Comercial.emision.request
             rznSocialUsuario = string.Empty;
             desDomicilioUsuario = string.Empty;
             codUbigeoNombre = string.Empty;
+            codDocumentoTipo = string.Empty;
 
             lstDetalle = new List<BEDocumRegDetalleRequest>();
             lstImpuestos = new List<BEDocumRegImpuestoRequest>();
@@ -37,7 +38,7 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public string numDocumento { get; set; }
 
-        public string codTipoComprobante { get; set; }
+        public string codDocumentoTipo { get; set; }
 
         public string codPuntoVenta { get; set; }
 

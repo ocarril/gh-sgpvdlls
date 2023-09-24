@@ -1184,10 +1184,10 @@ namespace CROM.GestionComercial.BusinessLogic
 
             if (indTrabajaConDeposito.ToLower() == Helper.ValorSiNo.S.ToString().ToLower())
                 if (documentoEmitir.IncidenciaEnStocks != 0)
-                    if (prm_ComprobanteEmision.CodigoArguDepositoOrigen == null)
+                    if (prm_ComprobanteEmision.codDepositoOrigen == null)
                         if (documentoEmitir.PideDeposito)
-                            prm_ComprobanteEmision.CodigoArguDepositoOrigen = ConfigCROM.AppConfig(prm_ComprobanteEmision.codEmpresa,
-                                                                                                   ConfigTool.DEFAULT_AlmacenPrincipal);
+                            prm_ComprobanteEmision.codDepositoOrigen = Extensors.CheckInt(ConfigCROM.AppConfig(prm_ComprobanteEmision.codEmpresa,
+                                                                                                   ConfigTool.DEFAULT_AlmacenPrincipal));
             ComprobanteEmisionLogic oComprobanteEmisionLogic = new ComprobanteEmisionLogic();
             ReturnValor oReturnValor = new ReturnValor();
             
@@ -1375,8 +1375,8 @@ namespace CROM.GestionComercial.BusinessLogic
 
                         //--- Eliminación de los ITEM del detalle del documento
                         ReturnValor ooReturnValor = new ReturnValor();
-                        if (comprobanteEmisionAnterior.CodigoArguDepositoOrigen == null)
-                            comprobanteEmisionAnterior.CodigoArguDepositoOrigen = comprobanteEmision.CodigoArguDepositoOrigen;
+                        if (comprobanteEmisionAnterior.codDepositoOrigen == null)
+                            comprobanteEmisionAnterior.codDepositoOrigen = comprobanteEmision.codDepositoOrigen;
 
                         /* ELIMINA TODA LA REFERENCIA YA REGISTRADA */
                         ooReturnValor = EliminarTodaReferenciaComprobanteEmision(comprobanteEmisionAnterior, comprobante);
@@ -1637,7 +1637,7 @@ namespace CROM.GestionComercial.BusinessLogic
                         productoLogic.UpdateProductoExistenciaStockFisico(new  BEProductoExistenciaStockUpdate
                         {
                             codProducto = productoKardex.codProducto,
-                            codDeposito = comprobanteEmision.CodigoArguDepositoOrigen,
+                            codDeposito = comprobanteEmision.codDepositoOrigen.Value,
                             cntStockFisico = Math.Round((decimal)productoKardex.cntSalida, 3),
                             indOperador = 1,
                             segUsuarioEdita = productoKardex.segUsuarioCrea,
@@ -1646,7 +1646,7 @@ namespace CROM.GestionComercial.BusinessLogic
                         productoLogic.UpdateProductoExistenciaStockComprometido(new  BEProductoExistenciaStockUpdate
                         {
                             codProducto = productoKardex.codProducto,
-                            codDeposito = comprobanteEmision.CodigoArguDepositoOrigen,
+                            codDeposito = comprobanteEmision.codDepositoOrigen.Value,
                             cntStockFisico = Math.Round((decimal)productoKardex.cntSalida, 3),
                             indOperador = -1,
                             segUsuarioEdita = productoKardex.segUsuarioCrea,
@@ -2344,24 +2344,24 @@ namespace CROM.GestionComercial.BusinessLogic
                             SUCEDE_UPDATE_STOCKS = true;
                             if (comprobante.IncidenciaEnStocks == -1)
                             {
-                                if (string.IsNullOrEmpty(comprobanteEmision.CodigoArguDepositoOrigen))
+                                if (!comprobanteEmision.codDepositoOrigen.HasValue)
                                 {
                                     returnValor.Exitosa = false;
                                     returnValor.Message = string.Concat( HelpMessages.INVENTARIO_ProcesoValidaAlmacen, " - Origen");
                                     return returnValor;
                                 }
-                                comprobanteEmisionDetalle.CodigoArguDepositoAlm = comprobanteEmision.CodigoArguDepositoOrigen;
+                                comprobanteEmisionDetalle.codDepositoAlm = comprobanteEmision.codDepositoOrigen;
                             }
 
                             if (comprobante.IncidenciaEnStocks == 1)
                             {
-                                if (string.IsNullOrEmpty(comprobanteEmision.CodigoArguDepositoDesti))
+                                if (!comprobanteEmision.codDepositoDestino.HasValue)
                                 {
                                     returnValor.Exitosa = false;
                                     returnValor.Message = string.Concat(HelpMessages.INVENTARIO_ProcesoValidaAlmacen, " - Destino");
                                     return returnValor;
                                 }
-                                comprobanteEmisionDetalle.CodigoArguDepositoAlm = comprobanteEmision.CodigoArguDepositoDesti;
+                                comprobanteEmisionDetalle.codDepositoAlm = comprobanteEmision.codDepositoDestino;
                             }
 
                             if (comprobanteEmisionDetalle.CodigoArguGarantiaProd == string.Empty)
@@ -2383,7 +2383,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                 {
                                     LlenarEntidadProductoKardexAux(comprobanteEmision, SUCEDE_DETALLE, comprobanteEmisionDetalle);
                                     if (productoKardex.codDeposito == null)
-                                        productoKardex.codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm;
+                                        productoKardex.codDeposito = comprobanteEmisionDetalle.codDepositoAlm;
                                     /* Si el documento se genera con el tipo de operacion SALDO INICIAL */
                                     if (comprobanteEmision.CodigoArguTipoDeOperacion == ConstantesGC.TIPO_MOV_DOCUME_SALDO_INICIAL)
                                     {
@@ -2398,7 +2398,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                         {
                                             codEmpresa = comprobanteEmision.codEmpresa,
                                             codProducto = comprobanteEmisionDetalle.codProducto,
-                                            codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                                            codDeposito = comprobanteEmisionDetalle.codDepositoAlm,
                                             cntStockInicial = comprobanteEmisionDetalle.Cantidad,
                                             segUsuarioEdita = comprobante.segUsuarioCrea,
                                             segUsuarioCrea = comprobante.segUsuarioCrea,
@@ -2425,7 +2425,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                         {
                                             codEmpresa = comprobanteEmision.codEmpresa,
                                             codProducto = comprobanteEmisionDetalle.codProducto,
-                                            codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm
+                                            codDeposito = comprobanteEmisionDetalle.codDepositoAlm
                                         });
                                         /* El Sistema consulta si el producto tiene ASIENTO de Existencia de Stocks 
                                            de no tener lo inserta y devuelve su Stock Fisico */
@@ -2438,7 +2438,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                             {
                                                 codEmpresa = comprobanteEmision.codEmpresa,
                                                 codProducto = comprobanteEmisionDetalle.codProducto,
-                                                codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                                                codDeposito = comprobanteEmisionDetalle.codDepositoAlm,
                                                 cntStockInicial = comprobanteEmisionDetalle.Cantidad,
                                                 segUsuarioEdita = comprobante.segUsuarioCrea,
                                                 segUsuarioCrea = comprobante.segUsuarioCrea,
@@ -2532,7 +2532,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                             {
                                                 codEmpresa = comprobanteEmision.codEmpresa,
                                                 codProducto = comprobanteEmisionDetalle.codProducto,
-                                                codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                                                codDeposito = comprobanteEmisionDetalle.codDepositoAlm.Value,
                                                 cntStockFisico = comprobanteEmisionDetalle.Cantidad,
                                                 indOperador = comprobante.Abreviatura == HelpDocumentos.Tipos.GRE.ToString() ? -1 : comprobante.IncidenciaEnStocks,
                                                 numDocumentoReferencia = comprobanteEmision.NumeroComprobanteORIGEN,
@@ -2583,7 +2583,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                         codEmpresa = comprobanteEmision.codEmpresa,
                                         codProducto = comprobanteEmisionDetalle.codProducto,
                                         cntStockComprometido = comprobanteEmisionDetalle.Cantidad,
-                                        codDeposito = comprobanteEmision.CodigoArguDepositoOrigen,
+                                        codDeposito = comprobanteEmision.codDepositoOrigen.Value,
                                         indOperador = 1,
                                         segUsuarioEdita = comprobanteEmision.SegUsuarioCrea,
                                         segUsuarioCrea = comprobante.segUsuarioCrea,
@@ -2621,7 +2621,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                                     codEmpresa = comprobanteEmision.codEmpresa,
                                                     codProducto = comprobanteEmisionDetalle.codProducto,
                                                     cntStockComprometido = comprobanteEmisionDetalle.Cantidad,
-                                                    codDeposito = comprobanteEmision.CodigoArguDepositoOrigen,
+                                                    codDeposito = comprobanteEmision.codDepositoOrigen.Value,
                                                     indOperador = -1,
                                                     segUsuarioEdita = comprobanteEmision.SegUsuarioCrea,
                                                     segUsuarioCrea = comprobante.segUsuarioCrea,
@@ -2778,7 +2778,7 @@ namespace CROM.GestionComercial.BusinessLogic
                 codDocumReg = comprobanteEmision.codDocumReg,
                 codRegistroTipoMotivo = comprobanteEmision.CodigoArguTipoDeOperacion,
                 codDeposito = comprobanteEmision.CodigoArguDestinoComp == WebConstants.DEFAULT_DOCUM_DESTINADO_CLIENTES ? 
-                              comprobanteEmision.CodigoArguDepositoOrigen : comprobanteEmision.CodigoArguDepositoDesti,
+                              comprobanteEmision.codDepositoOrigen : comprobanteEmision.codDepositoDestino,
                 codPersonaMovimi = comprobanteEmision.CodigoPersonaEntidad,
                 codProducto = comprobanteEmisionDetalle.codProducto,
                 codigoProducto = comprobanteEmisionDetalle.CodigoProducto,
@@ -2800,7 +2800,7 @@ namespace CROM.GestionComercial.BusinessLogic
             productoSeriado.SegUsuarioEdita = comprobanteEmision.SegUsuarioCrea;
             productoSeriado.CodigoPersonaEmpre = comprobanteEmision.CodigoPersonaEmpre;
             productoSeriado.CodigoPuntoVenta = comprobanteEmision.CodigoPuntoVenta;
-            productoSeriado.codDeposito = string.IsNullOrEmpty(comprobanteEmisionDetalle.CodigoArguDepositoAlm) ? productoSeriado.codDeposito : comprobanteEmisionDetalle.CodigoArguDepositoAlm;
+            productoSeriado.codDeposito = comprobanteEmisionDetalle.codDepositoAlm.HasValue ? productoSeriado.codDeposito : comprobanteEmisionDetalle.codDepositoAlm.Value;
             if (comprobante.IncidenciaEnStocks == 1)
             {
                 productoSeriado.CodigoPersonaProveedor = comprobanteEmision.CodigoPersonaEntidad;
@@ -2857,7 +2857,7 @@ namespace CROM.GestionComercial.BusinessLogic
         private ReturnValor EliminarTodaReferenciaComprobanteEmision(BEComprobanteEmision comprobanteEmision, 
                                                                      BEDocumento comprobante)
         {
-            string codDeposito = null;
+            int? codDeposito = null;
             decimal? SALDO_StockFisico = null;
             try
             {
@@ -2867,9 +2867,9 @@ namespace CROM.GestionComercial.BusinessLogic
                     {
 
                         if (comprobante.IncidenciaEnStocks == 1)
-                            codDeposito = comprobanteEmision.CodigoArguDepositoDesti;
+                            codDeposito = comprobanteEmision.codDepositoDestino;
                         else
-                            codDeposito = comprobanteEmision.CodigoArguDepositoOrigen;
+                            codDeposito = comprobanteEmision.codDepositoOrigen;
                         //E L I M I N A = En tabla: [Produccion].[ProductoKardex]
                         returnValor = productoKardexLogic.Delete(new BaseFiltroAlmacen
                         {
@@ -2954,7 +2954,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                         {
                                             codEmpresa = comprobanteEmision.codEmpresa,
                                             codProducto = comprobanteEmisionDetalle.codProducto,
-                                            codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm
+                                            codDeposito = comprobanteEmisionDetalle.codDepositoAlm
                                         });
                                         if (!returnValor.Exitosa)
                                             return returnValor;
@@ -2982,7 +2982,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                             {
                                                 codEmpresa = comprobanteEmision.codEmpresa,
                                                 codProducto = comprobanteEmisionDetalle.codProducto,
-                                                codDeposito = codDeposito,
+                                                codDeposito = codDeposito.Value,
                                                 cntStockFisico = Math.Round((decimal)comprobanteEmisionDetalle.Cantidad, 3),
                                                 indOperador = comprobante.IncidenciaEnStocks * -1,
                                                 segUsuarioEdita = comprobante.segUsuarioCrea,
@@ -3000,7 +3000,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                                 {
                                                     codEmpresa = comprobanteEmision.codEmpresa,
                                                     codProducto = comprobanteEmisionDetalle.codProducto,
-                                                    codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                                                    codDeposito = comprobanteEmisionDetalle.codDepositoAlm.Value,
                                                     cntStockFisico = Math.Round((decimal)comprobanteEmisionDetalle.Cantidad, 3),
                                                     indOperador = comprobante.Abreviatura == HelpDocumentos.Tipos.GRE.ToString() ? 1 : (comprobante.IncidenciaEnStocks * -1),
                                                     segUsuarioEdita = comprobante.segUsuarioCrea,
@@ -3017,7 +3017,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                                 {
                                                     codEmpresa = comprobanteEmision.codEmpresa,
                                                     codProducto = comprobanteEmisionDetalle.codProducto,
-                                                    codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                                                    codDeposito = comprobanteEmisionDetalle.codDepositoAlm.Value,
                                                     cntStockFisico = Math.Round((decimal)comprobanteEmisionDetalle.Cantidad, 3),
                                                     indOperador = comprobante.Abreviatura == HelpDocumentos.Tipos.GRE.ToString() ? -1 : (comprobante.IncidenciaEnStocks * 1),
                                                     segUsuarioEdita = comprobante.segUsuarioCrea
@@ -3037,7 +3037,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                             {
                                                 codEmpresa = comprobanteEmision.codEmpresa,
                                                 codProducto = comprobanteEmisionDetalle.codProducto,
-                                                codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                                                codDeposito = comprobanteEmisionDetalle.codDepositoAlm.Value,
                                                 cntStockFisico = Math.Round((decimal)comprobanteEmisionDetalle.Cantidad, 3),
                                                 indOperador = comprobante.Abreviatura == HelpDocumentos.Tipos.GRE.ToString() ? 1 : (comprobante.IncidenciaEnStocks * -1),
                                                 segUsuarioEdita = comprobante.segUsuarioCrea,
@@ -3053,7 +3053,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                             {
                                                 codEmpresa = comprobanteEmision.codEmpresa,
                                                 codProducto = comprobanteEmisionDetalle.codProducto,
-                                                codDeposito = comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                                                codDeposito = comprobanteEmisionDetalle.codDepositoAlm.Value,
                                                 cntStockFisico = Math.Round((decimal)comprobanteEmisionDetalle.Cantidad, 3),
                                                 indOperador = comprobante.Abreviatura == HelpDocumentos.Tipos.GRE.ToString() ? -1 : (comprobante.IncidenciaEnStocks * 1),
                                                 segUsuarioEdita = comprobante.segUsuarioCrea
@@ -3137,7 +3137,7 @@ namespace CROM.GestionComercial.BusinessLogic
                                             codEmpresa = comprobanteEmision.codEmpresa,
                                             codProducto = comprobanteEmisionDetalle.codProducto,
                                             cntStockComprometido = comprobanteEmisionDetalle.Cantidad,
-                                            codDeposito = comprobanteEmision.CodigoArguDepositoOrigen,
+                                            codDeposito = comprobanteEmision.codDepositoOrigen.Value,
                                             indOperador = -1,
                                             segUsuarioEdita = comprobanteEmision.SegUsuarioCrea
                                         }, ref prm_SALDO_StockComprometido);

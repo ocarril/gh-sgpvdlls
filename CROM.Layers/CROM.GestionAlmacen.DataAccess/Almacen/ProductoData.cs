@@ -1,6 +1,7 @@
 namespace CROM.GestionAlmacen.DataAccess
 {
     using CROM.BusinessEntities.Almacen;
+    using CROM.Tools.Comun;
     using CROM.Tools.Comun.entities;
     using CROM.Tools.Comun.settings;
     using System;
@@ -664,7 +665,7 @@ namespace CROM.GestionAlmacen.DataAccess
                                                               prm_baseFiltro.codProductoRefer, 
                                                               prm_baseFiltro.codProducto,
                                                               prm_baseFiltro.codPuntoVenta,
-                                                              prm_baseFiltro.codDeposito);
+                                                              Extensors.CheckStr(prm_baseFiltro.codDeposito));
                     foreach (var item in resul)
                     {
                         producto = new BEProducto();
@@ -1015,7 +1016,7 @@ namespace CROM.GestionAlmacen.DataAccess
                             monRegistrado = item.UnitValorCosto,
 
                             desRazonSocial = item.EntidadRazonSocial,
-                            codDeposito = item.codDeposito,
+                            codDeposito = Extensors.CheckInt(item.codDeposito),
                             segUsuarioCrea = item.SegUsuarioCrea,
                             segFechaCrea = item.FechaDeEmision,
                             segMaquina = item.SegMaquina,
