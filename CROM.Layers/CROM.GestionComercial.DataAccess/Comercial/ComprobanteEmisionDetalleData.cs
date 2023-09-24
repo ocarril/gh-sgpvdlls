@@ -6,6 +6,7 @@ namespace CROM.GestionComercial.DataAccess
 
     using CROM.BusinessEntities.Comercial;
     using CROM.BusinessEntities.Almacen;
+    using CROM.Tools.Comun;
 
     /// <summary>
     /// Proyecto    :  Modulo de Mantenimiento de : 
@@ -60,7 +61,7 @@ namespace CROM.GestionComercial.DataAccess
                        comprobanteEmisionDetalle.CodigoArguTipoProducto,
                        comprobanteEmisionDetalle.EsVerificarStock,
                        comprobanteEmisionDetalle.CodigoCuenta,
-                       comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                       Extensors.CheckStr(comprobanteEmisionDetalle.codDepositoAlm),
                        comprobanteEmisionDetalle.CodigoArguGarantiaProd == string.Empty ? null : comprobanteEmisionDetalle.CodigoArguGarantiaProd,
                        comprobanteEmisionDetalle.CodigoPartida,
                        comprobanteEmisionDetalle.CodigoCentroCosto,
@@ -130,7 +131,7 @@ namespace CROM.GestionComercial.DataAccess
                           comprobanteEmisionDetalle.CodigoArguTipoProducto,
                           comprobanteEmisionDetalle.EsVerificarStock,
                           comprobanteEmisionDetalle.CodigoCuenta,
-                          comprobanteEmisionDetalle.CodigoArguDepositoAlm,
+                          Extensors.CheckStr(comprobanteEmisionDetalle.codDepositoAlm),
                           comprobanteEmisionDetalle.CodigoArguGarantiaProd == string.Empty ? null : comprobanteEmisionDetalle.CodigoArguGarantiaProd,
                           comprobanteEmisionDetalle.CodigoPartida,
                           comprobanteEmisionDetalle.CodigoCentroCosto,
@@ -252,7 +253,7 @@ namespace CROM.GestionComercial.DataAccess
                             CodigoArguDestinoCompNombre = item.CodigoArguDestinoCompNombre,
                             EsVerificarStock = item.EsVerificarStock,
                             CodigoCuenta = item.CodigoCuenta,
-                            CodigoArguDepositoAlm = item.codDeposito,
+                           codDepositoAlm =  Extensors.CheckInt(item.codDeposito),
                             CodigoArguDepositoAlmNombre = item.codDepositoNombre,
                             CodigoArguEstadoDocu = item.CodigoArguEstadoDocu,
                             CodigoArguEstadoDocuNombre = item.CodigoArguEstadoDocuNombre,

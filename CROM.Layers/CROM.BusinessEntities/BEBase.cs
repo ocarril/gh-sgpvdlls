@@ -223,6 +223,65 @@
         public bool Status { get; set; }
     }
 
+
+    public class BEDatoEmpresa
+    {
+        public BEDatoEmpresa()
+        {
+            pathLogoEmpresa = string.Empty;
+            EmisorRazonSocial = string.Empty;
+            EmisorNombre = string.Empty;
+            EmisorRUC = string.Empty;
+            EmisorUbigeo = string.Empty;
+            EmisorCodUbigeo = string.Empty;
+            EmisorTelefon01 = string.Empty;
+            EmisorTelefon02 = string.Empty;
+            EmisorCorreoE = string.Empty;
+            EmisorWebSite = string.Empty;
+            EmisorDomicilio = string.Empty;
+            EmisorTipoDocumento = string.Empty;
+            EmisorPropaganda = string.Empty;
+            LogoAdicionalEmpresa = string.Empty;
+            nomReporteDocumSerie = string.Empty;
+        }
+
+        #region DATOS DE LA EMPRESA EMISOR DEL DOCUMENTO
+
+        public string pathLogoEmpresa { get; set; }
+
+        public string EmisorRazonSocial { get; set; }
+
+        public string EmisorNombre { get; set; }
+
+        public string EmisorRUC { get; set; }
+
+        public string EmisorUbigeo { get; set; }
+
+        public string EmisorCodUbigeo { get; set; }
+
+        public string EmisorTelefon01 { get; set; }
+
+        public string EmisorTelefon02 { get; set; }
+
+        public string EmisorCorreoE { get; set; }
+
+        public string EmisorWebSite { get; set; }
+
+        public string EmisorDomicilio { get; set; }
+
+        public string EmisorTipoDocumento { get; set; }
+
+        public string EmisorPropaganda { get; set; }
+
+        public string LogoAdicionalEmpresa { get; set; }
+
+        public string nomReporteDocumSerie { get; set; }
+
+    #endregion
+
+}
+
+
     /// <summary>
     /// Proyecto    :  Modulo de Mantenimiento de : 
     /// Creacion    : CROM - Orlando Carril Ramírez

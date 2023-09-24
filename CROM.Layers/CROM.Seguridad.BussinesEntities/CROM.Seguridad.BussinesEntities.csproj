@@ -114,11 +114,13 @@
     <Compile Include="acceso\BEUsuarioFreeRequest.cs" />
     <Compile Include="entidades\BEBase.cs" />
     <Compile Include="entidades\BEEmpresa.cs" />
+    <Compile Include="entidades\BEEmpresaSistemaLicencia.cs" />
     <Compile Include="entidades\BEEmpresaSistema.cs" />
     <Compile Include="entidades\BEEmpresaUsuario.cs" />
     <Compile Include="entidades\dto\BEBuscadorBaseRequest.cs" />
     <Compile Include="entidades\dto\BEBuscaAuditoriaRequest.cs" />
     <Compile Include="entidades\dto\BEBuscaEmpresaRequest.cs" />
+    <Compile Include="entidades\dto\BEBuscaEmpresaSistemaLicenciaRequest.cs" />
     <Compile Include="entidades\dto\BEBuscaEmpresaUsuarioRequest.cs" />
     <Compile Include="entidades\dto\BEBuscaRolOpcionRequest.cs" />
     <Compile Include="entidades\dto\BEBuscaRolUsuarioRequest.cs" />

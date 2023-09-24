@@ -315,11 +315,11 @@
         #endregion
 
 
-        public string codDepositoOrigen { get; set; }
+        public int? codDepositoOrigen { get; set; }
 
         public string codDepositoOrigenNombre { get; set; }
 
-        public string codDepositoDestino { get; set; }
+        public int? codDepositoDestino { get; set; }
 
         public string codDepositoDestinoNombre { get; set; }
 

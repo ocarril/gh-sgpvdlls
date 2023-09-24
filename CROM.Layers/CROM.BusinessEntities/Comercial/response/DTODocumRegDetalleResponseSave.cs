@@ -119,7 +119,7 @@
 
         public decimal mtoValorReferencialUnitario { get; set; }
 
-        public string codDeposito { get; set; }
+        public int? codDeposito { get; set; }
 
         public string codRegGarantiaProd { get; set; }
         

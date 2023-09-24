@@ -51,7 +51,7 @@ namespace CROM.BusinessEntities.Almacen
         public int codProductoExistencia { get; set; }
 
         public int codProducto { get; set; }
-        public string codDeposito { get; set; }
+        public int? codDeposito { get; set; }
         public decimal? cntStockInicial { get; set; }
         public decimal? StockFisico { get; set; }
         public decimal StoskComprometido { get; set; }
@@ -73,7 +73,7 @@ namespace CROM.BusinessEntities.Almacen
 
         public int codProducto { get; set; }
 
-        public string codDeposito { get; set; }
+        public int codDeposito { get; set; }
 
         public decimal? cntStockInicial { get; set; }
 
@@ -103,7 +103,7 @@ namespace CROM.BusinessEntities.Almacen
 
         public int codProducto { get; set; }
 
-        public string codDeposito { get; set; }
+        public int? codDeposito { get; set; }
 
     }
 }

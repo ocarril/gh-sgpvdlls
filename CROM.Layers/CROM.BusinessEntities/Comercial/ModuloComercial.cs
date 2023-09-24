@@ -849,7 +849,7 @@ namespace CROM.BusinessEntities.Comercial
             codPerEmpresaRUC = string.Empty;
             codPuntoVenta = string.Empty;
             codProductoRefer = string.Empty;
-            codAlmacen = string.Empty;
+            //codAlmacen = string.Empty;
             codRegCategoria = string.Empty;
         }
 
@@ -857,7 +857,7 @@ namespace CROM.BusinessEntities.Comercial
 
         public string codPuntoVenta { get; set; }
 
-        public string codAlmacen { get; set; }
+        public int? codAlmacen { get; set; }
 
         public int? codGrupo { get; set; }
 

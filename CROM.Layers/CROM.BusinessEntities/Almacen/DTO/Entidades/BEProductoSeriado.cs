@@ -30,7 +30,7 @@ namespace CROM.BusinessEntities.Almacen
 
         public int codProducto { get; set; }
         public string CodigoRegistro { get; set; }
-        public string codDeposito { get; set; }
+        public int codDeposito { get; set; }
         public DateTime FechaIngreso { get; set; }
         public Nullable<DateTime> FechaVencimiento { get; set; }
         public string NumeroLote { get; set; }

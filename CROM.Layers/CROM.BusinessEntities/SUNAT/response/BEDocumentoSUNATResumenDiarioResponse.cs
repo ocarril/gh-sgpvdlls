@@ -15,7 +15,13 @@ namespace CROM.BusinessEntities.SUNAT.response
             verUBLId = string.Empty;
             gloNota = string.Empty;
             LstDocumentosBVTA = new List<BEDocumentoSUNATResumenDiarioDetalleResponse>();
+            DatoEmpresa = new BEDatoEmpresa();
         }
+
+
+        public List<BEDocumentoSUNATResumenDiarioDetalleResponse> LstDocumentosBVTA { get; set; }
+
+        public BEDatoEmpresa DatoEmpresa { get; set; }
 
         public int codEmpresa { get; set; }
 
@@ -35,7 +41,6 @@ namespace CROM.BusinessEntities.SUNAT.response
 
         public string verCustomizationID { get; set; }
 
-
         public string desRptaSunatFS { get; set; }
 
         public DateTime? fecRptaSunatFS { get; set; }
@@ -50,13 +55,24 @@ namespace CROM.BusinessEntities.SUNAT.response
 
         public string numCorrelativo { get; set; }
 
-
-        public List<BEDocumentoSUNATResumenDiarioDetalleResponse> LstDocumentosBVTA { get; set; }
-
         public string pathFileResumenDiario { get; set; }
 
         public string gloNota { get; set; }
 
         public string codTipoDocumentoEmisor { get; set; }
+
+        public string totEnLetras { get; set; }
+
+
+
+        public decimal sumPrecioVentaADIC { get; set; }
+
+        public decimal sumPrecioVentaMODI { get; set; }
+
+        public decimal sumPrecioVentaANUL { get; set; }
+
+        public decimal sumPrecioVentaTOTA { get; set; }
+
+
     }
 }

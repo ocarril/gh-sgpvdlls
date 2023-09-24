@@ -74,7 +74,7 @@ namespace CROM.BusinessEntities.Comercial.emision.request
 
         public int numDiasCredito { get; set; }
 
-        public string codDepositoOrigen { get; set; }
+        public int? codDepositoOrigen { get; set; }
 
 
         public string desTotalCaja { get; set; }
