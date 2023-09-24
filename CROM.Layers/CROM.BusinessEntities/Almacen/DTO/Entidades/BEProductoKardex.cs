@@ -40,7 +40,7 @@ namespace CROM.BusinessEntities.Almacen
         public decimal? monCostoUnitSaldo { get; set; }
         public string desRazonSocial { get; set; }
         public int perKardexAnio { get; set; }
-        public string codDeposito { get; set; }
+        public int? codDeposito { get; set; }
         public string codRegistroTipoMotivo { get; set; }
         public string perInventario { get; set; }
         public Nullable<DateTime> fecInventarioCierre { get; set; }

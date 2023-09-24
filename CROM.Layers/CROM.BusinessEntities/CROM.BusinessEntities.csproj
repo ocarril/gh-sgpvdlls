@@ -179,6 +179,7 @@
     <Compile Include="SUNAT\FirmadoResponse.cs" />
     <Compile Include="SUNAT\IDocumentoElectronico.cs" />
     <Compile Include="SUNAT\request\BEBuscaDocumentoPendienteTicket.cs" />
+    <Compile Include="SUNAT\request\BEBuscaSunatSelectValidXMLRequest.cs" />
     <Compile Include="SUNAT\request\BEDocumentoSUNATRptaWSTicketRequest.cs" />
     <Compile Include="SUNAT\request\BEDocumentoSUNATResumenDiarioUpadeResponse.cs" />
     <Compile Include="SUNAT\request\BEDocumentEnvioWSapiSunatRequest.cs" />

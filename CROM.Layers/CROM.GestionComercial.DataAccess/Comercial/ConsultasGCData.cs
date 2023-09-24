@@ -11,7 +11,8 @@
     using CROM.BusinessEntities.Almacen;
     using CROM.BusinessEntities.Comercial;
     using CROM.BusinessEntities.Comercial.DTO;
-    
+    using CROM.Tools.Comun;
+
     /// <summary>
     /// Proyecto    : Modulo de Mantenimiento de : 
     /// Creacion    : CROM - Orlando Carril Ramírez
@@ -634,7 +635,7 @@
                             Periodo = item.Periodo,
                             CodigoPersonaEmpre = item.CodigoPersonaEmpre,
                             CodigoPuntoVenta = item.CodigoPuntoVenta,
-                            codDeposito = item.codDeposito,
+                            codDeposito = Extensors.CheckInt(item.codDeposito),
                             codDepositoNombre = item.codDepositoNombre,
                             codProducto = item.codProducto,
                             CodigoProducto = item.CodigoProducto,
@@ -761,7 +762,7 @@
                     var resul = SQLDC.omgc_R_ProductoInventarioActual(pFiltro.codEmpresa,
                                                                       pFiltro.codPerEmpresaRUC,
                                                                       pFiltro.codPuntoVenta, 
-                                                                      pFiltro.codAlmacen, 
+                                                                      Extensors.CheckStr(pFiltro.codAlmacen), 
                                                                       pFiltro.codGrupo, 
                                                                       pFiltro.codRegCategoria);
                     foreach (var item in resul)

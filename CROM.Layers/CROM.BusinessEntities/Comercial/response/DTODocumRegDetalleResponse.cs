@@ -37,6 +37,8 @@
             codRegMonedaNombre = string.Empty;
 
             mtoValorReferencialUnitario = 0;
+            codDepositoKey = string.Empty;
+            codDepositoNombre = string.Empty;
         }
 
         public int codEmpresa { get; set; }
@@ -152,7 +154,8 @@
 
         public string codCuenta { get; set; }
 
-        public string codDeposito { get; set; }
+        public int? codDeposito { get; set; }
+        public string codDepositoKey { get; set; }
         public string codDepositoNombre { get; set; }
         public string codRegEstadoDocu { get; set; }
         public string codRegEstadoDocuNombre { get; set; }

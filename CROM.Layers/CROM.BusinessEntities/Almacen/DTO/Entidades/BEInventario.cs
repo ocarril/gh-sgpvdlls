@@ -19,7 +19,7 @@ namespace CROM.BusinessEntities.Almacen
         public int codInventario { get; set; }
         public int codProducto { get; set; }
 
-        public string codDeposito { get; set; }
+        public int codDeposito { get; set; }
         public string Periodo { get; set; }
 
         public decimal Conteo01 { get; set; }

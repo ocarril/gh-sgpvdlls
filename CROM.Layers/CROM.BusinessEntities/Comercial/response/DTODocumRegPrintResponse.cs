@@ -301,7 +301,7 @@ namespace CROM.BusinessEntities.Comercial.response
 
         public int? codDocumRegOrigen { get; set; }
 
-        public string codDepositoOrigen { get; set; }
+        public int? codDepositoOrigen { get; set; }
 
         public string codDepositoOrigenNombre { get; set; }
 

@@ -5,6 +5,7 @@ namespace CROM.GestionAlmacen.DataAccess
     using System.Configuration;
 
     using CROM.BusinessEntities.Almacen;
+    using CROM.Tools.Comun;
 
     /// <summary>
     /// Proyecto    : Modulo de Mantenimiento de : 
@@ -39,7 +40,7 @@ namespace CROM.GestionAlmacen.DataAccess
                     SQLDC.omgc_I_ProductoSeriado(
                     ref codigoRetorno,
                     ref codigoRetornoRef,
-                    productoSeriado.codDeposito,
+                    Extensors.CheckStr(productoSeriado.codDeposito),
                     productoSeriado.codProducto,
                     productoSeriado.FechaIngreso,
                     productoSeriado.FechaVencimiento,
@@ -88,7 +89,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         SQLDC.omgc_I_ProductoSeriado(
                         ref codigoRetorno,
                         ref codigoRetornoRef,
-                        productoSeriado.codDeposito,
+                        Extensors.CheckStr(productoSeriado.codDeposito),
                         productoSeriado.codProducto,
                         productoSeriado.FechaIngreso,
                         productoSeriado.FechaVencimiento,
@@ -146,7 +147,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         codigoRetorno = SQLDC.omgc_U_ProductoSeriadoRetirar(
                         productoSeriado.codProductoSeriado,
                         productoSeriado.CodigoRegistro,
-                        productoSeriado.codDeposito,
+                        Extensors.CheckStr(productoSeriado.codDeposito),
                         productoSeriado.codProducto,
                         productoSeriado.FechaIngreso,
                         productoSeriado.FechaVencimiento,
@@ -187,7 +188,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         codigoRetorno = SQLDC.omgc_U_ProductoSeriado(
                             productoSeriado.codProductoSeriado,
                             productoSeriado.CodigoPuntoVenta,
-                            productoSeriado.codDeposito,
+                            Extensors.CheckStr(productoSeriado.codDeposito),
                             productoSeriado.codProducto,
                             productoSeriado.FechaIngreso,
                             productoSeriado.FechaVencimiento,
@@ -339,7 +340,7 @@ namespace CROM.GestionAlmacen.DataAccess
                             NumeroComprobanteCompra = item.NumeroComprobanteCompra,
                             CodigoPersonaComprometido = item.CodigoPersonaComprometido,
                             CodigoPersonaComprometidoNombre = item.CodigoPersonaComprometidoNombre,
-                            codDeposito = item.codDeposito,
+                            codDeposito = Extensors.CheckInt(item.codDeposito),
                             codDepositoNombre = item.codDepositoNombre,
                             CodigoRegistro = item.CodigoRegistro,
                             codigoProducto = item.CodigoProducto,

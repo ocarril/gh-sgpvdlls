@@ -74,7 +74,7 @@
 
         public int? codDocumRegOrigen { get; set; }
 
-        public string codDepositoOrigen { get; set; }
+        public int? codDepositoOrigen { get; set; }
 
         public Nullable<DateTime> fecEmisionOrigen { get; set; }
 
@@ -185,7 +185,7 @@
 
         #region PROPIEDADES DATOS DE NOTA DE INGRESO - NOTA DE SALIDA
 
-        public string codDepositoDestino { get; set; }
+        public int? codDepositoDestino { get; set; }
 
 
         #endregion

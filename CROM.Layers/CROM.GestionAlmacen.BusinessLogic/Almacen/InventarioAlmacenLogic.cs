@@ -987,7 +987,7 @@
                         EntidadDireccionUbigeo = objPersona.listaPersonasDomicilio.Find(x => x.codRegTipo == strCodRegDomiFiscal).codUbigeoNombre, 
                         Observaciones = "¡ [ DEVOLUCION ]¡ Proceso automático de reguralización de inventarios..!" + DateTime.Now.ToLongDateString(),
                         codEmpleadoVendedor = 1,
-                        CodigoArguDepositoDesti = objBaseFiltro.codAlmacen,
+                        codDepositoDestino = objBaseFiltro.codAlmacen,
                         DocEsGravado = false,
                         DocExigeDocAnexo = false,
                         DocEsFacturable = false,
@@ -997,7 +997,7 @@
                         SegFechaCrea = DateTime.Now,
                         SegUsuarioEdita = objBaseFiltro.UserActual,
                         SegFechaEdita = DateTime.Now,
-                        CodigoArguDepositoOrigen = objBaseFiltro.codAlmacen,
+                        codDepositoOrigen = objBaseFiltro.codAlmacen,
                         indInternacional = false,
                     };
                     comprobanteEmisionNotaSalida = new BEComprobanteEmision
@@ -1023,7 +1023,7 @@
                         EntidadDireccionUbigeo = objPersona.listaPersonasDomicilio.Find(x => x.codRegTipo == strCodRegDomiFiscal).codUbigeoNombre,
                         Observaciones = "¡ [ MERMA-PERDIDA ]¡ Proceso automático de reguralizacion de inventarios..!" + DateTime.Now.ToLongDateString(),
                         codEmpleadoVendedor = 1,
-                        CodigoArguDepositoDesti = objBaseFiltro.codAlmacen,
+                        codDepositoDestino = objBaseFiltro.codAlmacen,
                         DocEsGravado = false,
                         DocExigeDocAnexo = false,
                         DocEsFacturable = false,
@@ -1033,7 +1033,7 @@
                         SegFechaCrea = DateTime.Now,
                         SegUsuarioEdita = objBaseFiltro.UserActual,
                         SegFechaEdita = DateTime.Now,
-                        CodigoArguDepositoOrigen = objBaseFiltro.codAlmacen,
+                        codDepositoOrigen = objBaseFiltro.codAlmacen,
                         indInternacional = false,
                     };
 
@@ -1402,7 +1402,7 @@
 
                 desRazonSocial = empresa.RazonSocial,
                 perKardexAnio = DateTime.Now.Year,
-                codDeposito = ConfigCROM.AppConfig(documento.codEmpresa, ConfigTool.DEFAULT_AlmacenPrincipal),
+                codDeposito = Extensors.CheckInt(ConfigCROM.AppConfig(documento.codEmpresa, ConfigTool.DEFAULT_AlmacenPrincipal)),
                 indActivo = true,
                 segUsuarioCrea = inventario.segUsuarioEdita
             };
@@ -1475,7 +1475,7 @@
                 CodigoPersonaEmpre = listaInventario[0].CodigoPersonaEmpre,
                 CodigoPuntoVenta = listaInventario[0].CodigoPuntoVenta,
                 CodigoPersonaEntidad = listaInventario[0].CodigoPersonaEmpre,
-                CodigoArguDepositoDesti = ConfigCROM.AppConfig(pcodEmpresa, ConfigTool.DEFAULT_AlmacenPrincipal),
+                codDepositoDestino = Extensors.CheckInt( ConfigCROM.AppConfig(pcodEmpresa, ConfigTool.DEFAULT_AlmacenPrincipal)),
                 CodigoArguMoneda = ConfigCROM.AppConfig(pcodEmpresa, ConfigTool.DEFAULT_MonedaNac),
                 CodigoArguTipoDeOperacion = ConfigCROM.AppConfig(pcodEmpresa, ConfigTool.DEFAULT_Movim_SInicial),
                 CodigoComprobante = itemComprobantes.CodigoComprobante,
@@ -1521,8 +1521,8 @@
                 CodigoPuntoVenta = listaInventario[0].CodigoPuntoVenta,
                 CodigoPersonaEntidad = listaInventario[0].CodigoPersonaEmpre,
 
-                CodigoArguDepositoOrigen = listaInventario[0].codDeposito,
-                CodigoArguDepositoDesti = ConfigCROM.AppConfig(pcodEmpresa, ConfigTool.DEFAULT_AlmacenPrincipal),
+                codDepositoOrigen = listaInventario[0].codDeposito,
+                codDepositoDestino = Extensors.ToInteger( ConfigCROM.AppConfig(pcodEmpresa, ConfigTool.DEFAULT_AlmacenPrincipal)),
 
                 CodigoArguMoneda = ConfigCROM.AppConfig(pcodEmpresa, ConfigTool.DEFAULT_MonedaNac),
                 CodigoArguTipoDeOperacion = codRegOperacion,

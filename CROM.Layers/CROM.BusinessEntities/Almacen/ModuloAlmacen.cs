@@ -26,7 +26,7 @@
         public int codEmpresa { get; set; }
         public string codEmpresaRUC { get; set; }
         public string codPuntoVenta { get; set; }
-        public string codDeposito { get; set; }
+        public int? codDeposito { get; set; }
         public string codigoProducto { get; set; }
         public string codPeriodo { get; set; }
         public string desAgrupacion { get; set; }
@@ -212,7 +212,7 @@
 
         public int? codEmpleado { get; set; }
 
-        public string codAlmacen { get; set; }
+        public int? codAlmacen { get; set; }
 
         public string codPlanilla { get; set; }
 
@@ -228,14 +228,14 @@
         public BaseFiltroAlmacenMermaSobrante()
         {
             desAgrupacion = string.Empty;
-            codDeposito = string.Empty;
+            //codDeposito = string.Empty;
             codProductoRefer = string.Empty;
             perPeriodo = string.Empty;
         }
 
         public string codEmpresaRUC { get; set; }
         public string perPeriodo { get; set; }
-        public string codDeposito { get; set; }
+        public int? codDeposito { get; set; }
 
         public bool? indEstado { get; set; }
 

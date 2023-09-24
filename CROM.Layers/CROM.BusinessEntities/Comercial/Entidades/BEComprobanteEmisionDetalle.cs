@@ -58,7 +58,7 @@ namespace CROM.BusinessEntities.Comercial
         public string CodigoArguDestinoComp { get; set; }
         public bool EsVerificarStock { get; set; }
         public string CodigoCuenta { get; set; }
-        public string CodigoArguDepositoAlm { get; set; }
+        public int? codDepositoAlm { get; set; }
         public string CodigoArguEstadoDocu { get; set; }
         public string CodigoArguGarantiaProd { get; set; }
         public string CodigoPartida { get; set; }

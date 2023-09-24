@@ -109,6 +109,7 @@
     <Compile Include="CommonData.cs" />
     <Compile Include="entidades\AuditoriaData.cs" />
     <Compile Include="entidades\EmpresaData.cs" />
+    <Compile Include="entidades\EmpresaSistemaLicenciaData.cs" />
     <Compile Include="entidades\EmpresaSistemaData.cs" />
     <Compile Include="entidades\EmpresaUsuarioData.cs" />
     <Compile Include="entidades\OpcionData.cs" />

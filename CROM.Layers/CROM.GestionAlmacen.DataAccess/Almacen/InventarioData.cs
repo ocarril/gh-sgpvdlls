@@ -5,6 +5,7 @@ namespace CROM.GestionAlmacen.DataAccess
     using System.Configuration;
 
     using CROM.BusinessEntities.Almacen;
+    using CROM.Tools.Comun;
 
     /// <summary>
     /// Proyecto    : Modulo de Mantenimiento de : 
@@ -42,7 +43,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         SQLDC.omgc_I_Inventario(
                             inventario.codEmpresa,
                            ref codInventario,
-                           inventario.codDeposito,
+                           Extensors.CheckStr(inventario.codDeposito),
                            inventario.codProducto,
                            inventario.Periodo,
                            inventario.segUsuarioCrea,
@@ -112,7 +113,7 @@ namespace CROM.GestionAlmacen.DataAccess
                     codigoRetorno = SQLDC.omgc_U_Inventario(
                         inventario.codEmpresa,
                         inventario.codInventario,
-                        inventario.codDeposito,
+                        Extensors.CheckStr(inventario.codDeposito),
                         inventario.codProducto,
                         inventario.Periodo,
                         inventario.NumeroDeConteo,
@@ -164,7 +165,7 @@ namespace CROM.GestionAlmacen.DataAccess
                     codigoRetorno = SQLDC.omgc_U_Inventario_Cerrar_Deshacer(
                         itemInventario.codEmpresa,
                         itemInventario.codInventario,
-                        itemInventario.codDeposito,
+                        Extensors.CheckStr(itemInventario.codDeposito),
                         itemInventario.codProducto,
                         itemInventario.Periodo,
                         itemInventario.segUsuarioEdita,
@@ -250,7 +251,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         miEntidad = new InventarioAux()
                         {
                             codInventario = item.codInventario,
-                            codDeposito = item.codDeposito,
+                            codDeposito = Extensors.ToInteger( item.codDeposito),
                             CodigoProducto = item.codigoProducto,
                             Periodo = item.Periodo,
                             Conteo01 = item.Conteo01,
@@ -313,7 +314,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var resul = SQLDC.omgc_S_Inventario(pFiltro.codEmpresa,pFiltro.codEmpresaRUC
                                                       , pFiltro.codPuntoVenta
-                                                      , pFiltro.codDeposito
+                                                      , Extensors.CheckStr( pFiltro.codDeposito)
                                                       , pFiltro.codProductoRefer
                                                       , pFiltro.perPeriodo
                                                       , pFiltro.indEstado
@@ -324,7 +325,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         lstInventario.Add(new InventarioAux()
                         {
                             codInventario = item.codInventario,
-                            codDeposito = item.codDeposito,
+                            codDeposito = Extensors.ToInteger( item.codDeposito),
                             codProducto = item.codProducto,
                             CodigoProducto = item.codigoProducto,
                             CodigoProductoNombre = item.CodigoProductoNombre,
@@ -385,7 +386,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var resul = SQLDC.omgc_S_Inventario_Cerrar(pFiltro.codEmpresa, pFiltro.codEmpresaRUC,
                                                                pFiltro.codPuntoVenta,
-                                                               pFiltro.codDeposito,
+                                                               Extensors.CheckStr(pFiltro.codDeposito),
                                                                pFiltro.codProducto,
                                                                pFiltro.perPeriodo,
                                                                pFiltro.indEstado,
@@ -396,7 +397,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         lstInventario.Add(new InventarioAux()
                         {
                             codInventario = item.codInventario,
-                            codDeposito = item.codDeposito,
+                            codDeposito = Extensors.ToInteger(item.codDeposito),
                             codProducto = item.codProducto,
                             CodigoProducto = item.codigoProducto,
                             CodigoProductoNombre = item.CodigoProductoNombre,
@@ -454,7 +455,7 @@ namespace CROM.GestionAlmacen.DataAccess
                 {
                     var resul = SQLDC.omgc_S_Inventario_MermaSobrante(objBaseFiltro.codEmpresaRUC,
                                                                       objBaseFiltro.perPeriodo,
-                                                                      objBaseFiltro.codDeposito,
+                                                                      Extensors.CheckStr(objBaseFiltro.codDeposito),
                                                                       objBaseFiltro.indEstado,
                                                                       objBaseFiltro.desAgrupacion,
                                                                       objBaseFiltro.codProductoRefer);
@@ -463,7 +464,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         lstInventario.Add(new InventarioAux()
                         {
                             CodigoPersonaEmpre = objBaseFiltro.codEmpresaRUC,
-                            codDeposito = objBaseFiltro.codDeposito,
+                            codDeposito = Extensors.CheckInt(objBaseFiltro.codDeposito),
                             codInventario = item.codInventario,
                             codProducto = item.codProducto,
                             CodigoProducto = item.codigoProducto,
@@ -513,7 +514,7 @@ namespace CROM.GestionAlmacen.DataAccess
                                                                   , pFiltro.jqSortOrder
                                                                   , pFiltro.codEmpresaRUC
                                                                   , pFiltro.codPuntoVenta
-                                                                  , pFiltro.codDeposito
+                                                                  , Extensors.CheckStr(pFiltro.codDeposito)
                                                                   , pFiltro.codigoProducto
                                                                   , pFiltro.codPeriodo
                                                                   , pFiltro.desAgrupacion);
@@ -528,7 +529,7 @@ namespace CROM.GestionAlmacen.DataAccess
                         objInventario.codProducto = item.codProducto;
                         objInventario.objProducto.Descripcion = item.codProductoNombre;
                         objInventario.Periodo = item.Periodo;
-                        objInventario.codDeposito = item.codDeposito;
+                        objInventario.codDeposito = Extensors.ToInteger(item.codDeposito);
                         objInventario.objProducto.CodigoProducto = item.codigoProducto;
                         objInventario.Periodo = item.Periodo;
                         objInventario.Conteo01Empleado = item.ConteoEmpleado;
