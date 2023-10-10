@@ -17,6 +17,7 @@
     using System.Linq;
     using System.Reflection;
     using System.Transactions;
+    using static CROM.Tools.Comun.Web.WebConstants;
 
     /// <summary>
     /// Proyecto    : Seguridad del Sistema
@@ -355,7 +356,10 @@
 
                         BEUsuario pUsuario = oSeguridadData.FindLogin(pUsuarioPassword.desLogin);
 
-                        oReturn.Message = HelpMessages.Evento_EDIT;
+                        oReturn.Message = WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == 2021).Value;
+                        oReturn.codRetorno = WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == 2021).Key;
+                        oReturn.CodigoRetorno = oReturn.codRetorno.ToString();
+                        oReturn.ErrorCode = TypeError.OK.ToString();
 
                         if (pEnviaMail)
                         {
