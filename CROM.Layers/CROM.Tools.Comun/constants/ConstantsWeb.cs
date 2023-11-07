@@ -92,7 +92,8 @@
         public enum TypeError
         {
             NO_UPDATE = 0,
-            WARNING = -406
+            WARNING = -406,
+            OK = 1,
         }
 
 
