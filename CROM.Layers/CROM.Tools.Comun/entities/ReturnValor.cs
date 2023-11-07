@@ -12,6 +12,13 @@ namespace CROM.Tools.Comun.entities
     /// </summary>
     public class ReturnValor
     {
+        public ReturnValor()
+        {
+            Message = string.Empty;
+            CodigoRetorno = string.Empty;
+            ErrorCode = string.Empty;
+        }
+
         /// <summary>
         /// Gets or sets a value indicating whether this <see cref="Respuesta"/> is exitosa.
         /// </summary>

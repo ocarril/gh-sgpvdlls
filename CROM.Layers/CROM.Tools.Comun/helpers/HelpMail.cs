@@ -9,11 +9,13 @@ using System.Net;
 using CROM.Tools.Comun.settings;
 using System.Net.Mime;
 using Newtonsoft.Json;
+using System.Security.Cryptography.X509Certificates;
+using System.Net.Security;
 
 namespace CROM.Tools.Comun
 {
-   
-    
+
+
     public class HelpMail
     {
 
@@ -62,11 +64,11 @@ namespace CROM.Tools.Comun
         public static void Enviar(string pSubject, string pBody, List<string> lstEmails, bool indEnvioOculto,
                                   List<string> lstAttachments, CuentaCorreoEnvio pCuentaCorreoEnvio)
         {
-            bool strEMAIL_SSL = false; 
+            bool strEMAIL_SSL = false;
             string strEMAIL_Server = string.Empty;
             string strEMAIL_CredUsuario = string.Empty;
             string strEMAIL_CredClave = string.Empty;
-            string strEMAIL_Subject= string.Empty;
+            string strEMAIL_Subject = string.Empty;
             int strEMAIL_Puerto = 0;
 
             if (pCuentaCorreoEnvio == null)
@@ -95,7 +97,7 @@ namespace CROM.Tools.Comun
                 SubjectEncoding = System.Text.Encoding.UTF8,
                 Body = pBody,
                 IsBodyHtml = true,
-                Priority = System.Net.Mail.MailPriority.High,
+                Priority = System.Net.Mail.MailPriority.Normal,
             };
             foreach (string strCorreo in lstEmails)
             {
@@ -110,8 +112,9 @@ namespace CROM.Tools.Comun
                     throw new Exception(string.Format("Correo electrónico es inválido: {0}", strCorreo));
             }
 
-            if (lstAttachments != null) {
-                foreach(string cadaFile in lstAttachments)
+            if (lstAttachments != null)
+            {
+                foreach (string cadaFile in lstAttachments)
                 {
                     // Create  the file attachment for this email message.
                     Attachment data = new Attachment(cadaFile, MediaTypeNames.Application.Octet);
@@ -123,20 +126,28 @@ namespace CROM.Tools.Comun
                     // Add the file attachment to this email message.
                     correo.Attachments.Add(data);
                 }
-                
-             }
+
+            }
 
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient
-                {
-                    Credentials = new NetworkCredential(strEMAIL_CredUsuario, strEMAIL_CredClave),
-                    Port = strEMAIL_Puerto,
-                    Host = strEMAIL_Server,
-                    EnableSsl = strEMAIL_SSL,
-                    //DeliveryMethod = SmtpDeliveryMethod.Network,
-                    //UseDefaultCredentials = false,
-                };
+            {
+                Credentials = new NetworkCredential(strEMAIL_CredUsuario, strEMAIL_CredClave),
+                Port = strEMAIL_Puerto,
+                Host = strEMAIL_Server,
+                EnableSsl = strEMAIL_SSL,
+                DeliveryMethod = SmtpDeliveryMethod.Network,
+                UseDefaultCredentials = false,
+            };
             try
             {
+                ServicePointManager.ServerCertificateValidationCallback = delegate (object s, 
+                                                                                    X509Certificate certificate,
+                                                                                    X509Chain chain, 
+                                                                                    SslPolicyErrors errors)
+                {
+                    return true;
+                };
+
                 smtp.Send(correo);
             }
             catch (Exception)
