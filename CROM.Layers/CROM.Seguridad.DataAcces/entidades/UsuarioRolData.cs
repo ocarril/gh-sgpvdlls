@@ -65,6 +65,7 @@
                 using (_DBMLSeguridadSistemaDataContext SeguridadDC = new _DBMLSeguridadSistemaDataContext(conexion))
                 {
                     CodigoRetorno = SeguridadDC.usp_sis_U_UsuarioRol(
+                            pItem.codUsuarioRol,
                             pItem.codUsuario,
                             pItem.codRol,
                             Convert.ToBoolean(pItem.indEstado),

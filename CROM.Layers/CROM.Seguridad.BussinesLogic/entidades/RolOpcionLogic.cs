@@ -194,7 +194,9 @@
                         {
                             ID = item.codRolOpcion,
                             Row = new string[] {
-                                          item.indVer.ToString().ToLower()
+                                          string.Empty
+                                        , string.Empty
+                                        , item.indVer.ToString().ToLower()
                                         , item.indEditar.ToString().ToLower()
                                         , item.indEliminar.ToString().ToLower()
                                         , item.indExporta.ToString().ToLower()
