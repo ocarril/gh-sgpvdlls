@@ -468,13 +468,6 @@ namespace CROM.Seguridad.DataAcces
 			return ((ISingleResult<usp_sis_U_UsuarioResult>)(result.ReturnValue));
 		}
 		
-		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Seguridad.usp_sis_U_UsuarioRol")]
-		public int usp_sis_U_UsuarioRol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string p_codUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(4)")] string p_codRol, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> p_indEstado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string p_segUsuarioEdita)
-		{
-			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_codUsuario, p_codRol, p_indEstado, p_segUsuarioEdita);
-			return ((int)(result.ReturnValue));
-		}
-		
 		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Seguridad.omgc_mnt_GetAll_Opcion")]
 		public ISingleResult<omgc_mnt_GetAll_OpcionResult> omgc_mnt_GetAll_Opcion([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(4)")] string p_codOpcion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(4)")] string p_codSistema, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string p_desNombre, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string p_desDescripcion, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> p_indEstado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(15)")] string p_TipoObjeto)
 		{
@@ -494,6 +487,13 @@ namespace CROM.Seguridad.DataAcces
 		{
 			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_NumPagina, p_TamPagina, p_OrdenPor, p_OrdenTipo, p_codEmpresaSistema, p_codEmpresa, p_codSistema, p_indActivo);
 			return ((ISingleResult<usp_sis_R_ESLicencia_PagedResult>)(result.ReturnValue));
+		}
+		
+		[global::System.Data.Linq.Mapping.FunctionAttribute(Name="Seguridad.usp_sis_U_UsuarioRol")]
+		public int usp_sis_U_UsuarioRol([global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Int")] System.Nullable<int> p_codUsuarioRol, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(10)")] string p_codUsuario, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(4)")] string p_codRol, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="Bit")] System.Nullable<bool> p_indEstado, [global::System.Data.Linq.Mapping.ParameterAttribute(DbType="VarChar(50)")] string p_segUsuarioEdita)
+		{
+			IExecuteResult result = this.ExecuteMethodCall(this, ((MethodInfo)(MethodInfo.GetCurrentMethod())), p_codUsuarioRol, p_codUsuario, p_codRol, p_indEstado, p_segUsuarioEdita);
+			return ((int)(result.ReturnValue));
 		}
 	}
 	
