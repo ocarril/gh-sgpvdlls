@@ -916,13 +916,6 @@
       <Column Name="desMessage" Type="System.String" DbType="VarChar(2) NOT NULL" CanBeNull="false" />
     </ElementType>
   </Function>
-  <Function Name="Seguridad.usp_sis_U_UsuarioRol" Method="usp_sis_U_UsuarioRol">
-    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
-    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
-    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
-    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
-    <Return Type="System.Int32" />
-  </Function>
   <Function Name="Seguridad.omgc_mnt_GetAll_Opcion" Method="omgc_mnt_GetAll_Opcion">
     <Parameter Name="p_codOpcion" Type="System.String" DbType="VarChar(4)" />
     <Parameter Name="p_codSistema" Type="System.String" DbType="VarChar(4)" />
@@ -1008,5 +1001,13 @@
       <Column Name="TOTALROWS" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="ROWNUM" Type="System.Int64" DbType="BigInt" CanBeNull="true" />
     </ElementType>
+  </Function>
+  <Function Name="Seguridad.usp_sis_U_UsuarioRol" Method="usp_sis_U_UsuarioRol">
+    <Parameter Name="p_codUsuarioRol" Type="System.Int32" DbType="Int" />
+    <Parameter Name="p_codUsuario" Type="System.String" DbType="VarChar(10)" />
+    <Parameter Name="p_codRol" Type="System.String" DbType="VarChar(4)" />
+    <Parameter Name="p_indEstado" Type="System.Boolean" DbType="Bit" />
+    <Parameter Name="p_segUsuarioEdita" Type="System.String" DbType="VarChar(50)" />
+    <Return Type="System.Int32" />
   </Function>
 </Database>
