@@ -14,6 +14,7 @@
     using System;
     using System.Collections.Generic;
     using System.Diagnostics;
+    using System.Globalization;
     using System.Linq;
     using System.Reflection;
     using System.Transactions;
@@ -688,7 +689,7 @@
                         //                                                                                 DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud())),
                         //          string.Format("Empresa:[{0}], Usuario:[{1}]", "00", objUsuarioValidado.desLogin));
 
-                        if (HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[1].Trim()) > DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()))
+                        if (HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[1].Trim()).Value.AddMinutes(1439) > DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()))
                         {
                             blnEmpresaEsValido = true;
                             numCodigoError = 0;
@@ -733,7 +734,8 @@
                         operationResult.brokenRulesCollection.Add(new BrokenRule
                         {
                             description = string.Format(WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == numCodigoError).Value,
-                                                         strEmpresa, fecLicenciaVenc.Value.ToShortDateString()),
+                                                         strEmpresa, fecLicenciaVenc.Value.
+                                                       ToString("dd MMMM yyyy", new CultureInfo("es-ES"))),
                             severity = RuleSeverity.Warning
                         });
                     }
