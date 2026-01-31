@@ -32,7 +32,7 @@
 
         #region ----- Proceso de Listar -----
 
-        public OperationResult ListAuditoriaPage(BEBuscaAuditoriaRequest pFiltro)
+        public OperationResult ListAuditoriaPageJQGrid(BEBuscaAuditoriaRequest pFiltro)
         {
             try
             {
@@ -52,6 +52,9 @@
                         {
                             ID = item.codAuditoria,
                             Row = new string[] {
+                                                item.fecRegistroBD.ToString("dd-MM-yyyy HH:mm:ss"),
+                                                item.desLogin,
+                                                item.codUsuarioNombre,
                                                 item.codEmpresa.ToString(),
                                                 item.codEmpresaNombre,
                                                 item.codSistema,
@@ -59,17 +62,40 @@
                                                 item.codRol,
                                                 item.codRolNombre,
                                                 item.codUsuario,
-                                                item.desLogin,
-                                                item.codUsuarioNombre,
                                                 item.desTipo,
                                                 item.fecRegistroApp.ToString("dd-MM-yyyy HH:mm:ss"),
-                                                item.fecRegistroBD.ToString("dd-MM-yyyy HH:mm:ss"),
                                                 item.desMensaje,
                                                 item.nomMaquinaIP
                             }
                         }).ToArray()
                 };
                 return OK(jsonGrid);
+            }
+            catch (Exception ex)
+            {
+                return Error(GetType().Name, MethodBase.GetCurrentMethod().Name, ex, pFiltro.userActual, pFiltro.codEmpresa);
+            }
+            finally
+            {
+                if (oAuditoriaData != null)
+                {
+                    oAuditoriaData.Dispose();
+                    oAuditoriaData = null;
+                }
+            }
+        }
+
+
+        public OperationResult ListAuditoriaPageTable(BEBuscaAuditoriaRequest pFiltro)
+        {
+            try
+            {
+
+                pFiltro.fecInicioStr = HelpTime.ConvertYYYYMMDD(pFiltro.fecInicio);
+                pFiltro.fecFinalStr = HelpTime.ConvertYYYYMMDD(pFiltro.fecFinal);
+                var lstEmpresa = oAuditoriaData.ListAuditoriaPage(pFiltro);
+                return OK(lstEmpresa);
+
             }
             catch (Exception ex)
             {
