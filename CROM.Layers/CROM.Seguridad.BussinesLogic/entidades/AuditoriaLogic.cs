@@ -6,7 +6,7 @@
     using CROM.Seguridad.DataAcces;
     using CROM.Tools.Comun;
     using CROM.Tools.Comun.entities;
-
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -86,20 +86,26 @@
         }
 
 
-        public OperationResult ListAuditoriaPageTable(BEBuscaAuditoriaRequest pFiltro)
+        public ResultResponse<List<BEAuditoriaResponse>> ListAuditoriaPageTable(BEBuscaAuditoriaRequest pFiltro)
         {
+            ResultResponse<List<BEAuditoriaResponse>> result = new ResultResponse<List<BEAuditoriaResponse>>();
             try
             {
 
                 pFiltro.fecInicioStr = HelpTime.ConvertYYYYMMDD(pFiltro.fecInicio);
                 pFiltro.fecFinalStr = HelpTime.ConvertYYYYMMDD(pFiltro.fecFinal);
+
                 var lstEmpresa = oAuditoriaData.ListAuditoriaPage(pFiltro);
-                return OK(lstEmpresa);
+
+                result.Data = lstEmpresa;
+                result.Success = true;
+                result.Message = WebConstants.DEFAULT_OK;
 
             }
             catch (Exception ex)
             {
-                return Error(GetType().Name, MethodBase.GetCurrentMethod().Name, ex, pFiltro.userActual, pFiltro.codEmpresa);
+                oReturn = HelpException.mTraerMensaje(ex, false, pFiltro.maquinaPC, pFiltro.userActual, pFiltro.codEmpresa.ToString());
+                result.Message = oReturn.Message;
             }
             finally
             {
@@ -109,6 +115,7 @@
                     oAuditoriaData = null;
                 }
             }
+            return result;
         }
 
 
