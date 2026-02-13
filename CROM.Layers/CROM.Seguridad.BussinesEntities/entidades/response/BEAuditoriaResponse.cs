@@ -7,7 +7,7 @@ namespace CROM.Seguridad.BussinesEntities.entidades.response
     using System.Runtime.Serialization;
 
     [DataContract]
-    public class BEAuditoriaResponse : BEBasePaged
+    public class BEAuditoriaResponse 
     {
         public BEAuditoriaResponse()
         {
@@ -61,5 +61,16 @@ namespace CROM.Seguridad.BussinesEntities.entidades.response
 
         [DataMember]
         public string codUsuarioNombre { get; set; }
+
+        public string segUsuarioEdita { get; set; }
+
+        public Nullable<DateTime> segFechaEdita { get; set; }
+
+        public string segMaquinaEdita { get; set; }
+
+        [DataMember]
+        public long ROW { get; set; }
+        [DataMember]
+        public int TOTALROWS { get; set; }
     }
 }

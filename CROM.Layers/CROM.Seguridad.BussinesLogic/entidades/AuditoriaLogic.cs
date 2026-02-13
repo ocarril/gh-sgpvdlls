@@ -6,7 +6,7 @@
     using CROM.Seguridad.DataAcces;
     using CROM.Tools.Comun;
     using CROM.Tools.Comun.entities;
-
+    using CROM.Tools.Comun.Web;
     using System;
     using System.Collections.Generic;
     using System.Linq;
@@ -32,7 +32,7 @@
 
         #region ----- Proceso de Listar -----
 
-        public OperationResult ListAuditoriaPage(BEBuscaAuditoriaRequest pFiltro)
+        public OperationResult ListAuditoriaPageJQGrid(BEBuscaAuditoriaRequest pFiltro)
         {
             try
             {
@@ -52,6 +52,9 @@
                         {
                             ID = item.codAuditoria,
                             Row = new string[] {
+                                                item.fecRegistroBD.ToString("dd-MM-yyyy HH:mm:ss"),
+                                                item.desLogin,
+                                                item.codUsuarioNombre,
                                                 item.codEmpresa.ToString(),
                                                 item.codEmpresaNombre,
                                                 item.codSistema,
@@ -59,11 +62,8 @@
                                                 item.codRol,
                                                 item.codRolNombre,
                                                 item.codUsuario,
-                                                item.desLogin,
-                                                item.codUsuarioNombre,
                                                 item.desTipo,
                                                 item.fecRegistroApp.ToString("dd-MM-yyyy HH:mm:ss"),
-                                                item.fecRegistroBD.ToString("dd-MM-yyyy HH:mm:ss"),
                                                 item.desMensaje,
                                                 item.nomMaquinaIP
                             }
@@ -83,6 +83,39 @@
                     oAuditoriaData = null;
                 }
             }
+        }
+
+
+        public ResultResponse<List<BEAuditoriaResponse>> ListAuditoriaPageTable(BEBuscaAuditoriaRequest pFiltro)
+        {
+            ResultResponse<List<BEAuditoriaResponse>> result = new ResultResponse<List<BEAuditoriaResponse>>();
+            try
+            {
+
+                pFiltro.fecInicioStr = HelpTime.ConvertYYYYMMDD(pFiltro.fecInicio);
+                pFiltro.fecFinalStr = HelpTime.ConvertYYYYMMDD(pFiltro.fecFinal);
+
+                var lstEmpresa = oAuditoriaData.ListAuditoriaPage(pFiltro);
+
+                result.Data = lstEmpresa;
+                result.Success = true;
+                result.Message = WebConstants.DEFAULT_OK;
+
+            }
+            catch (Exception ex)
+            {
+                oReturn = HelpException.mTraerMensaje(ex, false, pFiltro.maquinaPC, pFiltro.userActual, pFiltro.codEmpresa.ToString());
+                result.Message = oReturn.Message;
+            }
+            finally
+            {
+                if (oAuditoriaData != null)
+                {
+                    oAuditoriaData.Dispose();
+                    oAuditoriaData = null;
+                }
+            }
+            return result;
         }
 
 
