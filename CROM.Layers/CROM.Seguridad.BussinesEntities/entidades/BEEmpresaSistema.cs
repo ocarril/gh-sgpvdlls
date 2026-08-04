@@ -31,6 +31,10 @@ namespace CROM.Seguridad.BussinesEntities
         public DateTime fecFinal { get; set; }
         public int numTiempoToken { get; set; }
         public bool indEliminado { get; set; }
+
+
+        public bool indFaltoPago { get; set; }
+        public DateTime? fecFinalLicFE { get; set; }
     }
 
     public class BEEmpresaSistemaRespose : BEBasePaged
@@ -53,6 +57,9 @@ namespace CROM.Seguridad.BussinesEntities
         public int numTiempoToken { get; set; }
 
         public bool indEliminado { get; set; }
+
+        public bool indFaltoPago { get; set; }
+        public DateTime? fecFinalLicFE { get; set; }
     }
 
     public class BEEmpresaSistemaRequest : BEBaseRequest
@@ -72,5 +79,9 @@ namespace CROM.Seguridad.BussinesEntities
 
         public int numTiempoToken { get; set; }
         public bool indEliminado { get; set; }
+
+
+        public bool indFaltoPago { get; set; }
+        public DateTime? fecFinalLicFE { get; set; }
     }
 }
