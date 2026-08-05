@@ -691,6 +691,21 @@
 
                         if (HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[1].Trim()).Value.AddMinutes(1439) > DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()))
                         {
+                            if (arrDatoEmpresa[6].Trim() == "1") /*[indFaltoPago]*/
+                            {
+                                numCodigoError = 2028;
+                                strEmpresa = arrDatoEmpresa[3].Trim();
+                                fecLicenciaVenc = HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[1].Trim());
+                                break;
+                            }
+                            if (arrDatoEmpresa[5].Trim().Length > 0)
+                                if (HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[5].Trim()).Value.AddMinutes(1439) > DateTime.Now.AddHours(GlobalSettings.GetDEFAULT_HorasFechaActualCloud()))
+                                {
+                                    numCodigoError = 2029;
+                                    strEmpresa = arrDatoEmpresa[3].Trim();
+                                    fecLicenciaVenc = HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[5].Trim());
+                                    break;
+                                }
                             blnEmpresaEsValido = true;
                             numCodigoError = 0;
                             fecLicenciaVenc = HelpTime.ConvertYYYYMMDDToDate(arrDatoEmpresa[1].Trim());
@@ -729,7 +744,17 @@
 
                 if (!blnEmpresaEsValido)
                 {
-                    if (numCodigoError == 2011)
+                    if (numCodigoError == 2028 || numCodigoError == 2029)
+                    {
+                        operationResult.brokenRulesCollection.Add(new BrokenRule
+                        {
+                            description = string.Format(WebConstants.ValidacionDatosSEGURIDAD.FirstOrDefault(x => x.Key == numCodigoError).Value,
+                                                         strEmpresa, fecLicenciaVenc.Value.
+                                                       ToString("dd MMMM yyyy", new CultureInfo("es-ES"))),
+                            severity = RuleSeverity.Warning
+                        });
+                    }
+                    else if (numCodigoError == 2011)
                     {
                         operationResult.brokenRulesCollection.Add(new BrokenRule
                         {
