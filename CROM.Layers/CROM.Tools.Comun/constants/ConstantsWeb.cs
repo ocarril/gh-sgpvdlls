@@ -243,7 +243,7 @@
           { 2026,  "Cuenta de usuario esta pendiente de cambio de contraseña." },
           { 2027,  "Contraseña de usuario es inválida." },
           { 2028,  "Sistema inactivo para la empresa: {0}. Por retraso de pago. Licencia aún vence: {1}" },
-          { 2029,  "Licencia por FAC-ELECTRONICA para la empresa: {0} - Por vencer Hasta : {1}" },
+          { 2029,  "Licencia FACT.ELECTRONICA: {0} Vence: {1}" },
 
         };
 
