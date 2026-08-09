@@ -33,6 +33,14 @@
         public string nomAction { get; set; }
 
 
+        [DataMember]
+        [JsonProperty("resultData")]
+        public bool resultData { get; set; }
+
+
+
+        [JsonIgnore]
+        public string segMaquinaIP { get; set; }
     }
 
 }
